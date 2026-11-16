@@ -470,9 +470,9 @@ export const en: Dictionary = {
     },
     profile: {
       eyebrow: 'Your contact',
-      title: 'Ümit Törün',
-      role: 'Dipl.-Imb. · Founder & Advisor',
-      bio: '[SHORT BIO: add career, focus areas and experience in two to three sentences.]',
+      title: 'Dipl.-Imb. Ümit Törün',
+      role: 'Founder & Advisor',
+      bio: 'Born in ’73, father of 3 (now married) children, creative lateral thinker, ex!banker, tireless business leader & optimist ;-)\nWith more than 33 years of know-how, know-what & experience, we get you to your goals …\nWith heart, mind, body & soul and plenty of passion – from practice, for practice.\nMore about me in a first get-to-know-you conversation 😊',
     },
     values: {
       eyebrow: 'Values',

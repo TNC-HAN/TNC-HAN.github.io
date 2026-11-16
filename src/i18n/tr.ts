@@ -462,9 +462,9 @@ export const tr: Dictionary = {
     },
     profile: {
       eyebrow: 'Muhatabınız',
-      title: 'Ümit Törün',
-      role: 'Dipl.-Imb. · Kurucu ve Danışman',
-      bio: '[KISA ÖZGEÇMİŞ: Kariyer, uzmanlık alanları ve deneyimi iki üç cümleyle ekleyin.]',
+      title: 'Dipl.-Imb. Ümit Törün',
+      role: 'Kurucu ve Danışman',
+      bio: '1973 doğumlu, (artık) evli 3 çocuk babası, yaratıcı ve sıra dışı düşünen, eski bankacı, yorulmak bilmeyen bir şirket yöneticisi ve iyimser ;-)\n33 yılı aşkın know-how, know-what ve deneyimle sizi hedeflerinize ulaştırıyoruz …\nKalben, aklen, bedenen ve ruhen, bolca tutkuyla – sahadan, saha için.\nHakkımda daha fazlasını ilk tanışma görüşmemizde memnuniyetle anlatırım 😊',
     },
     values: {
       eyebrow: 'Değerler',

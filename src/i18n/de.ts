@@ -473,9 +473,10 @@ export const de: Dictionary = {
     },
     profile: {
       eyebrow: 'Ihr Ansprechpartner',
-      title: 'Ümit Törün',
-      role: 'Dipl.-Imb. · Gründer & Berater',
-      bio: '[KURZVITA: Werdegang, Schwerpunkte und Erfahrung in zwei bis drei Sätzen eintragen.]',
+      title: 'Dipl.-Imb. Ümit Törün',
+      role: 'Gründer & Berater',
+      // Zeilenumbrüche (\n) werden auf der Seite als neue Zeile angezeigt.
+      bio: '73er Baujahr, Familienvater von 3 (mittlerweile) verheirateten Kindern, kreativer Querdenker, Ex!Banker, unermüdlicher Unternehmenslenker & Optimist ;-)\nMit mehr als 33 Jahren Know-how, Know-what & Erfahrung bringen wir Sie an Ihre Ziele …\nMit Herz, Verstand, Leib & Seele und viel Passion – aus der Praxis, für die Praxis.\nMehr über mich gerne in einem ersten Kennenlerngespräch 😊',
     },
     values: {
       eyebrow: 'Werte',
