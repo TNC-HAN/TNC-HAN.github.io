@@ -1,0 +1,23 @@
+# Ergebnis von "npm run build" – wird bei jeder Veröffentlichung neu erzeugt
+dist/
+
+# Von Astro erzeugte Typen und Zwischenstände
+.astro/
+
+# Installierte Pakete – mit "npm install" jederzeit wiederherstellbar
+node_modules/
+
+# Lokale Umgebungsvariablen (niemals Zugangsdaten einchecken)
+.env
+.env.*
+
+# Protokolle und Systemdateien
+npm-debug.log*
+*.log
+.DS_Store
+Thumbs.db
+
+# Editor-Einstellungen
+.vscode/*
+!.vscode/extensions.json
+.idea/

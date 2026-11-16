@@ -1,0 +1,126 @@
+---
+import { Image } from 'astro:assets';
+import nexxcon from '@/assets/brand/nexxcon-logo.png';
+import nexxus from '@/assets/brand/nexxus-logo.png';
+import { href, serviceKeys, type Lang } from '@/config/routes';
+import { site, whatsappUrl } from '@/config/site';
+import { t } from '@/i18n';
+
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const dict = t(lang);
+const year = new Date().getFullYear();
+---
+
+<footer class="relative mt-24 border-t border-line bg-ink-950/80">
+  <div class="hairline absolute top-0 left-0"></div>
+  <div class="container-site grid gap-12 py-16 md:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1.2fr]">
+    <div>
+      <Image
+        src={nexxcon}
+        alt="nexxcon – business RE solutions"
+        class="h-10 w-auto"
+        widths={[200, 400]}
+        sizes="200px"
+      />
+      <p class="mt-5 max-w-xs text-sm leading-relaxed text-muted">{dict.footer.claim}</p>
+      <p class="mt-6 text-xs tracking-wide text-subtle">{dict.footer.brandsNote}</p>
+      <div class="mt-2 flex items-center gap-3">
+        <Image
+          src={nexxus}
+          alt="nexxus Consulting"
+          class="h-9 w-auto"
+          widths={[120, 240]}
+          sizes="120px"
+        />
+      </div>
+      <p class="mt-2 text-xs text-subtle">{site.company}</p>
+    </div>
+
+    <div>
+      <h2 class="font-sans text-xs font-semibold tracking-[0.2em] text-champagne uppercase">
+        {dict.footer.servicesTitle}
+      </h2>
+      <ul class="mt-5 space-y-3 text-sm">
+        {serviceKeys.map((key) => (
+          <li>
+            <a href={href(key, lang)} class="text-muted transition hover:text-text">
+              {dict.services[key].label}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+
+    <div>
+      <h2 class="font-sans text-xs font-semibold tracking-[0.2em] text-champagne uppercase">
+        {dict.footer.companyTitle}
+      </h2>
+      <ul class="mt-5 space-y-3 text-sm">
+        <li>
+          <a href={href('about', lang)} class="text-muted hover:text-text">
+            {dict.nav.about}
+          </a>
+        </li>
+        <li>
+          <a href={href('contact', lang)} class="text-muted hover:text-text">
+            {dict.nav.contact}
+          </a>
+        </li>
+        <li>
+          <a href={href('imprint', lang)} class="text-muted hover:text-text">
+            {dict.footer.imprint}
+          </a>
+        </li>
+        <li>
+          <a href={href('privacy', lang)} class="text-muted hover:text-text">
+            {dict.footer.privacy}
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <div>
+      <h2 class="font-sans text-xs font-semibold tracking-[0.2em] text-champagne uppercase">
+        {dict.footer.contactTitle}
+      </h2>
+      <address class="mt-5 space-y-3 text-sm not-italic">
+        <p class="text-muted">
+          {site.address.zip} {site.address.city} · {site.address.region}
+        </p>
+        <p>
+          <a href={`tel:${site.contact.phoneIntl}`} class="text-text hover:text-champagne">
+            {site.contact.phoneDisplay}
+          </a>
+        </p>
+        <p>
+          <a href={`mailto:${site.contact.email}`} class="text-text hover:text-champagne">
+            {site.contact.email}
+          </a>
+        </p>
+        <p>
+          <a
+            href={whatsappUrl(dict.common.whatsappMessage)}
+            class="text-text hover:text-champagne"
+            rel="noopener"
+            target="_blank"
+          >
+            {dict.common.whatsapp}
+          </a>
+        </p>
+      </address>
+    </div>
+  </div>
+  <div class="border-t border-line">
+    <div class="container-site flex flex-col gap-2 py-6 text-xs text-subtle sm:flex-row sm:justify-between">
+      <p>
+        © {year} {site.company} · {dict.footer.rights}
+      </p>
+      <p>
+        {site.brand} · {site.hashtag}
+      </p>
+    </div>
+  </div>
+</footer>

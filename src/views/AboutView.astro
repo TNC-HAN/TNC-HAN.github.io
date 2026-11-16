@@ -1,0 +1,82 @@
+---
+import { Image } from 'astro:assets';
+import nexxcon from '@/assets/brand/nexxcon-logo.png';
+import nexxus from '@/assets/brand/nexxus-logo.png';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import PageHero from '@/components/sections/PageHero.astro';
+import FeatureGrid from '@/components/sections/FeatureGrid.astro';
+import CtaBand from '@/components/sections/CtaBand.astro';
+import RichText from '@/components/ui/RichText.astro';
+import type { Lang } from '@/config/routes';
+import { site } from '@/config/site';
+import { t } from '@/i18n';
+
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const dict = t(lang);
+const { about } = dict;
+const initials = site.owner
+  .split(' ')
+  .map((part) => part[0])
+  .join('');
+---
+
+<BaseLayout lang={lang} page="about" {...about.seo}>
+  <PageHero lang={lang} {...about.hero} current={dict.nav.about} />
+
+  <section class="container-site py-16" aria-labelledby="profile-title">
+    <div class="reveal glass grid gap-10 overflow-hidden p-8 sm:p-12 md:grid-cols-[auto_1fr] md:items-center">
+      <div
+        aria-hidden="true"
+        class="flex size-36 items-center justify-center rounded-full border border-gold/40 bg-gradient-to-br from-ink-700 to-ink-900 font-display text-5xl text-champagne shadow-[0_0_60px_-10px_rgb(201_164_92/0.5)] sm:size-44"
+      >
+        {initials}
+      </div>
+      <div>
+        <p class="eyebrow">{about.profile.eyebrow}</p>
+        <h2 id="profile-title" class="mt-4 text-4xl font-medium">
+          {about.profile.title}
+        </h2>
+        <p class="mt-2 text-champagne">{about.profile.role}</p>
+        <p class="mt-6 max-w-2xl text-lg leading-relaxed text-muted">
+          <RichText text={about.profile.bio} />
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <FeatureGrid id="values-title" {...about.values} icons={['shield', 'check', 'key']} />
+
+  <section class="container-site py-16" aria-labelledby="brands-title">
+    <div class="reveal glass grid gap-10 p-8 sm:p-12 lg:grid-cols-2 lg:items-center">
+      <div>
+        <p class="eyebrow">{about.brands.eyebrow}</p>
+        <h2 id="brands-title" class="mt-4 text-3xl font-medium sm:text-4xl">
+          {about.brands.title}
+        </h2>
+        <p class="mt-5 text-lg leading-relaxed text-muted">{about.brands.text}</p>
+        <p class="mt-4 text-sm text-subtle">{site.company}</p>
+      </div>
+      <div class="flex flex-col items-start gap-10 sm:flex-row sm:items-center lg:justify-end">
+        <Image
+          src={nexxcon}
+          alt="nexxcon – business RE solutions"
+          class="h-14 w-auto"
+          widths={[280, 560]}
+          sizes="280px"
+        />
+        <Image
+          src={nexxus}
+          alt="nexxus Consulting"
+          class="h-16 w-auto"
+          widths={[170, 340]}
+          sizes="170px"
+        />
+      </div>
+    </div>
+  </section>
+
+  <CtaBand lang={lang} />
+</BaseLayout>

@@ -1,0 +1,256 @@
+/* ============================================================
+ * GLOBALE STILE & DESIGN-TOKENS
+ * Farben, Schriften und Abstände werden NUR hier definiert.
+ * Tailwind erzeugt daraus Klassen wie bg-ink-900, text-gold, font-display.
+ * ============================================================ */
+@import 'tailwindcss';
+@import '@fontsource-variable/inter';
+@import '@fontsource-variable/fraunces';
+
+@theme {
+  /* Hintergründe: Schwarz → Anthrazit */
+  --color-ink-950: #04060a;
+  --color-ink-900: #080c13;
+  --color-ink-800: #0e141e;
+  --color-ink-700: #161e2b;
+  --color-ink-600: #222c3b;
+
+  /* Markenblau (aus dem Logo, für dunklen Grund aufgehellt) */
+  --color-brand-700: #0d4f8f;
+  --color-brand-500: #2f74c0;
+  --color-brand-400: #5496de;
+  --color-brand-300: #8bb8ea;
+
+  /* Gold / Champagner – Akzent */
+  --color-gold: #c9a45c;
+  --color-champagne: #e6d3a8;
+  --color-gold-deep: #9c7a3c;
+
+  /* Text */
+  --color-text: #eef1f6;
+  --color-muted: #a3adbd;
+  --color-subtle: #7a8597;
+  --color-line: rgb(255 255 255 / 0.09);
+
+  /* Schriften (lokal über @fontsource eingebunden) */
+  --font-sans: 'Inter Variable', ui-sans-serif, system-ui, sans-serif;
+  --font-display: 'Fraunces Variable', ui-serif, Georgia, serif;
+
+  /* Maße */
+  --container-site: 76rem;
+  --radius-card: 1.25rem;
+
+  /* Animationen */
+  --animate-aurora: aurora 22s ease-in-out infinite alternate;
+  --animate-marquee: marquee 48s linear infinite;
+}
+
+@keyframes aurora {
+  0% {
+    transform: translate3d(-6%, -4%, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(5%, 3%, 0) scale(1.08);
+  }
+  100% {
+    transform: translate3d(-2%, 6%, 0) scale(0.96);
+  }
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes reveal {
+  from {
+    opacity: 0;
+    transform: translateY(2.5rem);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes parallax-slow {
+  to {
+    transform: translateY(18vh);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(0.75rem);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* ---------- Grundlayout ---------- */
+@layer base {
+  html {
+    color-scheme: dark;
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    @apply bg-ink-950 font-sans text-text antialiased;
+    /* Harmonischer Verlauf: Schwarz, Anthrazit, Markenblau */
+    background-image:
+      radial-gradient(60rem 40rem at 85% -10%, rgb(47 116 192 / 0.22), transparent 60%),
+      radial-gradient(50rem 36rem at -10% 30%, rgb(34 44 59 / 0.9), transparent 65%),
+      radial-gradient(40rem 30rem at 50% 110%, rgb(13 79 143 / 0.18), transparent 60%),
+      linear-gradient(180deg, #04060a 0%, #0b111a 45%, #070a10 100%);
+    background-attachment: fixed;
+  }
+
+  ::selection {
+    background: rgb(201 164 92 / 0.35);
+    color: #fff;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-champagne);
+    outline-offset: 3px;
+    border-radius: 0.25rem;
+  }
+
+  h1,
+  h2,
+  h3 {
+    @apply font-display;
+    font-optical-sizing: auto;
+    letter-spacing: -0.02em;
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+}
+
+/* ---------- Wiederverwendbare Bausteine ---------- */
+@layer components {
+  .container-site {
+    @apply mx-auto w-full max-w-(--container-site) px-5 sm:px-8;
+  }
+
+  .eyebrow {
+    @apply inline-flex items-center gap-3 text-xs font-semibold tracking-[0.22em] text-champagne uppercase;
+  }
+  .eyebrow::before {
+    content: '';
+    @apply h-px w-8 bg-gradient-to-r from-gold to-transparent;
+  }
+
+  .text-gradient-gold {
+    background: linear-gradient(100deg, #f3e6c4 0%, #c9a45c 45%, #e6d3a8 70%, #9c7a3c 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  /* Glas-Karte mit feiner Lichtkante */
+  .glass {
+    @apply relative rounded-(--radius-card) border border-line bg-white/[0.035] backdrop-blur-xl;
+    box-shadow:
+      inset 0 1px 0 rgb(255 255 255 / 0.06),
+      0 30px 60px -30px rgb(0 0 0 / 0.8);
+  }
+
+  .glass-hover {
+    @apply transition duration-500 ease-out;
+  }
+  .glass-hover:hover {
+    @apply -translate-y-1 border-gold/40 bg-white/[0.055];
+    box-shadow:
+      inset 0 1px 0 rgb(255 255 255 / 0.08),
+      0 40px 80px -30px rgb(47 116 192 / 0.35);
+  }
+
+  .btn-gold,
+  .btn-ghost {
+    @apply inline-flex min-h-12 items-center justify-center gap-2 rounded-full px-6 text-sm font-semibold tracking-wide transition duration-300;
+  }
+  .btn-gold {
+    @apply text-ink-950;
+    background: linear-gradient(110deg, #f0dfb4, #c9a45c 55%, #e6d3a8);
+    background-size: 200% 100%;
+    box-shadow: 0 10px 30px -10px rgb(201 164 92 / 0.6);
+  }
+  .btn-gold:hover {
+    background-position: 100% 0;
+    box-shadow: 0 16px 40px -12px rgb(201 164 92 / 0.75);
+  }
+  .btn-ghost {
+    @apply border border-white/15 bg-white/[0.03] text-text hover:border-champagne/60 hover:bg-white/[0.07];
+  }
+
+  .hairline {
+    @apply h-px w-full bg-gradient-to-r from-transparent via-white/15 to-transparent;
+  }
+
+  /* Platzhalter deutlich sichtbar markieren */
+  .placeholder {
+    @apply rounded bg-amber-300/15 px-1 text-amber-200 ring-1 ring-amber-300/40;
+  }
+
+  .prose-legal h2 {
+    @apply mt-10 mb-3 text-2xl text-text;
+  }
+  .prose-legal h3 {
+    @apply mt-6 mb-2 font-sans text-base font-semibold text-champagne;
+  }
+  .prose-legal p,
+  .prose-legal li {
+    @apply mb-3 leading-relaxed text-muted;
+  }
+  .prose-legal ul {
+    @apply mb-4 list-disc pl-5;
+  }
+  .prose-legal a {
+    @apply text-brand-300 underline underline-offset-4 hover:text-champagne;
+  }
+}
+
+/* ---------- Bewegung: nur wenn erwünscht ---------- */
+@media (prefers-reduced-motion: no-preference) {
+  @supports (animation-timeline: view()) {
+    /* Einblenden beim Scrollen – reines CSS, kein JavaScript */
+    .reveal {
+      animation: reveal linear both;
+      animation-timeline: view();
+      animation-range: entry 0% cover 28%;
+    }
+    /* Parallax: Ebenen bewegen sich langsamer als der Inhalt */
+    .parallax {
+      animation: parallax-slow linear both;
+      animation-timeline: scroll(root);
+      animation-range: 0 100vh;
+    }
+  }
+
+  .animate-in {
+    animation: fade-in 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}

@@ -1,0 +1,105 @@
+---
+/**
+ * Grundgerüst jeder Seite: <head> mit SEO (Titel, Beschreibung, Canonical,
+ * hreflang, Open Graph, strukturierte Daten), Kopf- und Fußbereich.
+ */
+import '@/styles/global.css';
+import Header from '@/components/layout/Header.astro';
+import Footer from '@/components/layout/Footer.astro';
+import { languages, routePath, asset, type Lang, type PageKey } from '@/config/routes';
+import { site } from '@/config/site';
+import { t } from '@/i18n';
+
+interface Props {
+  lang: Lang;
+  /** Seite aus der Routentabelle; null = 404 */
+  page: PageKey | null;
+  title: string;
+  description: string;
+  jsonLd?: Record<string, unknown>[];
+  noindex?: boolean;
+}
+
+const { lang, page, title, description, jsonLd = [], noindex = false } = Astro.props;
+const dict = t(lang);
+const siteRoot = new URL(import.meta.env.BASE_URL, Astro.site);
+const abs = (path: string) => new URL(path, siteRoot).href;
+
+const canonical = page ? abs(routePath(page, lang)) : undefined;
+const alternates = page
+  ? languages.map((l) => ({ lang: t(l).meta.htmlLang, href: abs(routePath(page, l)) }))
+  : [];
+const xDefault = page ? abs(routePath(page, 'de')) : undefined;
+const ogImage = abs('og-image.png');
+
+const organization = {
+  '@context': 'https://schema.org',
+  '@type': 'ProfessionalService',
+  '@id': `${abs('')}#organization`,
+  name: site.brand,
+  legalName: site.company,
+  alternateName: [site.brandShort, 'nexxcon', 'nexxus Consulting'],
+  url: abs(''),
+  logo: abs('logo-nexxcon.png'),
+  image: ogImage,
+  email: site.contact.email,
+  telephone: site.contact.phoneIntl,
+  founder: { '@type': 'Person', name: site.owner },
+  address: {
+    '@type': 'PostalAddress',
+    postalCode: site.address.zip,
+    addressLocality: site.address.city,
+    addressRegion: 'Niedersachsen',
+    addressCountry: site.address.countryCode,
+  },
+  areaServed: site.areaServed,
+  knowsLanguage: ['de', 'en', 'tr'],
+};
+const structured = [organization, ...jsonLd];
+---
+
+<!doctype html>
+<html lang={dict.meta.htmlLang}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    {noindex && <meta name="robots" content="noindex" />}
+    {canonical && <link rel="canonical" href={canonical} />}
+    {alternates.map((a) => (
+      <link rel="alternate" hreflang={a.lang} href={a.href} />
+    ))}
+    {xDefault && <link rel="alternate" hreflang="x-default" href={xDefault} />}
+
+    <link rel="icon" href={asset('favicon.svg')} type="image/svg+xml" />
+    <link rel="sitemap" href={asset('sitemap-index.xml')} />
+    <meta name="theme-color" content="#04060a" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={site.brand} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:locale" content={dict.meta.ogLocale} />
+    {canonical && <meta property="og:url" content={canonical} />}
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <script is:inline type="application/ld+json" set:html={JSON.stringify(structured)} />
+  </head>
+  <body class="min-h-dvh overflow-x-clip">
+    <a
+      href="#inhalt"
+      class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[100] focus:rounded-full focus:bg-champagne focus:px-4 focus:py-2 focus:text-ink-950"
+    >
+      {dict.nav.skip}
+    </a>
+    <Header lang={lang} page={page} />
+    <main id="inhalt" tabindex="-1" class="outline-none">
+      <slot />
+    </main>
+    <Footer lang={lang} />
+  </body>
+</html>

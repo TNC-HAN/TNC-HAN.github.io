@@ -1,0 +1,51 @@
+---
+/** Impressum und Datenschutz. Texte: src/content/legal.ts (deutsche Fassung maßgeblich). */
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import PageHero from '@/components/sections/PageHero.astro';
+import RichText from '@/components/ui/RichText.astro';
+import { imprint, privacy } from '@/data/legal';
+import type { Lang } from '@/config/routes';
+import { t } from '@/i18n';
+
+interface Props {
+  lang: Lang;
+  kind: 'imprint' | 'privacy';
+}
+const { lang, kind } = Astro.props;
+const dict = t(lang);
+const doc = kind === 'imprint' ? imprint : privacy;
+const seo = dict.legal[kind];
+const label = kind === 'imprint' ? dict.footer.imprint : dict.footer.privacy;
+---
+
+<BaseLayout lang={lang} page={kind} {...seo}>
+  <PageHero lang={lang} eyebrow={label} title={doc.title} current={label} />
+  <section class="container-site pb-10">
+    {dict.meta.legalNote && (
+      <p class="mb-8 max-w-3xl rounded-xl border border-brand-400/30 bg-brand-500/10 p-4 text-sm text-brand-300">
+        {dict.meta.legalNote}
+      </p>
+    )}
+    <div class="prose-legal max-w-3xl" lang="de">
+      {doc.sections.map((section) => (
+        <Fragment>
+          <h2>{section.heading}</h2>
+          {section.paragraphs.map((p) => (
+            <p>
+              <RichText text={p} />
+            </p>
+          ))}
+          {section.list && (
+            <ul>
+              {section.list.map((item) => (
+                <li>
+                  <RichText text={item} />
+                </li>
+              ))}
+            </ul>
+          )}
+        </Fragment>
+      ))}
+    </div>
+  </section>
+</BaseLayout>

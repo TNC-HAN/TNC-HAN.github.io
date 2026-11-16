@@ -1,0 +1,31 @@
+---
+/** Sprachumschalter DE · EN · TR – verlinkt jeweils auf dieselbe Seite in der anderen Sprache. */
+import { href, languages, type Lang, type PageKey } from '@/config/routes';
+import { t, langCodes } from '@/i18n';
+
+interface Props {
+  lang: Lang;
+  page: PageKey | null;
+}
+const { lang, page } = Astro.props;
+---
+
+<nav aria-label={t(lang).nav.language}>
+  <ul class="flex items-center rounded-full border border-white/12 bg-white/[0.03] p-1 text-xs font-semibold">
+    {languages.map((l) => (
+      <li>
+        <a
+          href={href(page ?? 'home', l)}
+          hreflang={t(l).meta.htmlLang}
+          lang={t(l).meta.htmlLang}
+          aria-current={l === lang ? 'true' : undefined}
+          title={t(l).meta.languageName}
+          class="flex h-8 min-w-9 items-center justify-center rounded-full px-2 tracking-wider text-muted transition hover:text-text aria-[current=true]:bg-white/10 aria-[current=true]:text-champagne"
+        >
+          <span class="sr-only">{t(l).meta.languageName}</span>
+          <span aria-hidden="true">{langCodes[l]}</span>
+        </a>
+      </li>
+    ))}
+  </ul>
+</nav>

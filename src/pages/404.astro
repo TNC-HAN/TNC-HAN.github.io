@@ -1,0 +1,33 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import HeroBackdrop from '@/components/ui/HeroBackdrop.astro';
+import { href, languages } from '@/config/routes';
+import { t } from '@/i18n';
+
+const dict = t('de');
+---
+
+<BaseLayout lang="de" page={null} {...dict.notFound.seo} noindex>
+  <section class="relative isolate overflow-hidden">
+    <HeroBackdrop />
+    <div class="container-site flex min-h-[70vh] flex-col items-start justify-center py-24">
+      <p class="font-display text-8xl text-gradient-gold sm:text-9xl">404</p>
+      {languages.map((lang, i) => {
+        const d = t(lang);
+        const Heading = i === 0 ? 'h1' : 'h2';
+        return (
+          <div class="mt-8" lang={d.meta.htmlLang}>
+            <Heading class="text-2xl font-medium sm:text-3xl">{d.notFound.title}</Heading>
+            <p class="mt-2 text-muted">{d.notFound.text}</p>
+            <a
+              href={href('home', lang)}
+              class="mt-3 inline-block text-sm font-semibold text-champagne hover:text-text"
+            >
+              {d.common.backHome} →
+            </a>
+          </div>
+        );
+      })}
+    </div>
+  </section>
+</BaseLayout>

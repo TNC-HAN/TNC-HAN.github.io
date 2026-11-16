@@ -1,0 +1,19 @@
+---
+/**
+ * Gibt Text aus und markiert Platzhalter in eckigen Klammern [ … ] gelb,
+ * damit sie vor der Veröffentlichung nicht übersehen werden.
+ */
+interface Props {
+  text: string;
+}
+const { text } = Astro.props;
+const parts = text.split(/(\[[^\]]+\])/g).filter(Boolean);
+---
+
+{parts.map((part) =>
+  part.startsWith('[') && part.endsWith(']') ? (
+    <mark class="placeholder">{part}</mark>
+  ) : (
+    <Fragment>{part}</Fragment>
+  ),
+)}

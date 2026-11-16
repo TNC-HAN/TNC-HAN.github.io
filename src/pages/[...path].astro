@@ -1,0 +1,35 @@
+---
+/**
+ * Erzeugt ALLE Seiten in allen Sprachen aus der Routentabelle (src/config/routes.ts).
+ * Hier muss man normalerweise nichts ändern.
+ */
+import type { GetStaticPaths } from 'astro';
+import { languages, pages, routePath, type Lang, type PageKey } from '@/config/routes';
+import HomeView from '@/views/HomeView.astro';
+import ServiceView from '@/views/ServiceView.astro';
+import AboutView from '@/views/AboutView.astro';
+import ContactView from '@/views/ContactView.astro';
+import LegalView from '@/views/LegalView.astro';
+
+export const getStaticPaths = (() =>
+  languages.flatMap((lang) =>
+    pages.map((page) => ({
+      params: { path: routePath(page, lang).replace(/\/$/, '') || undefined },
+      props: { lang, page },
+    })),
+  )) satisfies GetStaticPaths;
+
+interface Props {
+  lang: Lang;
+  page: PageKey;
+}
+const { lang, page } = Astro.props;
+---
+
+{page === 'home' && <HomeView lang={lang} />}
+{(page === 'consulting' || page === 'realEstate' || page === 'ai') && (
+  <ServiceView lang={lang} service={page} />
+)}
+{page === 'about' && <AboutView lang={lang} />}
+{page === 'contact' && <ContactView lang={lang} />}
+{(page === 'imprint' || page === 'privacy') && <LegalView lang={lang} kind={page} />}

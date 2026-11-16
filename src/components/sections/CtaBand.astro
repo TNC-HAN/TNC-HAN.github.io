@@ -1,0 +1,55 @@
+---
+/** Kontakt-Aufruf am Seitenende: Erstgespräch, Telefon, WhatsApp. */
+import Icon from '@/components/ui/Icon.astro';
+import { href, type Lang } from '@/config/routes';
+import { site, whatsappUrl } from '@/config/site';
+import { t } from '@/i18n';
+
+interface Props {
+  lang: Lang;
+  title?: string;
+  text?: string;
+}
+const { lang, title, text } = Astro.props;
+const dict = t(lang);
+const cta = dict.home.cta;
+---
+
+<section class="container-site py-20" aria-labelledby="cta-title">
+  <div class="reveal glass relative overflow-hidden px-6 py-14 text-center sm:px-14 sm:py-20">
+    <div aria-hidden="true" class="pointer-events-none absolute inset-0">
+      <div class="absolute -top-32 left-1/2 size-[36rem] -translate-x-1/2 rounded-full bg-brand-500/25 blur-[100px]"></div>
+      <div class="absolute -bottom-40 left-1/4 size-80 rounded-full bg-gold/15 blur-[90px]"></div>
+    </div>
+    <div class="relative">
+      <p class="eyebrow justify-center">{cta.eyebrow}</p>
+      <h2
+        id="cta-title"
+        class="mx-auto mt-5 max-w-3xl text-3xl leading-tight font-medium sm:text-5xl"
+      >
+        {title ?? cta.title}
+      </h2>
+      <p class="mx-auto mt-5 max-w-2xl text-lg leading-relaxed text-muted">{text ?? cta.text}</p>
+      <div class="mt-10 flex flex-col justify-center gap-3 sm:flex-row">
+        <a href={href('contact', lang)} class="btn-gold">
+          {dict.home.hero.primary}
+          <Icon name="arrow" class="size-4" />
+        </a>
+        <a href={`tel:${site.contact.phoneIntl}`} class="btn-ghost">
+          <Icon name="phone" class="size-4" />
+          {site.contact.phoneDisplay}
+        </a>
+        <a
+          href={whatsappUrl(dict.common.whatsappMessage)}
+          class="btn-ghost"
+          target="_blank"
+          rel="noopener"
+        >
+          <Icon name="chat" class="size-4" />
+          {dict.common.whatsapp}
+        </a>
+      </div>
+      <p class="mt-6 text-sm text-subtle">{cta.reassurance}</p>
+    </div>
+  </div>
+</section>

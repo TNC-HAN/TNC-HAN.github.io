@@ -1,0 +1,47 @@
+---
+/** Kopfbereich der Unterseiten mit Brotkrumen-Navigation. */
+import HeroBackdrop from '@/components/ui/HeroBackdrop.astro';
+import { href, type Lang } from '@/config/routes';
+import { t } from '@/i18n';
+
+interface Props {
+  lang: Lang;
+  eyebrow: string;
+  title: string;
+  lead?: string;
+  current: string;
+}
+const { lang, eyebrow, title, lead, current } = Astro.props;
+const dict = t(lang);
+---
+
+<section class="relative isolate overflow-hidden" aria-labelledby="page-title">
+  <HeroBackdrop variant="soft" />
+  <div class="container-site pt-12 pb-16 sm:pt-16 sm:pb-24">
+    <nav aria-label="Breadcrumb" class="animate-in text-sm text-subtle">
+      <ol class="flex flex-wrap items-center gap-2">
+        <li>
+          <a href={href('home', lang)} class="hover:text-text">
+            {dict.common.breadcrumbHome}
+          </a>
+        </li>
+        <li aria-hidden="true">/</li>
+        <li aria-current="page" class="text-muted">
+          {current}
+        </li>
+      </ol>
+    </nav>
+    <p class="eyebrow animate-in mt-10 [animation-delay:80ms]">{eyebrow}</p>
+    <h1
+      id="page-title"
+      class="animate-in mt-6 max-w-4xl text-4xl leading-[1.05] font-medium [animation-delay:160ms] sm:text-6xl lg:text-7xl"
+    >
+      {title}
+    </h1>
+    {lead && (
+      <p class="animate-in mt-7 max-w-3xl text-lg leading-relaxed text-muted [animation-delay:240ms] sm:text-xl">
+        {lead}
+      </p>
+    )}
+  </div>
+</section>

@@ -1,0 +1,244 @@
+---
+/**
+ * Startseiten-Hero: animierter Hintergrund (Aurora + Linienraster mit Parallax),
+ * Leitsatz, CTAs und ein Slider über die drei Geschäftsbereiche.
+ */
+import Icon from '@/components/ui/Icon.astro';
+import HeroBackdrop from '@/components/ui/HeroBackdrop.astro';
+import { href, serviceKeys, type Lang } from '@/config/routes';
+import { t } from '@/i18n';
+
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const dict = t(lang);
+const { hero } = dict.home;
+const slideIcons = { consulting: 'compass', realEstate: 'building', ai: 'spark' } as const;
+---
+
+<section class="relative isolate overflow-hidden" aria-labelledby="hero-title">
+  <HeroBackdrop />
+
+  <div class="container-site grid items-center gap-12 pt-16 pb-20 sm:pt-24 lg:grid-cols-12 lg:gap-10 lg:pt-28 lg:pb-28">
+    <div class="lg:col-span-7">
+      <!-- lang="en": englische Begriffe, damit die türkische Großschreibung kein „İ“ erzeugt -->
+      <p class="eyebrow animate-in" lang="en">
+        {hero.eyebrow}
+      </p>
+      <h1
+        id="hero-title"
+        class="animate-in mt-6 text-[2.6rem] leading-[1.02] font-medium [animation-delay:120ms] sm:text-6xl lg:text-7xl"
+      >
+        {hero.title} <span class="text-gradient-gold block italic">{hero.titleAccent}</span>
+      </h1>
+      <p class="animate-in mt-7 max-w-2xl text-lg leading-relaxed text-muted [animation-delay:240ms] sm:text-xl">
+        {hero.lead}
+      </p>
+      <div class="animate-in mt-10 flex flex-col gap-3 [animation-delay:360ms] sm:flex-row">
+        <a href={href('contact', lang)} class="btn-gold">
+          {hero.primary}
+          <Icon name="arrow" class="size-4" />
+        </a>
+        <a href="#bereiche" class="btn-ghost">
+          {hero.secondary}
+        </a>
+      </div>
+      <ul class="animate-in mt-10 flex flex-wrap gap-x-6 gap-y-3 text-sm text-muted [animation-delay:480ms]">
+        {hero.trust.map((item) => (
+          <li class="flex items-center gap-2">
+            <Icon name="check" class="size-4 text-gold" />
+            {item}
+          </li>
+        ))}
+      </ul>
+    </div>
+
+    <!-- Slider über die drei Geschäftsbereiche -->
+    <div class="animate-in [animation-delay:300ms] lg:col-span-5">
+      <div
+        class="glass overflow-hidden p-7 sm:p-9"
+        data-slider
+        role="region"
+        aria-roledescription="carousel"
+        aria-label={dict.nav.services}
+      >
+        <div class="pointer-events-none absolute -top-24 -right-24 size-64 rounded-full bg-brand-500/25 blur-3xl"></div>
+        <div class="relative grid">
+          {serviceKeys.map((key, i) => {
+            const s = dict.services[key].slide;
+            return (
+              <article
+                data-slide
+                class:list={[
+                  'col-start-1 row-start-1 transition-all duration-700 ease-out',
+                  i === 0 ? 'is-active' : 'pointer-events-none translate-y-3 opacity-0',
+                ]}
+                aria-roledescription="slide"
+                aria-label={`${dict.common.slide} ${i + 1} / ${serviceKeys.length}`}
+                aria-hidden={i === 0 ? undefined : 'true'}
+              >
+                <div class="flex items-center gap-3">
+                  <span class="flex size-11 items-center justify-center rounded-full border border-gold/30 bg-gold/10 text-champagne">
+                    <Icon name={slideIcons[key]} class="size-5" />
+                  </span>
+                  <p
+                    class="text-xs font-semibold tracking-[0.2em] text-champagne uppercase"
+                    lang="en"
+                  >
+                    {s.kicker}
+                  </p>
+                </div>
+                <h2 class="mt-7 text-3xl leading-tight font-medium sm:text-4xl">{s.title}</h2>
+                <p class="mt-4 leading-relaxed text-muted">{s.text}</p>
+                <a
+                  href={href(key, lang)}
+                  tabindex={i === 0 ? undefined : -1}
+                  class="mt-7 inline-flex items-center gap-2 text-sm font-semibold text-champagne hover:gap-3 hover:text-text transition-all"
+                >
+                  {dict.common.learnMore}
+                  <Icon name="arrow" class="size-4" />
+                </a>
+              </article>
+            );
+          })}
+        </div>
+
+        <div class="relative mt-9 flex items-center gap-3 border-t border-line pt-6">
+          <div class="flex gap-2" data-dots>
+            {serviceKeys.map((_, i) => (
+              <button
+                type="button"
+                data-dot={i}
+                class:list={[
+                  'h-1.5 rounded-full transition-all duration-500',
+                  i === 0 ? 'w-8 bg-champagne' : 'w-3 bg-white/25 hover:bg-white/50',
+                ]}
+                aria-label={`${dict.common.slide} ${i + 1}`}
+                aria-current={i === 0 ? 'true' : undefined}
+              />
+            ))}
+          </div>
+          <div class="ml-auto flex gap-2">
+            <button type="button" data-prev class="slider-btn" aria-label={dict.common.previous}>
+              <Icon name="chevronLeft" class="size-4" />
+            </button>
+            <button
+              type="button"
+              data-toggle
+              class="slider-btn"
+              aria-label={dict.common.pause}
+              data-label-pause={dict.common.pause}
+              data-label-play={dict.common.play}
+            >
+              <Icon name="pause" class="size-4 [[data-paused]_&]:hidden" />
+              <Icon name="play" class="hidden size-4 [[data-paused]_&]:block" />
+            </button>
+            <button type="button" data-next class="slider-btn" aria-label={dict.common.next}>
+              <Icon name="chevronRight" class="size-4" />
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  @reference '../../styles/global.css';
+  .slider-btn {
+    @apply flex size-10 items-center justify-center rounded-full border border-white/15 text-muted transition hover:border-champagne/60 hover:text-text;
+  }
+</style>
+
+<script>
+  // Slider: automatischer Wechsel alle 7 s, Pause-Knopf (WCAG 2.2.2),
+  // pausiert bei Hover/Fokus und bei „reduzierte Bewegung“.
+  const INTERVAL = 7000;
+  document.querySelectorAll<HTMLElement>('[data-slider]').forEach((root) => {
+    const slides = [...root.querySelectorAll<HTMLElement>('[data-slide]')];
+    const dots = [...root.querySelectorAll<HTMLButtonElement>('[data-dot]')];
+    const toggle = root.querySelector<HTMLButtonElement>('[data-toggle]');
+    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    let index = 0;
+    let timer: number | undefined;
+    let paused = reduced;
+    let hovering = false;
+
+    const show = (next: number) => {
+      index = (next + slides.length) % slides.length;
+      slides.forEach((slide, i) => {
+        const active = i === index;
+        slide.classList.toggle('opacity-0', !active);
+        slide.classList.toggle('translate-y-3', !active);
+        slide.classList.toggle('pointer-events-none', !active);
+        if (active) slide.removeAttribute('aria-hidden');
+        else slide.setAttribute('aria-hidden', 'true');
+        slide
+          .querySelectorAll('a')
+          .forEach((a) =>
+            active ? a.removeAttribute('tabindex') : a.setAttribute('tabindex', '-1'),
+          );
+      });
+      dots.forEach((dot, i) => {
+        const active = i === index;
+        dot.classList.toggle('w-8', active);
+        dot.classList.toggle('bg-champagne', active);
+        dot.classList.toggle('w-3', !active);
+        dot.classList.toggle('bg-white/25', !active);
+        if (active) dot.setAttribute('aria-current', 'true');
+        else dot.removeAttribute('aria-current');
+      });
+    };
+
+    const schedule = () => {
+      window.clearInterval(timer);
+      if (!paused && !hovering) timer = window.setInterval(() => show(index + 1), INTERVAL);
+    };
+
+    const setPaused = (value: boolean) => {
+      paused = value;
+      root.toggleAttribute('data-paused', paused);
+      if (toggle)
+        toggle.setAttribute(
+          'aria-label',
+          (paused ? toggle.dataset.labelPlay : toggle.dataset.labelPause) ?? '',
+        );
+      schedule();
+    };
+
+    root.querySelector('[data-prev]')?.addEventListener('click', () => {
+      show(index - 1);
+      schedule();
+    });
+    root.querySelector('[data-next]')?.addEventListener('click', () => {
+      show(index + 1);
+      schedule();
+    });
+    dots.forEach((dot, i) =>
+      dot.addEventListener('click', () => {
+        show(i);
+        schedule();
+      }),
+    );
+    toggle?.addEventListener('click', () => setPaused(!paused));
+    root.addEventListener('mouseenter', () => {
+      hovering = true;
+      schedule();
+    });
+    root.addEventListener('mouseleave', () => {
+      hovering = false;
+      schedule();
+    });
+    root.addEventListener('focusin', () => {
+      hovering = true;
+      schedule();
+    });
+    root.addEventListener('focusout', () => {
+      hovering = false;
+      schedule();
+    });
+
+    setPaused(paused);
+  });
+</script>

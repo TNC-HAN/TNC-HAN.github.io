@@ -1,0 +1,92 @@
+---
+/**
+ * Kopfzeile: Logo, Navigation, Sprachumschalter, Haupt-CTA.
+ * Mobil öffnet sich das Menü über <details> – funktioniert ohne JavaScript.
+ */
+import { Image } from 'astro:assets';
+import logo from '@/assets/brand/nexxcon-logo.png';
+import Icon from '@/components/ui/Icon.astro';
+import LanguageSwitcher from './LanguageSwitcher.astro';
+import { href, serviceKeys, type Lang, type PageKey } from '@/config/routes';
+import { t } from '@/i18n';
+
+interface Props {
+  lang: Lang;
+  page: PageKey | null;
+}
+const { lang, page } = Astro.props;
+const dict = t(lang);
+
+const links: { key: PageKey; label: string }[] = [
+  ...serviceKeys.map((key) => ({ key, label: dict.services[key].label })),
+  { key: 'about', label: dict.nav.about },
+  { key: 'contact', label: dict.nav.contact },
+];
+---
+
+<header class="sticky top-0 z-50 border-b border-line bg-ink-950/70 backdrop-blur-xl">
+  <div class="container-site flex h-18 items-center gap-6 lg:h-20">
+    <a href={href('home', lang)} class="shrink-0" aria-label={`NEXXCON-24 – ${dict.nav.home}`}>
+      <Image
+        src={logo}
+        alt=""
+        class="h-8 w-auto lg:h-9"
+        loading="eager"
+        widths={[160, 320]}
+        sizes="160px"
+      />
+    </a>
+
+    <nav aria-label={dict.nav.primary} class="ml-auto hidden xl:block">
+      <ul class="flex items-center gap-1">
+        {links.map((l) => (
+          <li>
+            <a
+              href={href(l.key, lang)}
+              aria-current={page === l.key ? 'page' : undefined}
+              class="rounded-full px-3.5 py-2 text-sm text-muted transition hover:text-text aria-[current=page]:text-champagne"
+            >
+              {l.label}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </nav>
+
+    <div class="ml-auto flex items-center gap-3 xl:ml-2">
+      <LanguageSwitcher lang={lang} page={page} />
+      <a href={href('contact', lang)} class="btn-gold hidden !min-h-10 !px-5 sm:inline-flex">
+        {dict.nav.cta}
+      </a>
+
+      <details class="group relative xl:hidden">
+        <summary class="flex size-11 cursor-pointer list-none items-center justify-center rounded-full border border-white/15 text-text [&::-webkit-details-marker]:hidden">
+          <span class="sr-only">{dict.nav.menu}</span>
+          <Icon name="menu" class="size-5 group-open:hidden" />
+          <Icon name="close" class="hidden size-5 group-open:block" />
+        </summary>
+        <nav
+          aria-label={dict.nav.primary}
+          class="glass absolute top-14 right-0 w-[min(20rem,calc(100vw-2.5rem))] !bg-ink-900/95 p-3"
+        >
+          <ul class="flex flex-col">
+            {links.map((l) => (
+              <li>
+                <a
+                  href={href(l.key, lang)}
+                  aria-current={page === l.key ? 'page' : undefined}
+                  class="block rounded-xl px-4 py-3 text-base text-text hover:bg-white/5 aria-[current=page]:text-champagne"
+                >
+                  {l.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+          <a href={href('contact', lang)} class="btn-gold mt-2 w-full">
+            {dict.nav.cta}
+          </a>
+        </nav>
+      </details>
+    </div>
+  </div>
+</header>
