@@ -264,6 +264,18 @@ export const enContent: ExtraContent = {
       },
     ],
   },
+  video: {
+    eyebrow: 'Image film',
+    title: 'NEXXCON-24 in 25 seconds.',
+    text: 'Business, real estate and technology – a short look at the worlds in which we work for our clients.',
+    label:
+      'NEXXCON-24 image film: villas, skylines, strategy workshops, Mediterranean coast and data centre',
+    points: [
+      'DACH, Europe, Turkey, Northern Cyprus',
+      'Strategy, investment, AI',
+      'One point of contact',
+    ],
+  },
   markets: {
     eyebrow: 'Markets',
     title: 'Four markets. One point of contact.',

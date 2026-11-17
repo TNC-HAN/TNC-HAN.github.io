@@ -256,6 +256,14 @@ export const trContent: ExtraContent = {
       },
     ],
   },
+  video: {
+    eyebrow: 'Tanıtım filmi',
+    title: '25 saniyede NEXXCON-24.',
+    text: 'İşletme, gayrimenkul ve teknoloji – müşterilerimiz için hareket ettiğimiz dünyalara kısa bir bakış.',
+    label:
+      'NEXXCON-24 tanıtım filmi: villalar, şehir siluetleri, strateji atölyeleri, Akdeniz kıyısı ve veri merkezi',
+    points: ['DACH, Avrupa, Türkiye, Kuzey Kıbrıs', 'Strateji, yatırım, yapay zekâ', 'Tek muhatap'],
+  },
   markets: {
     eyebrow: 'Pazarlar',
     title: 'Dört pazar. Tek muhatap.',

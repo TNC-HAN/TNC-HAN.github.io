@@ -288,6 +288,18 @@ export const deContent: ExtraContent = {
       },
     ],
   },
+  video: {
+    eyebrow: 'Imagefilm',
+    title: 'NEXXCON-24 in 25 Sekunden.',
+    text: 'Unternehmen, Immobilien und Technologie – ein kurzer Blick auf die Welten, in denen wir für unsere Mandanten unterwegs sind.',
+    label:
+      'Imagefilm NEXXCON-24: Villen, Skylines, Strategie-Workshops, Mittelmeerküste und Rechenzentrum',
+    points: [
+      'D-A-CH, Europa, Türkei, Nordzypern',
+      'Strategie, Investment, KI',
+      'Ein Ansprechpartner',
+    ],
+  },
   markets: {
     eyebrow: 'Märkte',
     title: 'Vier Märkte. Ein Ansprechpartner.',

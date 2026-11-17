@@ -82,6 +82,7 @@ export interface ExtraContent {
     ai: OfferingDetail[];
   };
   markets: { eyebrow: string; title: string; lead: string; details: string[] };
+  video: { eyebrow: string; title: string; text: string; label: string; points: string[] };
 }
 
 export interface Dictionary {

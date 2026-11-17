@@ -4,6 +4,7 @@ import BannerSlider from '@/components/home/BannerSlider.astro';
 import Hero from '@/components/home/Hero.astro';
 import Marquee from '@/components/home/Marquee.astro';
 import Showcase from '@/components/home/Showcase.astro';
+import VideoFeature from '@/components/home/VideoFeature.astro';
 import AreaCards from '@/components/sections/AreaCards.astro';
 import ProcessSteps from '@/components/sections/ProcessSteps.astro';
 import FeatureGrid from '@/components/sections/FeatureGrid.astro';
@@ -36,6 +37,7 @@ const regionLinks = regionIds.map((id) => href('realEstate', lang, `#${id}`));
   <Marquee lang={lang} />
   <AreaCards lang={lang} />
   <Showcase lang={lang} />
+  <VideoFeature lang={lang} />
   <div class="hairline"></div>
   <ProcessSteps {...home.process} link={href('contact', lang)} linkLabel={dict.cta.book} />
   <FeatureGrid
