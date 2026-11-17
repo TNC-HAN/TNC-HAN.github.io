@@ -1,8 +1,9 @@
 ---
 /**
- * Dekorativer Hintergrund: langsam wandernde Lichtflächen (Aurora),
- * feines Linienraster und Lichtstrahl. Ebenen bewegen sich per Parallax.
- * Rein dekorativ (aria-hidden), komplett CSS/SVG.
+ * Zusätzliches Licht hinter den Kopfbereichen (Startseite und Unterseiten):
+ * leuchtende Nebelflächen in Blau, Lila, Rot und Gold über dem kosmischen
+ * Seitenhintergrund (Cosmos.astro). Bewegt sich per Parallax langsamer als der Inhalt.
+ * Rein dekorativ (aria-hidden), komplett CSS.
  */
 interface Props {
   variant?: 'full' | 'soft';
@@ -12,24 +13,15 @@ const { variant = 'full' } = Astro.props;
 
 <div aria-hidden="true" class="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
   <div class="parallax absolute inset-0">
-    <div class="absolute -top-40 right-[-10%] size-[46rem] animate-aurora rounded-full bg-brand-500/25 blur-[120px]"></div>
-    <div class="absolute top-1/3 -left-40 size-[34rem] animate-aurora rounded-full bg-ink-600/80 blur-[100px] [animation-delay:-7s]"></div>
+    <div class="absolute -top-40 right-[-10%] size-[46rem] animate-aurora rounded-full bg-nebula-blue/30 blur-[120px]"></div>
+    <div class="absolute top-1/4 -left-40 size-[34rem] animate-aurora rounded-full bg-nebula-violet/30 blur-[110px] [animation-delay:-7s]"></div>
     {variant === 'full' && (
-      <div class="absolute right-1/4 bottom-[-20%] size-[28rem] animate-aurora rounded-full bg-gold/10 blur-[110px] [animation-delay:-13s]" />
+      <>
+        <div class="absolute right-[18%] bottom-[-18%] size-[26rem] animate-aurora rounded-full bg-nebula-red/22 blur-[110px] [animation-delay:-13s]" />
+        <div class="absolute top-[30%] left-[45%] size-[14rem] animate-aurora rounded-full bg-white/8 blur-[90px] [animation-delay:-4s]" />
+      </>
     )}
   </div>
-
-  <!-- Linienraster, zur Mitte hin ausgeblendet -->
-  <svg class="absolute inset-0 h-full w-full opacity-[0.22] [mask-image:radial-gradient(ellipse_at_60%_30%,black,transparent_70%)]">
-    <defs>
-      <pattern id="nx-grid" width="64" height="64" patternUnits="userSpaceOnUse">
-        <path d="M64 0H0V64" fill="none" stroke="rgb(139 184 234 / 0.35)" stroke-width="0.6"></path>
-      </pattern>
-    </defs>
-    <rect width="100%" height="100%" fill="url(#nx-grid)"></rect>
-  </svg>
-
-  <!-- Lichtstrahl -->
-  <div class="absolute -top-1/2 left-1/2 hidden h-[140%] w-px rotate-[28deg] bg-gradient-to-b from-transparent via-champagne/30 to-transparent lg:block"></div>
-  <div class="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-b from-transparent to-ink-950/60"></div>
+  <!-- weicher Übergang in den Seitenhintergrund -->
+  <div class="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-b from-transparent to-[#04030c]/50"></div>
 </div>

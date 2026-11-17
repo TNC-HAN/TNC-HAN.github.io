@@ -1,0 +1,203 @@
+---
+/**
+ * Fester Hintergrund für die ganze Website: ein „metamorphes Universum“.
+ * - Sternenfeld in drei Ebenen (klein, mittel, hell mit Leuchten), funkelnd und langsam treibend
+ * - Nebel in Blau, Lila, Rot und Weiß, die sich langsam verformen, drehen und „atmen“
+ * Rein dekorativ (aria-hidden), nur CSS. Bei „reduzierte Bewegung“ steht alles still.
+ * Farben: Tokens --color-nebula-* in src/styles/global.css.
+ */
+
+/** Deterministischer Zufall: Sterne sitzen bei jedem Build an derselben Stelle. */
+function random(seed: number) {
+  let s = seed;
+  return () => {
+    s = (s * 16807) % 2147483647;
+    return (s - 1) / 2147483646;
+  };
+}
+
+/** Erzeugt eine box-shadow-Liste: jeder Schatten ist ein Stern. */
+function stars(count: number, seed: number, glow = 0): string {
+  const rnd = random(seed);
+  const list: string[] = [];
+  for (let i = 0; i < count; i++) {
+    const x = Math.round(rnd() * 2560);
+    const y = Math.round(rnd() * 1600);
+    const alpha = (0.45 + rnd() * 0.55).toFixed(2);
+    // vereinzelt leicht bläuliche oder rosafarbene Sterne
+    const tint = rnd();
+    const color =
+      tint < 0.12
+        ? `rgb(170 200 255 / ${alpha})`
+        : tint < 0.2
+          ? `rgb(255 190 215 / ${alpha})`
+          : `rgb(255 255 255 / ${alpha})`;
+    list.push(`${x}px ${y}px ${glow}px ${color}`);
+  }
+  return list.join(', ');
+}
+
+const small = stars(420, 7);
+const medium = stars(140, 31);
+const bright = stars(36, 97, 3);
+---
+
+<div aria-hidden="true" class="cosmos pointer-events-none fixed inset-0 -z-10 overflow-hidden">
+  <!-- Nebel -->
+  <div class="nebula nebula-1"></div>
+  <div class="nebula nebula-2"></div>
+  <div class="nebula nebula-3"></div>
+  <div class="nebula nebula-4"></div>
+  <div class="nebula nebula-5"></div>
+
+  <!-- Sterne in drei Ebenen; das Feld treibt langsam hin und her -->
+  <div class="star-field">
+    <span class="star star-sm" style={`box-shadow: ${small}`}></span>
+    <span class="star star-md" style={`box-shadow: ${medium}`}></span>
+    <span class="star star-lg" style={`box-shadow: ${bright}`}></span>
+  </div>
+
+  <!-- Vignette: Ränder abdunkeln, damit Text überall gut lesbar bleibt -->
+  <div class="vignette"></div>
+</div>
+
+<style>
+  .nebula {
+    position: absolute;
+    border-radius: 50%;
+    mix-blend-mode: screen;
+    will-change: transform, opacity;
+  }
+  /* Blau – oben rechts */
+  .nebula-1 {
+    width: 70vmax;
+    height: 50vmax;
+    top: -18vmax;
+    right: -16vmax;
+    background: radial-gradient(
+      closest-side,
+      rgb(42 95 214 / 0.55),
+      rgb(42 95 214 / 0.18) 55%,
+      transparent
+    );
+  }
+  /* Lila – links mittig */
+  .nebula-2 {
+    width: 60vmax;
+    height: 55vmax;
+    top: 18%;
+    left: -22vmax;
+    background: radial-gradient(
+      closest-side,
+      rgb(123 63 228 / 0.5),
+      rgb(75 29 143 / 0.22) 60%,
+      transparent
+    );
+  }
+  /* Rot/Rosé – rechts unten */
+  .nebula-3 {
+    width: 50vmax;
+    height: 38vmax;
+    bottom: -12vmax;
+    right: 4vmax;
+    background: radial-gradient(
+      closest-side,
+      rgb(214 52 94 / 0.42),
+      rgb(240 106 138 / 0.12) 55%,
+      transparent
+    );
+  }
+  /* Weißer Kern – hellt die Mitte zart auf */
+  .nebula-4 {
+    width: 30vmax;
+    height: 18vmax;
+    top: 38%;
+    left: 42%;
+    background: radial-gradient(
+      closest-side,
+      rgb(255 255 255 / 0.1),
+      rgb(190 170 255 / 0.06) 50%,
+      transparent
+    );
+  }
+  /* Tiefes Violett – unten links */
+  .nebula-5 {
+    width: 55vmax;
+    height: 35vmax;
+    bottom: -18vmax;
+    left: 10%;
+    background: radial-gradient(
+      closest-side,
+      rgb(75 29 143 / 0.55),
+      rgb(42 95 214 / 0.12) 60%,
+      transparent
+    );
+  }
+
+  .star-field {
+    position: absolute;
+    inset: 0;
+  }
+  .star {
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 50%;
+    background: transparent;
+  }
+  .star-sm {
+    width: 1px;
+    height: 1px;
+  }
+  .star-md {
+    width: 1.5px;
+    height: 1.5px;
+  }
+  .star-lg {
+    width: 2px;
+    height: 2px;
+  }
+
+  .vignette {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 50% 40%, transparent 55%, rgb(2 3 10 / 0.65) 100%);
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .nebula-1 {
+      animation:
+        nebula-drift 48s ease-in-out infinite,
+        nebula-breathe 13s ease-in-out infinite;
+    }
+    .nebula-2 {
+      animation:
+        nebula-drift 62s ease-in-out infinite reverse,
+        nebula-breathe 17s ease-in-out infinite -4s;
+    }
+    .nebula-3 {
+      animation:
+        nebula-drift 55s ease-in-out infinite -20s,
+        nebula-breathe 11s ease-in-out infinite -2s;
+    }
+    .nebula-4 {
+      animation:
+        nebula-drift 70s ease-in-out infinite -35s,
+        nebula-breathe 9s ease-in-out infinite;
+    }
+    .nebula-5 {
+      animation:
+        nebula-drift 80s ease-in-out infinite reverse -10s,
+        nebula-breathe 15s ease-in-out infinite -7s;
+    }
+    .star-field {
+      animation: star-drift 90s ease-in-out infinite alternate;
+    }
+    .star-md {
+      animation: star-twinkle 5s ease-in-out infinite;
+    }
+    .star-lg {
+      animation: star-twinkle 3.2s ease-in-out infinite -1.3s;
+    }
+  }
+</style>

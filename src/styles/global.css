@@ -21,6 +21,14 @@
   --color-brand-400: #5496de;
   --color-brand-300: #8bb8ea;
 
+  /* Kosmos: Nebelfarben des Hintergrunds */
+  --color-nebula-blue: #2a5fd6;
+  --color-nebula-violet: #7b3fe4;
+  --color-nebula-purple: #4b1d8f;
+  --color-nebula-red: #d6345e;
+  --color-nebula-rose: #f06a8a;
+  --color-star: #ffffff;
+
   /* Gold / Champagner – Akzent */
   --color-gold: #c9a45c;
   --color-champagne: #e6d3a8;
@@ -54,6 +62,50 @@
   }
   100% {
     transform: translate3d(-2%, 6%, 0) scale(0.96);
+  }
+}
+
+/*
+ * Kosmos: Nebel wandern, drehen sich und verformen sich (Metamorphose).
+ * Nur transform/opacity werden animiert – das übernimmt die Grafikkarte,
+ * die Seite bleibt auch auf Handys flüssig.
+ */
+@keyframes nebula-drift {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) rotate(0deg) scale(1, 1);
+  }
+  33% {
+    transform: translate3d(6vw, -4vh, 0) rotate(35deg) scale(1.18, 0.86);
+  }
+  66% {
+    transform: translate3d(-5vw, 5vh, 0) rotate(-20deg) scale(0.88, 1.14);
+  }
+}
+
+@keyframes nebula-breathe {
+  0%,
+  100% {
+    opacity: 0.55;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes star-twinkle {
+  0%,
+  100% {
+    opacity: 0.9;
+  }
+  50% {
+    opacity: 0.35;
+  }
+}
+
+@keyframes star-drift {
+  to {
+    transform: translate3d(0, -120px, 0);
   }
 }
 
@@ -104,12 +156,13 @@
 
   body {
     @apply bg-ink-950 font-sans text-text antialiased;
-    /* Harmonischer Verlauf: Schwarz, Anthrazit, Markenblau */
+    /* Tiefer Weltraum: Schwarz mit Blau-, Lila- und Rot-Schimmer (Grundton unter dem Kosmos) */
     background-image:
-      radial-gradient(60rem 40rem at 85% -10%, rgb(47 116 192 / 0.22), transparent 60%),
-      radial-gradient(50rem 36rem at -10% 30%, rgb(34 44 59 / 0.9), transparent 65%),
-      radial-gradient(40rem 30rem at 50% 110%, rgb(13 79 143 / 0.18), transparent 60%),
-      linear-gradient(180deg, #04060a 0%, #0b111a 45%, #070a10 100%);
+      radial-gradient(55rem 40rem at 85% -5%, rgb(42 95 214 / 0.28), transparent 62%),
+      radial-gradient(45rem 35rem at 5% 35%, rgb(123 63 228 / 0.22), transparent 64%),
+      radial-gradient(40rem 30rem at 70% 75%, rgb(214 52 94 / 0.14), transparent 62%),
+      radial-gradient(50rem 30rem at 20% 110%, rgb(75 29 143 / 0.3), transparent 65%),
+      linear-gradient(180deg, #02030a 0%, #070718 45%, #04030c 100%);
     background-attachment: fixed;
   }
 
