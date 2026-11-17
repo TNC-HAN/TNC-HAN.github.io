@@ -1,7 +1,11 @@
 ---
-/** Sprachumschalter DE · EN · TR – verlinkt jeweils auf dieselbe Seite in der anderen Sprache. */
+/**
+ * Sprachumschalter mit runden Flaggen (DE · EN · TR) – verlinkt jeweils auf dieselbe
+ * Seite in der anderen Sprache. Aktive Sprache: goldener Ring.
+ */
+import FlagIcon from '@/components/ui/FlagIcon.astro';
 import { href, languages, type Lang, type PageKey } from '@/config/routes';
-import { t, langCodes } from '@/i18n';
+import { t } from '@/i18n';
 
 interface Props {
   lang: Lang;
@@ -11,7 +15,7 @@ const { lang, page } = Astro.props;
 ---
 
 <nav aria-label={t(lang).nav.language}>
-  <ul class="flex items-center rounded-full border border-white/12 bg-white/[0.03] p-1 text-xs font-semibold">
+  <ul class="flex items-center gap-1 rounded-full border border-white/12 bg-white/[0.03] p-1">
     {languages.map((l) => (
       <li>
         <a
@@ -20,10 +24,10 @@ const { lang, page } = Astro.props;
           lang={t(l).meta.htmlLang}
           aria-current={l === lang ? 'true' : undefined}
           title={t(l).meta.languageName}
-          class="flex h-8 min-w-9 items-center justify-center rounded-full px-2 tracking-wider text-muted transition hover:text-text aria-[current=true]:bg-white/10 aria-[current=true]:text-champagne"
+          class="flex size-9 items-center justify-center rounded-full opacity-60 transition duration-300 hover:scale-110 hover:opacity-100 aria-[current=true]:opacity-100 aria-[current=true]:ring-2 aria-[current=true]:ring-champagne/80"
         >
           <span class="sr-only">{t(l).meta.languageName}</span>
-          <span aria-hidden="true">{langCodes[l]}</span>
+          <FlagIcon lang={l} class="size-7" />
         </a>
       </li>
     ))}

@@ -25,7 +25,7 @@ const links: { key: PageKey; label: string }[] = [
 ---
 
 <header class="sticky top-0 z-50 border-b border-line bg-ink-950/70 backdrop-blur-xl">
-  <div class="container-site flex h-18 items-center gap-6 lg:h-20">
+  <div class="container-site flex h-18 items-center gap-4 lg:h-20">
     <a href={href('home', lang)} class="shrink-0" aria-label={`NEXXCON-24 – ${dict.nav.home}`}>
       <BrandLogo3D src={logo} class="h-8 w-auto lg:h-10" />
     </a>
@@ -37,7 +37,7 @@ const links: { key: PageKey; label: string }[] = [
             <a
               href={href(l.key, lang)}
               aria-current={page === l.key ? 'page' : undefined}
-              class="rounded-full px-3.5 py-2 text-sm text-muted transition hover:text-text aria-[current=page]:text-champagne"
+              class="rounded-full px-3 py-2 text-sm whitespace-nowrap text-muted transition hover:text-text aria-[current=page]:text-champagne"
             >
               {l.label}
             </a>
@@ -48,7 +48,7 @@ const links: { key: PageKey; label: string }[] = [
 
     <div class="ml-auto flex items-center gap-3 xl:ml-2">
       <LanguageSwitcher lang={lang} page={page} />
-      <a href={href('contact', lang)} class="btn-gold hidden !min-h-10 !px-5 sm:inline-flex">
+      <a href={href('contact', lang)} class="btn-gold hidden !min-h-10 !px-5 whitespace-nowrap sm:inline-flex">
         {dict.nav.cta}
       </a>
 
