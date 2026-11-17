@@ -42,6 +42,31 @@ export const en: Dictionary = {
     breadcrumbHome: 'Home',
   },
 
+  launcher: {
+    phoneTitle: 'How would you like to call?',
+    phoneLead: 'Choose your phone app. On a smartphone, the phone app opens directly.',
+    emailTitle: 'How would you like to write?',
+    emailLead: 'Choose your email program. On a smartphone, your default mail app opens directly.',
+    defaultPhone: 'Default phone app',
+    defaultPhoneHint: 'e.g. Phone Link, CRM or call-centre dialer',
+    defaultEmail: 'Default email program',
+    defaultEmailHint: 'e.g. Outlook, Apple Mail, Thunderbird, eM Client',
+    sipHint: '3CX, MicroSIP, Zoiper, sipgate, Placetel …',
+    calltoHint: 'Power dialers & CRM telephony (callto)',
+    macOnly: 'Mac / iPhone only',
+    browserHint: 'opens in browser',
+    copyHint: 'opens mailbox, address is copied',
+    copyNumber: 'Copy number',
+    copyAddress: 'Copy address',
+    copied: 'Copied to clipboard',
+    remember: 'Remember my choice on this device',
+    change: 'Choose another program',
+    close: 'Close',
+    notOpened: 'No program opened?',
+    chooseOther: 'Choose another',
+    emailSubject: 'Enquiry via the NEXXCON-24 website',
+  },
+
   home: {
     seo: {
       title: 'NEXXCON-24 · Business Consulting, Off-Market Real Estate & AI Automation',

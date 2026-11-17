@@ -87,6 +87,7 @@ export const privacy: { title: string; sections: LegalSection[] } = {
       heading: '2. Überblick',
       paragraphs: [
         'Diese Website verwendet keine Cookies, keine Analyse- oder Tracking-Werkzeuge, keine Werbe-Pixel und keine eingebetteten Inhalte Dritter. Schriftarten werden von unserem eigenen Server geladen; es findet keine Verbindung zu Google Fonts oder anderen Schriftanbietern statt.',
+        'Nur wenn Sie auf der Kontaktseite im Auswahlfenster ausdrücklich „Auswahl auf diesem Gerät merken“ anhaken, wird Ihr bevorzugtes Telefon- bzw. E-Mail-Programm im lokalen Speicher Ihres Browsers abgelegt. Diese Angabe verlässt Ihr Gerät nicht und kann jederzeit über „Anderes Programm wählen“ oder durch Löschen der Browserdaten entfernt werden (§ 25 Abs. 2 Nr. 2 TDDDG).',
       ],
     },
     {

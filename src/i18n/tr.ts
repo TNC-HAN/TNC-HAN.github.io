@@ -41,6 +41,32 @@ export const tr: Dictionary = {
     breadcrumbHome: 'Ana sayfa',
   },
 
+  launcher: {
+    phoneTitle: 'Hangi uygulamayla aramak istersiniz?',
+    phoneLead: 'Telefon uygulamanızı seçin. Akıllı telefonda doğrudan telefon uygulaması açılır.',
+    emailTitle: 'Hangi uygulamayla yazmak istersiniz?',
+    emailLead:
+      'E-posta programınızı seçin. Akıllı telefonda doğrudan varsayılan e-posta uygulamanız açılır.',
+    defaultPhone: 'Varsayılan telefon uygulaması',
+    defaultPhoneHint: 'ör. Telefon Bağlantısı, CRM veya çağrı merkezi arayıcısı',
+    defaultEmail: 'Varsayılan e-posta programı',
+    defaultEmailHint: 'ör. Outlook, Apple Mail, Thunderbird, eM Client',
+    sipHint: '3CX, MicroSIP, Zoiper, sipgate, Placetel …',
+    calltoHint: 'Power dialer ve CRM telefonu (callto)',
+    macOnly: 'yalnızca Mac / iPhone',
+    browserHint: 'tarayıcıda açılır',
+    copyHint: 'posta kutusu açılır, adres kopyalanır',
+    copyNumber: 'Numarayı kopyala',
+    copyAddress: 'Adresi kopyala',
+    copied: 'Panoya kopyalandı',
+    remember: 'Seçimimi bu cihazda hatırla',
+    change: 'Başka bir program seç',
+    close: 'Kapat',
+    notOpened: 'Hiçbir program açılmadı mı?',
+    chooseOther: 'Başkasını seç',
+    emailSubject: 'NEXXCON-24 web sitesi üzerinden talep',
+  },
+
   home: {
     seo: {
       title: 'NEXXCON-24 · İşletme Danışmanlığı, Off-Market Gayrimenkul ve Yapay Zekâ Otomasyonu',

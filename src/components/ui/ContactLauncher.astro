@@ -1,0 +1,262 @@
+---
+/**
+ * Auswahlfenster „Womit anrufen / mailen?“ für die Kontakt-Kacheln.
+ *
+ * Verhalten:
+ * - Smartphone/Tablet: Der normale tel:/mailto:-Link öffnet direkt Telefon- bzw.
+ *   Standard-Mail-App. Öffnet sich nichts (z. B. keine Mail-App eingerichtet),
+ *   erscheint automatisch dieses Auswahlfenster.
+ * - Laptop/PC: Klick öffnet das Auswahlfenster mit den gängigsten Programmen.
+ *   „Auswahl merken“ speichert die Wahl nur im Browser des Besuchers (localStorage).
+ * - Ohne JavaScript funktionieren die Kacheln weiterhin als normale tel:/mailto:-Links.
+ * Kacheln werden über das Attribut data-launch="phone" | "email" angebunden.
+ * Programmliste: src/config/launchers.ts
+ */
+import Icon from '@/components/ui/Icon.astro';
+import type { LaunchOption } from '@/config/launchers';
+import type { Dictionary } from '@/i18n';
+
+interface Props {
+  kind: 'phone' | 'email';
+  options: LaunchOption[];
+  l: Dictionary['launcher'];
+}
+const { kind, options, l } = Astro.props;
+const title = kind === 'phone' ? l.phoneTitle : l.emailTitle;
+const lead = kind === 'phone' ? l.phoneLead : l.emailLead;
+const id = `launcher-${kind}`;
+---
+
+<dialog
+  id={id}
+  data-launcher={kind}
+  aria-labelledby={`${id}-title`}
+  class="launcher m-auto w-[min(30rem,calc(100vw-2rem))] rounded-3xl border border-white/12 bg-ink-900/95 p-0 text-text shadow-2xl backdrop:bg-black/60 backdrop:backdrop-blur-sm"
+>
+  <div class="flex items-start gap-4 border-b border-line p-6 pb-5">
+    <div class="min-w-0 flex-1">
+      <h2 id={`${id}-title`} class="text-2xl font-medium">
+        {title}
+      </h2>
+      <p class="mt-2 text-sm leading-relaxed text-muted">{lead}</p>
+      <p
+        data-notice
+        hidden
+        class="mt-3 rounded-xl border border-amber-300/40 bg-amber-300/10 px-3 py-2 text-sm text-amber-100"
+      >
+        {l.notOpened}
+      </p>
+    </div>
+    <button
+      type="button"
+      data-close
+      class="flex size-10 shrink-0 items-center justify-center rounded-full border border-white/15 text-muted hover:text-text"
+      aria-label={l.close}
+    >
+      <Icon name="close" class="size-4" />
+    </button>
+  </div>
+
+  <ul class="max-h-[60vh] space-y-1.5 overflow-y-auto p-3">
+    {options.map((o, i) => (
+      <li>
+        <button
+          type="button"
+          data-option={o.id}
+          data-url={o.url}
+          data-mode={o.mode}
+          data-copy={o.copy}
+          autofocus={i === 0}
+          class:list={[
+            'group flex w-full items-center gap-4 rounded-2xl px-4 py-3 text-left transition hover:bg-white/[0.06] focus-visible:bg-white/[0.06]',
+            i === 0 && 'border border-gold/30 bg-gold/[0.06]',
+          ]}
+        >
+          <span class="flex size-10 shrink-0 items-center justify-center rounded-full border border-gold/30 bg-gold/10 font-display text-sm text-champagne">
+            {o.mode === 'copy' ? <Icon name="layers" class="size-4" /> : o.label.slice(0, 2)}
+          </span>
+          <span class="min-w-0 flex-1">
+            <span class="block font-medium">{o.label}</span>
+            {o.hint && <span class="block truncate text-xs text-subtle">{o.hint}</span>}
+          </span>
+          <Icon
+            name="arrow"
+            class="size-4 shrink-0 text-subtle transition group-hover:translate-x-0.5 group-hover:text-champagne"
+          />
+        </button>
+      </li>
+    ))}
+  </ul>
+
+  <div class="flex items-center justify-between gap-4 border-t border-line px-6 py-4">
+    <label class="flex cursor-pointer items-center gap-2.5 text-sm text-muted">
+      <input type="checkbox" data-remember class="size-4 accent-[#c9a45c]" />
+      {l.remember}
+    </label>
+    <p
+      data-copied
+      data-ok={l.copied}
+      hidden
+      role="status"
+      class="text-sm text-champagne select-all"
+    >
+      {l.copied}
+    </p>
+  </div>
+</dialog>
+
+<!-- Hinweis unten am Bildschirm, falls sich am Laptop kein Programm öffnet -->
+<div
+  data-launch-toast={kind}
+  hidden
+  role="status"
+  class="fixed inset-x-4 bottom-5 z-[90] mx-auto flex max-w-md items-center gap-4 rounded-2xl border border-white/12 bg-ink-900/95 px-5 py-4 shadow-2xl backdrop-blur-xl"
+>
+  <p class="flex-1 text-sm text-text">{l.notOpened}</p>
+  <button type="button" data-toast-choose class="btn-gold !min-h-10 !px-4 text-xs">
+    {l.chooseOther}
+  </button>
+  <button type="button" data-toast-close class="text-muted hover:text-text" aria-label={l.close}>
+    <Icon name="close" class="size-4" />
+  </button>
+</div>
+
+<script>
+  type Kind = 'phone' | 'email';
+  const STORE = (k: Kind) => `nx-launcher-${k}`;
+  const isTouchDevice = () =>
+    /Android|iPhone|iPad|iPod|Mobile/i.test(navigator.userAgent) ||
+    (window.matchMedia('(pointer: coarse)').matches && navigator.maxTouchPoints > 0);
+
+  const read = (k: Kind) => {
+    try {
+      return localStorage.getItem(STORE(k));
+    } catch {
+      return null;
+    }
+  };
+  const write = (k: Kind, v: string | null) => {
+    try {
+      if (v) localStorage.setItem(STORE(k), v);
+      else localStorage.removeItem(STORE(k));
+    } catch {
+      /* Speicher gesperrt (z. B. privater Modus) – dann ohne Merken */
+    }
+  };
+
+  async function copyText(text: string) {
+    try {
+      await navigator.clipboard.writeText(text);
+      return true;
+    } catch {
+      const ta = document.createElement('textarea');
+      ta.value = text;
+      ta.style.cssText = 'position:fixed;opacity:0';
+      document.body.append(ta);
+      ta.select();
+      const ok = document.execCommand('copy');
+      ta.remove();
+      return ok;
+    }
+  }
+
+  /** Prüft, ob nach dem Start eines Programms der Browser den Fokus verliert. */
+  function watchLaunch(onFail: () => void) {
+    let left = false;
+    const mark = () => (left = true);
+    const onVis = () => document.visibilityState === 'hidden' && mark();
+    window.addEventListener('blur', mark);
+    window.addEventListener('pagehide', mark);
+    document.addEventListener('visibilitychange', onVis);
+    window.setTimeout(() => {
+      window.removeEventListener('blur', mark);
+      window.removeEventListener('pagehide', mark);
+      document.removeEventListener('visibilitychange', onVis);
+      if (!left) onFail();
+    }, 2200);
+  }
+
+  document.querySelectorAll<HTMLDialogElement>('dialog[data-launcher]').forEach((dialog) => {
+    const kind = dialog.dataset.launcher as Kind;
+    const toast = document.querySelector<HTMLElement>(`[data-launch-toast="${kind}"]`);
+    const notice = dialog.querySelector<HTMLElement>('[data-notice]');
+    const copied = dialog.querySelector<HTMLElement>('[data-copied]');
+    const remember = dialog.querySelector<HTMLInputElement>('[data-remember]');
+    const buttons = [...dialog.querySelectorAll<HTMLButtonElement>('[data-option]')];
+    const changeLinks = document.querySelectorAll<HTMLElement>(`[data-launch-change="${kind}"]`);
+
+    const refreshChange = () => changeLinks.forEach((el) => (el.hidden = !read(kind)));
+
+    const open = (showNotice = false) => {
+      if (toast) toast.hidden = true;
+      if (notice) notice.hidden = !showNotice;
+      if (copied) copied.hidden = true;
+      if (remember) remember.checked = Boolean(read(kind));
+      if (!dialog.open) dialog.showModal();
+    };
+
+    const failed = () => {
+      write(kind, null);
+      refreshChange();
+      if (isTouchDevice()) open(true);
+      else if (toast) toast.hidden = false;
+    };
+
+    const launch = async (btn: HTMLButtonElement) => {
+      const { url = '', mode, copy, option } = btn.dataset;
+      if (mode === 'copy' || mode === 'web-copy') {
+        const ok = await copyText(copy ?? '');
+        if (copied) {
+          // Kopieren gesperrt? Dann Text zum manuellen Markieren anzeigen.
+          copied.textContent = ok ? (copied.dataset.ok ?? '') : (copy ?? '');
+          copied.hidden = false;
+        }
+      }
+      if (remember?.checked && mode !== 'copy') write(kind, option ?? null);
+      else if (!remember?.checked) write(kind, null);
+      refreshChange();
+
+      if (mode === 'copy') return; // Fenster offen lassen, Bestätigung sichtbar
+      if (mode === 'protocol') {
+        dialog.close();
+        window.location.href = url;
+        watchLaunch(failed);
+      } else {
+        window.open(url, '_blank', 'noopener');
+        if (mode === 'web-copy') window.setTimeout(() => dialog.close(), 900);
+        else dialog.close();
+      }
+    };
+
+    buttons.forEach((btn) => btn.addEventListener('click', () => launch(btn)));
+    dialog.querySelector('[data-close]')?.addEventListener('click', () => dialog.close());
+    // Klick neben das Fenster schließt es
+    dialog.addEventListener('click', (e) => {
+      if (e.target === dialog) dialog.close();
+    });
+    toast?.querySelector('[data-toast-choose]')?.addEventListener('click', () => open(true));
+    toast
+      ?.querySelector('[data-toast-close]')
+      ?.addEventListener('click', () => (toast.hidden = true));
+    changeLinks.forEach((el) => el.addEventListener('click', () => open()));
+
+    // Kacheln anbinden
+    document.querySelectorAll<HTMLAnchorElement>(`a[data-launch="${kind}"]`).forEach((tile) => {
+      tile.addEventListener('click', (e) => {
+        if (isTouchDevice()) {
+          // Smartphone: normaler Link öffnet Telefon- bzw. Mail-App.
+          // Telefon klappt dort immer (iOS zeigt evtl. eine Rückfrage – kein Fehlschlag).
+          // Bei E-Mail: öffnet sich keine App, Auswahl anbieten.
+          if (kind === 'email') watchLaunch(failed);
+          return;
+        }
+        e.preventDefault();
+        const saved = read(kind);
+        const btn = buttons.find((b) => b.dataset.option === saved);
+        if (btn) launch(btn);
+        else open();
+      });
+    });
+    refreshChange();
+  });
+</script>

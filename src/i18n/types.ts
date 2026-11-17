@@ -72,6 +72,31 @@ export interface Dictionary {
     backHome: string;
     breadcrumbHome: string;
   };
+  /** Auswahlfenster „Mit welchem Programm anrufen / mailen?“ (Kontaktseite) */
+  launcher: {
+    phoneTitle: string;
+    phoneLead: string;
+    emailTitle: string;
+    emailLead: string;
+    defaultPhone: string;
+    defaultPhoneHint: string;
+    defaultEmail: string;
+    defaultEmailHint: string;
+    sipHint: string;
+    calltoHint: string;
+    macOnly: string;
+    browserHint: string;
+    copyHint: string;
+    copyNumber: string;
+    copyAddress: string;
+    copied: string;
+    remember: string;
+    change: string;
+    close: string;
+    notOpened: string;
+    chooseOther: string;
+    emailSubject: string;
+  };
   home: {
     seo: Seo;
     hero: {
