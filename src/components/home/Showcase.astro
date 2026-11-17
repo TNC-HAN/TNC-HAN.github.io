@@ -1,0 +1,86 @@
+---
+/**
+ * Bild-Text-Strecke im Zickzack (Startseite): Bild abwechselnd links/rechts,
+ * Text immer auf der Gegenseite. Bild und Überschrift führen in den Unterbereich.
+ * Struktur: src/config/content.ts → showcase · Texte: src/i18n/*.content.ts → showcase
+ */
+import { Image } from 'astro:assets';
+import Icon from '@/components/ui/Icon.astro';
+import SectionHeading from '@/components/ui/SectionHeading.astro';
+import BookButton from '@/components/ui/BookButton.astro';
+import { showcase } from '@/config/content';
+import { photos } from '@/config/media';
+import { href, type Lang } from '@/config/routes';
+import { t } from '@/i18n';
+
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const dict = t(lang);
+const items = showcase.map((s, i) => ({ ...s, ...dict.showcase.items[i]! }));
+---
+
+<section class="container-site py-24 sm:py-28" aria-labelledby="showcase-title">
+  <SectionHeading id="showcase-title" {...dict.showcase} />
+  <div class="mt-16 space-y-20 sm:space-y-28">
+    {items.map((item, i) => {
+      const link = href(item.page, lang, item.hash ? `#${item.hash}` : '');
+      const flip = i % 2 === 1;
+      return (
+        <article class="reveal grid items-center gap-8 md:grid-cols-2 md:gap-12 lg:gap-20">
+          <a
+            href={link}
+            class:list={[
+              'showcase-media group relative block overflow-hidden rounded-[1.75rem]',
+              flip && 'md:order-2',
+            ]}
+            aria-label={`${item.title} – ${dict.cta.details}`}
+          >
+            <Image
+              src={photos[item.photo]}
+              alt={dict.photoAlt[item.photo]}
+              class="aspect-[4/3] w-full object-cover transition duration-[1.2s] ease-out group-hover:scale-105"
+              widths={[480, 800, 1024]}
+              sizes="(min-width: 768px) 45vw, 100vw"
+              loading="lazy"
+            />
+            <span class="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#04030c]/70 via-transparent to-transparent" />
+            <span class="pointer-events-none absolute inset-0 rounded-[1.75rem] ring-1 ring-white/10 ring-inset transition group-hover:ring-champagne/50" />
+            <span class="absolute bottom-5 left-5 flex items-center gap-2 rounded-full bg-black/45 px-4 py-2 text-sm font-semibold text-champagne backdrop-blur transition group-hover:gap-3">
+              {dict.cta.details}
+              <Icon name="arrow" class="size-4" />
+            </span>
+            <span class="absolute top-5 right-5 font-display text-5xl text-white/25">
+              {String(i + 1).padStart(2, '0')}
+            </span>
+          </a>
+          <div class:list={[flip && 'md:order-1']}>
+            <p class="eyebrow">{item.kicker}</p>
+            <h3 class="mt-4 text-3xl leading-tight font-medium sm:text-4xl">
+              <a href={link} class="transition hover:text-champagne">
+                {item.title}
+              </a>
+            </h3>
+            <p class="mt-5 text-lg leading-relaxed text-muted">{item.text}</p>
+            <ul class="mt-6 space-y-2.5">
+              {item.points.map((p) => (
+                <li class="flex items-center gap-3 text-text/90">
+                  <Icon name="check" class="size-5 shrink-0 text-gold" />
+                  {p}
+                </li>
+              ))}
+            </ul>
+            <div class="mt-8 flex flex-wrap gap-3">
+              <BookButton lang={lang} />
+              <a href={link} class="btn-ghost">
+                {dict.cta.details}
+                <Icon name="arrow" class="size-4" />
+              </a>
+            </div>
+          </div>
+        </article>
+      );
+    })}
+  </div>
+</section>

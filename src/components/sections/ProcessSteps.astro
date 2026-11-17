@@ -1,4 +1,6 @@
 ---
+/** Ablauf in Schritten. Mit `link` werden die Schritte anklickbar (z. B. zur Kontaktseite). */
+import Icon from '@/components/ui/Icon.astro';
 import SectionHeading from '@/components/ui/SectionHeading.astro';
 import type { TitledText } from '@/i18n/types';
 
@@ -7,8 +9,11 @@ interface Props {
   title: string;
   lead?: string;
   steps: TitledText[];
+  link?: string;
+  linkLabel?: string;
 }
-const { eyebrow, title, lead, steps } = Astro.props;
+const { eyebrow, title, lead, steps, link, linkLabel } = Astro.props;
+const Tag = link ? 'a' : 'div';
 ---
 
 <section class="relative py-24 sm:py-28" aria-labelledby="process-title">
@@ -22,14 +27,26 @@ const { eyebrow, title, lead, steps } = Astro.props;
       <ol class="relative grid gap-10 md:grid-cols-2 lg:grid-cols-4 lg:gap-6">
         {steps.map((step, i) => (
           <li class="reveal relative">
-            <span class="relative flex size-12 items-center justify-center rounded-full border border-gold/40 bg-ink-900 font-display text-lg text-champagne shadow-[0_0_30px_-5px_rgb(201_164_92/0.5)]">
-              {String(i + 1).padStart(2, '0')}
-            </span>
-            <h3 class="mt-6 text-xl font-medium">{step.title}</h3>
-            <p class="mt-3 leading-relaxed text-muted">{step.text}</p>
+            <Tag href={link} class="group block rounded-2xl transition hover:-translate-y-1">
+              <span class="relative flex size-12 items-center justify-center rounded-full border border-gold/40 bg-ink-900 font-display text-lg text-champagne shadow-[0_0_30px_-5px_rgb(201_164_92/0.5)] transition group-hover:bg-gold/20">
+                {String(i + 1).padStart(2, '0')}
+              </span>
+              <h3 class="mt-6 text-xl font-medium transition group-hover:text-champagne">
+                {step.title}
+              </h3>
+              <p class="mt-3 leading-relaxed text-muted">{step.text}</p>
+            </Tag>
           </li>
         ))}
       </ol>
     </div>
+    {link && linkLabel && (
+      <div class="reveal mt-12">
+        <a href={link} class="btn-ghost">
+          {linkLabel}
+          <Icon name="arrow" class="size-4" />
+        </a>
+      </div>
+    )}
   </div>
 </section>

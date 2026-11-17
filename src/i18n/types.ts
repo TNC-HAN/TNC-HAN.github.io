@@ -34,6 +34,56 @@ export interface ServiceContent {
   risk?: string;
 }
 
+/** Vertiefung einer Leistung (Unterbereich auf der Bereichsseite) */
+export interface OfferingDetail {
+  /** 2–3 Sätze Detailtext */
+  text: string;
+  /** 3 konkrete Nutzenpunkte */
+  benefits: string[];
+}
+
+/**
+ * Erweiterte Inhalte (Banner, Bildstrecke, Unterbereiche, Kontaktleiste).
+ * Liegen je Sprache in src/i18n/<sprache>.content.ts und werden in t() zusammengeführt.
+ */
+export interface ExtraContent {
+  photoAlt: Record<import('@/config/media').PhotoKey, string>;
+  cta: {
+    /** Haupt-Aufruf, z. B. „Erstgespräch buchen“ (öffnet Calendly) */
+    book: string;
+    /** Zusatz unter Buttons, z. B. „kostenfrei · unverbindlich“ */
+    bookNote: string;
+    details: string;
+  };
+  dock: {
+    label: string;
+    hide: string;
+    show: string;
+    call: string;
+    mail: string;
+    whatsapp: string;
+    booking: string;
+  };
+  banner: {
+    label: string;
+    slides: { kicker: string; title: string; text: string }[];
+  };
+  showcase: {
+    eyebrow: string;
+    title: string;
+    lead: string;
+    items: { kicker: string; title: string; text: string; points: string[] }[];
+  };
+  details: {
+    eyebrow: string;
+    title: string;
+    consulting: OfferingDetail[];
+    realEstate: OfferingDetail[];
+    ai: OfferingDetail[];
+  };
+  markets: { eyebrow: string; title: string; lead: string; details: string[] };
+}
+
 export interface Dictionary {
   meta: {
     htmlLang: string;

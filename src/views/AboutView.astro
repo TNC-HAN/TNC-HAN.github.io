@@ -9,7 +9,7 @@ import FeatureGrid from '@/components/sections/FeatureGrid.astro';
 import CtaBand from '@/components/sections/CtaBand.astro';
 import RichText from '@/components/ui/RichText.astro';
 import SmartJustify from '@/components/ui/SmartJustify.astro';
-import type { Lang } from '@/config/routes';
+import { href, type Lang } from '@/config/routes';
 import { site } from '@/config/site';
 import { t } from '@/i18n';
 
@@ -85,7 +85,13 @@ const initials = site.owner
     </div>
   </section>
 
-  <FeatureGrid id="values-title" {...about.values} icons={['shield', 'check', 'key']} />
+  <FeatureGrid
+    id="values-title"
+    {...about.values}
+    icons={['shield', 'check', 'key']}
+    links={[href('contact', lang), href('contact', lang), href('contact', lang)]}
+    linkLabel={dict.cta.book}
+  />
 
   <section class="container-site py-16" aria-labelledby="brands-title">
     <div class="reveal glass grid gap-10 p-8 sm:p-12 lg:grid-cols-2 lg:items-center">

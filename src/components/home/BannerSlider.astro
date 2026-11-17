@@ -1,0 +1,271 @@
+---
+/**
+ * Slide-Banner ganz oben auf der Startseite: 10 Themen aus allen Geschäftsbereichen.
+ * Bild, Thema, Kurztext, „Details ansehen“ (öffnet den Unterbereich) und „Erstgespräch buchen“.
+ * Wechsel alle 6,5 s mit sanfter Überblendung und leichtem Zoom; Pause-Knopf, Pfeile,
+ * Punkte, Wischen am Handy, Pfeiltasten. Bei „reduzierte Bewegung“ kein Autoplay.
+ * Struktur: src/config/content.ts → bannerSlides · Texte: src/i18n/*.content.ts → banner
+ */
+import { Image } from 'astro:assets';
+import Icon from '@/components/ui/Icon.astro';
+import BookButton from '@/components/ui/BookButton.astro';
+import { bannerSlides } from '@/config/content';
+import { photos } from '@/config/media';
+import { href, type Lang } from '@/config/routes';
+import { t } from '@/i18n';
+
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const dict = t(lang);
+const slides = bannerSlides.map((s, i) => ({ ...s, ...dict.banner.slides[i]! }));
+---
+
+<section
+  class="banner relative isolate overflow-hidden"
+  data-banner
+  role="region"
+  aria-roledescription="carousel"
+  aria-label={dict.banner.label}
+>
+  <div class="banner-stage relative h-[78svh] min-h-[30rem] max-h-[52rem]">
+    {slides.map((s, i) => (
+      <article
+        data-bslide
+        class:list={['banner-slide absolute inset-0', i === 0 && 'is-active']}
+        aria-roledescription="slide"
+        aria-label={`${i + 1} / ${slides.length}`}
+        aria-hidden={i === 0 ? undefined : 'true'}
+      >
+        <a
+          href={href(s.page, lang, s.hash ? `#${s.hash}` : '')}
+          class="absolute inset-0"
+          tabindex="-1"
+          aria-hidden="true"
+        >
+          <Image
+            src={photos[s.photo]}
+            alt={dict.photoAlt[s.photo]}
+            class="banner-img size-full object-cover"
+            widths={[640, 1024, 1600]}
+            sizes="100vw"
+            loading={i === 0 ? 'eager' : 'lazy'}
+            fetchpriority={i === 0 ? 'high' : 'auto'}
+          />
+        </a>
+        <div class="pointer-events-none absolute inset-0 bg-gradient-to-r from-[#04030c]/92 via-[#04030c]/60 to-[#04030c]/10" />
+        <div class="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#04030c] via-transparent to-[#04030c]/40" />
+        <div class="container-site relative flex h-full flex-col justify-center pt-10 pb-24">
+          <p class="banner-text eyebrow" lang={lang}>
+            {String(i + 1).padStart(2, '0')} · {s.kicker}
+          </p>
+          <p class="banner-text mt-5 max-w-3xl font-display text-4xl leading-[1.05] font-medium tracking-tight [transition-delay:100ms] sm:text-6xl">
+            {s.title}
+          </p>
+          <p class="banner-text mt-5 max-w-xl text-lg leading-relaxed text-text/85 [transition-delay:200ms] sm:text-xl">
+            {s.text}
+          </p>
+          <div class="banner-text mt-8 flex flex-wrap items-center gap-3 [transition-delay:300ms]">
+            <BookButton lang={lang} />
+            <a
+              href={href(s.page, lang, s.hash ? `#${s.hash}` : '')}
+              class="btn-ghost"
+              tabindex={i === 0 ? undefined : -1}
+            >
+              {dict.cta.details}
+              <Icon name="arrow" class="size-4" />
+            </a>
+          </div>
+        </div>
+      </article>
+    ))}
+  </div>
+
+  <!-- Steuerung -->
+  <div class="container-site absolute inset-x-0 bottom-6 z-10 flex items-center gap-4">
+    <div class="flex flex-1 flex-wrap gap-1.5" data-bdots>
+      {slides.map((s, i) => (
+        <button
+          type="button"
+          data-bdot={i}
+          class="banner-dot"
+          aria-label={`${i + 1}: ${s.kicker}`}
+          aria-current={i === 0 ? 'true' : undefined}
+        >
+          <span class="banner-dot-fill" />
+        </button>
+      ))}
+    </div>
+    <div class="flex gap-2">
+      <button type="button" data-bprev class="banner-ctl" aria-label={dict.common.previous}>
+        <Icon name="chevronLeft" class="size-4" />
+      </button>
+      <button
+        type="button"
+        data-btoggle
+        class="banner-ctl"
+        aria-label={dict.common.pause}
+        data-label-pause={dict.common.pause}
+        data-label-play={dict.common.play}
+      >
+        <Icon name="pause" class="size-4 [[data-paused]_&]:hidden" />
+        <Icon name="play" class="hidden size-4 [[data-paused]_&]:block" />
+      </button>
+      <button type="button" data-bnext class="banner-ctl" aria-label={dict.common.next}>
+        <Icon name="chevronRight" class="size-4" />
+      </button>
+    </div>
+  </div>
+</section>
+
+<style>
+  @reference '../../styles/global.css';
+
+  .banner-slide {
+    opacity: 0;
+    visibility: hidden;
+    transition:
+      opacity 1.1s ease,
+      visibility 0s linear 1.1s;
+  }
+  .banner-slide.is-active {
+    opacity: 1;
+    visibility: visible;
+    transition:
+      opacity 1.1s ease,
+      visibility 0s;
+  }
+  .banner-img {
+    transform: scale(1.08);
+    transition: transform 7s ease-out;
+  }
+  .banner-slide.is-active .banner-img {
+    transform: scale(1);
+  }
+  .banner-text {
+    opacity: 0;
+    transform: translateY(1.25rem);
+    transition:
+      opacity 0.8s ease,
+      transform 0.8s cubic-bezier(0.2, 0.7, 0.2, 1);
+  }
+  .banner-slide.is-active .banner-text {
+    opacity: 1;
+    transform: none;
+  }
+  .banner-ctl {
+    @apply flex size-10 items-center justify-center rounded-full border border-white/20 bg-black/30 text-text backdrop-blur transition hover:border-champagne/60;
+  }
+  .banner-dot {
+    @apply relative h-1.5 w-6 overflow-hidden rounded-full bg-white/25 transition-all sm:w-8;
+  }
+  .banner-dot[aria-current='true'] {
+    @apply w-12 sm:w-16;
+  }
+  .banner-dot-fill {
+    @apply absolute inset-y-0 left-0 w-0 rounded-full bg-champagne;
+  }
+  .banner-dot[aria-current='true'] .banner-dot-fill {
+    width: 100%;
+  }
+  [data-banner]:not([data-paused]) .banner-dot[aria-current='true'] .banner-dot-fill {
+    animation: banner-progress var(--banner-interval, 6500ms) linear;
+  }
+  @keyframes banner-progress {
+    from {
+      width: 0;
+    }
+    to {
+      width: 100%;
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .banner-img {
+      transform: none !important;
+    }
+  }
+</style>
+
+<script>
+  const INTERVAL = 6500;
+  document.querySelectorAll<HTMLElement>('[data-banner]').forEach((root) => {
+    root.style.setProperty('--banner-interval', `${INTERVAL}ms`);
+    const slides = [...root.querySelectorAll<HTMLElement>('[data-bslide]')];
+    const dots = [...root.querySelectorAll<HTMLButtonElement>('[data-bdot]')];
+    const toggle = root.querySelector<HTMLButtonElement>('[data-btoggle]');
+    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    let index = 0;
+    let timer: number | undefined;
+    let paused = reduced;
+    let hold = false;
+
+    const show = (next: number) => {
+      index = (next + slides.length) % slides.length;
+      slides.forEach((s, i) => {
+        const active = i === index;
+        s.classList.toggle('is-active', active);
+        if (active) s.removeAttribute('aria-hidden');
+        else s.setAttribute('aria-hidden', 'true');
+        s.querySelectorAll<HTMLAnchorElement>('.banner-text a').forEach((a) =>
+          active ? a.removeAttribute('tabindex') : a.setAttribute('tabindex', '-1'),
+        );
+      });
+      dots.forEach((d, i) => {
+        if (i === index) d.setAttribute('aria-current', 'true');
+        else d.removeAttribute('aria-current');
+        // Fortschrittsbalken neu starten
+        const fill = d.firstElementChild as HTMLElement | null;
+        if (fill) {
+          fill.style.animation = 'none';
+          void fill.offsetWidth;
+          fill.style.animation = '';
+        }
+      });
+    };
+    const schedule = () => {
+      window.clearInterval(timer);
+      if (!paused && !hold) timer = window.setInterval(() => show(index + 1), INTERVAL);
+    };
+    const setPaused = (v: boolean) => {
+      paused = v;
+      root.toggleAttribute('data-paused', v);
+      toggle?.setAttribute(
+        'aria-label',
+        (v ? toggle.dataset.labelPlay : toggle.dataset.labelPause) ?? '',
+      );
+      schedule();
+    };
+    const go = (n: number) => {
+      show(n);
+      schedule();
+    };
+
+    root.querySelector('[data-bprev]')?.addEventListener('click', () => go(index - 1));
+    root.querySelector('[data-bnext]')?.addEventListener('click', () => go(index + 1));
+    dots.forEach((d, i) => d.addEventListener('click', () => go(i)));
+    toggle?.addEventListener('click', () => setPaused(!paused));
+    root.addEventListener('focusin', () => {
+      hold = true;
+      schedule();
+    });
+    root.addEventListener('focusout', () => {
+      hold = false;
+      schedule();
+    });
+    root.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight') go(index + 1);
+      if (e.key === 'ArrowLeft') go(index - 1);
+    });
+    // Wischen auf Touch-Geräten
+    let startX = 0;
+    root.addEventListener('touchstart', (e) => (startX = e.touches[0]?.clientX ?? 0), {
+      passive: true,
+    });
+    root.addEventListener('touchend', (e) => {
+      const dx = (e.changedTouches[0]?.clientX ?? 0) - startX;
+      if (Math.abs(dx) > 50) go(index + (dx < 0 ? 1 : -1));
+    });
+    setPaused(paused);
+  });
+</script>

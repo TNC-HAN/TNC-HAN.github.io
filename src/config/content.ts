@@ -1,0 +1,81 @@
+/**
+ * Struktur (nicht Text!) der Inhalts-Bausteine: welches Bild, welches Ziel.
+ * Die Texte dazu stehen in src/i18n/*.ts in derselben Reihenfolge.
+ */
+import type { PageKey, ServiceKey } from './routes';
+import type { PhotoKey } from './media';
+
+export interface Target {
+  page: PageKey;
+  /** Sprungmarke auf der Zielseite, z. B. "off-market" */
+  hash?: string;
+}
+
+/** Slide-Banner oben auf der Startseite – 10 Themen (Texte: home.banner.slides) */
+export const bannerSlides: (Target & { photo: PhotoKey })[] = [
+  { photo: 'strategieMeeting', page: 'consulting', hash: 'strategie' },
+  { photo: 'coachingUnternehmer', page: 'consulting', hash: 'coaching' },
+  { photo: 'handschlagNachfolge', page: 'consulting', hash: 'nachfolge' },
+  { photo: 'villaPoolModern', page: 'realEstate', hash: 'off-market' },
+  { photo: 'frankfurtSkyline', page: 'realEstate', hash: 'markt-dach' },
+  { photo: 'istanbulBosporus', page: 'realEstate', hash: 'markt-tuerkei' },
+  { photo: 'mittelmeerKueste', page: 'realEstate', hash: 'markt-nordzypern' },
+  { photo: 'vertragUnterschrift', page: 'realEstate', hash: 'due-diligence' },
+  { photo: 'rechenzentrum', page: 'ai', hash: 'workflow-automatisierung' },
+  { photo: 'kiRoboter', page: 'ai', hash: 'ki-assistenten' },
+];
+
+/** Bild-Text-Abschnitte im Zickzack auf der Startseite (Texte: home.showcase.items) */
+export const showcase: (Target & { photo: PhotoKey })[] = [
+  { photo: 'planungWand', page: 'consulting', hash: 'strategie' },
+  { photo: 'unternehmerNachdenklich', page: 'consulting', hash: 'coaching' },
+  { photo: 'herrenhaus', page: 'consulting', hash: 'nachfolge' },
+  { photo: 'poolMediterran', page: 'realEstate', hash: 'off-market' },
+  { photo: 'zypernKueste', page: 'realEstate', hash: 'maerkte' },
+  { photo: 'schluesseluebergabe', page: 'realEstate', hash: 'due-diligence' },
+  { photo: 'programmcode', page: 'ai', hash: 'workflow-automatisierung' },
+  { photo: 'datenanalyseLaptop', page: 'ai', hash: 'ki-assistenten' },
+];
+
+/** Sprungmarken der 6 Leistungen je Bereich (Reihenfolge = services.<bereich>.offerings.items) */
+export const offeringIds: Record<ServiceKey, string[]> = {
+  consulting: ['strategie', 'wachstum', 'prozesse', 'finanzierung', 'coaching', 'nachfolge'],
+  realEstate: [
+    'off-market',
+    'investmentanalyse',
+    'due-diligence',
+    'diskreter-verkauf',
+    'international',
+    'portfolio',
+  ],
+  ai: [
+    'potenzialanalyse',
+    'workflow-automatisierung',
+    'ki-assistenten',
+    'daten-reporting',
+    'web-apps',
+    'schulung',
+  ],
+};
+
+/** Bilder auf den Bereichsseiten: Kopfbild + Bilder neben ausgewählten Leistungen */
+export const serviceMedia: Record<
+  ServiceKey,
+  { hero: PhotoKey; inline: Partial<Record<number, PhotoKey>> }
+> = {
+  consulting: {
+    hero: 'strategieMeeting',
+    inline: { 0: 'planungWand', 4: 'coachingUnternehmer', 5: 'handschlagNachfolge' },
+  },
+  realEstate: {
+    hero: 'villaPoolModern',
+    inline: { 0: 'poolMediterran', 2: 'vertragUnterschrift', 4: 'istanbulBosporus' },
+  },
+  ai: {
+    hero: 'rechenzentrum',
+    inline: { 1: 'programmcode', 2: 'kiRoboter', 3: 'datenanalyseLaptop' },
+  },
+};
+
+/** Märkte (Immobilien): Sprungmarken in Reihenfolge von home.regions.items */
+export const regionIds = ['markt-dach', 'markt-europa', 'markt-tuerkei', 'markt-nordzypern'];

@@ -1,0 +1,189 @@
+---
+/**
+ * Mitlaufende Kontaktleiste rechts (auf jeder Seite):
+ * WhatsApp · Telefon · E-Mail · Calendly – darunter ein rotes X zum Ausblenden.
+ * - Erscheint nach kurzem Scrollen und schwebt sanft mit.
+ * - Ausgeblendet bleibt sie für diese Sitzung; ein kleiner Reiter holt sie zurück.
+ * - Telefon/E-Mail nutzen das Programm-Auswahlfenster (ContactLauncher, data-launch).
+ */
+import { siCalendly } from 'simple-icons';
+import Icon from '@/components/ui/Icon.astro';
+import WhatsAppIcon3D from '@/components/ui/WhatsAppIcon3D.astro';
+import type { Lang } from '@/config/routes';
+import { site, whatsappUrl } from '@/config/site';
+import { t } from '@/i18n';
+
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const dict = t(lang);
+const d = dict.dock;
+---
+
+<aside class="contact-dock" data-dock aria-label={d.label}>
+  <ul class="dock-panel">
+    <li>
+      <a
+        href={whatsappUrl(dict.common.whatsappMessage)}
+        target="_blank"
+        rel="noopener"
+        class="dock-btn !border-0 !bg-transparent !p-0"
+        aria-label={d.whatsapp}
+        title={d.whatsapp}
+      >
+        <WhatsAppIcon3D class="size-11" />
+      </a>
+    </li>
+    <li>
+      <a
+        href={`tel:${site.contact.phoneIntl}`}
+        data-launch="phone"
+        class="dock-btn"
+        aria-label={d.call}
+        title={d.call}
+      >
+        <Icon name="phone" class="size-5" />
+      </a>
+    </li>
+    <li>
+      <a
+        href={`mailto:${site.contact.email}?subject=${encodeURIComponent(dict.launcher.emailSubject)}`}
+        data-launch="email"
+        class="dock-btn"
+        aria-label={d.mail}
+        title={d.mail}
+      >
+        <Icon name="mail" class="size-5" />
+      </a>
+    </li>
+    {site.contact.bookingUrl && (
+      <li>
+        <a
+          href={site.contact.bookingUrl}
+          target="_blank"
+          rel="noopener"
+          class="dock-btn dock-calendly"
+          aria-label={d.booking}
+          title={d.booking}
+        >
+          <svg viewBox="0 0 24 24" class="size-5" aria-hidden="true">
+            <path d={siCalendly.path} fill="currentColor" />
+          </svg>
+        </a>
+      </li>
+    )}
+    <li class="mt-1 border-t border-white/10 pt-2">
+      <button type="button" data-dock-close class="dock-close" aria-label={d.hide} title={d.hide}>
+        <Icon name="close" class="size-4" />
+      </button>
+    </li>
+  </ul>
+</aside>
+
+<button type="button" data-dock-open class="dock-reopen" aria-label={d.show} title={d.show} hidden>
+  <Icon name="chat" class="size-4" />
+  <span class="sr-only">{d.show}</span>
+</button>
+
+<style>
+  @reference '../../styles/global.css';
+
+  .contact-dock {
+    position: fixed;
+    right: 0.75rem;
+    top: 50%;
+    z-index: 60;
+    transform: translate(calc(100% + 1.5rem), -50%);
+    opacity: 0;
+    pointer-events: none;
+    transition:
+      transform 0.7s cubic-bezier(0.2, 0.8, 0.2, 1),
+      opacity 0.5s ease;
+  }
+  .contact-dock.is-visible {
+    transform: translate(0, -50%);
+    opacity: 1;
+    pointer-events: auto;
+  }
+  .dock-panel {
+    @apply flex flex-col items-center gap-2 rounded-full border border-white/12 bg-ink-900/75 p-2 shadow-2xl backdrop-blur-xl;
+    box-shadow:
+      0 20px 40px -12px rgb(0 0 0 / 0.7),
+      0 0 30px -8px rgb(123 63 228 / 0.45);
+  }
+  .dock-btn {
+    @apply flex size-11 items-center justify-center rounded-full border border-gold/30 bg-gold/10 text-champagne transition duration-300;
+  }
+  .dock-btn:hover,
+  .dock-btn:focus-visible {
+    @apply scale-110 border-champagne/70 bg-gold/20 text-white;
+  }
+  .dock-calendly {
+    @apply border-[#006bff]/50 bg-[#006bff]/15 text-[#7fb2ff];
+  }
+  .dock-close {
+    @apply flex size-9 items-center justify-center rounded-full bg-red-600 text-white shadow-lg transition hover:scale-110 hover:bg-red-500;
+    box-shadow: 0 0 14px rgb(220 38 38 / 0.55);
+  }
+  .dock-reopen {
+    @apply fixed right-0 bottom-24 z-60 flex h-12 w-9 items-center justify-center rounded-l-xl border border-r-0 border-white/12 bg-ink-900/85 text-champagne shadow-xl backdrop-blur-xl transition hover:w-11;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .contact-dock.is-visible .dock-panel {
+      animation: dock-float 6s ease-in-out infinite;
+    }
+  }
+  @keyframes dock-float {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+  /* Kleine Bildschirme: etwas kompakter und näher am Rand */
+  @media (max-width: 480px) {
+    .contact-dock {
+      right: 0.4rem;
+    }
+    .dock-btn {
+      @apply size-10;
+    }
+  }
+</style>
+
+<script>
+  const KEY = 'nx-dock-hidden';
+  const dock = document.querySelector<HTMLElement>('[data-dock]');
+  const reopen = document.querySelector<HTMLButtonElement>('[data-dock-open]');
+  if (dock && reopen) {
+    let hidden = false;
+    try {
+      hidden = sessionStorage.getItem(KEY) === '1';
+    } catch {
+      /* ohne Speicher: Leiste bleibt sichtbar */
+    }
+    const update = () => {
+      const scrolled = window.scrollY > 240;
+      dock.classList.toggle('is-visible', !hidden && scrolled);
+      reopen.hidden = !hidden;
+    };
+    const setHidden = (value: boolean) => {
+      hidden = value;
+      try {
+        if (value) sessionStorage.setItem(KEY, '1');
+        else sessionStorage.removeItem(KEY);
+      } catch {
+        /* ignorieren */
+      }
+      update();
+    };
+    dock.querySelector('[data-dock-close]')?.addEventListener('click', () => setHidden(true));
+    reopen.addEventListener('click', () => setHidden(false));
+    window.addEventListener('scroll', update, { passive: true });
+    update();
+  }
+</script>

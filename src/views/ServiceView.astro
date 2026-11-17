@@ -1,5 +1,12 @@
 ---
-/** Vorlage für alle drei Geschäftsbereich-Seiten. Inhalte kommen aus src/i18n/<sprache>.ts → services. */
+/**
+ * Vorlage für alle drei Geschäftsbereich-Seiten.
+ * Aufbau: Kopf mit Bild → Leistungskacheln (anklickbar) → Unterbereiche je Leistung
+ * (Detailtext, Nutzen, Bild, CTA) → [Immobilien: Märkte] → Zielgruppe & Ansatz → FAQ → CTA.
+ * Texte: src/i18n/<sprache>.ts (services) und <sprache>.content.ts (details, markets).
+ * Bilder & Sprungmarken: src/config/content.ts
+ */
+import { Image } from 'astro:assets';
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import PageHero from '@/components/sections/PageHero.astro';
 import FeatureGrid from '@/components/sections/FeatureGrid.astro';
@@ -7,8 +14,11 @@ import FaqList from '@/components/sections/FaqList.astro';
 import CtaBand from '@/components/sections/CtaBand.astro';
 import AreaCards from '@/components/sections/AreaCards.astro';
 import SectionHeading from '@/components/ui/SectionHeading.astro';
+import BookButton from '@/components/ui/BookButton.astro';
 import Icon from '@/components/ui/Icon.astro';
-import { routePath, type Lang, type ServiceKey } from '@/config/routes';
+import { offeringIds, regionIds, serviceMedia } from '@/config/content';
+import { photos } from '@/config/media';
+import { href, routePath, type Lang, type ServiceKey } from '@/config/routes';
 import { site } from '@/config/site';
 import { breadcrumbJsonLd, faqJsonLd, serviceJsonLd } from '@/lib/structured-data';
 import { t } from '@/i18n';
@@ -22,6 +32,16 @@ const dict = t(lang);
 const s = dict.services[service];
 const root = new URL(import.meta.env.BASE_URL, Astro.site);
 const url = new URL(routePath(service, lang), root).href;
+const ids = offeringIds[service];
+const media = serviceMedia[service];
+const details = s.offerings.items.map((item, i) => ({
+  id: ids[i] ?? `leistung-${i + 1}`,
+  title: item.title,
+  summary: item.text,
+  detail: dict.details[service][i]?.text ?? '',
+  benefits: dict.details[service][i]?.benefits ?? [],
+  photo: media.inline[i],
+}));
 
 const jsonLd = [
   serviceJsonLd({
@@ -47,7 +67,102 @@ const offeringIcons = {
 <BaseLayout lang={lang} page={service} {...s.seo} jsonLd={jsonLd}>
   <PageHero lang={lang} {...s.hero} current={s.label} />
 
-  <FeatureGrid id="offerings-title" {...s.offerings} icons={[...offeringIcons[service]]} />
+  <!-- Kopfbild mit Haupt-CTA -->
+  <section class="container-site -mt-6 pb-8">
+    <div class="reveal relative overflow-hidden rounded-[2rem] ring-1 ring-white/10">
+      <Image
+        src={photos[media.hero]}
+        alt={dict.photoAlt[media.hero]}
+        class="aspect-[16/7] w-full object-cover"
+        widths={[640, 1024, 1600]}
+        sizes="(min-width: 1216px) 1216px, 100vw"
+        loading="eager"
+      />
+      <div class="absolute inset-0 bg-gradient-to-t from-[#04030c]/85 via-[#04030c]/20 to-transparent"></div>
+      <div class="absolute inset-x-0 bottom-0 flex flex-wrap items-end justify-between gap-4 p-6 sm:p-10">
+        <p class="max-w-xl font-display text-2xl leading-snug sm:text-3xl">{s.cta.title}</p>
+        <BookButton lang={lang} note />
+      </div>
+    </div>
+  </section>
+
+  <FeatureGrid
+    id="offerings-title"
+    {...s.offerings}
+    icons={[...offeringIcons[service]]}
+    links={ids.map((id) => `#${id}`)}
+    linkLabel={dict.cta.details}
+  />
+
+  <!-- Unterbereiche: je Leistung ein Detailabschnitt -->
+  <section class="container-site pb-12" aria-labelledby="details-title">
+    <SectionHeading id="details-title" eyebrow={dict.details.eyebrow} title={dict.details.title} />
+    <div class="mt-14 space-y-8">
+      {details.map((d, i) => (
+        <article
+          id={d.id}
+          class:list={[
+            'reveal glass scroll-mt-28 overflow-hidden',
+            d.photo ? 'grid items-stretch md:grid-cols-2' : 'p-8 sm:p-10',
+          ]}
+        >
+          {d.photo && (
+            <div class:list={['relative min-h-64', i % 2 === 1 && 'md:order-2']}>
+              <Image
+                src={photos[d.photo]}
+                alt={dict.photoAlt[d.photo]}
+                class="absolute inset-0 size-full object-cover"
+                widths={[480, 800, 1024]}
+                sizes="(min-width: 768px) 50vw, 100vw"
+                loading="lazy"
+              />
+            </div>
+          )}
+          <div class:list={[d.photo && 'p-8 sm:p-10']}>
+            <p class="eyebrow">
+              {String(i + 1).padStart(2, '0')} · {s.label}
+            </p>
+            <h3 class="mt-4 text-3xl font-medium">{d.title}</h3>
+            <p class="mt-3 text-champagne">{d.summary}</p>
+            <p class="mt-4 text-lg leading-relaxed text-muted">{d.detail}</p>
+            <ul class="mt-6 grid gap-2.5 sm:grid-cols-3 md:grid-cols-1 xl:grid-cols-3">
+              {d.benefits.map((b) => (
+                <li class="flex items-start gap-2.5 text-sm text-text/90">
+                  <Icon name="check" class="mt-0.5 size-4 shrink-0 text-gold" />
+                  {b}
+                </li>
+              ))}
+            </ul>
+            <div class="mt-8 flex flex-wrap gap-3">
+              <BookButton lang={lang} />
+              <a href={href('contact', lang)} class="btn-ghost">
+                {dict.nav.contact}
+                <Icon name="arrow" class="size-4" />
+              </a>
+            </div>
+          </div>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  {service === 'realEstate' && (
+    <FeatureGrid
+      id="maerkte"
+      eyebrow={dict.markets.eyebrow}
+      title={dict.markets.title}
+      lead={dict.markets.lead}
+      items={dict.home.regions.items.map((r, i) => ({
+        title: r.title,
+        text: dict.markets.details[i] ?? r.text,
+      }))}
+      icons={['pin']}
+      columns={4}
+      ids={regionIds}
+      links={regionIds.map(() => site.contact.bookingUrl || href('contact', lang))}
+      linkLabel={dict.cta.book}
+    />
+  )}
 
   <section class="container-site py-24 sm:py-28">
     <div class="grid gap-6 lg:grid-cols-2">
@@ -77,6 +192,7 @@ const offeringIcons = {
               </li>
             ))}
           </ul>
+          <BookButton lang={lang} class="mt-8" note />
         </div>
       </div>
     </div>

@@ -1,36 +1,59 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
+import BannerSlider from '@/components/home/BannerSlider.astro';
 import Hero from '@/components/home/Hero.astro';
 import Marquee from '@/components/home/Marquee.astro';
+import Showcase from '@/components/home/Showcase.astro';
 import AreaCards from '@/components/sections/AreaCards.astro';
 import ProcessSteps from '@/components/sections/ProcessSteps.astro';
 import FeatureGrid from '@/components/sections/FeatureGrid.astro';
 import FaqList from '@/components/sections/FaqList.astro';
 import CtaBand from '@/components/sections/CtaBand.astro';
 import { faqJsonLd } from '@/lib/structured-data';
-import type { Lang } from '@/config/routes';
+import { regionIds } from '@/config/content';
+import { href, type Lang } from '@/config/routes';
 import { t } from '@/i18n';
 
 interface Props {
   lang: Lang;
 }
 const { lang } = Astro.props;
-const { home } = t(lang);
+const dict = t(lang);
+const { home } = dict;
+// „Warum wir“: jede Kachel führt zum passenden Bereich
+const whyLinks = [
+  href('about', lang),
+  href('realEstate', lang, '#off-market'),
+  href('realEstate', lang, '#maerkte'),
+  href('ai', lang),
+];
+const regionLinks = regionIds.map((id) => href('realEstate', lang, `#${id}`));
 ---
 
 <BaseLayout lang={lang} page="home" {...home.seo} jsonLd={[faqJsonLd(home.faq.items)]}>
+  <BannerSlider lang={lang} />
   <Hero lang={lang} />
   <Marquee lang={lang} />
   <AreaCards lang={lang} />
+  <Showcase lang={lang} />
   <div class="hairline"></div>
-  <ProcessSteps {...home.process} />
+  <ProcessSteps {...home.process} link={href('contact', lang)} linkLabel={dict.cta.book} />
   <FeatureGrid
     id="why-title"
     {...home.why}
     columns={4}
     icons={['compass', 'key', 'globe', 'spark']}
+    links={whyLinks}
+    linkLabel={dict.cta.details}
   />
-  <FeatureGrid id="regions-title" {...home.regions} columns={4} icons={['pin']} />
+  <FeatureGrid
+    id="regions-title"
+    {...home.regions}
+    columns={4}
+    icons={['pin']}
+    links={regionLinks}
+    linkLabel={dict.cta.details}
+  />
   <FaqList {...home.faq} />
   <CtaBand lang={lang} />
 </BaseLayout>

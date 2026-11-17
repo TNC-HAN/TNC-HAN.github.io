@@ -8,8 +8,6 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
 import PageHero from '@/components/sections/PageHero.astro';
 import Icon, { type IconName } from '@/components/ui/Icon.astro';
 import WhatsAppIcon3D from '@/components/ui/WhatsAppIcon3D.astro';
-import ContactLauncher from '@/components/ui/ContactLauncher.astro';
-import { emailOptions, phoneOptions } from '@/config/launchers';
 import type { Lang } from '@/config/routes';
 import { site, whatsappUrl } from '@/config/site';
 import { t } from '@/i18n';
@@ -130,13 +128,6 @@ const channels: Channel[] = [
       })}
     </ul>
   </section>
-
-  <ContactLauncher
-    kind="phone"
-    options={phoneOptions(site.contact.phoneIntl, launcher)}
-    l={launcher}
-  />
-  <ContactLauncher kind="email" options={emailOptions(site.contact.email, launcher)} l={launcher} />
 
   <section class="container-site py-16">
     <div class="grid gap-5 lg:grid-cols-2">

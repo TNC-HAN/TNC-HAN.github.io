@@ -1,0 +1,30 @@
+---
+/** Haupt-CTA „Erstgespräch buchen“ – öffnet Calendly (Link in site.ts), sonst die Kontaktseite. */
+import Icon from '@/components/ui/Icon.astro';
+import { href, type Lang } from '@/config/routes';
+import { site } from '@/config/site';
+import { t } from '@/i18n';
+
+interface Props {
+  lang: Lang;
+  variant?: 'gold' | 'ghost';
+  note?: boolean;
+  class?: string;
+}
+const { lang, variant = 'gold', note = false, class: className } = Astro.props;
+const dict = t(lang);
+const url = site.contact.bookingUrl || href('contact', lang);
+const external = Boolean(site.contact.bookingUrl);
+---
+
+<span class:list={['inline-flex flex-col items-start gap-2', className]}>
+  <a
+    href={url}
+    class={variant === 'gold' ? 'btn-gold' : 'btn-ghost'}
+    {...(external ? { target: '_blank', rel: 'noopener' } : {})}
+  >
+    <Icon name="calendar" class="size-4" />
+    {dict.cta.book}
+  </a>
+  {note && <span class="text-xs text-subtle">{dict.cta.bookNote}</span>}
+</span>
