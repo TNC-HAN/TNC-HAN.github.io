@@ -41,7 +41,7 @@ export const enContent: ExtraContent = {
     slides: [
       {
         kicker: 'Business consulting',
-        title: 'Strategy that moves your company forward',
+        title: 'Strategies that move your company forward',
         text: 'Clear priorities, solid figures and a plan your team can execute.',
       },
       {
@@ -77,7 +77,7 @@ export const enContent: ExtraContent = {
       {
         kicker: 'Due diligence',
         title: 'Check first, sign later',
-        text: 'Documents, condition, legal situation and figures – before you commit capital.',
+        text: 'Documents, condition, opportunities and risks, payback and return on investment (ROI) – reviewed before you commit capital.',
       },
       {
         kicker: 'AI automation',
@@ -86,8 +86,8 @@ export const enContent: ExtraContent = {
       },
       {
         kicker: 'AI assistants',
-        title: 'Digital colleagues for sales, service and knowledge',
-        text: 'Assistants that know your processes and noticeably relieve your team.',
+        title: 'Digital colleagues for marketing & sales, services and knowledge base',
+        text: 'Assistants that know your processes, relieve your team, onboard new employees – and even make phone calls.',
       },
     ],
   },

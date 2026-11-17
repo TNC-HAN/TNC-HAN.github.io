@@ -211,7 +211,7 @@ export const tr: Dictionary = {
         description:
           'Küçük ve orta ölçekli işletmelerin sahipleri ve yöneticileri için strateji, büyüme, devir ve koçluk – pragmatik, veriye dayalı ve uygulama odaklı.',
       },
-      label: 'İşletme danışmanlığı',
+      label: 'Koçluk ve Danışmanlık',
       card: {
         title: 'İşletme danışmanlığı, koçluk ve consulting',
         text: 'KOBİ’ler için stratejik destek – yeniden yapılanmadan büyümeye ve şirket devrine kadar.',
@@ -391,7 +391,7 @@ export const tr: Dictionary = {
         description:
           'Yapay zekâyı pratikte kullanın: KOBİ’ler için süreç otomasyonu, yapay zekâ asistanları ve iş akışları – veri korumaya duyarlı, ölçülebilir ve teknik yük olmadan.',
       },
-      label: 'Yapay zekâ otomasyonu',
+      label: 'BT ve Yapay Zekâ Otomasyonu',
       card: {
         title: 'KOBİ’ler için yapay zekâ otomasyonu',
         text: 'Tekrarlayan işleri otomatikleştirin, bilgiyi kullanılabilir kılın, ekiplerinizi rahatlatın.',

@@ -41,7 +41,7 @@ export const deContent: ExtraContent = {
     slides: [
       {
         kicker: 'Unternehmensberatung',
-        title: 'Strategie, die Ihr Unternehmen nach vorne bringt',
+        title: 'Strategien, die Ihr Unternehmen nach vorne bringen',
         text: 'Klare Prioritäten, belastbare Zahlen und ein Plan, den Ihr Team umsetzen kann.',
       },
       {
@@ -77,7 +77,7 @@ export const deContent: ExtraContent = {
       {
         kicker: 'Due Diligence',
         title: 'Erst prüfen, dann unterschreiben',
-        text: 'Unterlagen, Zustand, Rechtslage und Zahlen – bevor Sie Kapital binden.',
+        text: 'Unterlagen, Zustand, Chancen und Risiken, Amortisation und Return on Investment (ROI) – geprüft, bevor Sie Kapital binden.',
       },
       {
         kicker: 'KI-Automation',
@@ -86,8 +86,8 @@ export const deContent: ExtraContent = {
       },
       {
         kicker: 'KI-Assistenten',
-        title: 'Digitale Kollegen für Vertrieb, Service und Wissen',
-        text: 'Assistenten, die Ihre Prozesse kennen und Ihr Team spürbar entlasten.',
+        title: 'Digitale Kollegen für Marketing & Sales, Services und Knowledge Base',
+        text: 'Assistenten, die Ihre Prozesse kennen, Ihr Team entlasten, neue Mitarbeiter onboarden – und sogar telefonieren.',
       },
     ],
   },

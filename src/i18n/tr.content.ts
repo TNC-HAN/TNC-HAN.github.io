@@ -41,7 +41,7 @@ export const trContent: ExtraContent = {
     slides: [
       {
         kicker: 'İşletme danışmanlığı',
-        title: 'Şirketinizi ileri taşıyan strateji',
+        title: 'Şirketinizi ileri taşıyan stratejiler',
         text: 'Net öncelikler, sağlam rakamlar ve ekibinizin uygulayabileceği bir plan.',
       },
       {
@@ -77,7 +77,7 @@ export const trContent: ExtraContent = {
       {
         kicker: 'Due diligence',
         title: 'Önce incele, sonra imzala',
-        text: 'Belgeler, durum, hukuki durum ve rakamlar – sermaye bağlamadan önce.',
+        text: 'Belgeler, durum, fırsatlar ve riskler, amortisman ve yatırım getirisi (ROI) – sermaye bağlamadan önce incelenir.',
       },
       {
         kicker: 'Yapay zekâ otomasyonu',
@@ -86,8 +86,8 @@ export const trContent: ExtraContent = {
       },
       {
         kicker: 'Yapay zekâ asistanları',
-        title: 'Satış, hizmet ve bilgi için dijital meslektaşlar',
-        text: 'Süreçlerinizi bilen ve ekibinizi gerçekten rahatlatan asistanlar.',
+        title: 'Pazarlama ve satış, hizmetler ve bilgi bankası için dijital meslektaşlar',
+        text: 'Süreçlerinizi bilen, ekibinizi rahatlatan, yeni çalışanları işe alıştıran – ve telefon görüşmesi bile yapan asistanlar.',
       },
     ],
   },

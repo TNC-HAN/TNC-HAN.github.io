@@ -25,9 +25,9 @@ const links: { key: PageKey; label: string }[] = [
 ---
 
 <header class="sticky top-0 z-50 border-b border-line bg-ink-950/70 backdrop-blur-xl">
-  <div class="container-site flex h-18 items-center gap-4 lg:h-20">
+  <div class="container-site flex h-18 items-center gap-3 lg:h-20">
     <a href={href('home', lang)} class="shrink-0" aria-label={`NEXXCON-24 – ${dict.nav.home}`}>
-      <BrandLogo3D src={logo} class="h-8 w-auto lg:h-10" />
+      <BrandLogo3D src={logo} class="h-9 w-auto lg:h-12" />
     </a>
 
     <nav aria-label={dict.nav.primary} class="ml-auto hidden xl:block">
@@ -37,7 +37,7 @@ const links: { key: PageKey; label: string }[] = [
             <a
               href={href(l.key, lang)}
               aria-current={page === l.key ? 'page' : undefined}
-              class="rounded-full px-3 py-2 text-sm whitespace-nowrap text-muted transition hover:text-text aria-[current=page]:text-champagne"
+              class="nav-pill rounded-full border border-gold/45 bg-gradient-to-b from-gold/25 to-gold/5 px-3 py-1.5 text-[13px] whitespace-nowrap text-champagne shadow-[inset_0_1px_0_rgb(255_255_255/0.2),0_4px_12px_-4px_rgb(0_0_0/0.6)] transition hover:-translate-y-px hover:border-champagne hover:from-gold/40 hover:text-white aria-[current=page]:border-transparent aria-[current=page]:from-[#f0dfb4] aria-[current=page]:to-gold aria-[current=page]:text-ink-950"
             >
               {l.label}
             </a>
@@ -48,7 +48,10 @@ const links: { key: PageKey; label: string }[] = [
 
     <div class="ml-auto flex items-center gap-3 xl:ml-2">
       <LanguageSwitcher lang={lang} page={page} />
-      <a href={href('contact', lang)} class="btn-gold hidden !min-h-10 !px-5 whitespace-nowrap sm:inline-flex">
+      <a
+        href={href('contact', lang)}
+        class="btn-gold hidden !min-h-10 !px-5 whitespace-nowrap sm:inline-flex"
+      >
         {dict.nav.cta}
       </a>
 

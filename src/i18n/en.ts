@@ -214,7 +214,7 @@ export const en: Dictionary = {
         description:
           'Strategy, growth, succession and coaching for owners and managing directors of small and medium-sized enterprises – pragmatic, data-driven and focused on execution.',
       },
-      label: 'Business consulting',
+      label: 'Coaching & Consulting',
       card: {
         title: 'Business consulting, coaching & advisory',
         text: 'Strategic support for SMEs – from realignment and growth to succession.',
@@ -398,7 +398,7 @@ export const en: Dictionary = {
         description:
           'Putting artificial intelligence to practical use: process automation, AI assistants and workflows for SMEs – privacy-aware, measurable and without technical overhead.',
       },
-      label: 'AI automation',
+      label: 'IT & AI automation',
       card: {
         title: 'AI automation for SMEs',
         text: 'Automate recurring work, make knowledge usable, relieve your teams.',

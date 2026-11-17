@@ -35,13 +35,13 @@ const cta = dict.home.cta;
           {dict.home.hero.primary}
           <Icon name="arrow" class="size-4" />
         </a>
-        <a href={`tel:${site.contact.phoneIntl}`} class="btn-ghost">
+        <a href={`tel:${site.contact.phoneIntl}`} data-launch="phone" class="btn-phone">
           <Icon name="phone" class="size-4" />
           {site.contact.phoneDisplay}
         </a>
         <a
           href={whatsappUrl(dict.common.whatsappMessage)}
-          class="btn-ghost"
+          class="btn-whatsapp"
           target="_blank"
           rel="noopener"
         >

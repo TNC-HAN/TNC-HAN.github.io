@@ -215,7 +215,7 @@ export const de: Dictionary = {
         description:
           'Strategie, Wachstum, Nachfolge und Coaching für Inhaber und Geschäftsführer kleiner und mittlerer Unternehmen – pragmatisch, zahlenbasiert und umsetzungsstark.',
       },
-      label: 'Unternehmensberatung',
+      label: 'Coaching & Consulting',
       card: {
         title: 'Unternehmensberatung, Coaching & Consulting',
         text: 'Strategische Begleitung für KMU – von der Neuausrichtung über Wachstum bis zur Nachfolge.',
@@ -403,7 +403,7 @@ export const de: Dictionary = {
         description:
           'Künstliche Intelligenz praxisnah einsetzen: Prozessautomatisierung, KI-Assistenten und Workflows für KMU – datenschutzbewusst, messbar und ohne Technik-Ballast.',
       },
-      label: 'KI-Automation',
+      label: 'IT- & KI-Automation',
       card: {
         title: 'KI-Automation für KMU',
         text: 'Wiederkehrende Arbeit automatisieren, Wissen nutzbar machen, Teams entlasten.',
