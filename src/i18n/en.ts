@@ -459,14 +459,14 @@ export const en: Dictionary = {
 
   about: {
     seo: {
-      title: 'About · NEXXCON-24 · Nexxus – Business & IT. Consulting GbR',
+      title: 'About · NEXXCON-24 · Nexxus – Business & IT. Consulting',
       description:
-        'NEXXCON-24 is the advisory brand of Nexxus – Business & IT. Consulting GbR, based in Laatzen near Hanover: business consulting, real estate investment and AI automation from a single source.',
+        'NEXXCON-24 is the advisory brand of Nexxus – Business & IT. Consulting, based in Laatzen near Hanover: business consulting, real estate investment and AI automation from a single source.',
     },
     hero: {
       eyebrow: 'About us',
       title: 'Personal. Discreet. Entrepreneurial.',
-      lead: 'NEXXCON-24 is run by Nexxus – Business & IT. Consulting GbR, based in Laatzen near Hanover. We combine business consulting, real estate expertise and technology into advice from a single source.',
+      lead: 'NEXXCON-24 is run by Nexxus – Business & IT. Consulting, based in Laatzen near Hanover. We combine business consulting, real estate expertise and technology into advice from a single source.',
     },
     profile: {
       eyebrow: 'Your contact',
@@ -535,7 +535,7 @@ export const en: Dictionary = {
   legal: {
     imprint: {
       title: 'Legal notice (Impressum) · NEXXCON-24',
-      description: 'Legal notice of Nexxus – Business & IT. Consulting GbR (NEXXCON-24).',
+      description: 'Legal notice of Nexxus – Business & IT. Consulting (NEXXCON-24).',
     },
     privacy: {
       title: 'Privacy policy · NEXXCON-24',

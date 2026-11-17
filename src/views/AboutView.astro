@@ -1,4 +1,5 @@
 ---
+import type { ImageMetadata } from 'astro';
 import { Image } from 'astro:assets';
 import nexxcon from '@/assets/brand/nexxcon-logo.png';
 import nexxus from '@/assets/brand/nexxus-logo.png';
@@ -7,6 +8,7 @@ import PageHero from '@/components/sections/PageHero.astro';
 import FeatureGrid from '@/components/sections/FeatureGrid.astro';
 import CtaBand from '@/components/sections/CtaBand.astro';
 import RichText from '@/components/ui/RichText.astro';
+import SmartJustify from '@/components/ui/SmartJustify.astro';
 import type { Lang } from '@/config/routes';
 import { site } from '@/config/site';
 import { t } from '@/i18n';
@@ -17,6 +19,17 @@ interface Props {
 const { lang } = Astro.props;
 const dict = t(lang);
 const { about } = dict;
+/**
+ * Porträtfoto: liegt als src/assets/team/portrait.png vor (erzeugt mit
+ * scripts/make-portrait.py). Fehlt die Datei, erscheinen die Initialen.
+ */
+const photos = import.meta.glob<{ default: ImageMetadata }>(
+  '/src/assets/team/portrait.{png,jpg,jpeg,webp}',
+  {
+    eager: true,
+  },
+);
+const portrait = Object.values(photos)[0]?.default;
 const initials = site.owner
   .split(' ')
   .map((part) => part[0])
@@ -26,23 +39,48 @@ const initials = site.owner
 <BaseLayout lang={lang} page="about" {...about.seo}>
   <PageHero lang={lang} {...about.hero} current={dict.nav.about} />
 
-  <section class="container-site py-16" aria-labelledby="profile-title">
-    <div class="reveal glass grid gap-10 overflow-hidden p-8 sm:p-12 md:grid-cols-[auto_1fr] md:items-center">
-      <div
-        aria-hidden="true"
-        class="flex size-36 items-center justify-center rounded-full border border-gold/40 bg-gradient-to-br from-ink-700 to-ink-900 font-display text-5xl text-champagne shadow-[0_0_60px_-10px_rgb(201_164_92/0.5)] sm:size-44"
-      >
-        {initials}
+  <!--
+    Ansprechpartner – mobil zuerst:
+    Handy & Tablet: Foto oben mittig, Kopfzeilen zentriert, Text darunter (breite Textspalte)
+    Laptop (lg): Foto links, Text rechts · große Bildschirme (xl): größeres Foto, mehr Luft
+  -->
+  <section class="container-site py-12 sm:py-16" aria-labelledby="profile-title">
+    <div class="reveal glass grid items-center gap-8 p-6 sm:gap-10 sm:p-10 lg:grid-cols-[auto_1fr] lg:gap-14 lg:p-14 xl:gap-16">
+      <div class="portrait-glow relative mx-auto size-56 shrink-0 rounded-full sm:size-64 lg:size-72 xl:size-80">
+        {portrait ? (
+          <Image
+            src={portrait}
+            alt={`${site.ownerTitle} ${site.owner}`}
+            class="size-full rounded-full object-cover"
+            widths={[240, 320, 480, 640]}
+            sizes="(min-width: 1280px) 320px, (min-width: 1024px) 288px, (min-width: 640px) 256px, 224px"
+            loading="lazy"
+          />
+        ) : (
+          <div
+            aria-hidden="true"
+            class="flex size-full items-center justify-center rounded-full border border-gold/40 bg-gradient-to-br from-ink-700 to-ink-900 font-display text-6xl text-champagne"
+          >
+            {initials}
+          </div>
+        )}
       </div>
-      <div>
-        <p class="eyebrow">{about.profile.eyebrow}</p>
-        <h2 id="profile-title" class="mt-4 text-4xl font-medium">
-          {about.profile.title}
-        </h2>
-        <p class="mt-2 text-champagne">{about.profile.role}</p>
-        <p class="mt-6 max-w-2xl text-lg leading-relaxed whitespace-pre-line text-muted">
-          <RichText text={about.profile.bio} />
-        </p>
+
+      <div class="min-w-0">
+        <div class="text-center lg:text-left">
+          <p class="eyebrow justify-center lg:justify-start">{about.profile.eyebrow}</p>
+          <h2 id="profile-title" class="mt-4 text-3xl font-medium sm:text-4xl xl:text-5xl">
+            {about.profile.title}
+          </h2>
+          <p class="mt-2 text-champagne">{about.profile.role}</p>
+        </div>
+        <SmartJustify class="mx-auto mt-6 max-w-2xl space-y-3 text-base leading-relaxed text-muted sm:text-lg lg:mx-0 lg:mt-7">
+          {about.profile.bio.split('\n').map((line) => (
+            <p>
+              <RichText text={line} />
+            </p>
+          ))}
+        </SmartJustify>
       </div>
     </div>
   </section>

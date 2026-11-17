@@ -2,7 +2,7 @@
   "name": "nx24-website",
   "version": "1.0.0",
   "private": true,
-  "description": "Firmenwebsite NEXXCON-24 / Nexxus – Business & IT. Consulting GbR (Astro, statisch)",
+  "description": "Firmenwebsite NEXXCON-24 / Nexxus – Business & IT. Consulting (Astro, statisch)",
   "type": "module",
   "engines": {
     "node": ">=22.12.0"

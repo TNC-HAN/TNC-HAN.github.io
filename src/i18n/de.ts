@@ -462,21 +462,21 @@ export const de: Dictionary = {
 
   about: {
     seo: {
-      title: 'Über uns · NEXXCON-24 · Nexxus – Business & IT. Consulting GbR',
+      title: 'Über uns · NEXXCON-24 · Nexxus – Business & IT. Consulting',
       description:
-        'NEXXCON-24 ist die Beratungsmarke der Nexxus – Business & IT. Consulting GbR aus Laatzen bei Hannover: Unternehmensberatung, Immobilien-Investment und KI-Automation aus einer Hand.',
+        'NEXXCON-24 ist die Beratungsmarke von Nexxus – Business & IT. Consulting aus Laatzen bei Hannover: Unternehmensberatung, Immobilien-Investment und KI-Automation aus einer Hand.',
     },
     hero: {
       eyebrow: 'Über uns',
       title: 'Persönlich. Diskret. Unternehmerisch.',
-      lead: 'Hinter NEXXCON-24 steht die Nexxus – Business & IT. Consulting GbR mit Sitz in Laatzen bei Hannover. Wir verbinden Unternehmensberatung, Immobilienkompetenz und Technologie zu einer Beratung aus einer Hand.',
+      lead: 'Hinter NEXXCON-24 steht Nexxus – Business & IT. Consulting mit Sitz in Laatzen bei Hannover. Wir verbinden Unternehmensberatung, Immobilienkompetenz und Technologie zu einer Beratung aus einer Hand.',
     },
     profile: {
       eyebrow: 'Ihr Ansprechpartner',
       title: 'Dipl.-Imb. Ümit Törün',
       role: 'Gründer & Berater',
-      // Zeilenumbrüche (\n) werden auf der Seite als neue Zeile angezeigt.
-      bio: '73er Baujahr, Familienvater von 3 (mittlerweile) verheirateten Kindern, kreativer Querdenker, Ex!Banker, unermüdlicher Unternehmenslenker & Optimist ;-)\nMit mehr als 33 Jahren Know-how, Know-what & Erfahrung bringen wir Sie an Ihre Ziele …\nMit Herz, Verstand, Leib & Seele und viel Passion – aus der Praxis, für die Praxis.\nMehr über mich gerne in einem ersten Kennenlerngespräch 😊',
+      // \n = neuer Absatz. ­ = unsichtbare Trennstelle für sauberen Blocksatz bei langen Wörtern.
+      bio: '73er Baujahr, Familien­vater von 3 (mittler­weile) verheira­teten Kindern, kreativer Quer­denker, Ex!Banker, unermüd­licher Unter­nehmens­lenker & Optimist ;-)\nMit mehr als 33 Jahren Know-how, Know-what & Erfahrung bringen wir Sie an Ihre Ziele …\nMit Herz, Verstand, Leib & Seele und viel Passion – aus der Praxis, für die Praxis.\nMehr über mich gerne in einem ersten Kennen­lern­gespräch 😊',
     },
     values: {
       eyebrow: 'Werte',
@@ -539,7 +539,7 @@ export const de: Dictionary = {
   legal: {
     imprint: {
       title: 'Impressum · NEXXCON-24',
-      description: 'Impressum der Nexxus – Business & IT. Consulting GbR (NEXXCON-24).',
+      description: 'Impressum von Nexxus – Business & IT. Consulting (NEXXCON-24).',
     },
     privacy: {
       title: 'Datenschutzerklärung · NEXXCON-24',

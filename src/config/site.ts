@@ -7,11 +7,12 @@ export const site = {
   brand: 'NEXXCON-24',
   brandShort: 'NX.24',
   hashtag: '#nexxcon',
-  company: 'Nexxus – Business & IT. Consulting GbR',
+  company: 'Nexxus – Business & IT. Consulting',
+  /** Rechtsform: Einzelunternehmen mit einem alleinigen Inhaber. */
+  legalForm: 'Einzelunternehmen',
   owner: 'Ümit Törün',
   ownerTitle: 'Dipl.-Imb.',
-  /** Alle Gesellschafter der GbR (Pflichtangabe im Impressum). */
-  partners: ['Ümit Törün', '[WEITERE GESELLSCHAFTER DER GbR EINTRAGEN ODER ZEILE LÖSCHEN]'],
+  ownerRole: 'Founder & CEO',
 
   address: {
     street: '[STRASSE UND HAUSNUMMER]',
@@ -36,8 +37,6 @@ export const site = {
 
   legal: {
     vatId: '[USt-IdNr. EINTRAGEN ODER ZEILE LÖSCHEN]',
-    /** Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV */
-    responsible: 'Ümit Törün',
     /** Anbieter, der die Website ausliefert (für die Datenschutzerklärung). */
     host: 'GitHub Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA',
   },

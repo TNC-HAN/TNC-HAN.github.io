@@ -1,6 +1,6 @@
 # NEXXCON-24 – Website
 
-Firmenwebsite der **Nexxus – Business & IT. Consulting GbR** (Marke NEXXCON-24) in Deutsch, Englisch und Türkisch.
+Firmenwebsite von **Nexxus – Business & IT. Consulting** (Einzelunternehmen, Marke NEXXCON-24) in Deutsch, Englisch und Türkisch.
 Gebaut mit [Astro](https://astro.build), TypeScript und Tailwind CSS. Ergebnis ist eine rein statische Website –
 ohne Datenbank, ohne Cookies, ohne Tracking – die kostenlos auf GitHub Pages läuft.
 

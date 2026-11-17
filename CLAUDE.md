@@ -1,6 +1,6 @@
 # Regeln für Claude-Code-Sitzungen in diesem Projekt
 
-Website der Nexxus – Business & IT. Consulting GbR (Marke NEXXCON-24). Astro + TypeScript strict + Tailwind 4, statisch, DE/EN/TR.
+Website von Nexxus – Business & IT. Consulting (Einzelunternehmen, Inhaber Ümit Törün; Marke NEXXCON-24). Astro + TypeScript strict + Tailwind 4, statisch, DE/EN/TR.
 Inhaber: Ümit Törün – auf Deutsch antworten, einfache Sprache, Fachbegriffe kurz erklären.
 
 ## Wo was liegt

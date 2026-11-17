@@ -451,20 +451,20 @@ export const tr: Dictionary = {
 
   about: {
     seo: {
-      title: 'Hakkımızda · NEXXCON-24 · Nexxus – Business & IT. Consulting GbR',
+      title: 'Hakkımızda · NEXXCON-24 · Nexxus – Business & IT. Consulting',
       description:
-        'NEXXCON-24, Hannover yakınlarındaki Laatzen merkezli Nexxus – Business & IT. Consulting GbR’nin danışmanlık markasıdır: işletme danışmanlığı, gayrimenkul yatırımı ve yapay zekâ otomasyonu tek elden.',
+        'NEXXCON-24, Hannover yakınlarındaki Laatzen merkezli Nexxus – Business & IT. Consulting’in danışmanlık markasıdır: işletme danışmanlığı, gayrimenkul yatırımı ve yapay zekâ otomasyonu tek elden.',
     },
     hero: {
       eyebrow: 'Hakkımızda',
       title: 'Kişisel. Gizli. Girişimci.',
-      lead: 'NEXXCON-24’ün arkasında Hannover yakınlarındaki Laatzen merkezli Nexxus – Business & IT. Consulting GbR bulunur. İşletme danışmanlığını, gayrimenkul uzmanlığını ve teknolojiyi tek elden danışmanlıkta birleştiriyoruz.',
+      lead: 'NEXXCON-24’ün arkasında Hannover yakınlarındaki Laatzen merkezli Nexxus – Business & IT. Consulting bulunur. İşletme danışmanlığını, gayrimenkul uzmanlığını ve teknolojiyi tek elden danışmanlıkta birleştiriyoruz.',
     },
     profile: {
       eyebrow: 'Muhatabınız',
       title: 'Dipl.-Imb. Ümit Törün',
       role: 'Kurucu ve Danışman',
-      bio: '1973 doğumlu, (artık) evli 3 çocuk babası, yaratıcı ve sıra dışı düşünen, eski bankacı, yorulmak bilmeyen bir şirket yöneticisi ve iyimser ;-)\n33 yılı aşkın know-how, know-what ve deneyimle sizi hedeflerinize ulaştırıyoruz …\nKalben, aklen, bedenen ve ruhen, bolca tutkuyla – sahadan, saha için.\nHakkımda daha fazlasını ilk tanışma görüşmemizde memnuniyetle anlatırım 😊',
+      bio: '1973 doğumlu, (artık) evli 3 çocuk babası, yaratıcı ve sıra dışı düşünen, eski bankacı, yorul­mak bilme­yen bir şirket yöneti­cisi ve iyimser ;-)\n33 yılı aşkın know-how, know-what ve deneyimle sizi hedeflerinize ulaştırıyoruz …\nKalben, aklen, bedenen ve ruhen, bolca tutkuyla – sahadan, saha için.\nHakkımda daha fazlasını ilk tanışma görüşmemizde memnuniyetle anlatırım 😊',
     },
     values: {
       eyebrow: 'Değerler',
@@ -527,7 +527,7 @@ export const tr: Dictionary = {
   legal: {
     imprint: {
       title: 'Künye (Impressum) · NEXXCON-24',
-      description: 'Nexxus – Business & IT. Consulting GbR (NEXXCON-24) künyesi.',
+      description: 'Nexxus – Business & IT. Consulting (NEXXCON-24) künyesi.',
     },
     privacy: {
       title: 'Gizlilik politikası · NEXXCON-24',

@@ -1,0 +1,61 @@
+---
+/**
+ * Blocksatz mit Lücken-Wächter: Alle Absätze stehen im Blocksatz. Ein kleines
+ * Skript misst die Wortabstände; wird irgendwo eine Lücke größer als MAX_GAP × normal,
+ * wird der ganze Block linksbündig gesetzt. Läuft bei jeder Größenänderung neu.
+ * Ohne JavaScript bleibt der Blocksatz (mit CSS-Fallback für sehr schmale Spalten).
+ */
+interface Props {
+  class?: string;
+}
+const { class: className } = Astro.props;
+---
+
+<div class:list={['smart-justify', className]} data-smart-justify>
+  <slot />
+</div>
+
+<script>
+  // Maximal erlaubte Wortlücke im Verhältnis zum normalen Leerzeichen (3 ≈ eine knappe
+  // Buchstabenbreite). Kleiner = strenger (schneller linksbündig), größer = toleranter.
+  const MAX_GAP = 3;
+
+  function hasLargeGaps(p: HTMLElement): boolean {
+    p.classList.remove('is-ragged');
+    const normal = parseFloat(getComputedStyle(p).fontSize) * 0.28;
+    const walker = document.createTreeWalker(p, NodeFilter.SHOW_TEXT);
+    const range = document.createRange();
+    for (let node = walker.nextNode(); node; node = walker.nextNode()) {
+      const text = node.textContent ?? '';
+      for (let i = 0; i < text.length; i++) {
+        if (text[i] !== ' ') continue;
+        range.setStart(node, i);
+        range.setEnd(node, i + 1);
+        const rects = range.getClientRects();
+        // Leerzeichen am Zeilenende haben keine sichtbare Breite → ignorieren
+        if (rects.length === 1 && rects[0]!.width > normal * MAX_GAP) return true;
+      }
+    }
+    return false;
+  }
+
+  // Einheitliches Schriftbild: Hat ein Absatz zu große Lücken, wird der ganze Block linksbündig.
+  function check(root: HTMLElement) {
+    const paragraphs = [...root.querySelectorAll<HTMLElement>(':scope > *')];
+    const ragged = paragraphs.some(hasLargeGaps);
+    paragraphs.forEach((p) => p.classList.toggle('is-ragged', ragged));
+  }
+
+  document.querySelectorAll<HTMLElement>('[data-smart-justify]').forEach((root) => {
+    let frame = 0;
+    let lastWidth = 0;
+    new ResizeObserver(([entry]) => {
+      const width = Math.round(entry?.contentRect.width ?? 0);
+      if (width === lastWidth) return;
+      lastWidth = width;
+      cancelAnimationFrame(frame);
+      frame = requestAnimationFrame(() => check(root));
+    }).observe(root);
+    document.fonts?.ready.then(() => check(root));
+  });
+</script>

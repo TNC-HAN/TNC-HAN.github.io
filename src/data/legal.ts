@@ -14,18 +14,25 @@ export interface LegalSection {
 
 const a = site.address;
 const fullAddress = `${a.street}, ${a.zip} ${a.city}, ${a.country}`;
+/** z. B. „Dipl.-Imb. Ümit Törün (Founder & CEO)“ */
+const ownerFull = `${site.ownerTitle} ${site.owner} (${site.ownerRole})`;
 
 export const imprint: { title: string; sections: LegalSection[] } = {
   title: 'Impressum',
   sections: [
     {
       heading: 'Angaben gemäß § 5 DDG',
-      paragraphs: [site.company, a.street, `${a.zip} ${a.city}`, a.country],
+      paragraphs: [
+        ownerFull,
+        `${site.company} (${site.legalForm})`,
+        a.street,
+        `${a.zip} ${a.city}`,
+        a.country,
+      ],
     },
     {
-      heading: 'Vertreten durch die Gesellschafter',
-      paragraphs: [],
-      list: [...site.partners],
+      heading: 'Inhaber',
+      paragraphs: [`Alleiniger Inhaber und Verfügungsberechtigter: ${ownerFull}`],
     },
     {
       heading: 'Kontakt',
@@ -37,7 +44,7 @@ export const imprint: { title: string; sections: LegalSection[] } = {
     },
     {
       heading: 'Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV',
-      paragraphs: [`${site.legal.responsible}, ${fullAddress}`],
+      paragraphs: [`${ownerFull}, ${fullAddress}`],
     },
     {
       heading: 'Verbraucherstreitbeilegung',
@@ -72,7 +79,7 @@ export const privacy: { title: string; sections: LegalSection[] } = {
     {
       heading: '1. Verantwortlicher',
       paragraphs: [
-        `${site.company}, ${fullAddress}`,
+        `${ownerFull}, ${site.company} (${site.legalForm}), ${fullAddress}`,
         `Telefon: ${site.contact.phoneDisplay} · E-Mail: ${site.contact.email}`,
       ],
     },

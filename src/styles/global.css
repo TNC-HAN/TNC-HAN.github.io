@@ -222,8 +222,76 @@
   }
 }
 
+/* ---------- Porträt mit leuchtendem Goldrahmen ---------- */
+@layer components {
+  .portrait-glow {
+    /* Mehrstufiger, nach außen abstrahlender Goldschein */
+    box-shadow:
+      0 0 0 1px rgb(230 211 168 / 0.35),
+      0 0 18px 2px rgb(240 223 180 / 0.45),
+      0 0 50px 6px rgb(201 164 92 / 0.35),
+      0 0 120px 20px rgb(201 164 92 / 0.18);
+  }
+  .portrait-glow::after {
+    /* weicher Lichthof hinter dem Foto */
+    content: '';
+    position: absolute;
+    inset: -12%;
+    z-index: -1;
+    border-radius: 9999px;
+    background: radial-gradient(closest-side, rgb(201 164 92 / 0.28), transparent 72%);
+  }
+
+  /*
+   * Blocksatz mit Silbentrennung. Wird die Zeile zu schmal (große Wortlücken),
+   * schaltet der Text automatisch auf linksbündig um (Container-Abfrage).
+   */
+  .smart-justify {
+    container-type: inline-size;
+  }
+  .smart-justify > * {
+    text-align: justify;
+    text-align-last: left;
+    hyphens: auto;
+    -webkit-hyphens: auto;
+    hyphenate-limit-chars: 6 3 2;
+    word-spacing: -0.01em;
+  }
+  /* Sehr schmale Spalte oder vom Skript als „zu große Lücken“ erkannt → linksbündig */
+  @container (max-width: 16rem) {
+    .smart-justify > * {
+      text-align: left;
+    }
+  }
+  .smart-justify > .is-ragged {
+    text-align: left;
+  }
+  /* Browser ohne Silbentrennung: Blocksatz erst bei breiteren Zeilen */
+  @supports not ((hyphens: auto) or (-webkit-hyphens: auto)) {
+    @container (max-width: 34rem) {
+      .smart-justify > * {
+        text-align: left;
+      }
+    }
+  }
+}
+
+@keyframes glow-pulse {
+  0%,
+  100% {
+    filter: drop-shadow(0 0 0 rgb(201 164 92 / 0));
+  }
+  50% {
+    filter: drop-shadow(0 0 14px rgb(240 223 180 / 0.35));
+  }
+}
+
 /* ---------- Bewegung: nur wenn erwünscht ---------- */
 @media (prefers-reduced-motion: no-preference) {
+  .portrait-glow {
+    animation: glow-pulse 6s ease-in-out infinite;
+  }
+
   @supports (animation-timeline: view()) {
     /* Einblenden beim Scrollen – reines CSS, kein JavaScript */
     .reveal {
