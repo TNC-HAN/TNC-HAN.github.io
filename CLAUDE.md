@@ -3,6 +3,11 @@
 Website von Nexxus – Business & IT. Consulting (Einzelunternehmen, Inhaber Ümit Törün; Marke NEXXCON-24). Astro + TypeScript strict + Tailwind 4, statisch, DE/EN/TR.
 Inhaber: Ümit Törün – auf Deutsch antworten, einfache Sprache, Fachbegriffe kurz erklären.
 
+## Live
+
+- Website: https://tnc-han.github.io/ · Repository: https://github.com/TNC-HAN/TNC-HAN.github.io
+- Jeder Push auf `main` veröffentlicht automatisch (GitHub Actions → GitHub Pages). Push nur nach Ja des Inhabers.
+
 ## Wo was liegt
 
 - Firmendaten/Kontakt: `src/config/site.ts` · Seiten & URLs: `src/config/routes.ts`
