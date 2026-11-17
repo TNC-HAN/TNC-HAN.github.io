@@ -32,11 +32,12 @@ export const site = {
      * Link zur Online-Terminbuchung (z. B. Calendly, Microsoft Bookings).
      * Leer lassen, solange es keinen gibt – dann erscheint ein Hinweis.
      */
-    bookingUrl: '',
+    bookingUrl: 'https://calendly.com/uemit-t-aka-nexxcon24',
   },
 
   legal: {
-    vatId: '[USt-IdNr. EINTRAGEN ODER ZEILE LÖSCHEN]',
+    /** Wird im Impressum genau so angezeigt; später durch die Nummer ersetzen. */
+    vatId: 'USt.-Id. folgt ...',
     /** Anbieter, der die Website ausliefert (für die Datenschutzerklärung). */
     host: 'GitHub Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA',
   },

@@ -40,7 +40,7 @@ export const imprint: { title: string; sections: LegalSection[] } = {
     },
     {
       heading: 'Umsatzsteuer-Identifikationsnummer',
-      paragraphs: [`Gemäß § 27a Umsatzsteuergesetz: ${site.legal.vatId}`],
+      paragraphs: [site.legal.vatId],
     },
     {
       heading: 'Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV',
@@ -111,7 +111,14 @@ export const privacy: { title: string; sections: LegalSection[] } = {
       ],
     },
     {
-      heading: '6. Ihre Rechte',
+      heading: '6. Online-Terminbuchung über Calendly',
+      paragraphs: [
+        'Für die Terminbuchung verlinken wir auf den Dienst Calendly (Calendly LLC, 115 E Main St, Ste A1B, Buford, GA 30518, USA). Erst wenn Sie den Link anklicken, wird die Seite von Calendly geöffnet; vorher werden keine Daten an Calendly übertragen. Bei der Buchung verarbeitet Calendly die von Ihnen eingegebenen Daten (z. B. Name, E-Mail-Adresse, Wunschtermin) nach eigenen Bestimmungen, auch in den USA. Alternativ erreichen Sie uns jederzeit per Telefon oder E-Mail.',
+        'Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO (Anbahnung eines Vertrags) sowie Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an einer einfachen Terminvereinbarung). [PRÜFEN: Anschrift von Calendly und Grundlage der US-Übermittlung]',
+      ],
+    },
+    {
+      heading: '7. Ihre Rechte',
       paragraphs: ['Sie haben im Rahmen der gesetzlichen Vorgaben jederzeit das Recht auf:'],
       list: [
         'Auskunft über Ihre gespeicherten Daten (Art. 15 DSGVO)',
@@ -124,14 +131,14 @@ export const privacy: { title: string; sections: LegalSection[] } = {
       ],
     },
     {
-      heading: '7. Zuständige Aufsichtsbehörde',
+      heading: '8. Zuständige Aufsichtsbehörde',
       paragraphs: [
         'Die Landesbeauftragte für den Datenschutz Niedersachsen, Prinzenstraße 5, 30159 Hannover.',
       ],
     },
     {
-      heading: '8. Stand',
-      paragraphs: ['Diese Datenschutzerklärung hat den Stand [MONAT JAHR].'],
+      heading: '9. Stand',
+      paragraphs: ['Diese Datenschutzerklärung hat den Stand November 2026.'],
     },
   ],
 };
