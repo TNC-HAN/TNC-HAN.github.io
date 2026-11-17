@@ -1,15 +1,17 @@
 ---
 /**
- * Mitlaufende Kontaktleiste rechts (auf jeder Seite):
- * WhatsApp · Telefon · E-Mail · Calendly – darunter ein rotes X zum Ausblenden.
- * - Erscheint nach kurzem Scrollen und schwebt sanft mit.
- * - Ausgeblendet bleibt sie für diese Sitzung; ein kleiner Reiter holt sie zurück.
+ * Mitlaufende Kontaktleiste rechts oben (auf jeder Seite):
+ * WhatsApp (grün) · Telefon (türkis) · E-Mail (blau) · Termin (orange) – darunter ein rotes X.
+ * - Sitzt im oberen Drittel (dort, wo das Auge zuerst hinschaut) und folgt dem Scrollen
+ *   mit einer weichen, federnden Verzögerung.
+ * - X: Leiste gleitet animiert nach oben weg; oben rechts bleibt ein kleiner Kontakt-Kreis,
+ *   der sie wieder herunterholt. Zustand gilt für die laufende Sitzung.
  * - Telefon/E-Mail nutzen das Programm-Auswahlfenster (ContactLauncher, data-launch).
+ * - Farben: alle Kreise im gleichen 3D-Stil; Töne harmonieren mit dem Nebel-Hintergrund.
  */
-import { siCalendly } from 'simple-icons';
 import Icon from '@/components/ui/Icon.astro';
 import WhatsAppIcon3D from '@/components/ui/WhatsAppIcon3D.astro';
-import type { Lang } from '@/config/routes';
+import { href, type Lang } from '@/config/routes';
 import { site, whatsappUrl } from '@/config/site';
 import { t } from '@/i18n';
 
@@ -19,71 +21,78 @@ interface Props {
 const { lang } = Astro.props;
 const dict = t(lang);
 const d = dict.dock;
+const bookingUrl = site.contact.bookingUrl || href('contact', lang);
+const bookingExternal = Boolean(site.contact.bookingUrl);
 ---
 
 <aside class="contact-dock" data-dock aria-label={d.label}>
-  <ul class="dock-panel">
-    <li>
-      <a
-        href={whatsappUrl(dict.common.whatsappMessage)}
-        target="_blank"
-        rel="noopener"
-        class="dock-btn !border-0 !bg-transparent !p-0"
-        aria-label={d.whatsapp}
-        title={d.whatsapp}
-      >
-        <WhatsAppIcon3D class="size-11" />
-      </a>
-    </li>
-    <li>
-      <a
-        href={`tel:${site.contact.phoneIntl}`}
-        data-launch="phone"
-        class="dock-btn"
-        aria-label={d.call}
-        title={d.call}
-      >
-        <Icon name="phone" class="size-5" />
-      </a>
-    </li>
-    <li>
-      <a
-        href={`mailto:${site.contact.email}?subject=${encodeURIComponent(dict.launcher.emailSubject)}`}
-        data-launch="email"
-        class="dock-btn"
-        aria-label={d.mail}
-        title={d.mail}
-      >
-        <Icon name="mail" class="size-5" />
-      </a>
-    </li>
-    {site.contact.bookingUrl && (
+  <div class="dock-follow" data-dock-follow>
+    <ul class="dock-panel">
       <li>
         <a
-          href={site.contact.bookingUrl}
+          href={whatsappUrl(dict.common.whatsappMessage)}
           target="_blank"
           rel="noopener"
-          class="dock-btn dock-calendly"
-          aria-label={d.booking}
-          title={d.booking}
+          class="dock-link"
+          aria-label={d.whatsapp}
+          title={d.whatsapp}
         >
-          <svg viewBox="0 0 24 24" class="size-5" aria-hidden="true">
-            <path d={siCalendly.path} fill="currentColor" />
-          </svg>
+          <WhatsAppIcon3D class="size-11" />
         </a>
       </li>
-    )}
-    <li class="mt-1 border-t border-white/10 pt-2">
-      <button type="button" data-dock-close class="dock-close" aria-label={d.hide} title={d.hide}>
-        <Icon name="close" class="size-4" />
-      </button>
-    </li>
-  </ul>
+      <li>
+        <a
+          href={`tel:${site.contact.phoneIntl}`}
+          data-launch="phone"
+          class="dock-link"
+          aria-label={d.call}
+          title={d.call}
+        >
+          <span class="orb orb-phone">
+            <Icon name="phone" class="orb-icon" />
+          </span>
+        </a>
+      </li>
+      <li>
+        <a
+          href={`mailto:${site.contact.email}?subject=${encodeURIComponent(dict.launcher.emailSubject)}`}
+          data-launch="email"
+          class="dock-link"
+          aria-label={d.mail}
+          title={d.mail}
+        >
+          <span class="orb orb-mail">
+            <Icon name="mail" class="orb-icon" />
+          </span>
+        </a>
+      </li>
+      <li>
+        <a
+          href={bookingUrl}
+          class="dock-link"
+          aria-label={d.booking}
+          title={d.booking}
+          {...(bookingExternal ? { target: '_blank', rel: 'noopener' } : {})}
+        >
+          <span class="orb orb-calendar">
+            <Icon name="calendar" class="orb-icon" />
+          </span>
+        </a>
+      </li>
+      <li class="mt-1 border-t border-white/10 pt-2">
+        <button type="button" data-dock-close class="dock-close" aria-label={d.hide} title={d.hide}>
+          <Icon name="close" class="size-4" />
+        </button>
+      </li>
+    </ul>
+  </div>
 </aside>
 
+<!-- Kleiner Kontakt-Kreis oben rechts, solange die Leiste ausgeblendet ist -->
 <button type="button" data-dock-open class="dock-reopen" aria-label={d.show} title={d.show} hidden>
-  <Icon name="chat" class="size-4" />
-  <span class="sr-only">{d.show}</span>
+  <span class="orb orb-contact">
+    <Icon name="chat" class="orb-icon" />
+  </span>
 </button>
 
 <style>
@@ -92,9 +101,9 @@ const d = dict.dock;
   .contact-dock {
     position: fixed;
     right: 0.75rem;
-    top: 50%;
+    top: clamp(6rem, 20vh, 11rem);
     z-index: 60;
-    transform: translate(calc(100% + 1.5rem), -50%);
+    transform: translateX(calc(100% + 1.5rem));
     opacity: 0;
     pointer-events: none;
     transition:
@@ -102,55 +111,187 @@ const d = dict.dock;
       opacity 0.5s ease;
   }
   .contact-dock.is-visible {
-    transform: translate(0, -50%);
+    transform: none;
     opacity: 1;
     pointer-events: auto;
   }
+  /* Schließen: gleitet nach oben aus dem Bild */
+  .contact-dock.is-closing {
+    transform: translateY(calc(-100% - 12rem));
+    opacity: 0;
+    pointer-events: none;
+    transition:
+      transform 0.65s cubic-bezier(0.6, 0, 0.8, 0.2),
+      opacity 0.55s ease 0.1s;
+  }
+  /* Wieder öffnen: kommt von oben herunter */
+  .contact-dock.is-opening {
+    animation: dock-drop 0.75s cubic-bezier(0.2, 0.9, 0.25, 1.15);
+  }
+  @keyframes dock-drop {
+    from {
+      transform: translateY(calc(-100% - 12rem));
+      opacity: 0;
+    }
+    to {
+      transform: none;
+      opacity: 1;
+    }
+  }
+
+  .dock-follow {
+    will-change: transform;
+  }
   .dock-panel {
-    @apply flex flex-col items-center gap-2 rounded-full border border-white/12 bg-ink-900/75 p-2 shadow-2xl backdrop-blur-xl;
+    @apply flex flex-col items-center gap-2.5 rounded-full border border-white/12 bg-ink-900/70 p-2 backdrop-blur-xl;
     box-shadow:
       0 20px 40px -12px rgb(0 0 0 / 0.7),
       0 0 30px -8px rgb(123 63 228 / 0.45);
   }
-  .dock-btn {
-    @apply flex size-11 items-center justify-center rounded-full border border-gold/30 bg-gold/10 text-champagne transition duration-300;
+  .dock-link {
+    @apply block rounded-full transition duration-300;
   }
-  .dock-btn:hover,
-  .dock-btn:focus-visible {
-    @apply scale-110 border-champagne/70 bg-gold/20 text-white;
-  }
-  .dock-calendly {
-    @apply border-[#006bff]/50 bg-[#006bff]/15 text-[#7fb2ff];
-  }
-  .dock-close {
-    @apply flex size-9 items-center justify-center rounded-full bg-red-600 text-white shadow-lg transition hover:scale-110 hover:bg-red-500;
-    box-shadow: 0 0 14px rgb(220 38 38 / 0.55);
-  }
-  .dock-reopen {
-    @apply fixed right-0 bottom-24 z-60 flex h-12 w-9 items-center justify-center rounded-l-xl border border-r-0 border-white/12 bg-ink-900/85 text-champagne shadow-xl backdrop-blur-xl transition hover:w-11;
+  .dock-link:hover,
+  .dock-link:focus-visible {
+    transform: scale(1.12);
   }
 
+  /* Einheitliche 3D-Kugeln: Licht oben links, satte Mitte, dunkler Rand, Glanzkuppe */
+  .orb {
+    position: relative;
+    display: flex;
+    width: 2.75rem;
+    height: 2.75rem;
+    align-items: center;
+    justify-content: center;
+    border-radius: 9999px;
+    color: #fff;
+    background: radial-gradient(circle at 32% 26%, var(--hi) 0%, var(--mid) 45%, var(--lo) 100%);
+    box-shadow:
+      inset 0 2px 2px rgb(255 255 255 / 0.5),
+      inset 0 -4px 6px rgb(0 0 0 / 0.35),
+      0 6px 12px -2px rgb(0 0 0 / 0.6),
+      0 0 16px var(--glow);
+  }
+  .orb::before {
+    content: '';
+    position: absolute;
+    top: 6%;
+    left: 16%;
+    width: 68%;
+    height: 42%;
+    border-radius: 9999px;
+    background: linear-gradient(180deg, rgb(255 255 255 / 0.6), rgb(255 255 255 / 0));
+    pointer-events: none;
+  }
+  .orb-icon {
+    position: relative;
+    width: 1.25rem;
+    height: 1.25rem;
+    stroke-width: 2;
+    filter: drop-shadow(0 1px 1px rgb(0 0 0 / 0.45));
+  }
+  /* Telefon: Türkis – frisch, klar abgesetzt vom WhatsApp-Grün */
+  .orb-phone {
+    --hi: #a7f3e4;
+    --mid: #14b8a6;
+    --lo: #0b5d57;
+    --glow: rgb(20 184 166 / 0.45);
+  }
+  /* E-Mail: Markenblau – passt zum Nebel und zum Logo */
+  .orb-mail {
+    --hi: #b9d3ff;
+    --mid: #3b7ddd;
+    --lo: #1b3f86;
+    --glow: rgb(59 125 221 / 0.5);
+  }
+  /* Termin: warmes Orange – nah am Gold-Akzent, setzt den Handlungsimpuls */
+  .orb-calendar {
+    --hi: #ffd9a8;
+    --mid: #f08a24;
+    --lo: #9a4a0c;
+    --glow: rgb(240 138 36 / 0.45);
+  }
+  /* Kontakt-Kreis zum Wiederöffnen: Champagner-Gold */
+  .orb-contact {
+    --hi: #fff1cf;
+    --mid: #c9a45c;
+    --lo: #6f5222;
+    --glow: rgb(201 164 92 / 0.55);
+  }
+
+  .dock-close {
+    @apply flex size-9 items-center justify-center rounded-full bg-red-600 text-white transition hover:scale-110 hover:bg-red-500;
+    box-shadow:
+      inset 0 2px 2px rgb(255 255 255 / 0.35),
+      0 0 14px rgb(220 38 38 / 0.55);
+  }
+
+  .dock-reopen {
+    position: fixed;
+    right: 0.9rem;
+    top: 5.25rem;
+    z-index: 60;
+    border-radius: 9999px;
+    transition: transform 0.3s ease;
+  }
+  .dock-reopen:hover,
+  .dock-reopen:focus-visible {
+    transform: scale(1.1);
+  }
+  .dock-reopen:not([hidden]) {
+    animation: reopen-in 0.5s cubic-bezier(0.2, 0.9, 0.25, 1.2) 0.35s both;
+  }
+  @keyframes reopen-in {
+    from {
+      transform: translateY(-1.5rem) scale(0.4);
+      opacity: 0;
+    }
+    to {
+      transform: none;
+      opacity: 1;
+    }
+  }
+  @media (min-width: 1024px) {
+    .dock-reopen {
+      top: 6.25rem;
+    }
+  }
   @media (prefers-reduced-motion: no-preference) {
-    .contact-dock.is-visible .dock-panel {
-      animation: dock-float 6s ease-in-out infinite;
+    /* sanftes Pulsieren, damit der Kreis auffällt */
+    .dock-reopen .orb-contact::after {
+      content: '';
+      position: absolute;
+      inset: -4px;
+      border-radius: 9999px;
+      border: 2px solid rgb(230 211 168 / 0.6);
+      animation: reopen-pulse 2.4s ease-out infinite;
     }
   }
-  @keyframes dock-float {
-    0%,
-    100% {
-      transform: translateY(0);
+  @keyframes reopen-pulse {
+    from {
+      transform: scale(1);
+      opacity: 0.8;
     }
-    50% {
-      transform: translateY(-10px);
+    to {
+      transform: scale(1.6);
+      opacity: 0;
     }
   }
-  /* Kleine Bildschirme: etwas kompakter und näher am Rand */
   @media (max-width: 480px) {
     .contact-dock {
       right: 0.4rem;
     }
-    .dock-btn {
-      @apply size-10;
+    .orb {
+      width: 2.5rem;
+      height: 2.5rem;
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .contact-dock.is-closing,
+    .contact-dock.is-opening {
+      transition: none;
+      animation: none;
     }
   }
 </style>
@@ -158,32 +299,78 @@ const d = dict.dock;
 <script>
   const KEY = 'nx-dock-hidden';
   const dock = document.querySelector<HTMLElement>('[data-dock]');
+  const follow = document.querySelector<HTMLElement>('[data-dock-follow]');
   const reopen = document.querySelector<HTMLButtonElement>('[data-dock-open]');
-  if (dock && reopen) {
+  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  if (dock && follow && reopen) {
     let hidden = false;
     try {
       hidden = sessionStorage.getItem(KEY) === '1';
     } catch {
       /* ohne Speicher: Leiste bleibt sichtbar */
     }
-    const update = () => {
-      const scrolled = window.scrollY > 240;
-      dock.classList.toggle('is-visible', !hidden && scrolled);
-      reopen.hidden = !hidden;
-    };
-    const setHidden = (value: boolean) => {
-      hidden = value;
+    const save = () => {
       try {
-        if (value) sessionStorage.setItem(KEY, '1');
+        if (hidden) sessionStorage.setItem(KEY, '1');
         else sessionStorage.removeItem(KEY);
       } catch {
         /* ignorieren */
       }
+    };
+
+    const update = () => {
+      if (hidden) return;
+      dock.classList.toggle('is-visible', window.scrollY > 160);
+    };
+
+    // Weiches Mitlaufen: beim Scrollen bleibt die Leiste kurz zurück und federt nach.
+    let offset = 0;
+    let lastY = window.scrollY;
+    let raf = 0;
+    const animate = () => {
+      offset *= 0.86;
+      follow.style.transform = `translateY(${offset.toFixed(2)}px)`;
+      raf = Math.abs(offset) > 0.3 ? requestAnimationFrame(animate) : 0;
+      if (!raf) follow.style.transform = '';
+    };
+    const onScroll = () => {
+      const y = window.scrollY;
+      if (!reduced && !hidden) {
+        offset = Math.max(-28, Math.min(28, offset - (y - lastY) * 0.35));
+        if (!raf) raf = requestAnimationFrame(animate);
+      }
+      lastY = y;
       update();
     };
-    dock.querySelector('[data-dock-close]')?.addEventListener('click', () => setHidden(true));
-    reopen.addEventListener('click', () => setHidden(false));
-    window.addEventListener('scroll', update, { passive: true });
+
+    const close = () => {
+      hidden = true;
+      save();
+      dock.classList.remove('is-opening');
+      dock.classList.add('is-closing');
+      window.setTimeout(
+        () => {
+          dock.classList.remove('is-visible', 'is-closing');
+          reopen.hidden = false;
+          reopen.focus({ preventScroll: true });
+        },
+        reduced ? 0 : 650,
+      );
+    };
+    const open = () => {
+      hidden = false;
+      save();
+      reopen.hidden = true;
+      dock.classList.add('is-visible', 'is-opening');
+      window.setTimeout(() => dock.classList.remove('is-opening'), 800);
+      dock.querySelector<HTMLElement>('a')?.focus({ preventScroll: true });
+    };
+
+    dock.querySelector('[data-dock-close]')?.addEventListener('click', close);
+    reopen.addEventListener('click', open);
+    window.addEventListener('scroll', onScroll, { passive: true });
+    reopen.hidden = !hidden;
     update();
   }
 </script>
