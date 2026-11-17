@@ -17,7 +17,7 @@ import tailwindcss from '@tailwindcss/vite';
  * Alternativ per Umgebungsvariable SITE_URL / BASE_PATH (z. B. im
  * GitHub-Actions-Workflow) – dann bleibt diese Datei unverändert.
  * ============================================================ */
-const SITE_URL = process.env.SITE_URL ?? 'https://nexxcon24.github.io';
+const SITE_URL = process.env.SITE_URL ?? 'https://tnc-han.github.io';
 const BASE_PATH = process.env.BASE_PATH ?? '/';
 
 export default defineConfig({
