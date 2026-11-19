@@ -3,8 +3,7 @@ import type { ExtraContent } from './types';
 /** Extended content – English. Order matches src/config/content.ts. */
 export const enContent: ExtraContent = {
   photoAlt: {
-    dachCollage:
-      'Collage of Munich with the Frauenkirche, Vienna’s Belvedere Palace and Zurich’s Grossmünster on Lake Zurich',
+    dachCollage: 'Selected properties in Germany, Austria and Switzerland',
     istanbulNacht: 'Istanbul at night with the illuminated Bosphorus Bridge',
     nzKyreniaHafen:
       'Old harbour of Kyrenia (Girne) with castle and the Beşparmak mountains, Northern Cyprus',
@@ -12,7 +11,17 @@ export const enContent: ExtraContent = {
     nzKyreniaBurg: 'Kyrenia (Girne) Castle by the harbour, Northern Cyprus',
     nzStrand: 'Sandy beach and turquoise sea in Northern Cyprus',
     nzHuegel: 'Green hills with sea view in Northern Cyprus',
-    nzFamagusta: 'Lala Mustafa Pasha Mosque in the old town of Famagusta (Gazimağusa)',
+    nzKyreniaBaum:
+      'View beneath trees over Kyrenia (Girne) harbour and the mountains, Northern Cyprus',
+    dachDeAltbauvilla: 'Wilhelminian-era villa with stucco façade and bay window in Germany',
+    dachDeMuenchen: 'Prestigious period building with stucco façade in Munich',
+    dachDeHamburg: 'Modern residential tower with curved balconies in Hamburg’s HafenCity',
+    dachAtWien: 'Elegant period buildings with bay windows and balconies in Vienna',
+    dachAtAlpenvilla: 'Historic Alpine villa with wooden balconies in Austria',
+    dachAtVillaBerge: 'Villa with garden and mountain panorama in Austria',
+    dachChZuerich: 'Stylish Zurich period building with mansard roof and roof garden',
+    dachChModern: 'Modern apartment building with large windows in Switzerland',
+    dachChVilla: 'Villa in front of snow-capped Alpine peaks in Switzerland',
     nzMeerblick: 'Sea view from the harbour wall in Kyrenia (Girne)',
     nzTuerkis: 'Turquoise bay with breakwater on the coast of Northern Cyprus',
     noyanlarPool:

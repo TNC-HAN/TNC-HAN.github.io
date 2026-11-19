@@ -23,6 +23,17 @@ const dict = t(lang);
 const slides = bannerSlides.map((s, i) => ({ ...s, ...dict.banner.slides[i]! }));
 /** Anzeigedauer je Galeriebild (Folien mit `gallery` bleiben entsprechend länger stehen) */
 const GALLERY_STEP = 3200;
+/** Länderbeschriftung der dreigeteilten Folie (D · A · CH) */
+const panelLabels: Record<Lang, string[]> = {
+  de: ['Deutschland', 'Österreich', 'Schweiz'],
+  en: ['Germany', 'Austria', 'Switzerland'],
+  tr: ['Almanya', 'Avusturya', 'İsviçre'],
+};
+const durationOf = (s: (typeof slides)[number]) => {
+  if (s.panels) return Math.max(...s.panels.map((p) => p.length)) * GALLERY_STEP + 1500;
+  if (s.gallery) return s.gallery.length * GALLERY_STEP;
+  return undefined;
+};
 ---
 
 <section
@@ -40,7 +51,7 @@ const GALLERY_STEP = 3200;
         aria-roledescription="slide"
         aria-label={`${i + 1} / ${slides.length}`}
         aria-hidden={i === 0 ? undefined : 'true'}
-        data-duration={s.gallery ? s.gallery.length * GALLERY_STEP : undefined}
+        data-duration={durationOf(s)}
       >
         <a
           href={href(s.page, lang, s.hash ? `#${s.hash}` : '')}
@@ -52,13 +63,41 @@ const GALLERY_STEP = 3200;
             <div class="banner-img size-full">
               <AgenticGraphic label={`${s.kicker}: ${s.title}`} />
             </div>
+          ) : s.panels ? (
+            <div class="banner-img grid size-full grid-cols-3 gap-1 bg-champagne/60">
+              {s.panels.map((panel, p) => (
+                <div
+                  class="gallery relative overflow-hidden"
+                  data-gallery
+                  data-step={GALLERY_STEP}
+                  data-offset={p * 500}
+                >
+                  {panel.map((g, k) => (
+                    <Image
+                      src={photos[g]}
+                      alt={dict.photoAlt[g]}
+                      class:list={[
+                        'gallery-img absolute inset-0 size-full object-cover',
+                        k === 0 && 'is-on',
+                      ]}
+                      widths={[400, 640, 1000]}
+                      sizes="34vw"
+                      loading="lazy"
+                    />
+                  ))}
+                </div>
+              ))}
+            </div>
           ) : s.gallery ? (
             <div class="banner-img gallery size-full" data-gallery data-step={GALLERY_STEP}>
               {s.gallery.map((g, k) => (
                 <Image
                   src={photos[g]}
                   alt={dict.photoAlt[g]}
-                  class:list={['gallery-img absolute inset-0 size-full object-cover', k === 0 && 'is-on']}
+                  class:list={[
+                    'gallery-img absolute inset-0 size-full object-cover',
+                    k === 0 && 'is-on',
+                  ]}
                   widths={[640, 1024, 1600]}
                   sizes="100vw"
                   loading="lazy"
@@ -87,6 +126,17 @@ const GALLERY_STEP = 3200;
             <div class="pointer-events-none absolute inset-0 bg-gradient-to-r from-[#04030c]/92 via-[#04030c]/60 to-[#04030c]/10" />
             <div class="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#04030c] via-transparent to-[#04030c]/40" />
           </Fragment>
+        )}
+        {s.panels && (
+          <div class="pointer-events-none absolute inset-0 grid grid-cols-3" aria-hidden="true">
+            {s.panels.map((_, p) => (
+              <div class="relative">
+                <span class="absolute right-2 bottom-[4.5rem] rounded-full border border-champagne/50 bg-black/55 px-2.5 py-1 text-[10px] font-semibold tracking-[0.16em] text-champagne uppercase backdrop-blur sm:right-4 sm:px-3 sm:text-xs">
+                  {panelLabels[lang][p]}
+                </span>
+              </div>
+            ))}
+          </div>
         )}
         <div
           class:list={[
@@ -252,28 +302,41 @@ const GALLERY_STEP = 3200;
     dots.forEach((d, i) => d.style.setProperty('--banner-interval', `${durationOf(i)}ms`));
 
     // Diashow innerhalb einer Folie (z. B. Nordzypern)
-    let galleryTimer: number | undefined;
+    let galleryTimers: number[] = [];
     const runGallery = () => {
-      window.clearInterval(galleryTimer);
+      galleryTimers.forEach((t) => {
+        window.clearInterval(t);
+        window.clearTimeout(t);
+      });
+      galleryTimers = [];
       slides.forEach((s, i) => {
-        const g = s.querySelector<HTMLElement>('[data-gallery]');
-        if (!g) return;
-        const imgs = [...g.querySelectorAll<HTMLImageElement>('.gallery-img')];
-        if (i !== index) {
-          window.setTimeout(() => {
-            if (i !== index) imgs.forEach((im, k) => im.classList.toggle('is-on', k === 0));
-          }, 1200);
-          return;
-        }
-        imgs.forEach((im) => (im.loading = 'eager'));
-        let k = 0;
-        imgs.forEach((im, n) => im.classList.toggle('is-on', n === 0));
-        if (reduced) return;
-        galleryTimer = window.setInterval(() => {
-          imgs[k]?.classList.remove('is-on');
-          k = (k + 1) % imgs.length;
-          imgs[k]?.classList.add('is-on');
-        }, Number(g.dataset.step) || 3200);
+        s.querySelectorAll<HTMLElement>('[data-gallery]').forEach((g) => {
+          const imgs = [...g.querySelectorAll<HTMLImageElement>('.gallery-img')];
+          if (i !== index) {
+            window.setTimeout(() => {
+              if (i !== index) imgs.forEach((im, k) => im.classList.toggle('is-on', k === 0));
+            }, 1200);
+            return;
+          }
+          imgs.forEach((im) => (im.loading = 'eager'));
+          imgs.forEach((im, n) => im.classList.toggle('is-on', n === 0));
+          if (reduced || imgs.length < 2) return;
+          let k = 0;
+          const step = Number(g.dataset.step) || 3200;
+          const start = window.setTimeout(
+            () => {
+              galleryTimers.push(
+                window.setInterval(() => {
+                  imgs[k]?.classList.remove('is-on');
+                  k = (k + 1) % imgs.length;
+                  imgs[k]?.classList.add('is-on');
+                }, step),
+              );
+            },
+            Number(g.dataset.offset) || 0,
+          );
+          galleryTimers.push(start);
+        });
       });
     };
 

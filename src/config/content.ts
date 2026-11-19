@@ -21,13 +21,25 @@ export const bannerSlides: (Target & {
   photo: PhotoKey;
   graphic?: 'agentic';
   gallery?: PhotoKey[];
+  /** Dreigeteiltes Bild, jede Spalte eine eigene kleine Diashow (z. B. D · A · CH) */
+  panels?: PhotoKey[][];
   light?: boolean;
 })[] = [
   { photo: 'strategieMeeting', page: 'consulting', hash: 'strategie', light: true },
   { photo: 'coachingUnternehmer', page: 'consulting', hash: 'coaching', light: true },
   { photo: 'vertragUnterschrift', page: 'consulting', hash: 'nachfolge' },
   { photo: 'villaPoolModern', page: 'realEstate', hash: 'off-market' },
-  { photo: 'dachCollage', page: 'realEstate', hash: 'markt-dach', light: true },
+  {
+    photo: 'dachCollage',
+    page: 'realEstate',
+    hash: 'markt-dach',
+    light: true,
+    panels: [
+      ['dachDeAltbauvilla', 'dachDeHamburg', 'dachDeMuenchen'],
+      ['dachAtWien', 'dachAtAlpenvilla', 'dachAtVillaBerge'],
+      ['dachChZuerich', 'dachChVilla', 'dachChModern'],
+    ],
+  },
   { photo: 'istanbulNacht', page: 'realEstate', hash: 'markt-tuerkei', light: true },
   {
     photo: 'noyanlarPool',
@@ -42,7 +54,7 @@ export const bannerSlides: (Target & {
       'nzStrand',
       'noyanlarOceanLife',
       'nzHuegel',
-      'nzFamagusta',
+      'nzKyreniaBaum',
       'nzMeerblick',
       'nzTuerkis',
     ],

@@ -3,15 +3,24 @@ import type { ExtraContent } from './types';
 /** Erweiterte Inhalte – Deutsch. Reihenfolgen passen zu src/config/content.ts. */
 export const deContent: ExtraContent = {
   photoAlt: {
-    dachCollage:
-      'Collage aus München mit der Frauenkirche, dem Wiener Schloss Belvedere und dem Zürcher Grossmünster am Zürichsee',
+    dachCollage: 'Ausgewählte Immobilien in Deutschland, Österreich und der Schweiz',
     istanbulNacht: 'Istanbul bei Nacht mit beleuchteter Bosporusbrücke',
     nzKyreniaHafen: 'Alter Hafen von Kyrenia (Girne) mit Burg und Beşparmak-Gebirge, Nordzypern',
     nzPromenade: 'Strand und Strandpromenade an der Küste Nordzyperns aus der Luft',
     nzKyreniaBurg: 'Burg von Kyrenia (Girne) am Hafenbecken, Nordzypern',
     nzStrand: 'Sandstrand und türkisblaues Meer in Nordzypern',
     nzHuegel: 'Grüne Hügellandschaft mit Meerblick in Nordzypern',
-    nzFamagusta: 'Lala-Mustafa-Pascha-Moschee in der Altstadt von Famagusta (Gazimağusa)',
+    nzKyreniaBaum:
+      'Blick unter Bäumen auf den Hafen von Kyrenia (Girne) und das Gebirge, Nordzypern',
+    dachDeAltbauvilla: 'Gründerzeit-Villa mit Stuckfassade und Erker in Deutschland',
+    dachDeMuenchen: 'Repräsentativer Altbau mit Stuckfassade in München',
+    dachDeHamburg: 'Moderner Wohnturm mit geschwungenen Balkonen in der Hamburger HafenCity',
+    dachAtWien: 'Elegante Altbauten mit Erkern und Balkonen in Wien',
+    dachAtAlpenvilla: 'Historische Alpenvilla mit Holzbalkonen vor Bergwald in Österreich',
+    dachAtVillaBerge: 'Villa mit Garten vor Bergpanorama in Österreich',
+    dachChZuerich: 'Stilvoller Zürcher Altbau mit Mansarddach und Dachgarten',
+    dachChModern: 'Modernes Mehrfamilienhaus mit großen Fenstern in der Schweiz',
+    dachChVilla: 'Villa vor schneebedeckten Alpengipfeln in der Schweiz',
     nzMeerblick: 'Meerblick von der Hafenmole in Kyrenia (Girne)',
     nzTuerkis: 'Türkisfarbene Bucht mit Wellenbrecher an der Küste Nordzyperns',
     noyanlarPool:

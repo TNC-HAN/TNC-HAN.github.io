@@ -33,7 +33,16 @@ import nzPromenade from '@/assets/photos/nordzypern-strandpromenade.jpg';
 import nzKyreniaBurg from '@/assets/photos/nordzypern-kyrenia-burg.jpg';
 import nzStrand from '@/assets/photos/nordzypern-strand.jpg';
 import nzHuegel from '@/assets/photos/nordzypern-huegel-meer.jpg';
-import nzFamagusta from '@/assets/photos/nordzypern-famagusta.jpg';
+import nzKyreniaBaum from '@/assets/photos/nordzypern-kyrenia-hafen-baum.jpg';
+import dachDeAltbauvilla from '@/assets/photos/dach-de-altbauvilla.jpg';
+import dachDeMuenchen from '@/assets/photos/dach-de-muenchen-altbau.jpg';
+import dachDeHamburg from '@/assets/photos/dach-de-hamburg-wohnturm.jpg';
+import dachAtWien from '@/assets/photos/dach-at-wien-altbau.jpg';
+import dachAtAlpenvilla from '@/assets/photos/dach-at-alpenvilla.jpg';
+import dachAtVillaBerge from '@/assets/photos/dach-at-villa-berge.jpg';
+import dachChZuerich from '@/assets/photos/dach-ch-zuerich-altbau.jpg';
+import dachChModern from '@/assets/photos/dach-ch-modern.jpg';
+import dachChVilla from '@/assets/photos/dach-ch-villa-alpen.jpg';
 import nzMeerblick from '@/assets/photos/nordzypern-kyrenia-meerblick.jpg';
 import nzTuerkis from '@/assets/photos/nordzypern-tuerkis.jpg';
 
@@ -67,7 +76,16 @@ export const photos = {
   nzKyreniaBurg,
   nzStrand,
   nzHuegel,
-  nzFamagusta,
+  nzKyreniaBaum,
+  dachDeAltbauvilla,
+  dachDeMuenchen,
+  dachDeHamburg,
+  dachAtWien,
+  dachAtAlpenvilla,
+  dachAtVillaBerge,
+  dachChZuerich,
+  dachChModern,
+  dachChVilla,
   nzMeerblick,
   nzTuerkis,
 } satisfies Record<string, ImageMetadata>;

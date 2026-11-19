@@ -3,15 +3,23 @@ import type { ExtraContent } from './types';
 /** Genişletilmiş içerikler – Türkçe. Sıralama src/config/content.ts ile aynıdır. */
 export const trContent: ExtraContent = {
   photoAlt: {
-    dachCollage:
-      'Frauenkirche ile Münih, Viyana’daki Belvedere Sarayı ve Zürih Gölü kıyısındaki Grossmünster’den kolaj',
+    dachCollage: 'Almanya, Avusturya ve İsviçre’den seçkin gayrimenkuller',
     istanbulNacht: 'Işıklandırılmış Boğaziçi Köprüsü ile gece İstanbul',
     nzKyreniaHafen: 'Kalesi ve Beşparmak Dağları ile Girne Antik Limanı, Kuzey Kıbrıs',
     nzPromenade: 'Kuzey Kıbrıs sahilinde plaj ve sahil yürüyüş yolu, havadan görünüm',
     nzKyreniaBurg: 'Liman kenarındaki Girne Kalesi, Kuzey Kıbrıs',
     nzStrand: 'Kuzey Kıbrıs’ta kumsal ve turkuaz deniz',
     nzHuegel: 'Kuzey Kıbrıs’ta deniz manzaralı yeşil tepeler',
-    nzFamagusta: 'Gazimağusa eski şehrinde Lala Mustafa Paşa Camii',
+    nzKyreniaBaum: 'Ağaçların altından Girne Limanı ve dağlara bakış, Kuzey Kıbrıs',
+    dachDeAltbauvilla: 'Almanya’da alçı süslemeli cepheli, cumbalı tarihi villa',
+    dachDeMuenchen: 'Münih’te alçı süslemeli cepheye sahip prestijli tarihi bina',
+    dachDeHamburg: 'Hamburg HafenCity’de kavisli balkonlu modern konut kulesi',
+    dachAtWien: 'Viyana’da cumbalı ve balkonlu zarif tarihi binalar',
+    dachAtAlpenvilla: 'Avusturya’da ahşap balkonlu tarihi Alp villası',
+    dachAtVillaBerge: 'Avusturya’da dağ manzaralı bahçeli villa',
+    dachChZuerich: 'Zürih’te mansard çatılı ve çatı bahçeli şık tarihi bina',
+    dachChModern: 'İsviçre’de büyük pencereli modern apartman',
+    dachChVilla: 'İsviçre’de karla kaplı Alp zirvelerinin önünde villa',
     nzMeerblick: 'Girne’de liman mendireğinden deniz manzarası',
     nzTuerkis: 'Kuzey Kıbrıs kıyısında dalgakıranlı turkuaz koy',
     noyanlarPool:
