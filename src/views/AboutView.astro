@@ -9,6 +9,7 @@ import FeatureGrid from '@/components/sections/FeatureGrid.astro';
 import CtaBand from '@/components/sections/CtaBand.astro';
 import RichText from '@/components/ui/RichText.astro';
 import SmartJustify from '@/components/ui/SmartJustify.astro';
+import BookButton from '@/components/ui/BookButton.astro';
 import NetworkGlobe from '@/components/about/NetworkGlobe.astro';
 import { href, type Lang } from '@/config/routes';
 import { site } from '@/config/site';
@@ -82,6 +83,9 @@ const initials = site.owner
             </p>
           ))}
         </SmartJustify>
+        <div class="mt-8 flex justify-center lg:justify-start">
+          <BookButton lang={lang} note />
+        </div>
       </div>
     </div>
   </section>
@@ -106,6 +110,7 @@ const initials = site.owner
         </h2>
         <p class="mt-5 text-lg leading-relaxed text-muted">{about.brands.text}</p>
         <p class="mt-4 text-sm text-subtle">{site.company}</p>
+        <BookButton lang={lang} class="mt-6" />
       </div>
       <div class="flex flex-col items-start gap-10 sm:flex-row sm:items-center lg:justify-end">
         <Image
