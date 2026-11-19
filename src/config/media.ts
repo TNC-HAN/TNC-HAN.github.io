@@ -28,6 +28,14 @@ import noyanlarPool from '@/assets/photos/noyanlar-ocean-life-pool.jpg';
 import noyanlarOceanLife from '@/assets/photos/noyanlar-ocean-life.jpg';
 import dubaiMarina from '@/assets/photos/dubai-marina-nacht.jpg';
 import mittelmeerBucht from '@/assets/photos/mittelmeer-bucht.jpg';
+import nzKyreniaHafen from '@/assets/photos/nordzypern-kyrenia-hafen-berge.jpg';
+import nzPromenade from '@/assets/photos/nordzypern-strandpromenade.jpg';
+import nzKyreniaBurg from '@/assets/photos/nordzypern-kyrenia-burg.jpg';
+import nzStrand from '@/assets/photos/nordzypern-strand.jpg';
+import nzHuegel from '@/assets/photos/nordzypern-huegel-meer.jpg';
+import nzFamagusta from '@/assets/photos/nordzypern-famagusta.jpg';
+import nzMeerblick from '@/assets/photos/nordzypern-kyrenia-meerblick.jpg';
+import nzTuerkis from '@/assets/photos/nordzypern-tuerkis.jpg';
 
 export const photos = {
   strategieMeeting,
@@ -54,6 +62,14 @@ export const photos = {
   noyanlarOceanLife,
   dubaiMarina,
   mittelmeerBucht,
+  nzKyreniaHafen,
+  nzPromenade,
+  nzKyreniaBurg,
+  nzStrand,
+  nzHuegel,
+  nzFamagusta,
+  nzMeerblick,
+  nzTuerkis,
 } satisfies Record<string, ImageMetadata>;
 
 export type PhotoKey = keyof typeof photos;

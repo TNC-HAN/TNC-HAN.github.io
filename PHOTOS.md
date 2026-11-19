@@ -46,3 +46,26 @@ ohne Namensnennung erlaubt. Herkunft zur Nachvollziehbarkeit:
 | `laatzen-nah.jpg`, `laatzen-weit.jpg` | Luftbilder Laatzen (DOP20)       | © LGLN – Digitale Orthophotos Niedersachsen, Open-Data-WMS `opendata.lgln.niedersachsen.de` (erzeugt mit `scripts/make-globe-assets.py`). **Lizenzbezeichnung beim LGLN prüfen und ggf. Quellenvermerk anpassen.** |
 | `earth-blue-marble.jpg`               | NASA Blue Marble Next Generation | NASA Visible Earth, gemeinfrei (Kopie aus dem npm-Paket `three-globe`)                                                                                                                                             |
 | `earth-night.jpg`                     | NASA Black Marble (Nachtlichter) | NASA, gemeinfrei (Kopie aus `three-globe`)                                                                                                                                                                         |
+
+## Neue Banner-Fotos (2026-11-19, Abend)
+
+Quelle: [Unsplash](https://unsplash.com) – Unsplash-Lizenz (kostenlos, auch gewerblich, ohne Namensnennung; keine Unsplash+-Bilder).
+Erzeugt mit `scripts/fetch-photos-2026-11-19.py` (lädt, schneidet zu, baut die Collage, hellt Istanbul auf).
+
+| Datei                                | Motiv                                   | Bild-ID (images.unsplash.com/photo-…) |
+| ------------------------------------ | --------------------------------------- | ------------------------------------- |
+| `strategie-meeting.jpg`              | Präsentation im Meeting (Übergang)      | 1758691736451-6937303cc06f            |
+| `coaching-unternehmer.jpg`           | Zwei Unternehmer im Gespräch (Übergang) | 1758599543147-97eda140ca82            |
+| `dach-collage.jpg` (Teil)            | München, Frauenkirche                   | 1692726781437-bd6e202894b9            |
+| `dach-collage.jpg` (Teil)            | Wien, Schloss Belvedere                 | 1785245579601-a932c8d6b055            |
+| `dach-collage.jpg` (Teil)            | Zürich, Grossmünster                    | 1620563316910-f242d1bad656            |
+| `nordzypern-kyrenia-hafen-berge.jpg` | Kyrenia, Hafen mit Burg und Gebirge     | 1678798876237-ed9da98af522            |
+| `nordzypern-strandpromenade.jpg`     | Strand und Promenade                    | 1710106830391-6679e22a68f9            |
+| `nordzypern-kyrenia-burg.jpg`        | Burg von Kyrenia                        | 1678798876280-0b746013b646            |
+| `nordzypern-strand.jpg`              | Strand                                  | 1710106793368-82f483165c7f            |
+| `nordzypern-huegel-meer.jpg`         | Hügel mit Meerblick                     | 1710106931323-fbe515ad1efb            |
+| `nordzypern-famagusta.jpg`           | Famagusta, Lala-Mustafa-Pascha-Moschee  | 1689477602442-8c8a3e785143            |
+| `nordzypern-kyrenia-meerblick.jpg`   | Kyrenia, Meerblick                      | 1678798876264-9a7808be39b5            |
+| `nordzypern-tuerkis.jpg`             | Türkisfarbene Bucht                     | 1710106830410-04e2d76f8ac8            |
+
+`istanbul-bosporusbruecke-nacht.jpg` wurde aufgehellt; das Original liegt in `scripts/originals/`.

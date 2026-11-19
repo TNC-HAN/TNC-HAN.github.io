@@ -14,15 +14,39 @@ export interface Target {
 /**
  * Slide-Banner oben auf der Startseite – 10 Themen (Texte: banner.slides).
  * `graphic: 'agentic'` zeigt statt des Fotos die animierte Agentic-AI-Grafik (Foto bleibt als Rückfall).
+ * `gallery` macht aus der Folie eine kleine Diashow (Fotos wechseln, Folie bleibt entsprechend länger).
+ * `light` nutzt eine hellere Abdunklung, damit das Motiv auch links gut sichtbar bleibt.
  */
-export const bannerSlides: (Target & { photo: PhotoKey; graphic?: 'agentic' })[] = [
-  { photo: 'strategieMeeting', page: 'consulting', hash: 'strategie' },
-  { photo: 'coachingUnternehmer', page: 'consulting', hash: 'coaching' },
+export const bannerSlides: (Target & {
+  photo: PhotoKey;
+  graphic?: 'agentic';
+  gallery?: PhotoKey[];
+  light?: boolean;
+})[] = [
+  { photo: 'strategieMeeting', page: 'consulting', hash: 'strategie', light: true },
+  { photo: 'coachingUnternehmer', page: 'consulting', hash: 'coaching', light: true },
   { photo: 'vertragUnterschrift', page: 'consulting', hash: 'nachfolge' },
   { photo: 'villaPoolModern', page: 'realEstate', hash: 'off-market' },
-  { photo: 'dachCollage', page: 'realEstate', hash: 'markt-dach' },
-  { photo: 'istanbulNacht', page: 'realEstate', hash: 'markt-tuerkei' },
-  { photo: 'noyanlarPool', page: 'realEstate', hash: 'markt-nordzypern' },
+  { photo: 'dachCollage', page: 'realEstate', hash: 'markt-dach', light: true },
+  { photo: 'istanbulNacht', page: 'realEstate', hash: 'markt-tuerkei', light: true },
+  {
+    photo: 'noyanlarPool',
+    page: 'realEstate',
+    hash: 'markt-nordzypern',
+    light: true,
+    gallery: [
+      'noyanlarPool',
+      'nzKyreniaHafen',
+      'nzPromenade',
+      'nzKyreniaBurg',
+      'nzStrand',
+      'noyanlarOceanLife',
+      'nzHuegel',
+      'nzFamagusta',
+      'nzMeerblick',
+      'nzTuerkis',
+    ],
+  },
   { photo: 'datenanalyseLaptop', page: 'realEstate', hash: 'due-diligence' },
   { photo: 'rechenzentrum', page: 'ai', hash: 'workflow-automatisierung', graphic: 'agentic' },
   { photo: 'kiRoboter', page: 'ai', hash: 'ki-assistenten' },

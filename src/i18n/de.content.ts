@@ -4,15 +4,23 @@ import type { ExtraContent } from './types';
 export const deContent: ExtraContent = {
   photoAlt: {
     dachCollage:
-      'Collage aus Frankfurt am Main, einem Wiener Palais und der Zürcher Altstadt an der Limmat',
+      'Collage aus München mit der Frauenkirche, dem Wiener Schloss Belvedere und dem Zürcher Grossmünster am Zürichsee',
     istanbulNacht: 'Istanbul bei Nacht mit beleuchteter Bosporusbrücke',
+    nzKyreniaHafen: 'Alter Hafen von Kyrenia (Girne) mit Burg und Beşparmak-Gebirge, Nordzypern',
+    nzPromenade: 'Strand und Strandpromenade an der Küste Nordzyperns aus der Luft',
+    nzKyreniaBurg: 'Burg von Kyrenia (Girne) am Hafenbecken, Nordzypern',
+    nzStrand: 'Sandstrand und türkisblaues Meer in Nordzypern',
+    nzHuegel: 'Grüne Hügellandschaft mit Meerblick in Nordzypern',
+    nzFamagusta: 'Lala-Mustafa-Pascha-Moschee in der Altstadt von Famagusta (Gazimağusa)',
+    nzMeerblick: 'Meerblick von der Hafenmole in Kyrenia (Girne)',
+    nzTuerkis: 'Türkisfarbene Bucht mit Wellenbrecher an der Küste Nordzyperns',
     noyanlarPool:
       'Ocean Life Residence von NOYANLAR in İskele (Long Beach), Nordzypern – Poolanlage bei Sonnenuntergang',
     noyanlarOceanLife: 'Ocean Life Residence von NOYANLAR in İskele (Long Beach), Nordzypern',
     dubaiMarina: 'Dubai Marina bei Nacht',
     mittelmeerBucht: 'Türkisblaue Bucht am Mittelmeer',
-    strategieMeeting: 'Strategie-Workshop: Team bespricht Unternehmensziele am Konferenztisch',
-    coachingUnternehmer: 'Unternehmer im Anzug denkt im Büro über eine Entscheidung nach',
+    strategieMeeting: 'Berater präsentiert gut gelaunt eine Strategie vor einem Team im Besprechungsraum',
+    coachingUnternehmer: 'Zwei Unternehmer im offenen, positiven Gespräch vor einem Bürogebäude',
     handschlagNachfolge: 'Handschlag über einem Schreibtisch nach erfolgreicher Vereinbarung',
     villaPoolModern: 'Moderne Villa mit Pool in der Abenddämmerung',
     frankfurtSkyline: 'Skyline von Frankfurt am Main bei Nacht',

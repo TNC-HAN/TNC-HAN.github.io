@@ -4,15 +4,23 @@ import type { ExtraContent } from './types';
 export const trContent: ExtraContent = {
   photoAlt: {
     dachCollage:
-      'Frankfurt am Main, bir Viyana sarayı ve Limmat kıyısındaki Zürih eski şehrinden kolaj',
+      'Frauenkirche ile Münih, Viyana’daki Belvedere Sarayı ve Zürih Gölü kıyısındaki Grossmünster’den kolaj',
     istanbulNacht: 'Işıklandırılmış Boğaziçi Köprüsü ile gece İstanbul',
+    nzKyreniaHafen: 'Kalesi ve Beşparmak Dağları ile Girne Antik Limanı, Kuzey Kıbrıs',
+    nzPromenade: 'Kuzey Kıbrıs sahilinde plaj ve sahil yürüyüş yolu, havadan görünüm',
+    nzKyreniaBurg: 'Liman kenarındaki Girne Kalesi, Kuzey Kıbrıs',
+    nzStrand: 'Kuzey Kıbrıs’ta kumsal ve turkuaz deniz',
+    nzHuegel: 'Kuzey Kıbrıs’ta deniz manzaralı yeşil tepeler',
+    nzFamagusta: 'Gazimağusa eski şehrinde Lala Mustafa Paşa Camii',
+    nzMeerblick: 'Girne’de liman mendireğinden deniz manzarası',
+    nzTuerkis: 'Kuzey Kıbrıs kıyısında dalgakıranlı turkuaz koy',
     noyanlarPool:
       'NOYANLAR Ocean Life Residence, İskele (Long Beach), Kuzey Kıbrıs – gün batımında havuz alanı',
     noyanlarOceanLife: 'NOYANLAR Ocean Life Residence, İskele (Long Beach), Kuzey Kıbrıs',
     dubaiMarina: 'Gece Dubai Marina',
     mittelmeerBucht: 'Akdeniz’de turkuaz bir koy',
-    strategieMeeting: 'Strateji atölyesi: ekip toplantı masasında şirket hedeflerini konuşuyor',
-    coachingUnternehmer: 'Takım elbiseli girişimci ofiste bir karar üzerine düşünüyor',
+    strategieMeeting: 'Danışman toplantı odasında ekibe güler yüzle bir strateji sunuyor',
+    coachingUnternehmer: 'İki girişimci bir ofis binasının önünde açık ve olumlu bir sohbette',
     handschlagNachfolge: 'Başarılı bir anlaşmanın ardından masa üzerinde el sıkışma',
     villaPoolModern: 'Akşam alacakaranlığında havuzlu modern villa',
     frankfurtSkyline: 'Gece Frankfurt am Main silueti',

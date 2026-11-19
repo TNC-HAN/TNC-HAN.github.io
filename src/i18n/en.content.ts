@@ -4,15 +4,23 @@ import type { ExtraContent } from './types';
 export const enContent: ExtraContent = {
   photoAlt: {
     dachCollage:
-      'Collage of Frankfurt am Main, a Viennese palais and Zurich’s old town on the Limmat',
+      'Collage of Munich with the Frauenkirche, Vienna’s Belvedere Palace and Zurich’s Grossmünster on Lake Zurich',
     istanbulNacht: 'Istanbul at night with the illuminated Bosphorus Bridge',
+    nzKyreniaHafen: 'Old harbour of Kyrenia (Girne) with castle and the Beşparmak mountains, Northern Cyprus',
+    nzPromenade: 'Aerial view of beach and seaside promenade on the coast of Northern Cyprus',
+    nzKyreniaBurg: 'Kyrenia (Girne) Castle by the harbour, Northern Cyprus',
+    nzStrand: 'Sandy beach and turquoise sea in Northern Cyprus',
+    nzHuegel: 'Green hills with sea view in Northern Cyprus',
+    nzFamagusta: 'Lala Mustafa Pasha Mosque in the old town of Famagusta (Gazimağusa)',
+    nzMeerblick: 'Sea view from the harbour wall in Kyrenia (Girne)',
+    nzTuerkis: 'Turquoise bay with breakwater on the coast of Northern Cyprus',
     noyanlarPool:
       'Ocean Life Residence by NOYANLAR in İskele (Long Beach), Northern Cyprus – pool area at sunset',
     noyanlarOceanLife: 'Ocean Life Residence by NOYANLAR in İskele (Long Beach), Northern Cyprus',
     dubaiMarina: 'Dubai Marina at night',
     mittelmeerBucht: 'Turquoise bay on the Mediterranean',
-    strategieMeeting: 'Strategy workshop: team discussing company goals at a conference table',
-    coachingUnternehmer: 'Entrepreneur in a suit considering a decision in the office',
+    strategieMeeting: 'Consultant cheerfully presenting a strategy to a team in a meeting room',
+    coachingUnternehmer: 'Two entrepreneurs in an open, positive conversation outside an office building',
     handschlagNachfolge: 'Handshake across a desk after a successful agreement',
     villaPoolModern: 'Modern villa with pool at dusk',
     frankfurtSkyline: 'Frankfurt am Main skyline at night',

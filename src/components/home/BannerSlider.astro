@@ -21,6 +21,8 @@ interface Props {
 const { lang } = Astro.props;
 const dict = t(lang);
 const slides = bannerSlides.map((s, i) => ({ ...s, ...dict.banner.slides[i]! }));
+/** Anzeigedauer je Galeriebild (Folien mit `gallery` bleiben entsprechend länger stehen) */
+const GALLERY_STEP = 3200;
 ---
 
 <section
@@ -38,6 +40,7 @@ const slides = bannerSlides.map((s, i) => ({ ...s, ...dict.banner.slides[i]! }))
         aria-roledescription="slide"
         aria-label={`${i + 1} / ${slides.length}`}
         aria-hidden={i === 0 ? undefined : 'true'}
+        data-duration={s.gallery ? s.gallery.length * GALLERY_STEP : undefined}
       >
         <a
           href={href(s.page, lang, s.hash ? `#${s.hash}` : '')}
@@ -48,6 +51,19 @@ const slides = bannerSlides.map((s, i) => ({ ...s, ...dict.banner.slides[i]! }))
           {s.graphic === 'agentic' ? (
             <div class="banner-img size-full">
               <AgenticGraphic label={`${s.kicker}: ${s.title}`} />
+            </div>
+          ) : s.gallery ? (
+            <div class="banner-img gallery size-full" data-gallery data-step={GALLERY_STEP}>
+              {s.gallery.map((g, k) => (
+                <Image
+                  src={photos[g]}
+                  alt={dict.photoAlt[g]}
+                  class:list={['gallery-img absolute inset-0 size-full object-cover', k === 0 && 'is-on']}
+                  widths={[640, 1024, 1600]}
+                  sizes="100vw"
+                  loading="lazy"
+                />
+              ))}
             </div>
           ) : (
             <Image
@@ -61,9 +77,23 @@ const slides = bannerSlides.map((s, i) => ({ ...s, ...dict.banner.slides[i]! }))
             />
           )}
         </a>
-        <div class="pointer-events-none absolute inset-0 bg-gradient-to-r from-[#04030c]/92 via-[#04030c]/60 to-[#04030c]/10" />
-        <div class="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#04030c] via-transparent to-[#04030c]/40" />
-        <div class="container-site relative flex h-full flex-col justify-center pt-10 pb-24">
+        {s.light ? (
+          <Fragment>
+            <div class="pointer-events-none absolute inset-0 bg-gradient-to-r from-[#04030c]/78 via-[#04030c]/30 to-transparent" />
+            <div class="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#04030c]/95 via-transparent to-[#04030c]/25" />
+          </Fragment>
+        ) : (
+          <Fragment>
+            <div class="pointer-events-none absolute inset-0 bg-gradient-to-r from-[#04030c]/92 via-[#04030c]/60 to-[#04030c]/10" />
+            <div class="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#04030c] via-transparent to-[#04030c]/40" />
+          </Fragment>
+        )}
+        <div
+          class:list={[
+            'container-site relative flex h-full flex-col justify-center pt-10 pb-24',
+            s.light && 'banner-shadow',
+          ]}
+        >
           <p class="banner-text eyebrow" lang={lang}>
             {String(i + 1).padStart(2, '0')} · {s.kicker}
           </p>
@@ -150,6 +180,18 @@ const slides = bannerSlides.map((s, i) => ({ ...s, ...dict.banner.slides[i]! }))
   .banner-slide.is-active .banner-img {
     transform: scale(1);
   }
+  .banner-shadow p {
+    text-shadow:
+      0 1px 2px rgb(0 0 0 / 0.55),
+      0 2px 18px rgb(0 0 0 / 0.45);
+  }
+  .gallery-img {
+    opacity: 0;
+    transition: opacity 1.2s ease;
+  }
+  .gallery-img.is-on {
+    opacity: 1;
+  }
   .banner-text {
     opacity: 0;
     transform: translateY(1.25rem);
@@ -206,6 +248,34 @@ const slides = bannerSlides.map((s, i) => ({ ...s, ...dict.banner.slides[i]! }))
     let timer: number | undefined;
     let paused = reduced;
     let hold = false;
+    const durationOf = (i: number) => Number(slides[i]?.dataset.duration) || INTERVAL;
+    dots.forEach((d, i) => d.style.setProperty('--banner-interval', `${durationOf(i)}ms`));
+
+    // Diashow innerhalb einer Folie (z. B. Nordzypern)
+    let galleryTimer: number | undefined;
+    const runGallery = () => {
+      window.clearInterval(galleryTimer);
+      slides.forEach((s, i) => {
+        const g = s.querySelector<HTMLElement>('[data-gallery]');
+        if (!g) return;
+        const imgs = [...g.querySelectorAll<HTMLImageElement>('.gallery-img')];
+        if (i !== index) {
+          window.setTimeout(() => {
+            if (i !== index) imgs.forEach((im, k) => im.classList.toggle('is-on', k === 0));
+          }, 1200);
+          return;
+        }
+        imgs.forEach((im) => (im.loading = 'eager'));
+        let k = 0;
+        imgs.forEach((im, n) => im.classList.toggle('is-on', n === 0));
+        if (reduced) return;
+        galleryTimer = window.setInterval(() => {
+          imgs[k]?.classList.remove('is-on');
+          k = (k + 1) % imgs.length;
+          imgs[k]?.classList.add('is-on');
+        }, Number(g.dataset.step) || 3200);
+      });
+    };
 
     const show = (next: number) => {
       index = (next + slides.length) % slides.length;
@@ -229,10 +299,15 @@ const slides = bannerSlides.map((s, i) => ({ ...s, ...dict.banner.slides[i]! }))
           fill.style.animation = '';
         }
       });
+      runGallery();
     };
     const schedule = () => {
-      window.clearInterval(timer);
-      if (!paused && !hold) timer = window.setInterval(() => show(index + 1), INTERVAL);
+      window.clearTimeout(timer);
+      if (!paused && !hold)
+        timer = window.setTimeout(() => {
+          show(index + 1);
+          schedule();
+        }, durationOf(index));
     };
     const setPaused = (v: boolean) => {
       paused = v;
