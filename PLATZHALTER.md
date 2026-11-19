@@ -4,7 +4,6 @@ Auf der Website werden Platzhalter gelb markiert. Suche im Code nach `[`.
 
 | Wo                                                  | Platzhalter                          | Was zu tun ist                                                           |
 | --------------------------------------------------- | ------------------------------------ | ------------------------------------------------------------------------ |
-| `src/config/site.ts` → `address.street`             | Straße und Hausnummer                | Geschäftsanschrift eintragen (Pflicht im Impressum)                      |
 | `src/config/site.ts` → `legal.vatId`                | „USt.-Id. folgt ...“                 | Durch die USt-IdNr. ersetzen, sobald vorhanden (kein gelber Platzhalter) |
 | `src/data/legal.ts` → Datenschutz 3                 | Grundlage US-Übermittlung            | Angaben des Hosters (GitHub) prüfen                                      |
 | `src/data/legal.ts` → Datenschutz 6                 | Calendly: Anschrift, US-Übermittlung | Angaben in der Datenschutzerklärung von Calendly prüfen                  |

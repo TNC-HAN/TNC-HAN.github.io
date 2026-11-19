@@ -15,7 +15,7 @@ export const site = {
   ownerRole: 'Founder & CEO',
 
   address: {
-    street: '[STRASSE UND HAUSNUMMER]',
+    street: 'Wülferoder Str. 43',
     zip: '30880',
     city: 'Laatzen',
     region: 'Region Hannover',
