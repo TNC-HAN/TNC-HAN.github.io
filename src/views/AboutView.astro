@@ -9,6 +9,7 @@ import FeatureGrid from '@/components/sections/FeatureGrid.astro';
 import CtaBand from '@/components/sections/CtaBand.astro';
 import RichText from '@/components/ui/RichText.astro';
 import SmartJustify from '@/components/ui/SmartJustify.astro';
+import NetworkGlobe from '@/components/about/NetworkGlobe.astro';
 import { href, type Lang } from '@/config/routes';
 import { site } from '@/config/site';
 import { t } from '@/i18n';
@@ -84,6 +85,9 @@ const initials = site.owner
       </div>
     </div>
   </section>
+
+  <!-- Netzwerk: D-A-CH und global (interaktiver Globus) -->
+  <NetworkGlobe lang={lang} />
 
   <FeatureGrid
     id="values-title"

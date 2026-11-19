@@ -292,6 +292,18 @@ export const deContent: ExtraContent = {
       },
     ],
   },
+  network: {
+    eyebrow: 'Netzwerk',
+    title: 'Von Laatzen in die D‑A‑CH‑Region – und rund um den Globus.',
+    text: 'Aus unserer Zentrale in Laatzen bei Hannover heraus ist über viele Jahre ein starkes B2B- und B2C-Netzwerk gewachsen: Unternehmer, Investoren, Bauträger, Banken, Fachpartner und Dienstleister – in ganz Deutschland, Österreich und der Schweiz und global, von der Türkei und Nordzypern bis nach Dubai und in die USA. Dieses Netzwerk öffnet Ihnen Türen, die sonst verschlossen bleiben.',
+    points: ['B2B & B2C', 'Gesamte D‑A‑CH‑Region', 'Global vernetzt', 'Persönliche Kontakte'],
+    caption:
+      'Symbolische Darstellung unseres Netzwerks. Ziehen zum Drehen, scrollen oder zwei Finger zum Zoomen.',
+    credits:
+      'Luftbild Laatzen: © LGLN, Digitale Orthophotos Niedersachsen (Open Data) · Erdkarte: NASA Blue Marble (gemeinfrei)',
+    replay: 'Flug ab Laatzen wiederholen',
+    hq: 'Laatzen – Zentrale',
+  },
   video: {
     eyebrow: 'Imagefilm',
     title: 'NEXXCON-24 in 25 Sekunden.',

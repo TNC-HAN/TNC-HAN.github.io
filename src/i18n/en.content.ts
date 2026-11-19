@@ -276,6 +276,17 @@ export const enContent: ExtraContent = {
       },
     ],
   },
+  network: {
+    eyebrow: 'Network',
+    title: 'From Laatzen into the DACH region – and around the globe.',
+    text: 'From our headquarters in Laatzen near Hanover, a strong B2B and B2C network has grown over many years: entrepreneurs, investors, developers, banks, specialist partners and service providers – throughout Germany, Austria and Switzerland and globally, from Turkey and Northern Cyprus to Dubai and the USA. This network opens doors that would otherwise remain closed.',
+    points: ['B2B & B2C', 'Entire DACH region', 'Globally connected', 'Personal contacts'],
+    caption: 'Symbolic illustration of our network. Drag to rotate, scroll or pinch to zoom.',
+    credits:
+      'Aerial image Laatzen: © LGLN, Digital Orthophotos Lower Saxony (open data) · Earth map: NASA Blue Marble (public domain)',
+    replay: 'Replay the flight from Laatzen',
+    hq: 'Laatzen – headquarters',
+  },
   video: {
     eyebrow: 'Image film',
     title: 'NEXXCON-24 in 25 seconds.',

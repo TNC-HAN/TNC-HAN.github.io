@@ -264,6 +264,18 @@ export const trContent: ExtraContent = {
       },
     ],
   },
+  network: {
+    eyebrow: 'Ağ',
+    title: 'Laatzen’den DACH bölgesine – ve tüm küreye.',
+    text: 'Hannover yakınlarındaki Laatzen merkezimizden yıllar içinde güçlü bir B2B ve B2C ağı büyüdü: girişimciler, yatırımcılar, müteahhitler, bankalar, uzman ortaklar ve hizmet sağlayıcılar – Almanya, Avusturya ve İsviçre’nin tamamında ve küresel olarak, Türkiye ve Kuzey Kıbrıs’tan Dubai’ye ve ABD’ye kadar. Bu ağ, aksi halde kapalı kalacak kapıları size açar.',
+    points: ['B2B ve B2C', 'Tüm DACH bölgesi', 'Küresel bağlantılar', 'Kişisel ilişkiler'],
+    caption:
+      'Ağımızın sembolik gösterimi. Döndürmek için sürükleyin, yakınlaştırmak için kaydırın veya iki parmak kullanın.',
+    credits:
+      'Laatzen hava fotoğrafı: © LGLN, Aşağı Saksonya Dijital Ortofotoları (açık veri) · Dünya haritası: NASA Blue Marble (kamu malı)',
+    replay: 'Laatzen’den uçuşu tekrarla',
+    hq: 'Laatzen – merkez',
+  },
   video: {
     eyebrow: 'Tanıtım filmi',
     title: '25 saniyede NEXXCON-24.',

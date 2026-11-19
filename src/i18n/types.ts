@@ -93,6 +93,16 @@ export interface ExtraContent {
   };
   markets: { eyebrow: string; title: string; lead: string; details: string[] };
   video: { eyebrow: string; title: string; text: string; label: string; points: string[] };
+  network: {
+    eyebrow: string;
+    title: string;
+    text: string;
+    points: string[];
+    caption: string;
+    credits: string;
+    replay: string;
+    hq: string;
+  };
 }
 
 export interface Dictionary {

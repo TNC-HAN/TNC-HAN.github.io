@@ -1,0 +1,322 @@
+---
+/**
+ * Netzwerk-Globus (Seite „Über uns“):
+ * 1. Intro: Satellitenansicht über Laatzen (amtliches LGLN-Luftbild) → schneller Zoom heraus
+ * 2. Interaktiver 3D-Globus (NASA Blue Marble), dreht sich langsam
+ * 3. Leuchtende Netzwerkbögen im Glasfaser-Stil von Laatzen zu den Netzwerk-Regionen
+ * Mit Maus/Touch drehbar und zoombar. Die 3D-Bibliothek (globe.gl/three.js, lokal gebündelt)
+ * wird erst geladen, wenn der Abschnitt sichtbar wird. Bei „reduzierte Bewegung“: kein Intro,
+ * keine Eigendrehung. Bilder: public/globe/ (erzeugt mit scripts/make-globe-assets.py).
+ * Netzwerkpunkte: unten in `NODES` – symbolische Darstellung.
+ */
+import Icon from '@/components/ui/Icon.astro';
+import BookButton from '@/components/ui/BookButton.astro';
+import { asset, type Lang } from '@/config/routes';
+import { t } from '@/i18n';
+
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const n = t(lang).network;
+const config = {
+  hq: { name: n.hq, lat: 52.3125, lng: 9.804 },
+  textures: { day: asset('globe/earth-blue-marble.jpg'), night: asset('globe/earth-night.jpg') },
+};
+---
+
+<section class="container-site py-16" aria-labelledby="network-title">
+  <div class="reveal glass overflow-hidden">
+    <div class="grid lg:grid-cols-12">
+      <div class="p-8 sm:p-10 lg:col-span-5 lg:p-12">
+        <p class="eyebrow">{n.eyebrow}</p>
+        <h2 id="network-title" class="mt-4 text-3xl leading-tight font-medium sm:text-4xl">
+          {n.title}
+        </h2>
+        <p class="mt-5 leading-relaxed text-muted">{n.text}</p>
+        <ul class="mt-6 grid grid-cols-2 gap-2.5">
+          {n.points.map((p) => (
+            <li class="flex items-center gap-2 text-sm text-text/90">
+              <Icon name="check" class="size-4 shrink-0 text-gold" />
+              {p}
+            </li>
+          ))}
+        </ul>
+        <BookButton lang={lang} class="mt-8" note />
+      </div>
+
+      <div
+        class="relative min-h-[26rem] bg-[#02030a] sm:min-h-[32rem] lg:col-span-7"
+        data-globe-stage
+      >
+        <!-- Intro: Luftbilder Laatzen (nah → weit) -->
+        <div
+          class="globe-intro pointer-events-none absolute inset-0 overflow-hidden"
+          data-globe-intro
+          aria-hidden="true"
+        >
+          <img
+            src={asset('globe/laatzen-weit.jpg')}
+            alt=""
+            class="intro-far absolute inset-0 size-full object-cover"
+            loading="lazy"
+          />
+          <img
+            src={asset('globe/laatzen-nah.jpg')}
+            alt=""
+            class="intro-near absolute inset-0 size-full object-cover"
+            loading="lazy"
+          />
+          <span class="intro-pin"></span>
+        </div>
+        <!-- 3D-Globus -->
+        <div
+          class="absolute inset-0"
+          data-globe
+          role="img"
+          aria-label={`${n.title} ${n.caption}`}
+        ></div>
+        <button
+          type="button"
+          data-globe-replay
+          class="absolute top-4 right-4 z-10 rounded-full border border-white/15 bg-black/40 px-3 py-1.5 text-xs text-muted backdrop-blur transition hover:text-text"
+        >
+          {n.replay}
+        </button>
+        <p class="pointer-events-none absolute inset-x-4 bottom-3 z-10 text-[11px] leading-snug text-white/55">
+          {n.caption}
+          <br />
+          {n.credits}
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script is:inline type="application/json" data-globe-config set:html={JSON.stringify(config)} />
+<style>
+  .intro-near,
+  .intro-far {
+    transform-origin: 50% 50%;
+    will-change: transform, opacity;
+  }
+  .intro-far {
+    opacity: 0;
+  }
+  .intro-pin {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 18px;
+    height: 18px;
+    margin: -9px 0 0 -9px;
+    border-radius: 9999px;
+    background: #f0dfb4;
+    box-shadow:
+      0 0 0 6px rgb(240 223 180 / 0.35),
+      0 0 24px 8px rgb(201 164 92 / 0.8);
+  }
+  /* Ablauf: Nahbild schrumpft (Zoom heraus), Weitbild übernimmt, dann Übergang zum Globus */
+  .globe-intro.is-playing .intro-near {
+    animation: near-out 1.6s cubic-bezier(0.55, 0, 0.75, 0.3) forwards;
+  }
+  .globe-intro.is-playing .intro-far {
+    animation: far-out 3s cubic-bezier(0.45, 0, 0.7, 0.4) forwards;
+  }
+  .globe-intro.is-playing .intro-pin {
+    animation: pin-out 3s ease forwards;
+  }
+  .globe-intro.is-done {
+    display: none;
+  }
+  @keyframes near-out {
+    from {
+      transform: scale(1);
+      opacity: 1;
+    }
+    80% {
+      opacity: 1;
+    }
+    to {
+      transform: scale(0.1);
+      opacity: 0;
+    }
+  }
+  @keyframes far-out {
+    0% {
+      transform: scale(10);
+      opacity: 0;
+    }
+    20% {
+      opacity: 1;
+    }
+    53% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(0.06);
+      opacity: 0;
+    }
+  }
+  @keyframes pin-out {
+    0%,
+    70% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+</style>
+
+<script>
+  type Node = { name: string; lat: number; lng: number; dach?: boolean };
+  // Symbolische Netzwerkpunkte: D-A-CH und global
+  const NODES: Node[] = [
+    { name: 'Berlin', lat: 52.52, lng: 13.405, dach: true },
+    { name: 'Hamburg', lat: 53.551, lng: 9.993, dach: true },
+    { name: 'Köln', lat: 50.938, lng: 6.96, dach: true },
+    { name: 'Frankfurt', lat: 50.11, lng: 8.682, dach: true },
+    { name: 'München', lat: 48.137, lng: 11.575, dach: true },
+    { name: 'Wien', lat: 48.208, lng: 16.373, dach: true },
+    { name: 'Zürich', lat: 47.377, lng: 8.541, dach: true },
+    { name: 'London', lat: 51.507, lng: -0.128 },
+    { name: 'Paris', lat: 48.857, lng: 2.352 },
+    { name: 'Istanbul', lat: 41.008, lng: 28.978 },
+    { name: 'Antalya', lat: 36.897, lng: 30.713 },
+    { name: 'Kyrenia', lat: 35.34, lng: 33.319 },
+    { name: 'İskele', lat: 35.287, lng: 33.893 },
+    { name: 'Dubai', lat: 25.205, lng: 55.271 },
+    { name: 'New York', lat: 40.713, lng: -74.006 },
+    { name: 'Miami', lat: 25.762, lng: -80.192 },
+  ];
+
+  const stage = document.querySelector<HTMLElement>('[data-globe-stage]');
+  const mount = document.querySelector<HTMLElement>('[data-globe]');
+  const intro = document.querySelector<HTMLElement>('[data-globe-intro]');
+  const replay = document.querySelector<HTMLButtonElement>('[data-globe-replay]');
+  const cfgEl = document.querySelector<HTMLScriptElement>('[data-globe-config]');
+  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  if (stage && mount && intro && cfgEl) {
+    const cfg = JSON.parse(cfgEl.textContent || '{}') as {
+      hq: { name: string; lat: number; lng: number };
+      textures: { day: string; night: string };
+    };
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    let globe: any = null;
+
+    const flyOut = () => {
+      if (!globe) return;
+      globe.pointOfView({ lat: cfg.hq.lat, lng: cfg.hq.lng, altitude: 0.08 }, 0);
+      window.setTimeout(
+        () => globe.pointOfView({ lat: 44, lng: 18, altitude: 2.3 }, 2600),
+        reduced ? 0 : 1500,
+      );
+    };
+
+    const playIntro = () => {
+      if (reduced) {
+        intro.classList.add('is-done');
+        flyOut();
+        return;
+      }
+      intro.classList.remove('is-done', 'is-playing');
+      void intro.offsetWidth;
+      // Luftbilder vor dem Start sicher laden, damit der Flug nicht über schwarzem Grund beginnt
+      intro.querySelectorAll('img').forEach((img) => img.setAttribute('loading', 'eager'));
+      intro.classList.add('is-playing');
+      flyOut();
+      window.setTimeout(() => intro.classList.add('is-done'), 3000);
+    };
+
+    const init = async () => {
+      const { default: Globe } = await import('globe.gl');
+      const hq = { ...cfg.hq, hq: true };
+      const arcs = NODES.map((node, i) => ({
+        startLat: hq.lat,
+        startLng: hq.lng,
+        endLat: node.lat,
+        endLng: node.lng,
+        color: node.dach ? ['#f0dfb4', '#c9a45c'] : ['#f0dfb4', '#5ab4ff'],
+        delay: i * 180,
+      }));
+      // Querverbindungen für das Netz-Gefühl
+      for (let i = 0; i < NODES.length; i++) {
+        const a = NODES[i]!;
+        const b = NODES[(i + 5) % NODES.length]!;
+        arcs.push({
+          startLat: a.lat,
+          startLng: a.lng,
+          endLat: b.lat,
+          endLng: b.lng,
+          color: ['#7b3fe455', '#5ab4ff99'],
+          delay: 0,
+        });
+      }
+
+      globe = new Globe(mount, { animateIn: !reduced })
+        .width(mount.clientWidth)
+        .height(mount.clientHeight)
+        .backgroundColor('rgba(0,0,0,0)')
+        .globeImageUrl(cfg.textures.day)
+        .showAtmosphere(true)
+        .atmosphereColor('#5ab4ff')
+        .atmosphereAltitude(0.18)
+        .arcsData(arcs)
+        .arcColor('color')
+        .arcStroke(0.45)
+        .arcAltitudeAutoScale(0.45)
+        .arcDashLength(0.35)
+        .arcDashGap(0.25)
+        .arcDashInitialGap(() => Math.random())
+        .arcDashAnimateTime(reduced ? 0 : 2600)
+        .pointsData([hq, ...NODES])
+        .pointColor((o: object) => {
+          const d = o as Node & { hq?: boolean };
+          return d.hq ? '#f0dfb4' : d.dach ? '#e6c27a' : '#8bd0ff';
+        })
+        .pointAltitude(0.012)
+        .pointRadius((o: object) => ((o as { hq?: boolean }).hq ? 0.55 : 0.28))
+        .pointLabel((o: object) => (o as Node).name)
+        .ringsData(reduced ? [] : [hq])
+        .ringColor(() => (t: number) => `rgba(240,223,180,${1 - t})`)
+        .ringMaxRadius(5)
+        .ringPropagationSpeed(2.2)
+        .ringRepeatPeriod(1400);
+
+      const controls = globe.controls();
+      controls.autoRotate = !reduced;
+      controls.autoRotateSpeed = 0.35;
+      controls.enableZoom = true;
+      controls.minDistance = 130;
+      controls.maxDistance = 600;
+
+      new ResizeObserver(() => globe.width(mount.clientWidth).height(mount.clientHeight)).observe(
+        mount,
+      );
+      // Luftbilder vor dem Start sicher laden, damit der Flug nicht über schwarzem Grund beginnt
+      await Promise.all(
+        [...intro.querySelectorAll('img')].map((img) => {
+          img.setAttribute('loading', 'eager');
+          return img.decode().catch(() => undefined);
+        }),
+      );
+      playIntro();
+    };
+
+    let started = false;
+    new IntersectionObserver(
+      ([entry]) => {
+        if (entry?.isIntersecting && !started) {
+          started = true;
+          init().catch(() => intro.classList.add('is-done'));
+        }
+      },
+      { threshold: 0.35 },
+    ).observe(stage);
+
+    replay?.addEventListener('click', playIntro);
+  }
+</script>
