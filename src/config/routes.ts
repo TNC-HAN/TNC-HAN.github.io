@@ -12,6 +12,7 @@ export const pages = [
   'consulting',
   'realEstate',
   'ai',
+  'emigration',
   'about',
   'contact',
   'imprint',
@@ -19,8 +20,8 @@ export const pages = [
 ] as const;
 export type PageKey = (typeof pages)[number];
 
-/** Die drei Geschäftsbereiche – in genau dieser Reihenfolge überall auf der Seite. */
-export const serviceKeys = ['consulting', 'realEstate', 'ai'] as const;
+/** Die Geschäftsbereiche – in genau dieser Reihenfolge überall auf der Seite. */
+export const serviceKeys = ['consulting', 'realEstate', 'ai', 'emigration'] as const;
 export type ServiceKey = (typeof serviceKeys)[number];
 
 export const routes: Record<PageKey, Record<Lang, string>> = {
@@ -32,6 +33,11 @@ export const routes: Record<PageKey, Record<Lang, string>> = {
     tr: 'gayrimenkul-yatirim',
   },
   ai: { de: 'ki-automation', en: 'ai-automation', tr: 'yapay-zeka-otomasyonu' },
+  emigration: {
+    de: 'auswanderungscoaching',
+    en: 'relocation-coaching',
+    tr: 'yurt-disina-yerlesim-koclugu',
+  },
   about: { de: 'ueber-uns', en: 'about', tr: 'hakkimizda' },
   contact: { de: 'kontakt', en: 'contact', tr: 'iletisim' },
   imprint: { de: 'impressum', en: 'imprint', tr: 'kunye' },

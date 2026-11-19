@@ -15,7 +15,12 @@ interface Props {
 const { lang } = Astro.props;
 const dict = t(lang);
 const { hero } = dict.home;
-const icons = { consulting: 'compass', realEstate: 'building', ai: 'spark' } as const;
+const icons = {
+  consulting: 'compass',
+  realEstate: 'building',
+  ai: 'spark',
+  emigration: 'plane',
+} as const;
 ---
 
 <section class="relative isolate overflow-hidden" aria-labelledby="hero-title">

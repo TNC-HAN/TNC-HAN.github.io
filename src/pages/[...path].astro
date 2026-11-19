@@ -27,7 +27,7 @@ const { lang, page } = Astro.props;
 ---
 
 {page === 'home' && <HomeView lang={lang} />}
-{(page === 'consulting' || page === 'realEstate' || page === 'ai') && (
+{(page === 'consulting' || page === 'realEstate' || page === 'ai' || page === 'emigration') && (
   <ServiceView lang={lang} service={page} />
 )}
 {page === 'about' && <AboutView lang={lang} />}

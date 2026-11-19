@@ -101,7 +101,7 @@ export const tr: Dictionary = {
     ],
     areas: {
       eyebrow: 'Faaliyet alanları',
-      title: 'Üç disiplin. Tek muhatap.',
+      title: 'Dört disiplin. Tek muhatap.',
       lead: 'İşletme, gayrimenkul ve teknoloji, klasik danışmanlığın gösterdiğinden çok daha iç içedir. Biz bunları birlikte ele alır, sunum dosyaları yerine sonuç üretiriz.',
     },
     process: {

@@ -38,6 +38,7 @@ export const showcase: (Target & { photo: PhotoKey })[] = [
   { photo: 'schluesseluebergabe', page: 'realEstate', hash: 'due-diligence' },
   { photo: 'programmcode', page: 'ai', hash: 'workflow-automatisierung' },
   { photo: 'datenanalyseLaptop', page: 'ai', hash: 'ki-assistenten' },
+  { photo: 'mittelmeerBucht', page: 'emigration' },
 ];
 
 /** Sprungmarken der 6 Leistungen je Bereich (Reihenfolge = services.<bereich>.offerings.items) */
@@ -59,6 +60,7 @@ export const offeringIds: Record<ServiceKey, string[]> = {
     'web-apps',
     'schulung',
   ],
+  emigration: ['tuerkei', 'nordzypern', 'zielland-check', 'usa', 'vae-dubai', 'ankommen'],
 };
 
 /** Bilder auf den Bereichsseiten: Kopfbild + Bilder neben ausgewählten Leistungen */
@@ -77,6 +79,10 @@ export const serviceMedia: Record<
   ai: {
     hero: 'rechenzentrum',
     inline: { 1: 'programmcode', 2: 'kiRoboter', 3: 'datenanalyseLaptop' },
+  },
+  emigration: {
+    hero: 'mittelmeerBucht',
+    inline: { 0: 'istanbulNacht', 1: 'noyanlarOceanLife', 4: 'dubaiMarina' },
   },
 };
 

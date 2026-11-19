@@ -102,7 +102,7 @@ export const de: Dictionary = {
     ],
     areas: {
       eyebrow: 'Geschäftsbereiche',
-      title: 'Drei Disziplinen. Ein Ansprechpartner.',
+      title: 'Vier Disziplinen. Ein Ansprechpartner.',
       lead: 'Unternehmen, Immobilien und Technologie hängen enger zusammen, als es klassische Beratung abbildet. Wir denken sie gemeinsam – und liefern Ergebnisse statt Foliensätze.',
     },
     process: {

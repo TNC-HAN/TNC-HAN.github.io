@@ -32,17 +32,19 @@ const links: { key: PageKey; label: string }[] = [
 
     <nav aria-label={dict.nav.primary} class="ml-auto hidden xl:block">
       <ul class="flex items-center gap-1">
-        {links.map((l) => (
-          <li>
-            <a
-              href={href(l.key, lang)}
-              aria-current={page === l.key ? 'page' : undefined}
-              class="nav-pill rounded-full border border-gold/45 bg-gradient-to-b from-gold/25 to-gold/5 px-3 py-1.5 text-[13px] whitespace-nowrap text-champagne shadow-[inset_0_1px_0_rgb(255_255_255/0.2),0_4px_12px_-4px_rgb(0_0_0/0.6)] transition hover:-translate-y-px hover:border-champagne hover:from-gold/40 hover:text-white aria-[current=page]:border-transparent aria-[current=page]:from-[#f0dfb4] aria-[current=page]:to-gold aria-[current=page]:text-ink-950"
-            >
-              {l.label}
-            </a>
-          </li>
-        ))}
+        {links
+          .filter((l) => l.key !== 'contact')
+          .map((l) => (
+            <li>
+              <a
+                href={href(l.key, lang)}
+                aria-current={page === l.key ? 'page' : undefined}
+                class="nav-pill rounded-full border border-gold/45 bg-gradient-to-b from-gold/25 to-gold/5 px-3 py-1.5 text-[13px] whitespace-nowrap text-champagne shadow-[inset_0_1px_0_rgb(255_255_255/0.2),0_4px_12px_-4px_rgb(0_0_0/0.6)] transition hover:-translate-y-px hover:border-champagne hover:from-gold/40 hover:text-white aria-[current=page]:border-transparent aria-[current=page]:from-[#f0dfb4] aria-[current=page]:to-gold aria-[current=page]:text-ink-950"
+              >
+                {l.label}
+              </a>
+            </li>
+          ))}
       </ul>
     </nav>
 

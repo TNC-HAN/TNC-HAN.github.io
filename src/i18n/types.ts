@@ -43,6 +43,16 @@ export interface OfferingDetail {
 }
 
 /**
+ * Geschäftsbereich Auswanderungscoaching – je Sprache in src/i18n/<sprache>.emigration.ts.
+ * Wird in t() als services.emigration, details.emigration und 9. Bildstrecken-Thema eingehängt.
+ */
+export interface EmigrationContent {
+  service: ServiceContent;
+  details: OfferingDetail[];
+  showcase: { kicker: string; title: string; text: string; points: string[] };
+}
+
+/**
  * Erweiterte Inhalte (Banner, Bildstrecke, Unterbereiche, Kontaktleiste).
  * Liegen je Sprache in src/i18n/<sprache>.content.ts und werden in t() zusammengeführt.
  */

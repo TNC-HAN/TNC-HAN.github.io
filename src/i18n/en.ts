@@ -101,7 +101,7 @@ export const en: Dictionary = {
     ],
     areas: {
       eyebrow: 'Business areas',
-      title: 'Three disciplines. One point of contact.',
+      title: 'Four disciplines. One point of contact.',
       lead: 'Business, real estate and technology are more closely linked than traditional advisory reflects. We think them through together – and deliver results, not slide decks.',
     },
     process: {
