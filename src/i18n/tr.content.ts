@@ -3,6 +3,14 @@ import type { ExtraContent } from './types';
 /** Genişletilmiş içerikler – Türkçe. Sıralama src/config/content.ts ile aynıdır. */
 export const trContent: ExtraContent = {
   photoAlt: {
+    dachCollage:
+      'Frankfurt am Main, bir Viyana sarayı ve Limmat kıyısındaki Zürih eski şehrinden kolaj',
+    istanbulNacht: 'Işıklandırılmış Boğaziçi Köprüsü ile gece İstanbul',
+    noyanlarPool:
+      'NOYANLAR Ocean Life Residence, İskele (Long Beach), Kuzey Kıbrıs – gün batımında havuz alanı',
+    noyanlarOceanLife: 'NOYANLAR Ocean Life Residence, İskele (Long Beach), Kuzey Kıbrıs',
+    dubaiMarina: 'Gece Dubai Marina',
+    mittelmeerBucht: 'Akdeniz’de turkuaz bir koy',
     strategieMeeting: 'Strateji atölyesi: ekip toplantı masasında şirket hedeflerini konuşuyor',
     coachingUnternehmer: 'Takım elbiseli girişimci ofiste bir karar üzerine düşünüyor',
     handschlagNachfolge: 'Başarılı bir anlaşmanın ardından masa üzerinde el sıkışma',
@@ -72,7 +80,7 @@ export const trContent: ExtraContent = {
       {
         kicker: 'Kuzey Kıbrıs',
         title: 'Fırsat ve risklere net bakışla Akdeniz gayrimenkulü',
-        text: 'Yeni ve mevcut projeler, yerel bağlantılarla ve hukuken sağlam şekilde.',
+        text: 'Yeni ve mevcut projeler, yerel bağlantılarla – fırsat ve risklere net bakışla.',
       },
       {
         kicker: 'Due diligence',
@@ -123,13 +131,13 @@ export const trContent: ExtraContent = {
       {
         kicker: 'Türkiye ve Kuzey Kıbrıs',
         title: 'Tek muhatapla Akdeniz yatırımları',
-        text: 'Almanca ve Türkçe konuşuyor, yerel süreçleri ve tuzakları biliyor, güvenilir avukat ve ortaklarla çalışıyoruz.',
-        points: ['Lokasyon ve proje seçimi', 'Hukuk ve maliyette netlik', 'Teslime kadar destek'],
+        text: 'Almanca ve Türkçe konuşuyor, yerel süreçleri ve tuzakları biliyor, yerinde güvenilir ortaklarla çalışıyoruz.',
+        points: ['Lokasyon ve proje seçimi', 'Maliyet ve getiride netlik', 'Teslime kadar destek'],
       },
       {
         kicker: 'Due diligence ve kapanış',
         title: 'İmzadan önce güvence',
-        text: 'Belgeler, durum, hukuki durum ve hesap: uzman ortaklarla birlikte inceliyoruz, böylece içiniz rahat karar verirsiniz.',
+        text: 'Belgeler, durum, fırsatlar ve riskler, amortisman ve yatırım getirisi (ROI): uzman ortaklarla birlikte inceliyoruz, böylece içiniz rahat karar verirsiniz.',
         points: ['Belge kontrolü', 'Kârlılık hesabı', 'Şeffaf riskler'],
       },
       {
@@ -201,9 +209,9 @@ export const trContent: ExtraContent = {
         benefits: ['Şeffaf hesaplama', 'Lokasyon ve pazar değerlendirmesi', 'Karar dosyası'],
       },
       {
-        text: 'Avukatlar, eksperler ve vergi danışmanlarıyla birlikte belgeleri, yapı durumunu, izinleri ve hukuki durumu inceliyoruz – yurt dışında da Almanya’daki kadar titizlikle.',
+        text: 'Eksperler ve uzman ortaklarla birlikte belgeleri, yapı durumunu, lokasyonu, fırsat ve riskleri, amortismanı ve yatırım getirisini (ROI) inceliyoruz – yurt dışında da Almanya’daki kadar titizlikle.',
         benefits: [
-          'Ortaklarla hukuki inceleme',
+          'Fırsat ve riskler değerlendirilir',
           'Teknik değerlendirme',
           'Risklerin açıkça belirtilmesi',
         ],
@@ -269,10 +277,10 @@ export const trContent: ExtraContent = {
     title: 'Dört pazar. Tek muhatap.',
     lead: 'Her pazarın kendi kuralları var. Onları biliyor ve yerinde güvenilir ortaklarla çalışıyoruz.',
     details: [
-      'Almanya, Avusturya ve İsviçre istikrar ve hukuki güvence sunar. Konut ve ticari binalar, portföyler ve proje geliştirmelerde yatırımlara eşlik ediyoruz.',
+      'Almanya, Avusturya ve İsviçre istikrar ve planlama güvencesi sunar. Konut ve ticari binalar, portföyler ve proje geliştirmelerde yatırımlara eşlik ediyoruz.',
       'Seçili Avrupa pazarlarında istikrarlı koşullara ve anlaşılır gelişim potansiyeline sahip lokasyonlar arıyoruz.',
       'İstanbul’dan Türk Rivierası’na: gayrimenkul seçimine eşlik ediyor, belgeleri ve maliyetleri inceliyor, tapu tesciline kadar destek oluyoruz.',
-      'Kuzey Kıbrıs’ta yerel bilgi ve hukuki özen belirleyicidir. Yerinde bağlantılarımızla yeni ve mevcut projelere, fırsat ve risklere net bakışla eşlik ediyoruz.',
+      'Kuzey Kıbrıs’ta yerel bilgi ve özen belirleyicidir. Yerinde bağlantılarımızla yeni ve mevcut projelere, fırsat ve risklere net bakışla eşlik ediyoruz.',
     ],
   },
 };

@@ -166,7 +166,7 @@ export const tr: Dictionary = {
         },
         {
           title: 'Kuzey Kıbrıs',
-          text: 'Yeni ve mevcut projeler, yerel bağlantılarla, hukuki durum ve risklere net bir bakışla.',
+          text: 'Yeni ve mevcut projeler, yerel bağlantılarla, fırsatlar, riskler ve kârlılığa net bir bakışla.',
         },
       ],
     },
@@ -365,7 +365,7 @@ export const tr: Dictionary = {
       approach: {
         eyebrow: 'Pazarlar',
         title: 'DACH · Avrupa · Türkiye · Kuzey Kıbrıs.',
-        text: 'Her pazarın kendi kuralları vardır. Hukuki, vergisel ve kültürel farkları biliyor, yerinde güvenilir ortaklarla çalışıyoruz.',
+        text: 'Her pazarın kendi kuralları vardır. Süreçleri, maliyetleri ve kültürel farkları biliyor, yerinde güvenilir ortaklarla çalışıyoruz.',
         points: ['Almanca, İngilizce ve Türkçe', 'Yerel ortak ağı', 'Her konuda tek muhatap'],
       },
       faq: [
@@ -375,7 +375,7 @@ export const tr: Dictionary = {
         },
         {
           q: 'Türkiye ve Kuzey Kıbrıs’taki alımlara da eşlik ediyor musunuz?',
-          a: 'Evet. Gayrimenkul seçiminden incelemeye ve tapu devrine kadar size eşlik ediyor, bu süreçte yerel avukatlar ve uzman ortaklarla çalışıyoruz.',
+          a: 'Evet. Gayrimenkul seçiminden incelemeye ve tapu devrine kadar size eşlik ediyor, bu süreçte güvenilir yerel uzman ortaklarla çalışıyoruz.',
         },
       ],
       cta: {

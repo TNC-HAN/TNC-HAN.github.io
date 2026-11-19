@@ -3,6 +3,14 @@ import type { ExtraContent } from './types';
 /** Erweiterte Inhalte – Deutsch. Reihenfolgen passen zu src/config/content.ts. */
 export const deContent: ExtraContent = {
   photoAlt: {
+    dachCollage:
+      'Collage aus Frankfurt am Main, einem Wiener Palais und der Zürcher Altstadt an der Limmat',
+    istanbulNacht: 'Istanbul bei Nacht mit beleuchteter Bosporusbrücke',
+    noyanlarPool:
+      'Ocean Life Residence von NOYANLAR in İskele (Long Beach), Nordzypern – Poolanlage bei Sonnenuntergang',
+    noyanlarOceanLife: 'Ocean Life Residence von NOYANLAR in İskele (Long Beach), Nordzypern',
+    dubaiMarina: 'Dubai Marina bei Nacht',
+    mittelmeerBucht: 'Türkisblaue Bucht am Mittelmeer',
     strategieMeeting: 'Strategie-Workshop: Team bespricht Unternehmensziele am Konferenztisch',
     coachingUnternehmer: 'Unternehmer im Anzug denkt im Büro über eine Entscheidung nach',
     handschlagNachfolge: 'Handschlag über einem Schreibtisch nach erfolgreicher Vereinbarung',
@@ -72,7 +80,7 @@ export const deContent: ExtraContent = {
       {
         kicker: 'Nordzypern',
         title: 'Mittelmeer-Immobilien mit klarem Blick auf Chancen und Risiken',
-        text: 'Neubau- und Bestandsobjekte, vor Ort vernetzt und rechtlich sauber begleitet.',
+        text: 'Neubau- und Bestandsobjekte, vor Ort vernetzt – mit klarem Blick auf Chancen und Risiken.',
       },
       {
         kicker: 'Due Diligence',
@@ -127,17 +135,17 @@ export const deContent: ExtraContent = {
       {
         kicker: 'Türkei & Nordzypern',
         title: 'Mittelmeer-Investments mit einem Ansprechpartner',
-        text: 'Wir sprechen Deutsch und Türkisch, kennen Abläufe und Fallstricke vor Ort und arbeiten mit geprüften Anwälten und Partnern.',
+        text: 'Wir sprechen Deutsch und Türkisch, kennen Abläufe und Fallstricke vor Ort und arbeiten mit geprüften Partnern vor Ort.',
         points: [
           'Standort- & Projektauswahl',
-          'Rechts- & Kostenklarheit',
+          'Kosten- & Renditeklarheit',
           'Begleitung bis zur Übergabe',
         ],
       },
       {
         kicker: 'Due Diligence & Abschluss',
         title: 'Sicherheit vor der Unterschrift',
-        text: 'Unterlagen, Zustand, Rechtslage und Rechnung: Wir prüfen gemeinsam mit Fachpartnern, damit Sie mit gutem Gefühl entscheiden.',
+        text: 'Unterlagen, Zustand, Chancen und Risiken, Amortisation und Return on Investment (ROI): Wir prüfen gemeinsam mit Fachpartnern, damit Sie mit gutem Gefühl entscheiden.',
         points: ['Unterlagen-Check', 'Wirtschaftlichkeitsrechnung', 'Risiken transparent'],
       },
       {
@@ -225,12 +233,8 @@ export const deContent: ExtraContent = {
         benefits: ['Transparente Kalkulation', 'Lage- und Marktbewertung', 'Entscheidungsvorlage'],
       },
       {
-        text: 'Gemeinsam mit Anwälten, Gutachtern und Steuerberatern prüfen wir Unterlagen, Bausubstanz, Genehmigungen und Rechtslage – im Ausland ebenso sorgfältig wie in Deutschland.',
-        benefits: [
-          'Rechtliche Prüfung mit Partnern',
-          'Technische Einschätzung',
-          'Risiken klar benannt',
-        ],
+        text: 'Gemeinsam mit Gutachtern und Fachpartnern prüfen wir Unterlagen, Bausubstanz, Lage, Chancen und Risiken sowie Amortisation und Return on Investment (ROI) – im Ausland ebenso sorgfältig wie in Deutschland.',
+        benefits: ['Chancen & Risiken bewertet', 'Technische Einschätzung', 'Risiken klar benannt'],
       },
       {
         text: 'Sie möchten verkaufen, ohne Ihr Objekt öffentlich zu zeigen? Wir sprechen ausgewählte, geprüfte Interessenten gezielt an und schützen Ihre Privatsphäre während des gesamten Prozesses.',
@@ -305,10 +309,10 @@ export const deContent: ExtraContent = {
     title: 'Vier Märkte. Ein Ansprechpartner.',
     lead: 'Jeder Markt hat eigene Regeln. Wir kennen sie – und arbeiten mit geprüften Partnern vor Ort.',
     details: [
-      'Deutschland, Österreich und die Schweiz bieten Stabilität und Rechtssicherheit. Wir begleiten Kapitalanlagen in Wohn- und Geschäftshäusern, Portfolios und Projektentwicklungen.',
+      'Deutschland, Österreich und die Schweiz bieten Stabilität und Planungssicherheit. Wir begleiten Kapitalanlagen in Wohn- und Geschäftshäusern, Portfolios und Projektentwicklungen.',
       'In ausgewählten europäischen Märkten suchen wir Standorte mit stabilen Rahmenbedingungen und nachvollziehbarem Entwicklungspotenzial.',
       'Von Istanbul bis an die türkische Riviera: Wir begleiten die Objektauswahl, prüfen Unterlagen und Kosten und unterstützen bis zur Eintragung im Grundbuch (Tapu).',
-      'In Nordzypern sind Ortskenntnis und rechtliche Sorgfalt entscheidend. Wir sind vor Ort vernetzt und begleiten Neubau- und Bestandsobjekte mit klarem Blick auf Chancen und Risiken.',
+      'In Nordzypern sind Ortskenntnis und Sorgfalt entscheidend. Wir sind vor Ort vernetzt und begleiten Neubau- und Bestandsobjekte mit klarem Blick auf Chancen und Risiken.',
     ],
   },
 };

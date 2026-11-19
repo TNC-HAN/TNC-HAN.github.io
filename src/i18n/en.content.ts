@@ -3,6 +3,14 @@ import type { ExtraContent } from './types';
 /** Extended content – English. Order matches src/config/content.ts. */
 export const enContent: ExtraContent = {
   photoAlt: {
+    dachCollage:
+      'Collage of Frankfurt am Main, a Viennese palais and Zurich’s old town on the Limmat',
+    istanbulNacht: 'Istanbul at night with the illuminated Bosphorus Bridge',
+    noyanlarPool:
+      'Ocean Life Residence by NOYANLAR in İskele (Long Beach), Northern Cyprus – pool area at sunset',
+    noyanlarOceanLife: 'Ocean Life Residence by NOYANLAR in İskele (Long Beach), Northern Cyprus',
+    dubaiMarina: 'Dubai Marina at night',
+    mittelmeerBucht: 'Turquoise bay on the Mediterranean',
     strategieMeeting: 'Strategy workshop: team discussing company goals at a conference table',
     coachingUnternehmer: 'Entrepreneur in a suit considering a decision in the office',
     handschlagNachfolge: 'Handshake across a desk after a successful agreement',
@@ -72,7 +80,7 @@ export const enContent: ExtraContent = {
       {
         kicker: 'Northern Cyprus',
         title: 'Mediterranean property with a clear view of opportunities and risks',
-        text: 'New-build and existing properties, locally connected and legally sound.',
+        text: 'New-build and existing properties, locally connected – with a clear view of opportunities and risks.',
       },
       {
         kicker: 'Due diligence',
@@ -127,7 +135,7 @@ export const enContent: ExtraContent = {
       {
         kicker: 'Turkey & Northern Cyprus',
         title: 'Mediterranean investments with one point of contact',
-        text: 'We speak German and Turkish, know local procedures and pitfalls and work with vetted lawyers and partners.',
+        text: 'We speak German and Turkish, know local procedures and pitfalls and work with vetted local partners.',
         points: [
           'Location & project selection',
           'Clarity on law & costs',
@@ -137,7 +145,7 @@ export const enContent: ExtraContent = {
       {
         kicker: 'Due diligence & closing',
         title: 'Certainty before you sign',
-        text: 'Documents, condition, legal situation and numbers: we review them with specialist partners so you can decide with confidence.',
+        text: 'Documents, condition, opportunities and risks, payback and return on investment (ROI): we review them with specialist partners so you can decide with confidence.',
         points: ['Document review', 'Profitability calculation', 'Transparent risks'],
       },
       {
@@ -213,8 +221,12 @@ export const enContent: ExtraContent = {
         ],
       },
       {
-        text: 'Together with lawyers, surveyors and tax advisors we review documents, building condition, permits and legal situation – abroad as carefully as in Germany.',
-        benefits: ['Legal review with partners', 'Technical assessment', 'Risks clearly stated'],
+        text: 'Together with surveyors and specialist partners we review documents, building condition, location, opportunities and risks as well as payback and return on investment (ROI) – abroad as carefully as in Germany.',
+        benefits: [
+          'Opportunities & risks assessed',
+          'Technical assessment',
+          'Risks clearly stated',
+        ],
       },
       {
         text: 'Want to sell without showing your property publicly? We approach selected, vetted prospects and protect your privacy throughout the process.',
@@ -281,10 +293,10 @@ export const enContent: ExtraContent = {
     title: 'Four markets. One point of contact.',
     lead: 'Every market has its own rules. We know them – and work with vetted local partners.',
     details: [
-      'Germany, Austria and Switzerland offer stability and legal certainty. We support investments in residential and commercial buildings, portfolios and developments.',
+      'Germany, Austria and Switzerland offer stability and planning certainty. We support investments in residential and commercial buildings, portfolios and developments.',
       'In selected European markets we look for locations with stable conditions and comprehensible development potential.',
       'From Istanbul to the Turkish Riviera: we support property selection, review documents and costs and assist until registration in the land registry (tapu).',
-      'In Northern Cyprus, local knowledge and legal diligence are decisive. We are connected locally and support new-build and existing properties with a clear view of opportunities and risks.',
+      'In Northern Cyprus, local knowledge and diligence are decisive. We are connected locally and support new-build and existing properties with a clear view of opportunities and risks.',
     ],
   },
 };

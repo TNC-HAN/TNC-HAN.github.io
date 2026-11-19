@@ -22,6 +22,12 @@ import zypernKueste from '@/assets/photos/zypern-kueste.jpg';
 import schluesseluebergabe from '@/assets/photos/schluesseluebergabe.jpg';
 import programmcode from '@/assets/photos/programmcode.jpg';
 import datenanalyseLaptop from '@/assets/photos/datenanalyse-laptop.jpg';
+import dachCollage from '@/assets/photos/dach-collage.jpg';
+import istanbulNacht from '@/assets/photos/istanbul-bosporusbruecke-nacht.jpg';
+import noyanlarPool from '@/assets/photos/noyanlar-ocean-life-pool.jpg';
+import noyanlarOceanLife from '@/assets/photos/noyanlar-ocean-life.jpg';
+import dubaiMarina from '@/assets/photos/dubai-marina-nacht.jpg';
+import mittelmeerBucht from '@/assets/photos/mittelmeer-bucht.jpg';
 
 export const photos = {
   strategieMeeting,
@@ -42,6 +48,12 @@ export const photos = {
   schluesseluebergabe,
   programmcode,
   datenanalyseLaptop,
+  dachCollage,
+  istanbulNacht,
+  noyanlarPool,
+  noyanlarOceanLife,
+  dubaiMarina,
+  mittelmeerBucht,
 } satisfies Record<string, ImageMetadata>;
 
 export type PhotoKey = keyof typeof photos;

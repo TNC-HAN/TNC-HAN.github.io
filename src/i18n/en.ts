@@ -169,7 +169,7 @@ export const en: Dictionary = {
         },
         {
           title: 'Northern Cyprus',
-          text: 'New-build and existing projects, locally connected, with a clear view of legal matters and risks.',
+          text: 'New-build and existing projects, locally connected, with a clear view of opportunities, risks and profitability.',
         },
       ],
     },
@@ -368,7 +368,7 @@ export const en: Dictionary = {
       approach: {
         eyebrow: 'Markets',
         title: 'DACH · Europe · Turkey · Northern Cyprus.',
-        text: 'Every market has its own rules. We know the differences – legal, tax and cultural – and work with vetted local partners.',
+        text: 'Every market has its own rules. We know procedures, costs and cultural differences – and work with vetted local partners.',
         points: [
           'German, English and Turkish',
           'Local partner network',
@@ -382,7 +382,7 @@ export const en: Dictionary = {
         },
         {
           q: 'Do you also support purchases in Turkey and Northern Cyprus?',
-          a: 'Yes. We accompany you from selecting the property and reviewing it through to the transfer of ownership, working with local lawyers and specialist partners.',
+          a: 'Yes. We accompany you from selecting the property and reviewing it through to the transfer of ownership, working with vetted local specialist partners.',
         },
       ],
       cta: {

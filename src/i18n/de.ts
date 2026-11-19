@@ -170,7 +170,7 @@ export const de: Dictionary = {
         },
         {
           title: 'Nordzypern',
-          text: 'Neubau- und Bestandsprojekte, vor Ort vernetzt, mit klarem Blick auf Rechtslage und Risiken.',
+          text: 'Neubau- und Bestandsprojekte, vor Ort vernetzt, mit klarem Blick auf Chancen, Risiken und Wirtschaftlichkeit.',
         },
       ],
     },
@@ -373,7 +373,7 @@ export const de: Dictionary = {
       approach: {
         eyebrow: 'Märkte',
         title: 'D-A-CH · Europa · Türkei · Nordzypern.',
-        text: 'Jeder Markt hat eigene Regeln. Wir kennen die Unterschiede – rechtlich, steuerlich und kulturell – und arbeiten mit geprüften Partnern vor Ort.',
+        text: 'Jeder Markt hat eigene Regeln. Wir kennen Abläufe, Kosten und kulturelle Unterschiede – und arbeiten mit geprüften Partnern vor Ort.',
         points: [
           'Deutsch, Englisch und Türkisch',
           'Partnernetzwerk vor Ort',
@@ -387,7 +387,7 @@ export const de: Dictionary = {
         },
         {
           q: 'Begleiten Sie auch Käufe in der Türkei und Nordzypern?',
-          a: 'Ja. Wir begleiten Sie von der Objektauswahl über die Prüfung bis zur Eigentumsübertragung und arbeiten dabei mit Anwälten und Fachpartnern vor Ort zusammen.',
+          a: 'Ja. Wir begleiten Sie von der Objektauswahl über die Prüfung bis zur Eigentumsübertragung und arbeiten dabei mit geprüften Fachpartnern vor Ort zusammen.',
         },
       ],
       cta: {

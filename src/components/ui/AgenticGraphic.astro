@@ -1,0 +1,286 @@
+---
+/**
+ * Animierte Grafik „Agentic AI & Workflow-Prozesse“ (reines SVG + CSS, keine Bilder, keine Skripte):
+ * Ein zentraler KI-Orchestrator steuert spezialisierte Agenten (Vertrieb, Dokumente, Daten, Service,
+ * Buchhaltung, Kalender). Lichtimpulse laufen entlang der Workflow-Linien, Knoten pulsieren,
+ * der äußere Ring dreht sich langsam. Bei „reduzierte Bewegung“ steht alles still.
+ */
+interface Props {
+  class?: string;
+  label?: string;
+}
+const { class: className, label } = Astro.props;
+
+const cx = 1360; // rechts, damit die Banner-Überschrift links frei bleibt
+const cy = 400;
+const agents = [
+  { a: -150, t: 'Sales' },
+  { a: -90, t: 'Docs' },
+  { a: -30, t: 'Data' },
+  { a: 30, t: 'Service' },
+  { a: 90, t: 'Finance' },
+  { a: 150, t: 'Calendar' },
+].map((n, i) => {
+  const rad = (n.a * Math.PI) / 180;
+  return {
+    ...n,
+    i,
+    x: Math.round(cx + Math.cos(rad) * 430),
+    y: Math.round(cy + Math.sin(rad) * 290),
+  };
+});
+// zusätzliche Workflow-Ketten zwischen Agenten
+const chains = agents.map((n, i) => [n, agents[(i + 1) % agents.length]!] as const);
+---
+
+<svg
+  class:list={['agentic size-full', className]}
+  viewBox="0 0 1920 820"
+  preserveAspectRatio="xMaxYMid slice"
+  role={label ? 'img' : undefined}
+  aria-label={label}
+  aria-hidden={label ? undefined : 'true'}
+>
+  <defs>
+    <radialGradient id="ag-bg" cx="50%" cy="48%" r="70%">
+      <stop offset="0" stop-color="#1b1350"></stop>
+      <stop offset="0.55" stop-color="#0a0b24"></stop>
+      <stop offset="1" stop-color="#03040c"></stop>
+    </radialGradient>
+    <radialGradient id="ag-core" cx="50%" cy="45%" r="55%">
+      <stop offset="0" stop-color="#fff6dc"></stop>
+      <stop offset="0.35" stop-color="#e6c27a"></stop>
+      <stop offset="1" stop-color="#7b3fe4"></stop>
+    </radialGradient>
+    <linearGradient id="ag-line" x1="0" x2="1">
+      <stop offset="0" stop-color="#5496de" stop-opacity="0.15"></stop>
+      <stop offset="0.5" stop-color="#8bb8ea" stop-opacity="0.65"></stop>
+      <stop offset="1" stop-color="#f06a8a" stop-opacity="0.15"></stop>
+    </linearGradient>
+    <filter id="ag-glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="6" result="b"></feGaussianBlur>
+      <feMerge>
+        <feMergeNode in="b"></feMergeNode>
+        <feMergeNode in="SourceGraphic"></feMergeNode>
+      </feMerge>
+    </filter>
+    <pattern id="ag-grid" width="48" height="48" patternUnits="userSpaceOnUse">
+      <circle cx="1" cy="1" r="1" fill="#8bb8ea" opacity="0.18"></circle>
+    </pattern>
+  </defs>
+
+  <rect width="1920" height="820" fill="url(#ag-bg)"></rect>
+  <rect width="1920" height="820" fill="url(#ag-grid)"></rect>
+
+  <!-- äußerer Orbit -->
+  <g class="ag-orbit" style={`transform-origin:${cx}px ${cy}px`}>
+    <ellipse
+      cx={cx}
+      cy={cy}
+      rx="560"
+      ry="320"
+      fill="none"
+      stroke="#5496de"
+      stroke-opacity="0.25"
+      stroke-dasharray="4 14"
+    ></ellipse>
+    <ellipse
+      cx={cx}
+      cy={cy}
+      rx="380"
+      ry="215"
+      fill="none"
+      stroke="#c9a45c"
+      stroke-opacity="0.22"
+      stroke-dasharray="2 10"
+    ></ellipse>
+  </g>
+
+  <!-- Workflow-Ketten zwischen Agenten -->
+  {chains.map(([a, b], i) => (
+    <g>
+      <path
+        d={`M${a.x},${a.y} Q${cx},${cy} ${b.x},${b.y}`}
+        fill="none"
+        stroke="url(#ag-line)"
+        stroke-width="1.5"
+      />
+      <circle r="4" fill="#f0dfb4" filter="url(#ag-glow)" class="ag-pulse">
+        <animateMotion
+          dur={`${5 + (i % 3)}s`}
+          begin={`${i * 0.7}s`}
+          repeatCount="indefinite"
+          path={`M${a.x},${a.y} Q${cx},${cy} ${b.x},${b.y}`}
+        />
+      </circle>
+    </g>
+  ))}
+
+  <!-- Speichen: Orchestrator ↔ Agenten, Impulse in beide Richtungen -->
+  {agents.map((n) => (
+    <g>
+      <line
+        x1={cx}
+        y1={cy}
+        x2={n.x}
+        y2={n.y}
+        stroke="#8bb8ea"
+        stroke-opacity="0.35"
+        stroke-width="2"
+      />
+      <circle r="6" fill="#8bb8ea" filter="url(#ag-glow)" class="ag-pulse">
+        <animateMotion
+          dur="2.6s"
+          begin={`${n.i * 0.45}s`}
+          repeatCount="indefinite"
+          path={`M${cx},${cy} L${n.x},${n.y}`}
+        />
+      </circle>
+      <circle r="5" fill="#f06a8a" filter="url(#ag-glow)" class="ag-pulse">
+        <animateMotion
+          dur="3.4s"
+          begin={`${1.2 + n.i * 0.5}s`}
+          repeatCount="indefinite"
+          path={`M${n.x},${n.y} L${cx},${cy}`}
+        />
+      </circle>
+    </g>
+  ))}
+
+  <!-- Agenten-Knoten -->
+  {agents.map((n) => (
+    <g class="ag-node" style={`animation-delay:${n.i * 0.6}s;transform-origin:${n.x}px ${n.y}px`}>
+      <circle
+        cx={n.x}
+        cy={n.y}
+        r="54"
+        fill="#0d1030"
+        stroke="#5496de"
+        stroke-opacity="0.7"
+        stroke-width="2"
+      />
+      <circle
+        cx={n.x}
+        cy={n.y}
+        r="54"
+        fill="none"
+        stroke="#c9a45c"
+        stroke-opacity="0.5"
+        stroke-width="1"
+        class="ag-ring"
+      />
+      <text
+        x={n.x}
+        y={n.y + 8}
+        text-anchor="middle"
+        font-family="Inter Variable, sans-serif"
+        font-size="22"
+        font-weight="600"
+        fill="#e6d3a8"
+      >
+        {n.t}
+      </text>
+    </g>
+  ))}
+
+  <!-- KI-Orchestrator -->
+  <g filter="url(#ag-glow)">
+    <circle
+      cx={cx}
+      cy={cy}
+      r="96"
+      fill="url(#ag-core)"
+      class="ag-core"
+      style={`transform-origin:${cx}px ${cy}px`}
+    ></circle>
+  </g>
+  <circle
+    cx={cx}
+    cy={cy}
+    r="128"
+    fill="none"
+    stroke="#e6c27a"
+    stroke-opacity="0.5"
+    stroke-width="2"
+    class="ag-ring"
+    style={`transform-origin:${cx}px ${cy}px`}
+  ></circle>
+  <text
+    x={cx}
+    y={cy - 6}
+    text-anchor="middle"
+    font-family="Fraunces Variable, serif"
+    font-size="40"
+    fill="#0b0b1e"
+    font-weight="600"
+  >
+    AI
+  </text>
+  <text
+    x={cx}
+    y={cy + 26}
+    text-anchor="middle"
+    font-family="Inter Variable, sans-serif"
+    font-size="15"
+    letter-spacing="3"
+    fill="#2a1a55"
+    font-weight="700"
+  >
+    AGENTS
+  </text>
+</svg>
+
+<style>
+  @media (prefers-reduced-motion: no-preference) {
+    .ag-orbit {
+      animation: ag-spin 90s linear infinite;
+    }
+    .ag-core {
+      animation: ag-breathe 4s ease-in-out infinite;
+    }
+    .ag-ring {
+      animation: ag-ripple 3.2s ease-out infinite;
+    }
+    .ag-node {
+      animation: ag-float 6s ease-in-out infinite;
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .ag-pulse {
+      display: none;
+    }
+  }
+  @keyframes ag-spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  @keyframes ag-breathe {
+    0%,
+    100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.06);
+    }
+  }
+  @keyframes ag-ripple {
+    from {
+      transform: scale(1);
+      opacity: 0.6;
+    }
+    to {
+      transform: scale(1.35);
+      opacity: 0;
+    }
+  }
+  @keyframes ag-float {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-8px);
+    }
+  }
+</style>

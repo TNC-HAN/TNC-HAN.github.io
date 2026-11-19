@@ -11,17 +11,20 @@ export interface Target {
   hash?: string;
 }
 
-/** Slide-Banner oben auf der Startseite – 10 Themen (Texte: home.banner.slides) */
-export const bannerSlides: (Target & { photo: PhotoKey })[] = [
+/**
+ * Slide-Banner oben auf der Startseite – 10 Themen (Texte: banner.slides).
+ * `graphic: 'agentic'` zeigt statt des Fotos die animierte Agentic-AI-Grafik (Foto bleibt als Rückfall).
+ */
+export const bannerSlides: (Target & { photo: PhotoKey; graphic?: 'agentic' })[] = [
   { photo: 'strategieMeeting', page: 'consulting', hash: 'strategie' },
   { photo: 'coachingUnternehmer', page: 'consulting', hash: 'coaching' },
-  { photo: 'handschlagNachfolge', page: 'consulting', hash: 'nachfolge' },
+  { photo: 'vertragUnterschrift', page: 'consulting', hash: 'nachfolge' },
   { photo: 'villaPoolModern', page: 'realEstate', hash: 'off-market' },
-  { photo: 'frankfurtSkyline', page: 'realEstate', hash: 'markt-dach' },
-  { photo: 'istanbulBosporus', page: 'realEstate', hash: 'markt-tuerkei' },
-  { photo: 'mittelmeerKueste', page: 'realEstate', hash: 'markt-nordzypern' },
-  { photo: 'vertragUnterschrift', page: 'realEstate', hash: 'due-diligence' },
-  { photo: 'rechenzentrum', page: 'ai', hash: 'workflow-automatisierung' },
+  { photo: 'dachCollage', page: 'realEstate', hash: 'markt-dach' },
+  { photo: 'istanbulNacht', page: 'realEstate', hash: 'markt-tuerkei' },
+  { photo: 'noyanlarPool', page: 'realEstate', hash: 'markt-nordzypern' },
+  { photo: 'datenanalyseLaptop', page: 'realEstate', hash: 'due-diligence' },
+  { photo: 'rechenzentrum', page: 'ai', hash: 'workflow-automatisierung', graphic: 'agentic' },
   { photo: 'kiRoboter', page: 'ai', hash: 'ki-assistenten' },
 ];
 
@@ -31,7 +34,7 @@ export const showcase: (Target & { photo: PhotoKey })[] = [
   { photo: 'unternehmerNachdenklich', page: 'consulting', hash: 'coaching' },
   { photo: 'herrenhaus', page: 'consulting', hash: 'nachfolge' },
   { photo: 'poolMediterran', page: 'realEstate', hash: 'off-market' },
-  { photo: 'zypernKueste', page: 'realEstate', hash: 'maerkte' },
+  { photo: 'noyanlarOceanLife', page: 'realEstate', hash: 'maerkte' },
   { photo: 'schluesseluebergabe', page: 'realEstate', hash: 'due-diligence' },
   { photo: 'programmcode', page: 'ai', hash: 'workflow-automatisierung' },
   { photo: 'datenanalyseLaptop', page: 'ai', hash: 'ki-assistenten' },

@@ -9,6 +9,7 @@
 import { Image } from 'astro:assets';
 import Icon from '@/components/ui/Icon.astro';
 import BookButton from '@/components/ui/BookButton.astro';
+import AgenticGraphic from '@/components/ui/AgenticGraphic.astro';
 import { bannerSlides } from '@/config/content';
 import { photos } from '@/config/media';
 import { href, type Lang } from '@/config/routes';
@@ -44,15 +45,21 @@ const slides = bannerSlides.map((s, i) => ({ ...s, ...dict.banner.slides[i]! }))
           tabindex="-1"
           aria-hidden="true"
         >
-          <Image
-            src={photos[s.photo]}
-            alt={dict.photoAlt[s.photo]}
-            class="banner-img size-full object-cover"
-            widths={[640, 1024, 1600]}
-            sizes="100vw"
-            loading={i === 0 ? 'eager' : 'lazy'}
-            fetchpriority={i === 0 ? 'high' : 'auto'}
-          />
+          {s.graphic === 'agentic' ? (
+            <div class="banner-img size-full">
+              <AgenticGraphic label={`${s.kicker}: ${s.title}`} />
+            </div>
+          ) : (
+            <Image
+              src={photos[s.photo]}
+              alt={dict.photoAlt[s.photo]}
+              class="banner-img size-full object-cover"
+              widths={[640, 1024, 1600]}
+              sizes="100vw"
+              loading={i === 0 ? 'eager' : 'lazy'}
+              fetchpriority={i === 0 ? 'high' : 'auto'}
+            />
+          )}
         </a>
         <div class="pointer-events-none absolute inset-0 bg-gradient-to-r from-[#04030c]/92 via-[#04030c]/60 to-[#04030c]/10" />
         <div class="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#04030c] via-transparent to-[#04030c]/40" />
