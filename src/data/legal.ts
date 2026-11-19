@@ -70,6 +70,13 @@ export const imprint: { title: string; sections: LegalSection[] } = {
         'Die durch den Betreiber erstellten Inhalte, Texte, Grafiken und Logos unterliegen dem deutschen Urheberrecht. Vervielfältigung, Bearbeitung und Verbreitung außerhalb der Grenzen des Urheberrechts bedürfen der schriftlichen Zustimmung des Betreibers.',
       ],
     },
+    {
+      heading: 'Bildnachweis',
+      paragraphs: [
+        'Fotos: Unsplash, Openverse und Wikimedia Commons (freie Lizenzen), NOYANLAR Group (mit Genehmigung), NASA (gemeinfrei), LGLN (Luftbilder Laatzen).',
+        'Einzelne Bilder, auf denen der Inhaber zu sehen ist (u. a. im Startseiten-Banner), wurden mit KI-Unterstützung auf Basis eigener Fotos erstellt.',
+      ],
+    },
   ],
 };
 

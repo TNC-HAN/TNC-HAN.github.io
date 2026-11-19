@@ -19,8 +19,10 @@ export const trContent: ExtraContent = {
     noyanlarOceanLife: 'NOYANLAR Ocean Life Residence, İskele (Long Beach), Kuzey Kıbrıs',
     dubaiMarina: 'Gece Dubai Marina',
     mittelmeerBucht: 'Akdeniz’de turkuaz bir koy',
-    strategieMeeting: 'Danışman toplantı odasında ekibe güler yüzle bir strateji sunuyor',
-    coachingUnternehmer: 'İki girişimci bir ofis binasının önünde açık ve olumlu bir sohbette',
+    strategieMeeting:
+      'Ümit Törün aydınlık bir toplantı odasında ekibe güler yüzle büyüme stratejisi sunuyor',
+    coachingUnternehmer:
+      'Ümit Törün bir çatı terasında bir girişimciyle açık ve olumlu bir koçluk sohbetinde',
     handschlagNachfolge: 'Başarılı bir anlaşmanın ardından masa üzerinde el sıkışma',
     villaPoolModern: 'Akşam alacakaranlığında havuzlu modern villa',
     frankfurtSkyline: 'Gece Frankfurt am Main silueti',

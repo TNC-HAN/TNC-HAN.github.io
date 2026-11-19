@@ -19,8 +19,10 @@ export const deContent: ExtraContent = {
     noyanlarOceanLife: 'Ocean Life Residence von NOYANLAR in İskele (Long Beach), Nordzypern',
     dubaiMarina: 'Dubai Marina bei Nacht',
     mittelmeerBucht: 'Türkisblaue Bucht am Mittelmeer',
-    strategieMeeting: 'Berater präsentiert gut gelaunt eine Strategie vor einem Team im Besprechungsraum',
-    coachingUnternehmer: 'Zwei Unternehmer im offenen, positiven Gespräch vor einem Bürogebäude',
+    strategieMeeting:
+      'Ümit Törün präsentiert gut gelaunt eine Wachstumsstrategie vor einem Team im hellen Besprechungsraum',
+    coachingUnternehmer:
+      'Ümit Törün im offenen, positiven Coaching-Gespräch mit einem Unternehmer auf einer Dachterrasse',
     handschlagNachfolge: 'Handschlag über einem Schreibtisch nach erfolgreicher Vereinbarung',
     villaPoolModern: 'Moderne Villa mit Pool in der Abenddämmerung',
     frankfurtSkyline: 'Skyline von Frankfurt am Main bei Nacht',

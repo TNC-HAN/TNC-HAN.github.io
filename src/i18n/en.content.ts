@@ -6,7 +6,8 @@ export const enContent: ExtraContent = {
     dachCollage:
       'Collage of Munich with the Frauenkirche, Vienna’s Belvedere Palace and Zurich’s Grossmünster on Lake Zurich',
     istanbulNacht: 'Istanbul at night with the illuminated Bosphorus Bridge',
-    nzKyreniaHafen: 'Old harbour of Kyrenia (Girne) with castle and the Beşparmak mountains, Northern Cyprus',
+    nzKyreniaHafen:
+      'Old harbour of Kyrenia (Girne) with castle and the Beşparmak mountains, Northern Cyprus',
     nzPromenade: 'Aerial view of beach and seaside promenade on the coast of Northern Cyprus',
     nzKyreniaBurg: 'Kyrenia (Girne) Castle by the harbour, Northern Cyprus',
     nzStrand: 'Sandy beach and turquoise sea in Northern Cyprus',
@@ -19,8 +20,10 @@ export const enContent: ExtraContent = {
     noyanlarOceanLife: 'Ocean Life Residence by NOYANLAR in İskele (Long Beach), Northern Cyprus',
     dubaiMarina: 'Dubai Marina at night',
     mittelmeerBucht: 'Turquoise bay on the Mediterranean',
-    strategieMeeting: 'Consultant cheerfully presenting a strategy to a team in a meeting room',
-    coachingUnternehmer: 'Two entrepreneurs in an open, positive conversation outside an office building',
+    strategieMeeting:
+      'Ümit Törün cheerfully presenting a growth strategy to a team in a bright meeting room',
+    coachingUnternehmer:
+      'Ümit Törün in an open, positive coaching conversation with an entrepreneur on a rooftop terrace',
     handschlagNachfolge: 'Handshake across a desk after a successful agreement',
     villaPoolModern: 'Modern villa with pool at dusk',
     frankfurtSkyline: 'Frankfurt am Main skyline at night',
