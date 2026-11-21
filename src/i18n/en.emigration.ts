@@ -21,7 +21,7 @@ export const enEmigration: EmigrationContent = {
     },
     slide: {
       kicker: '04 · Relocation',
-      title: 'Relocate with a plan, not a gut feeling.',
+      title: 'Relocation or global set-up – with a plan, not a gut feeling.',
       text: 'Personal relocation coaching – focus on Turkey and Northern Cyprus.',
     },
     hero: {

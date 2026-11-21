@@ -21,7 +21,7 @@ export const deEmigration: EmigrationContent = {
     },
     slide: {
       kicker: '04 · Relocation',
-      title: 'Auswandern mit Plan statt mit Bauchgefühl.',
+      title: 'Auswandern oder globales Set-up – mit Plan statt mit Bauchgefühl.',
       text: 'Persönliches Auswanderungscoaching – Schwerpunkt Türkei und Nordzypern.',
     },
     hero: {

@@ -229,7 +229,7 @@ export const en: Dictionary = {
       },
       slide: {
         kicker: '01 · Consulting',
-        title: 'Strategy that works in everyday business.',
+        title: 'Strategies from practice, for practice.',
         text: 'Consulting and coaching for owners and managing directors of SMEs.',
       },
       hero: {
@@ -323,7 +323,7 @@ export const en: Dictionary = {
       },
       slide: {
         kicker: '02 · Real Estate',
-        title: 'Properties not everyone gets to see.',
+        title: 'Properties not everyone gets to see – but you do, with us.',
         text: 'Off-market and investment property in D-A-CH, Europe, Turkey and Northern Cyprus.',
       },
       hero: {
@@ -417,7 +417,7 @@ export const en: Dictionary = {
       },
       slide: {
         kicker: '03 · Intelligence',
-        title: 'AI that takes work off your plate.',
+        title: 'AI that empowers you and your people – not replaces them.',
         text: 'Automation and AI assistants for small and medium-sized companies.',
       },
       hero: {

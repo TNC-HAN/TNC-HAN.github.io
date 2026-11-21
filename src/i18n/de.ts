@@ -230,7 +230,7 @@ export const de: Dictionary = {
       },
       slide: {
         kicker: '01 · Consulting',
-        title: 'Strategie, die im Alltag trägt.',
+        title: 'Strategien aus der Praxis, für die Praxis.',
         text: 'Consulting und Coaching für Inhaber und Geschäftsführer im Mittelstand.',
       },
       hero: {
@@ -324,7 +324,7 @@ export const de: Dictionary = {
       },
       slide: {
         kicker: '02 · Real Estate',
-        title: 'Immobilien, die nicht jeder sieht.',
+        title: 'Immobilien, die nicht jeder sieht – aber Sie mit uns schon.',
         text: 'Off-Market- und Investmentimmobilien in D-A-CH, Europa, Türkei und Nordzypern.',
       },
       hero: {
@@ -418,7 +418,7 @@ export const de: Dictionary = {
       },
       slide: {
         kicker: '03 · Intelligence',
-        title: 'KI, die Arbeit abnimmt.',
+        title: 'KI, die Sie und Ihre Mitarbeiter stärkt – nicht ersetzt.',
         text: 'Automatisierung und KI-Assistenten für kleine und mittlere Unternehmen.',
       },
       hero: {

@@ -229,7 +229,7 @@ export const tr: Dictionary = {
       },
       slide: {
         kicker: '01 · Consulting',
-        title: 'Günlük işte de işleyen strateji.',
+        title: 'Pratikten, pratik için stratejiler.',
         text: 'Orta ölçekli şirketlerin sahipleri ve yöneticileri için danışmanlık ve koçluk.',
       },
       hero: {
@@ -323,7 +323,7 @@ export const tr: Dictionary = {
       },
       slide: {
         kicker: '02 · Real Estate',
-        title: 'Herkesin göremediği gayrimenkuller.',
+        title: 'Herkesin göremediği gayrimenkuller – ama siz bizimle görürsünüz.',
         text: 'D-A-CH, Avrupa, Türkiye ve Kuzey Kıbrıs’ta off-market ve yatırım gayrimenkulleri.',
       },
       hero: {
@@ -417,7 +417,7 @@ export const tr: Dictionary = {
       },
       slide: {
         kicker: '03 · Intelligence',
-        title: 'İş yükünü alan yapay zekâ.',
+        title: 'Sizi ve çalışanlarınızı güçlendiren – yerini almayan yapay zekâ.',
         text: 'Küçük ve orta ölçekli şirketler için otomasyon ve yapay zekâ asistanları.',
       },
       hero: {

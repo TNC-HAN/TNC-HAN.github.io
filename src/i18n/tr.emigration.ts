@@ -16,7 +16,7 @@ export const trEmigration: EmigrationContent = {
     },
     slide: {
       kicker: '04 · Relocation',
-      title: 'İçgüdüyle değil, planla yerleşin.',
+      title: 'Yerleşim veya küresel kurulum – içgüdüyle değil, planla.',
       text: 'Kişisel yerleşim koçluğu – odak Türkiye ve Kuzey Kıbrıs.',
     },
     hero: {
