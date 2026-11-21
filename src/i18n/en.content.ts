@@ -115,7 +115,7 @@ export const enContent: ExtraContent = {
       {
         kicker: 'AI assistants',
         title: 'Digital colleagues for marketing & sales, service and knowledge base',
-        text: 'Assistants that know your processes, relieve your team, onboard new staff – and even take phone calls.',
+        text: '“AI agents” are the new digital assistants that know your processes, relieve your team, onboard new staff – and even take phone calls.',
       },
     ],
   },

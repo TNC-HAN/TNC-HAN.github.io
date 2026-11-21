@@ -114,7 +114,7 @@ export const deContent: ExtraContent = {
       {
         kicker: 'KI-Assistenten',
         title: 'Digitale Kollegen für Marketing & Sales, Services und Knowledge Base',
-        text: 'Assistenten, die Ihre Prozesse kennen, Ihr Team entlasten, neue Mitarbeiter onboarden – und sogar telefonieren.',
+        text: '„KI-Agenten“ sind die neuen digitalen Assistenten, die Ihre Prozesse kennen, Ihr Team entlasten, neue Mitarbeiter onboarden – und sogar telefonieren.',
       },
     ],
   },

@@ -113,7 +113,7 @@ export const trContent: ExtraContent = {
       {
         kicker: 'Yapay zekâ asistanları',
         title: 'Pazarlama ve satış, hizmet ve bilgi bankası için dijital iş arkadaşları',
-        text: 'Süreçlerinizi bilen, ekibinizin yükünü azaltan, yeni çalışanları işe alıştıran – ve hatta telefonla görüşen asistanlar.',
+        text: '“Yapay zekâ ajanları” yeni dijital asistanlardır: süreçlerinizi bilir, ekibinizin yükünü azaltır, yeni çalışanları işe alıştırır – ve hatta telefonla görüşür.',
       },
     ],
   },
