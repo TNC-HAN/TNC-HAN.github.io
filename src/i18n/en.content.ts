@@ -105,7 +105,7 @@ export const enContent: ExtraContent = {
       {
         kicker: 'Due diligence & valuation',
         title: 'Thoroughly checked. Precisely placed.',
-        text: 'Realistic valuation and maximum proceeds through targeted placement with the right buyers.',
+        text: 'Realistic valuation and maximum proceeds through targeted placement with successors who bring both heart & mind.',
       },
       {
         kicker: 'AI automation',

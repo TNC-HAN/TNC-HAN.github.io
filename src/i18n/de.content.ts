@@ -104,7 +104,7 @@ export const deContent: ExtraContent = {
       {
         kicker: 'Due Diligence & Bewertung',
         title: 'Sorgfältig geprüft. Gezielt platziert.',
-        text: 'Realistische Bewertung und maximaler Erlös durch gezielte Platzierung bei den richtigen Käufern.',
+        text: 'Realistische Bewertung und maximaler Erlös durch gezielte Platzierung bei Nachfolgern mit Herz & Verstand.',
       },
       {
         kicker: 'KI-Automation',

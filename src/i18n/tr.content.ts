@@ -103,7 +103,7 @@ export const trContent: ExtraContent = {
       {
         kicker: 'Due diligence ve değerleme',
         title: 'Titizlikle incelendi. Hedefli konumlandırıldı.',
-        text: 'Gerçekçi değerleme ve doğru alıcılara hedefli konumlandırma ile en yüksek satış geliri.',
+        text: 'Gerçekçi değerleme ve kalbi & aklıyla hareket eden haleflere hedefli konumlandırma ile en yüksek satış geliri.',
       },
       {
         kicker: 'Yapay zekâ otomasyonu',
