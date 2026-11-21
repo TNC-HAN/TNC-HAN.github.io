@@ -110,7 +110,7 @@ export const enContent: ExtraContent = {
       {
         kicker: 'AI automation',
         title: 'Workflows that work for you around the clock',
-        text: 'Every operational service process automated to the fullest – effective, efficient, traceable, controllable, secure and GDPR-compliant.',
+        text: 'Every operational service process automated to the fullest – effective, efficient, traceable, controllable, secure and data-protection compliant under BDSG & GDPR.',
       },
       {
         kicker: 'AI assistants',

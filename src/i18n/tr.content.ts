@@ -108,7 +108,7 @@ export const trContent: ExtraContent = {
       {
         kicker: 'Yapay zekâ otomasyonu',
         title: 'Sizin için 7/24 çalışan iş akışları',
-        text: 'Operasyonel işin tüm hizmet süreçleri en üst düzeyde otomatikleştirildi – etkili, verimli, izlenebilir, kontrol edilebilir, güvenli ve veri koruma mevzuatına uygun.',
+        text: 'Operasyonel işin tüm hizmet süreçleri en üst düzeyde otomatikleştirildi – etkili, verimli, izlenebilir, kontrol edilebilir, güvenli ve BDSG & DSGVO (GDPR) veri koruma mevzuatına uygun.',
       },
       {
         kicker: 'Yapay zekâ asistanları',

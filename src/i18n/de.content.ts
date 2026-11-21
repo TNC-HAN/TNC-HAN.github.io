@@ -109,7 +109,7 @@ export const deContent: ExtraContent = {
       {
         kicker: 'KI-Automation',
         title: 'Workflows, die rund um die Uhr für Sie arbeiten',
-        text: 'Alle Leistungsprozesse des operativen Geschäfts maximal automatisiert – effektiv, effizient, nachvollziehbar, kontrollierbar, sicher und datenschutzkonform.',
+        text: 'Alle Leistungsprozesse des operativen Geschäfts maximal automatisiert – effektiv, effizient, nachvollziehbar, kontrollierbar, sicher und datenschutzkonform nach BDSG & DSGVO.',
       },
       {
         kicker: 'KI-Assistenten',
