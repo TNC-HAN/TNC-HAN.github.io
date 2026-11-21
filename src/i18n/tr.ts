@@ -77,7 +77,7 @@ export const tr: Dictionary = {
       eyebrow: 'Business · Real Estate · Intelligence',
       title: 'Değer yaratan kararlar için',
       titleAccent: 'netlik.',
-      lead: 'NEXXCON-24; girişimcilere, yatırımcılara ve aile ofislerine özün önemli olduğu yerde eşlik eder: şirketin stratejik yönünde, gizli gayrimenkul yatırımında, yapay zekâ ile otomasyonda ve yurt dışında yeni bir başlangıçta.',
+      lead: 'NEXXCON-24; girişimcilere, emlak danışmanlarına, yatırımcılara ve aile ofislerine özün önemli olduğu yerde eşlik eder: şirketin stratejik yönünde, gizli gayrimenkul yatırımında ve konumlandırmasında, yapay zekâ ile otomasyonda ve yurt dışında yeni bir başlangıçta, genişlemede veya çıkışta.',
       primary: 'Gizli ön görüşme',
       secondary: 'Hizmetleri görün',
       trust: [

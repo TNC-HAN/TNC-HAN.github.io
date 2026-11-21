@@ -77,7 +77,7 @@ export const en: Dictionary = {
       eyebrow: 'Business · Real Estate · Intelligence',
       title: 'Clarity for decisions',
       titleAccent: 'that create value.',
-      lead: 'NEXXCON-24 supports business owners, investors and family offices where substance matters: in the strategic direction of the company, in discreet real estate investment, in automation with artificial intelligence and in a new start abroad.',
+      lead: 'NEXXCON-24 supports business owners, real estate agents, investors and family offices where substance matters: in the strategic direction of the company, in discreet real estate investment and placement, in automation with artificial intelligence and in a new start, expansion or exit abroad.',
       primary: 'Confidential consultation',
       secondary: 'View services',
       trust: [

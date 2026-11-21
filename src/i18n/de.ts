@@ -78,7 +78,7 @@ export const de: Dictionary = {
       eyebrow: 'Business · Real Estate · Intelligence',
       title: 'Klarheit für Entscheidungen,',
       titleAccent: 'die Werte schaffen.',
-      lead: 'NEXXCON-24 begleitet Unternehmer, Investoren und Family Offices dort, wo es um Substanz geht: bei der strategischen Ausrichtung des Unternehmens, beim diskreten Immobilieninvestment, bei der Automatisierung mit künstlicher Intelligenz und beim Neustart im Ausland.',
+      lead: 'NEXXCON-24 begleitet Unternehmer, Makler, Investoren und Family Offices dort, wo es um Substanz geht: bei der strategischen Ausrichtung des Unternehmens, beim diskreten Immobilieninvestment und der Platzierung, bei der Automatisierung mit künstlicher Intelligenz und beim Neustart, bei der Expansion oder beim Exit im Ausland.',
       primary: 'Vertrauliches Erstgespräch',
       secondary: 'Leistungen ansehen',
       trust: [
