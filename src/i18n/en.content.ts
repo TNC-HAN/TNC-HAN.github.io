@@ -78,7 +78,7 @@ export const enContent: ExtraContent = {
         text: 'Confidential, direct and solution-focused – for better decisions in an increasingly complex market.',
       },
       {
-        kicker: 'Succession & M&A',
+        kicker: 'Succession and M&A',
         title: 'Your life’s work in the right hands',
         text: 'Selling, buying or handing over a business – carefully prepared, realistically valued, discreetly managed.',
       },

@@ -77,7 +77,7 @@ export const deContent: ExtraContent = {
         text: 'Vertraulich, direkt und lösungsorientiert – für bessere Entscheidungen in einem zunehmend komplexen Markt.',
       },
       {
-        kicker: 'Nachfolge & M&A',
+        kicker: 'Nachfolge und M&A',
         title: 'Ihr Lebenswerk in die richtigen Hände',
         text: 'Unternehmensverkauf, Kauf oder Übergabe – strukturiert vorbereitet, realistisch bewertet, diskret begleitet.',
       },
