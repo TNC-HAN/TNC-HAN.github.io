@@ -4,25 +4,25 @@ import type { EmigrationContent } from './types';
 export const trEmigration: EmigrationContent = {
   service: {
     seo: {
-      title: 'Yurt Dışına Yerleşim Koçluğu Türkiye & Kuzey Kıbrıs · ABD · Dubai · NEXXCON-24',
+      title: 'Yurt Dışına Yerleşim Koçluğu Türkiye ve Kuzey Kıbrıs · ABD · Dubai · NEXXCON-24',
       description:
-        'Planlı yerleşim: girişimciler, aileler ve emekliler için kişisel yerleşim koçluğu – odak Türkiye ve Kuzey Kıbrıs, ayrıca ABD ve BAE/Dubai. Ülke seçiminden yerleşmeye kadar.',
+        'Planlı yerleşim: girişimciler, aileler ve emekliler için kişisel yerleşim koçluğu – odak Türkiye ve Kuzey Kıbrıs, ayrıca ABD ve BAE/Dubai. Hedef ülke seçiminden yerleşmeye kadar.',
     },
-    label: 'Yerleşim koçluğu',
+    label: 'Yerleşim',
     card: {
       title: 'Yurt dışına yerleşim koçluğu',
-      text: 'Yurt dışında yeni bir hayat – planlı ve kişisel eşlikle. Odak Türkiye ve Kuzey Kıbrıs.',
+      text: 'Yurt dışında yeni bir hayat – yapılandırılmış şekilde planlanmış, dürüstçe değerlendirilmiş, kişisel olarak desteklenmiş. Odak Türkiye ve Kuzey Kıbrıs.',
       points: ['Türkiye ve Kuzey Kıbrıs', 'ABD ve BAE/Dubai', 'Konut, iş, ağ', 'Yerinde destek'],
     },
     slide: {
       kicker: '04 · Relocation',
-      title: 'Sezgiyle değil, planla taşının.',
+      title: 'İçgüdüyle değil, planla yerleşin.',
       text: 'Kişisel yerleşim koçluğu – odak Türkiye ve Kuzey Kıbrıs.',
     },
     hero: {
       eyebrow: '04 · Yurt dışına yerleşim koçluğu',
-      title: 'Planla taşının – yolu bilen biriyle.',
-      lead: 'Yurt dışında yeni bir başlangıç hayatın en büyük kararlarından biridir. İlk fikirden yerleşene kadar size eşlik ediyoruz: dürüst, yapılandırılmış ve yerinde bir ağla. Odağımız Türkiye ve Kuzey Kıbrıs; ayrıca ABD ve Dubai odaklı Birleşik Arap Emirlikleri planlarına da eşlik ediyoruz.',
+      title: 'Planla yerleşin – yolu bilen biriyle.',
+      lead: 'Yurt dışında yeni bir başlangıç hayatın en büyük kararlarından biridir. İlk fikirden yerleşmeye kadar yanınızdayız: dürüst, yapılandırılmış ve yerinde kişisel bir ağla. Odağımız Türkiye ve Kuzey Kıbrıs; bunun ötesinde ABD’ye ve Dubai odaklı olarak Birleşik Arap Emirlikleri’ne yönelik planlara da eşlik ediyoruz.',
     },
     offerings: {
       eyebrow: 'Hedef ülkeler ve hizmetler',
@@ -30,27 +30,27 @@ export const trEmigration: EmigrationContent = {
       items: [
         {
           title: 'Türkiye',
-          text: 'İstanbul’dan Riviera’ya: yaşam kalitesi, konut ve iş fırsatları gerçekçi şekilde değerlendirilir.',
+          text: 'İstanbul’dan Türk Rivierası’na: yaşam kalitesi, konut ve iş fırsatları gerçekçi şekilde değerlendirilmiş.',
         },
         {
           title: 'Kuzey Kıbrıs',
-          text: 'Akdeniz, güneş, kısa mesafeler – İskele ve Girne’de yerel bilgi ve ortaklarla.',
+          text: 'Akdeniz, güneş, kısa mesafeler – İskele ve Girne’de yerel bilgi ve doğrudan yerinde ortaklarla.',
         },
         {
           title: 'Ülke kontrolü ve yol haritası',
-          text: 'Hangi ülke hedeflerinize, bütçenize ve ailenize uygun? Net bir karşılaştırma ve adım adım plan.',
+          text: 'Hangi ülke hedeflerinize, bütçenize ve ailenize uyuyor? Dürüst bir karşılaştırma ve kilometre taşlı bir yol haritası.',
         },
         {
           title: 'ABD',
-          text: 'Somut planı olan girişimciler ve uzmanlar için: yapılandırılmış hazırlık ve doğru muhataplarla bağlantı.',
+          text: 'Somut planı olan girişimciler ve uzmanlar için: kapsamlı hazırlık ve doğru muhataplarla bağlantı.',
         },
         {
           title: 'BAE / Dubai',
-          text: 'İş ve yatırım için dinamik bir konum – maliyet, fırsat ve günlük yaşama gerçekçi bakışla.',
+          text: 'İş ve yatırım için uluslararası bir merkez – maliyetlere ve günlük yaşamın gerçeklerine net bir bakışla.',
         },
         {
           title: 'Yerleşme ve ağ',
-          text: 'Konut, banka, okul, ortaklar aracılığıyla şirket kuruluşu, topluluk: taşınmayı yuvaya dönüştürmek için.',
+          text: 'Konut, banka, okul, ortaklar aracılığıyla şirket kuruluşu ve topluluğa katılım – taşınma bir yuvaya dönüşsün diye.',
         },
       ],
     },
@@ -58,57 +58,57 @@ export const trEmigration: EmigrationContent = {
       eyebrow: 'Kimler için',
       title: 'Yeni başlangıcını ciddiye alanlar için.',
       items: [
-        'İşini uluslararası hale getirmek isteyen girişimciler ve serbest çalışanlar',
-        'Daha fazla yaşam kalitesi ve güneş arayan aileler',
-        'Emekliliğini Akdeniz’de geçirmek isteyenler',
+        'İşini uluslararası düzeyde kurmak isteyen girişimciler ve serbest çalışanlar',
+        'Daha fazla yaşam kalitesi, güneş ve yeni bakış açıları arayan aileler',
+        'Emeklilik yıllarını Akdeniz’de geçirmek isteyenler',
         'Yerleşimi gayrimenkul yatırımıyla birleştirmek isteyen yatırımcılar',
       ],
     },
     approach: {
       eyebrow: 'Yaklaşımımız',
-      title: 'Dürüst danışmanlık. Kişisel eşlik.',
-      text: 'Sadece güzel yanları değil, maliyetleri, engelleri ve alternatifleri de gösteriyoruz. Böylece kararınızı net bir kafayla verir, her adımda sırada ne olduğunu bilirsiniz.',
-      points: ['Almanca ve Türkçe', 'Yerinde ağ', 'Tek muhatap'],
+      title: 'Dürüst danışmanlık. Kişisel destek.',
+      text: 'Size sadece güzel yanlarını değil, maliyetleri, engelleri ve alternatifleri de gösteririz. Böylece kararınızı berrak bir zihinle verir – her adımda sırada ne olduğunu ve size kimin yardım edeceğini bilirsiniz.',
+      points: ['Almanca, İngilizce ve Türkçe', 'Yerinde kişisel ağ', 'Tek muhatap'],
     },
     faq: [
       {
-        q: 'Neden Türkiye ve Kuzey Kıbrıs odağınız?',
-        a: 'Çünkü yıllardır orada aktifiz, dili konuşuyoruz ve ortaklar, müteahhitler ve hizmet sağlayıcılardan oluşan kişisel bir ağımız var. Bu, yerinde desteğimizi özellikle güvenilir kılıyor.',
+        q: 'Neden Türkiye ve Kuzey Kıbrıs odağınızda?',
+        a: 'Çünkü yıllardır orada faaliyet gösteriyor, dili konuşuyor ve ortaklar, müteahhitler ve hizmet sağlayıcılardan oluşan kişisel bir ağa sahibiz. Bu, yerinde desteğimizi özellikle güvenilir kılar.',
       },
       {
-        q: 'Vize ve oturum başvurularını siz mi yapıyorsunuz?',
-        a: 'Hayır. Hukuk, vergi veya göç danışmanlığı yapmıyoruz. Sizi yapılandırılmış şekilde hazırlıyor ve dilerseniz ağımızdaki yetkili uzmanlarla tanıştırıyoruz.',
+        q: 'Vize ve oturma izni başvurularını üstleniyor musunuz?',
+        a: 'Hayır. Hukuk, vergi ve göç danışmanlığı yapmıyoruz. Sizi yapılandırılmış şekilde hazırlar ve isterseniz ağımızdaki yetkili uzmanlarla bağlantı kurarız.',
       },
       {
         q: 'Yerleşimi bir gayrimenkul yatırımıyla birleştirebilir miyim?',
-        a: 'Evet, bu güçlü yönlerimizden biri. Türkiye’de ve Kuzey Kıbrıs’ta uygun gayrimenkullerin seçimi ve incelenmesinde de fırsatlar, riskler ve kârlılık açısından size eşlik ediyoruz.',
+        a: 'Evet, bu tam da güçlü yönlerimizden biri. Türkiye ve Kuzey Kıbrıs’ta uygun gayrimenkullerin seçimi ve incelenmesinde de yanınızdayız – deniz kenarındaki daireden villaya kadar.',
       },
     ],
     cta: {
-      title: 'Yolculuğunuz nereye?',
-      text: 'Planınızı bize anlatın. Ücretsiz ön görüşmede hangi ülkenin size uygun olduğunu ve sonraki adımları birlikte netleştirelim.',
+      title: 'Yolculuğunuz nereye uzansın?',
+      text: 'Bize planınızı anlatın. Ücretsiz ön görüşmede hangi ülkenin size uygun olduğunu ve sonraki adımların neler olması gerektiğini netleştiririz.',
     },
-    risk: 'Yerleşim koçluğumuz hukuk, vergi veya göç danışmanlığı değildir. Vize, oturum, vergi ve sosyal güvenlik sorularını lütfen yetkili uzmanlarla netleştirin; dilerseniz bağlantıyı biz kurarız.',
+    risk: 'Yerleşim koçluğumuz hukuk, vergi veya göç danışmanlığı değildir. Vize, oturma, vergi ve sosyal güvenlik sorularını lütfen yetkili uzmanlarla netleştirin; isterseniz bağlantıyı biz kurarız.',
   },
   details: [
     {
-      text: 'Türkiye metropolleri, sahilleri ve güçlü ekonomisini bir araya getirir. İstanbul, Antalya veya Ege gibi bölgeleri yaşam maliyeti, altyapı, okullar, sağlık hizmetleri ve iş fırsatlarına göre gerçekçi şekilde karşılaştırmanıza yardım ediyor, konut arayışında ve ilk adımlarınızda size eşlik ediyoruz.',
+      text: 'Türkiye; canlı metropolleri, uzun kıyıları ve dinamik ekonomisini bir araya getirir. İstanbul, Antalya veya Ege gibi bölgeleri yaşam maliyeti, altyapı, okullar, sağlık hizmetleri ve iş fırsatlarına göre gerçekçi şekilde karşılaştırmanıza yardımcı olur, ev arayışında ve yerindeki ilk adımlarınızda yanınızda oluruz.',
       benefits: [
         'Gerçek maliyetlerle bölge karşılaştırması',
-        'Konut ve altyapı incelenir',
+        'Konut ve altyapı incelendi',
         'Almanca ve Türkçe destek',
       ],
     },
     {
-      text: 'Kuzey Kıbrıs Akdeniz iklimi, rahat yaşam tarzı ve cazip yeni projeleriyle – örneğin İskele/Long Beach veya Girne’de – dikkat çekiyor. Yerleri, müteahhitleri ve süreçleri tanıyor, fırsatları riskler kadar açık şekilde gösteriyoruz.',
+      text: 'Kuzey Kıbrıs; Akdeniz iklimi, rahat yaşam tarzı ve modern yeni projeleriyle büyüler – örneğin İskele/Long Beach veya Girne’de. Yerleri, müteahhitleri ve süreçleri tanıyor ve adanın neden birçokları için İspanya ve Dubai’ye gerçek bir alternatif olduğunu gösteriyoruz.',
       benefits: [
         'İskele ve Girne’de yerel bilgi',
-        'Yerinde güvenilir ortaklar',
-        'Şeffaf fırsat ve riskler',
+        'Şahsen tanıdığımız ortaklar',
+        'Dürüst bir değerlendirme',
       ],
     },
     {
-      text: 'Her şey en önemli soruyla başlar: Hangi ülke size gerçekten uygun? Hedefleri, bütçeyi, aileyi, mesleği ve yaşam tarzını karşılaştırır, zaman çizelgesi, bütçe ve kilometre taşlarıyla bir yol haritası hazırlarız.',
+      text: 'Her şey en önemli soruyla başlar: Hangi ülke size gerçekten uygun? Hedefleri, bütçeyi, aileyi, mesleği ve yaşam tarzını karşılaştırır; zaman çizelgesi, maliyet çerçevesi ve kilometre taşlarıyla bir yol haritası hazırlarız – hayal bir plana dönüşsün diye.',
       benefits: [
         'Kişisel ülke karşılaştırması',
         'Maliyet ve zaman planı',
@@ -116,26 +116,22 @@ export const trEmigration: EmigrationContent = {
       ],
     },
     {
-      text: 'ABD büyük fırsatlar – ve yüksek gereklilikler – sunar. Girişimcilerin ve uzmanların planlarını gerçekçi şekilde yapmalarına, belgeleri hazırlamalarına ve doğru muhatapları bulmalarına yardım ediyoruz.',
+      text: 'ABD büyük fırsatlar sunar – ve yüksek gereklilikler taşır. Girişimcilerin ve uzmanların planlarını gerçekçi şekilde hazırlamalarına, belgeleri hazırlamalarına ve doğru muhatapları bulmalarına yardımcı oluruz.',
       benefits: ['Gerçekçi hazırlık', 'İş perspektifi', 'Uzmanlarla bağlantı'],
     },
     {
-      text: 'Birleşik Arap Emirlikleri, başta Dubai, iş ve yatırım için uluslararası bir merkezdir. Maliyetleri, günlük yaşamı ve fırsatları soğukkanlı biçimde değerlendirir, hazırlığınızı destekleriz.',
-      benefits: [
-        'Dubai lokasyon kontrolü',
-        'Maliyetler ve günlük yaşam',
-        'İş ve yatırım perspektifi',
-      ],
+      text: 'Birleşik Arap Emirlikleri, başta Dubai olmak üzere, iş ve yatırım için uluslararası bir merkezdir. Maliyetleri, günlük yaşamın gerçeklerini ve fırsatları net şekilde değerlendirir, hazırlık sürecinde destek oluruz.',
+      benefits: ['Dubai konum kontrolü', 'Maliyetler ve günlük yaşam', 'İş ve yatırım perspektifi'],
     },
     {
-      text: 'Hayat asıl taşındıktan sonra başlar: konut, banka hesabı, okullar, doktorlar, ortaklar aracılığıyla şirket kuruluşu ve topluluğa katılım. Hızla yerleşmeniz için ağımızda kapılar açıyoruz.',
+      text: 'Taşındıktan sonra yeni hayat asıl başlar: konut, banka hesabı, okullar, doktorlar, ortaklar aracılığıyla şirket kuruluşu ve topluluğa katılım. Hızla yerleşmeniz için ağımızda kapılar açarız – ve sonrasında da ulaşılabilir kalırız.',
       benefits: ['Pratik başlangıç desteği', 'Ağ ve topluluk', 'Sonrasında da muhatap'],
     },
   ],
   showcase: {
     kicker: 'Yerleşim koçluğu',
     title: 'Akdeniz’de yeni başlangıç – iyi hazırlanmış',
-    text: 'Odağımız Türkiye ve Kuzey Kıbrıs; ABD ve Dubai teklifi tamamlıyor. Ülke seçiminden yerleşmeye kadar size eşlik ediyoruz – dürüst, yapılandırılmış ve yerinde bir ağla.',
+    text: 'Türkiye ve Kuzey Kıbrıs odağımızdır, ABD ve Dubai teklifimizi tamamlar. Hedef ülke seçiminden yerleşmeye kadar yanınızdayız – dürüst, yapılandırılmış ve yerinde kişisel bir ağla.',
     points: ['Ülke kontrolü ve yol haritası', 'Konut, iş, ağ', 'Yerinde destek'],
   },
 };

@@ -65,7 +65,7 @@ Erzeugt mit `scripts/fetch-photos-2026-11-19.py` (lädt, schneidet zu, baut die 
 | `nordzypern-kyrenia-meerblick.jpg`              | Kyrenia, Meerblick                  | 1678798876264-9a7808be39b5            |
 | `nordzypern-tuerkis.jpg`                        | Türkisfarbene Bucht                 | 1710106830410-04e2d76f8ac8            |
 
-`istanbul-bosporusbruecke-nacht.jpg` wurde aufgehellt; das Original liegt in `scripts/originals/`.
+`istanbul-bosporusbruecke-nacht.jpg`: seit 2026-11-21 neues Motiv (Unsplash, Bild-ID 1661935635412-fa36cf42ae35, Bosporusbrücke zur blauen Stunde); das frühere Bild liegt in `scripts/originals/`.
 
 ## KI-Bilder mit dem Inhaber (2026-11-19)
 

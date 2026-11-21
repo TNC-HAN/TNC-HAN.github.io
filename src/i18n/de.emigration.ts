@@ -6,12 +6,12 @@ export const deEmigration: EmigrationContent = {
     seo: {
       title: 'Auswanderungscoaching Türkei & Nordzypern · USA · Dubai · NEXXCON-24',
       description:
-        'Auswandern mit Plan: persönliches Auswanderungscoaching für Unternehmer, Familien und Ruheständler – Schwerpunkt Türkei und Nordzypern, außerdem USA und VAE/Dubai. Von der Zielland-Wahl bis zum Ankommen.',
+        'Auswandern mit Plan: persönliches Auswanderungscoaching für Unternehmer, Familien und Ruheständler – Schwerpunkt Türkei und Nordzypern, außerdem USA und VAE/Dubai. Von der Wahl des Ziellands bis zum Ankommen.',
     },
     label: 'Auswandern',
     card: {
       title: 'Auswanderungscoaching',
-      text: 'Neues Leben im Ausland – strukturiert geplant, persönlich begleitet. Schwerpunkt Türkei und Nordzypern.',
+      text: 'Ein neues Leben im Ausland – strukturiert geplant, ehrlich bewertet, persönlich begleitet. Schwerpunkt Türkei und Nordzypern.',
       points: [
         'Türkei & Nordzypern',
         'USA & VAE/Dubai',
@@ -27,7 +27,7 @@ export const deEmigration: EmigrationContent = {
     hero: {
       eyebrow: '04 · Auswanderungscoaching',
       title: 'Auswandern mit Plan – und mit jemandem, der den Weg kennt.',
-      lead: 'Ein Neustart im Ausland ist eine der größten Entscheidungen im Leben. Wir begleiten Sie von der ersten Idee bis zum Ankommen: ehrlich, strukturiert und mit einem Netzwerk vor Ort. Unser Schwerpunkt liegt auf der Türkei und Nordzypern; außerdem begleiten wir Vorhaben in den USA und den Vereinigten Arabischen Emiraten mit Fokus Dubai.',
+      lead: 'Ein Neustart im Ausland ist eine der größten Entscheidungen im Leben. Wir begleiten Sie von der ersten Idee bis zum Ankommen: ehrlich, strukturiert und mit einem persönlichen Netzwerk vor Ort. Unser Schwerpunkt liegt auf der Türkei und Nordzypern; darüber hinaus begleiten wir Vorhaben in den USA und den Vereinigten Arabischen Emiraten mit Fokus auf Dubai.',
     },
     offerings: {
       eyebrow: 'Zielländer & Leistungen',
@@ -35,27 +35,27 @@ export const deEmigration: EmigrationContent = {
       items: [
         {
           title: 'Türkei',
-          text: 'Von Istanbul bis an die Riviera: Lebensqualität, Wohnen und Business-Möglichkeiten realistisch eingeordnet.',
+          text: 'Von Istanbul bis an die türkische Riviera: Lebensqualität, Wohnen und Business-Chancen realistisch eingeordnet.',
         },
         {
           title: 'Nordzypern',
-          text: 'Mittelmeer, Sonne, überschaubare Wege – mit Ortskenntnis und Partnern direkt vor Ort in İskele und Kyrenia.',
+          text: 'Mittelmeer, Sonne, kurze Wege – mit Ortskenntnis und Partnern direkt vor Ort in İskele und Kyrenia.',
         },
         {
           title: 'Zielland-Check & Fahrplan',
-          text: 'Welches Land passt zu Ihren Zielen, Ihrem Budget und Ihrer Familie? Ein klarer Vergleich und ein Schritt-für-Schritt-Plan.',
+          text: 'Welches Land passt zu Ihren Zielen, Ihrem Budget und Ihrer Familie? Ein ehrlicher Vergleich und ein Fahrplan mit Meilensteinen.',
         },
         {
           title: 'USA',
-          text: 'Für Unternehmer und Fachkräfte mit konkretem Vorhaben: strukturierte Vorbereitung und Kontakte zu den richtigen Ansprechpartnern.',
+          text: 'Für Unternehmer und Fachkräfte mit konkretem Vorhaben: gründliche Vorbereitung und Kontakt zu den richtigen Ansprechpartnern.',
         },
         {
           title: 'VAE / Dubai',
-          text: 'Dynamischer Standort für Business und Investment – mit nüchternem Blick auf Kosten, Chancen und Lebensrealität.',
+          text: 'Internationaler Knotenpunkt für Business und Investment – mit klarem Blick auf Kosten und Lebensrealität.',
         },
         {
           title: 'Ankommen & Netzwerk',
-          text: 'Wohnung, Banken, Schulen, Unternehmensgründung über Partner, Community: damit aus dem Umzug ein Zuhause wird.',
+          text: 'Wohnung, Bank, Schule, Firmengründung über Partner und Anschluss an die Community – damit aus dem Umzug ein Zuhause wird.',
         },
       ],
     },
@@ -64,7 +64,7 @@ export const deEmigration: EmigrationContent = {
       title: 'Für Menschen, die ihren Neustart ernst nehmen.',
       items: [
         'Unternehmer und Selbstständige, die ihr Business international aufstellen möchten',
-        'Familien, die mehr Lebensqualität und Sonne suchen',
+        'Familien, die mehr Lebensqualität, Sonne und neue Perspektiven suchen',
         'Ruheständler, die ihren Lebensabend am Mittelmeer verbringen möchten',
         'Investoren, die Auswandern und Immobilieninvestment verbinden wollen',
       ],
@@ -72,8 +72,12 @@ export const deEmigration: EmigrationContent = {
     approach: {
       eyebrow: 'Unser Ansatz',
       title: 'Ehrlich beraten. Persönlich begleiten.',
-      text: 'Wir zeigen nicht nur die Sonnenseiten, sondern auch Kosten, Hürden und Alternativen. So treffen Sie Ihre Entscheidung mit klarem Kopf – und wissen bei jedem Schritt, was als Nächstes kommt.',
-      points: ['Deutsch & Türkisch', 'Netzwerk vor Ort', 'Ein Ansprechpartner'],
+      text: 'Wir zeigen nicht nur die Sonnenseiten, sondern auch Kosten, Hürden und Alternativen. So treffen Sie Ihre Entscheidung mit klarem Kopf – und wissen bei jedem Schritt, was als Nächstes kommt und wer Ihnen dabei hilft.',
+      points: [
+        'Deutsch, Englisch & Türkisch',
+        'Persönliches Netzwerk vor Ort',
+        'Ein Ansprechpartner',
+      ],
     },
     faq: [
       {
@@ -82,11 +86,11 @@ export const deEmigration: EmigrationContent = {
       },
       {
         q: 'Übernehmen Sie Visa- und Aufenthaltsanträge?',
-        a: 'Nein. Rechts-, Steuer- und Migrationsberatung erbringen wir nicht. Wir bereiten Sie strukturiert vor und vermitteln Ihnen auf Wunsch zugelassene Fachleute aus unserem Netzwerk.',
+        a: 'Nein. Rechts-, Steuer- und Migrationsberatung erbringen wir nicht. Wir bereiten Sie strukturiert vor und stellen auf Wunsch den Kontakt zu zugelassenen Fachleuten aus unserem Netzwerk her.',
       },
       {
         q: 'Kann ich Auswandern und eine Immobilieninvestition verbinden?',
-        a: 'Ja, das ist eine unserer Stärken. In der Türkei und in Nordzypern begleiten wir Sie auch bei der Auswahl und Prüfung passender Immobilien – mit Blick auf Chancen, Risiken und Wirtschaftlichkeit.',
+        a: 'Ja, genau das ist eine unserer Stärken. In der Türkei und in Nordzypern begleiten wir Sie auch bei Auswahl und Prüfung passender Immobilien – vom Apartment am Meer bis zur Villa.',
       },
     ],
     cta: {
@@ -97,7 +101,7 @@ export const deEmigration: EmigrationContent = {
   },
   details: [
     {
-      text: 'Die Türkei verbindet Metropolen, Küste und eine starke Wirtschaft. Wir helfen Ihnen, Regionen wie Istanbul, Antalya oder die Ägäis realistisch zu vergleichen – nach Lebenshaltungskosten, Infrastruktur, Schulen, Gesundheitsversorgung und Business-Chancen – und begleiten Sie bei Wohnungssuche und ersten Schritten vor Ort.',
+      text: 'Die Türkei verbindet pulsierende Metropolen, lange Küsten und eine dynamische Wirtschaft. Wir helfen Ihnen, Regionen wie Istanbul, Antalya oder die Ägäis realistisch zu vergleichen – nach Lebenshaltungskosten, Infrastruktur, Schulen, Gesundheitsversorgung und Business-Chancen – und begleiten Sie bei Wohnungssuche und ersten Schritten vor Ort.',
       benefits: [
         'Regionenvergleich mit echten Kosten',
         'Wohnen & Infrastruktur geprüft',
@@ -105,15 +109,15 @@ export const deEmigration: EmigrationContent = {
       ],
     },
     {
-      text: 'Nordzypern lockt mit Mittelmeerklima, entspanntem Lebensstil und attraktiven Neubauprojekten – etwa in İskele/Long Beach oder Kyrenia. Wir kennen die Orte, die Bauträger und die Abläufe und zeigen Ihnen Chancen ebenso offen wie Risiken.',
+      text: 'Nordzypern begeistert mit Mittelmeerklima, entspanntem Lebensstil und modernen Neubauprojekten – etwa in İskele/Long Beach oder Kyrenia. Wir kennen die Orte, die Bauträger und die Abläufe und zeigen Ihnen, warum die Insel für viele eine echte Alternative zu Spanien und Dubai ist.',
       benefits: [
         'Ortskenntnis İskele & Kyrenia',
-        'Geprüfte Partner vor Ort',
-        'Chancen & Risiken transparent',
+        'Persönlich bekannte Partner vor Ort',
+        'Ehrliche Einordnung',
       ],
     },
     {
-      text: 'Am Anfang steht die wichtigste Frage: Welches Land passt wirklich zu Ihnen? Wir vergleichen Ziele, Budget, Familie, Beruf und Lebensstil und erarbeiten einen Fahrplan mit Zeitachse, Kostenrahmen und Meilensteinen.',
+      text: 'Am Anfang steht die wichtigste Frage: Welches Land passt wirklich zu Ihnen? Wir vergleichen Ziele, Budget, Familie, Beruf und Lebensstil und erarbeiten einen Fahrplan mit Zeitachse, Kostenrahmen und Meilensteinen – damit aus einem Traum ein Plan wird.',
       benefits: [
         'Persönlicher Ländervergleich',
         'Kosten- & Zeitplan',
@@ -121,11 +125,11 @@ export const deEmigration: EmigrationContent = {
       ],
     },
     {
-      text: 'Die USA bieten enorme Chancen – und hohe Anforderungen. Wir helfen Unternehmern und Fachkräften, ihr Vorhaben realistisch zu planen, Unterlagen vorzubereiten und die richtigen Ansprechpartner zu finden.',
+      text: 'Die USA bieten enorme Chancen – und stellen hohe Anforderungen. Wir helfen Unternehmern und Fachkräften, ihr Vorhaben realistisch zu planen, Unterlagen vorzubereiten und die richtigen Ansprechpartner zu finden.',
       benefits: ['Realistische Vorbereitung', 'Business-Perspektive', 'Kontakte zu Fachleuten'],
     },
     {
-      text: 'Die Vereinigten Arabischen Emirate, allen voran Dubai, sind ein internationaler Knotenpunkt für Business und Investment. Wir ordnen Kosten, Lebensrealität und Chancen nüchtern ein und unterstützen bei der Vorbereitung.',
+      text: 'Die Vereinigten Arabischen Emirate, allen voran Dubai, sind ein internationaler Knotenpunkt für Business und Investment. Wir ordnen Kosten, Lebensrealität und Chancen klar ein und unterstützen Sie bei der Vorbereitung.',
       benefits: [
         'Standortcheck Dubai',
         'Kosten & Lebensrealität',
@@ -133,14 +137,14 @@ export const deEmigration: EmigrationContent = {
       ],
     },
     {
-      text: 'Nach dem Umzug fängt das Leben erst an: Wohnung, Bankkonto, Schulen, Ärzte, Unternehmensgründung über Partner und Anschluss an die Community. Wir öffnen Türen in unserem Netzwerk, damit Sie schnell ankommen.',
+      text: 'Nach dem Umzug fängt das neue Leben erst richtig an: Wohnung, Bankkonto, Schulen, Ärzte, Unternehmensgründung über Partner und Anschluss an die Community. Wir öffnen Türen in unserem Netzwerk, damit Sie schnell ankommen – und bleiben auch danach ansprechbar.',
       benefits: ['Praktische Starthilfe', 'Netzwerk & Community', 'Ansprechpartner auch danach'],
     },
   ],
   showcase: {
     kicker: 'Auswanderungscoaching',
     title: 'Neustart am Mittelmeer – gut vorbereitet',
-    text: 'Türkei und Nordzypern sind unser Schwerpunkt, USA und Dubai ergänzen das Angebot. Wir begleiten Sie von der Zielland-Wahl bis zum Ankommen – ehrlich, strukturiert und mit Netzwerk vor Ort.',
+    text: 'Türkei und Nordzypern sind unser Schwerpunkt, USA und Dubai ergänzen das Angebot. Wir begleiten Sie von der Wahl des Ziellands bis zum Ankommen – ehrlich, strukturiert und mit einem persönlichen Netzwerk vor Ort.',
     points: ['Zielland-Check & Fahrplan', 'Wohnen, Business, Netzwerk', 'Begleitung vor Ort'],
   },
 };
