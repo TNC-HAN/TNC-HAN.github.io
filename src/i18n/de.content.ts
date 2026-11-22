@@ -130,8 +130,8 @@ export const deContent: ExtraContent = {
       },
       {
         kicker: 'Türkei',
-        title: 'Investieren zwischen Metropole und Kontinent – im Herzen Eurasiens',
-        text: 'Von Istanbul bis an die türkische Riviera: von der Penthouse-Wohnung bis zur Villa am Meer.',
+        title: 'Investieren zwischen Orient und Okzident',
+        text: 'Von Istanbul, der Weltmetropole in Eurasien, die mit der berühmten Bosporusbrücke Europa und Asien verbindet: lukrative Immobilien von der Penthouse-Wohnung bis zur Villa am Meer – von Istanbul bis an die türkische Riviera.',
       },
       {
         kicker: 'Nordzypern',

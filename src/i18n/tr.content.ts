@@ -128,8 +128,8 @@ export const trContent: ExtraContent = {
       },
       {
         kicker: 'Türkiye',
-        title: 'Metropol ile kıta arasında yatırım – Avrasya’nın kalbinde',
-        text: 'İstanbul’dan Türk Rivierası’na: şehirdeki penthouse dairesinden deniz kenarındaki villaya.',
+        title: 'Doğu ile Batı arasında yatırım',
+        text: 'Ünlü Boğaz Köprüsü ile Avrupa ve Asya’yı birleştiren Avrasya’nın dünya metropolü İstanbul’dan: penthouse dairesinden deniz kenarındaki villaya kadar kazançlı gayrimenkuller – İstanbul’dan Türk Rivierası’na.',
       },
       {
         kicker: 'Kuzey Kıbrıs',
