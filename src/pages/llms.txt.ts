@@ -23,7 +23,7 @@ export const GET: APIRoute = ({ site: siteUrl }) => {
     '## Geschäftsbereiche',
     ...serviceKeys.map((key) => {
       const s = de.services[key];
-      return `- [${s.card.title}](${url(routePath(key, 'de'))}): ${s.seo.description}`;
+      return `- [${s.card.title.replace(/\s*\n\s*/g, ' ')}](${url(routePath(key, 'de'))}): ${s.seo.description}`;
     }),
     '',
     '## Häufige Fragen',

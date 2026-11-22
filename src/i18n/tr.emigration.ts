@@ -12,11 +12,17 @@ export const trEmigration: EmigrationContent = {
     card: {
       title: 'Yurt dışına yerleşim koçluğu',
       text: 'Yurt dışında yeni bir hayat – yapılandırılmış şekilde planlanmış, dürüstçe değerlendirilmiş, kişisel olarak desteklenmiş. Odak Türkiye ve Kuzey Kıbrıs.',
-      points: ['Türkiye ve Kuzey Kıbrıs', 'ABD ve BAE/Dubai', 'Konut, iş, ağ', 'Yerinde destek'],
+      points: [
+        'Yerleşimde tam hizmet',
+        'Türkiye ve Kuzey Kıbrıs',
+        'ABD ve BAE / Dubai',
+        'Konut, iş, ağ',
+        'Yerinde birebir kişisel destek',
+      ],
     },
     slide: {
       kicker: '04 · Relocation',
-      title: 'Yerleşim veya küresel kurulum – içgüdüyle değil, planla.',
+      title: 'Yerleşim ve/veya küresel\nSetUp – içgüdüyle değil, planla.',
       text: 'Kişisel yerleşim koçluğu – odak Türkiye ve Kuzey Kıbrıs.',
     },
     hero: {

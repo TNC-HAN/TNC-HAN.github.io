@@ -45,8 +45,26 @@ import dachChModern from '@/assets/photos/dach-ch-modern.jpg';
 import dachChVilla from '@/assets/photos/dach-ch-villa-alpen.jpg';
 import nzMeerblick from '@/assets/photos/nordzypern-kyrenia-meerblick.jpg';
 import nzTuerkis from '@/assets/photos/nordzypern-tuerkis.jpg';
+import omVillaPool from '@/assets/photos/offmarket-villa-pool-modern.jpg';
+import omAnwesen from '@/assets/photos/offmarket-anwesen-abend.jpg';
+import omArchitektenhaus from '@/assets/photos/offmarket-architektenhaus-daemmerung.jpg';
+import omPenthouseMeer from '@/assets/photos/offmarket-penthouse-meerblick.jpg';
+import omHerrenhaus from '@/assets/photos/offmarket-herrenhaus-klassisch.jpg';
+import omAltbau from '@/assets/photos/offmarket-altbau-fassade.jpg';
+import omBuero from '@/assets/photos/offmarket-buerogebaeude-glas.jpg';
+import omPenthouseNacht from '@/assets/photos/offmarket-penthouse-nacht.jpg';
+import omWasserlage from '@/assets/photos/offmarket-villen-wasserlage.jpg';
 
 export const photos = {
+  omVillaPool,
+  omAnwesen,
+  omArchitektenhaus,
+  omPenthouseMeer,
+  omHerrenhaus,
+  omAltbau,
+  omBuero,
+  omPenthouseNacht,
+  omWasserlage,
   strategieMeeting,
   coachingUnternehmer,
   handschlagNachfolge,

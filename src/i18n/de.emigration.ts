@@ -10,18 +10,19 @@ export const deEmigration: EmigrationContent = {
     },
     label: 'Auswandern',
     card: {
-      title: 'Auswanderungscoaching',
+      title: 'Auswanderungs-Coaching',
       text: 'Ein neues Leben im Ausland – strukturiert geplant, ehrlich bewertet, persönlich begleitet. Schwerpunkt Türkei und Nordzypern.',
       points: [
+        'ReLocation – Full-Services',
         'Türkei & Nordzypern',
-        'USA & VAE/Dubai',
+        'USA & VAE / Dubai',
         'Wohnen, Business, Netzwerk',
-        'Begleitung vor Ort',
+        'Persönliche 1:1 Begleitung vor Ort',
       ],
     },
     slide: {
       kicker: '04 · Relocation',
-      title: 'Auswandern oder globales Set-up – mit Plan statt mit Bauchgefühl.',
+      title: 'Auswandern und/oder globales\nSetUp – mit Plan statt mit Bauchgefühl.',
       text: 'Persönliches Auswanderungscoaching – Schwerpunkt Türkei und Nordzypern.',
     },
     hero: {

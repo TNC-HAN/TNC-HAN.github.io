@@ -87,18 +87,25 @@ export const en: Dictionary = {
       ],
     },
     marquee: [
-      'SME strategy',
-      'Coaching for business owners',
-      'Succession & M&A',
+      'SME strategies',
+      '1:1 coaching for business owners',
+      'Interim management',
+      'Change management',
+      'Webinars & in-house seminars',
+      'Succession and M&A',
       'Off-market real estate',
       'Investment property',
+      'Special-purpose property',
       'D-A-CH',
       'Europe',
       'Turkey',
       'Northern Cyprus',
+      'Dubai (UAE)',
+      'USA',
       'AI automation',
       'AI assistants',
-      'Relocation coaching',
+      'AI agents',
+      'Relocation support',
       'Family offices',
     ],
     areas: {
@@ -219,17 +226,18 @@ export const en: Dictionary = {
       label: 'Coaching & Consulting',
       card: {
         title: 'Business consulting, coaching & consulting',
-        text: 'Strategic support for SMEs – from realignment and growth to financing and succession.',
+        text: 'Strategic support for SMEs – from realignment, growth and financing all the way to succession.',
         points: [
           'Strategy & business model',
-          'Growth & processes',
+          'Expansion & processes',
           'Coaching for business owners',
+          'Interim/change management',
           'Succession, M&A, exit',
         ],
       },
       slide: {
         kicker: '01 · Consulting',
-        title: 'Strategies from practice, for practice.',
+        title: 'SME strategies from practice,\nfor practice.',
         text: 'Consulting and coaching for owners and managing directors of SMEs.',
       },
       hero: {
@@ -312,13 +320,14 @@ export const en: Dictionary = {
       },
       label: 'Real Estate & Investment',
       card: {
-        title: 'Real estate advisory – off-market & investment',
+        title: 'Real estate advisory –\noff-market & investments',
         text: 'Exclusive access to investment property in D-A-CH, Europe, Turkey and Northern Cyprus – discreet, reviewed, personally supported.',
         points: [
           'Off-market access',
           'Investment & location analysis',
-          'Due diligence & support',
+          'Due diligence analyses',
           'International markets',
+          'Global connections',
         ],
       },
       slide: {
@@ -336,16 +345,16 @@ export const en: Dictionary = {
         title: 'From search profile to closing.',
         items: [
           {
-            title: 'Off-market access',
-            text: 'Selected properties and investors from personal networks – in confidence, before the market sees them.',
+            title: 'Global off-market access',
+            text: 'Selected properties and investors from our personal and international networks – confidential, fast, lucrative; before “the market” sees them.',
           },
           {
-            title: 'Investment analysis',
-            text: 'Location, yield, costs, financing and value development – clearly calculated and put into context.',
+            title: 'Investment analyses – so the bottom line always stays green',
+            text: 'Market-driven optimisation of your investor profile: locations, yields, costs, financing and value development – clearly calculated, with opportunities and risks put into context. Your decision aid with all relevant facts and figures.',
           },
           {
-            title: 'Due diligence',
-            text: 'Documents, building fabric, leases and profitability – reviewed together with surveyors and specialists.',
+            title: 'Due diligence analyses',
+            text: 'Meticulous review of all facts and figures – from the building fabric, tenant structure and leases to long-term profitability and savings potential.',
           },
           {
             title: 'Selling without publicity',
@@ -390,6 +399,38 @@ export const en: Dictionary = {
           q: 'Do you also support purchases in Turkey and Northern Cyprus?',
           a: 'Yes. We support you from property selection and review through to the transfer of ownership, working with local specialists we have known for years.',
         },
+        {
+          q: 'What does your support with buying or selling cost?',
+          a: 'That depends on the type and scope of the mandate – for example a search mandate, investment analysis, due diligence or a discreet sale. We agree the fee transparently and in writing before any costs arise. The initial consultation is free and without obligation.',
+        },
+        {
+          q: 'From what size is working together worthwhile?',
+          a: 'There is no fixed minimum. What matters is a clear plan and a realistic search profile. Our focus is on residential and commercial buildings, portfolios, development projects and special-purpose property, as well as high-quality residential property in Turkey and Northern Cyprus.',
+        },
+        {
+          q: 'What is special-purpose property?',
+          a: 'Property with a specific use and its own market environment – for example hotels, care and healthcare property, medical centres, logistics and commercial space, or leisure property. It requires specialist know-how in valuation, operators and contracts – and offers opportunities of its own.',
+        },
+        {
+          q: 'How discreet is an off-market sale?',
+          a: 'Your property does not appear on any portal. We first present it anonymously to selected, vetted prospects; full documents are only shared after a non-disclosure agreement has been signed. You stay in control of who learns what, and when.',
+        },
+        {
+          q: 'How do you make sure buyers and investors are serious?',
+          a: 'Before sharing confidential documents, we check the prospect’s identity, acquisition profile and proof of funds or financing confirmation – including the legally required identification. That way you know who is serious before the first meeting.',
+        },
+        {
+          q: 'What is the difference between investment analysis and due diligence?',
+          a: 'The investment analysis answers early on whether a property pays off and fits your strategy. Due diligence checks before signing whether all assumptions hold – structurally, commercially and for tax purposes, together with specialists from our network.',
+        },
+        {
+          q: 'How long does due diligence take?',
+          a: 'That depends on the type of property, the documents available and the location. For well-documented properties it is often a few weeks; larger portfolios or properties abroad take correspondingly longer. We agree the timetable together at the outset.',
+        },
+        {
+          q: 'Do you also help with financing?',
+          a: 'We prepare the calculation, property documents and investor profile so that banks can decide quickly. We do not arrange financing ourselves; on request we put you in touch with banks and licensed financing partners.',
+        },
       ],
       cta: {
         title: 'Looking for your next investment?',
@@ -409,15 +450,16 @@ export const en: Dictionary = {
         title: 'AI automation for SMEs',
         text: 'Automate operational processes, make knowledge usable, noticeably relieve teams – securely and GDPR-compliant.',
         points: [
-          'Potential analysis',
+          'AI potential analyses',
           'Workflow automation',
-          'AI assistants',
-          'Training & operation',
+          'AI assistants / AI agents',
+          'Smart office & smart home',
+          'Implementation & onboarding',
         ],
       },
       slide: {
         kicker: '03 · Intelligence',
-        title: 'AI that empowers you and your people – not replaces them.',
+        title: 'AI that empowers you and your people – and doesn’t replace them.',
         text: 'Automation and AI assistants for small and medium-sized companies.',
       },
       hero: {

@@ -3,6 +3,15 @@ import type { ExtraContent } from './types';
 /** Genişletilmiş içerikler – Türkçe. Sıralama src/config/content.ts ile aynıdır. */
 export const trContent: ExtraContent = {
   photoAlt: {
+    omVillaPool: 'Havuzlu ve teraslı modern villa',
+    omAnwesen: 'Akşam ışıklandırılmış cephesiyle görkemli malikâne',
+    omArchitektenhaus: 'Alacakaranlıkta geniş cam yüzeyli mimari ev',
+    omPenthouseMeer: 'Galerili, oturma alanlı ve deniz manzaralı penthouse',
+    omHerrenhaus: 'Gölet ve fıskiyeli klasik malikâne',
+    omAltbau: 'Süslü cepheli prestijli tarihi ticari bina',
+    omBuero: 'Bir ofis binasının modern cam cephesi',
+    omPenthouseNacht: 'Gece şehir manzaralı penthouse yaşam alanı',
+    omWasserlage: 'Palmiyeli su kenarı villaları',
     dachCollage: 'Almanya, Avusturya ve İsviçre’den seçkin gayrimenkuller',
     istanbulNacht: 'Işıklandırılmış Boğaziçi Köprüsü ile gece İstanbul',
     nzKyreniaHafen: 'Kalesi ve Beşparmak Dağları ile Girne Antik Limanı, Kuzey Kıbrıs',
@@ -120,23 +129,27 @@ export const trContent: ExtraContent = {
   showcase: {
     eyebrow: 'Odakta',
     title: 'Farkı yarattığımız alanlar.',
-    lead: 'Deneyimin, ağın ve gizliliğin belirleyici olduğu dokuz konu. Tek tıkla doğrudan ayrıntılara ulaşırsınız.',
+    lead: 'Know-how, know-what, deneyim, gizlilik, ağ ve inovasyonun yol gösterdiği dokuz konu. Tek tıkla doğrudan ayrıntılara ulaşırsınız.',
     items: [
       {
         kicker: 'Strateji ve iş modeli',
         title: 'İçgüdüden sağlam bir stratejiye',
-        text: 'Piyasa, rekabet, rakamlar ve kişisel hedefleriniz net bir tablo oluşturur: etkisi büyük birkaç öncelik, sorumluları ve kilometre taşları belli bir yol haritası – ve beş yıl sonra da işleyen bir iş modeli.',
+        text: 'Piyasa, rekabet, rakamlar, veriler, gerçekler ve kişisel istek ve hedefleriniz net bir tablo oluşturur: daha az yapılacak iş ve daha az stres, etkisi büyük birkaç öncelik, net bir gelecek stratejisi, sorumlular ve kilometre taşlarıyla bir yol haritası – ve her şeyden önce siz olmadan da sorunsuz işleyen, optimize edilmiş bir iş modeli.\n\nBaşarılı girişimci artık şirketinin içinde değil, “kartal bakışıyla” şirketinin üzerinde çalışır.',
         points: [
-          'Konumlandırma ve hedef pazarlar',
-          'İş modeli kontrolü',
-          'Kilometre taşlı uygulama planı',
+          'Gelecek ve hedef pazarlarda konumlanma',
+          'Yönlendirme, optimizasyon ve dayanıklılık stratejileri',
+          'Stres testleri, değerlendirme, analizler ve uygulama',
         ],
       },
       {
         kicker: 'Girişimciler için koçluk',
-        title: 'Dinleyen – ve gerektiğinde itiraz eden bir sparring ortağı',
-        text: 'Zirvede yalnızlık vardır: Girişimciler en önemli kararları çoğu zaman tek başına verir. Gizli koçlukta seçenekleri sıralar, varsayımları sınar ve liderliğin ihtiyaç duyduğu alanı yaratırız.',
-        points: ['Kararları yapılandırmak', 'Liderlik ve etkililik', 'Gizli, esnek, video ile de'],
+        title: 'Gerçekten dinleyen – ve gerektiğinde itiraz eden bir sparring ortağı',
+        text: 'Yapıcı eleştiri, sürekli iyileştirmenin ve istikrarlı büyümenin temel bir parçasıdır.\n\nZirvede çoğu zaman yalnızlık vardır: En önemli kararlar girişimcilere zor gelir – ve onları tek başına verirler. Gizli koçlukta zorlukları sıralar, seçenekler geliştirir, varsayımları sınar, birlikte tartar ve böylece girişimci yönünüzü ve özgürlüğünüzü koruyarak karar netliği yaratırız.',
+        points: [
+          'Stres ve baskıya rağmen sağlam kararlar',
+          'Kalıplaşmış yönetim yerine yürek ve akılla liderlik',
+          'Her zaman gizli, ihtiyatlı, verimli ve kişisel (çevrim dışı ve çevrim içi)',
+        ],
       },
       {
         kicker: 'Devir, M&A ve çıkış',
@@ -239,20 +252,22 @@ export const trContent: ExtraContent = {
     ],
     realEstate: [
       {
-        text: 'Pek çok cazip mülk hiç kamuya açık sunulmadan el değiştirir. Arama profilinize göre mülk sahipleri, müteahhitler ve yatırımcılardan oluşan kişisel ağlardaki fırsatları inceler – size yalnızca uygun mülkleri gizlilikle sunarız.',
+        text: 'Pek çok cazip mülk hiç kamuya açık sunulmadan el değiştirir. Arama profilinize göre mülk sahipleri, müteahhitler ve yatırımcılardan oluşan kişisel ağlardaki fırsatları inceler ve size yalnızca uygun mülkleri gizlilikle sunarız – ya da mülkünüzü değerine uygun, gizli ve kısa sürede pazarlarız.',
         benefits: ['Daha az rekabet', 'Gizli belgeler', 'Kriterlerinize göre ön seçim'],
       },
       {
-        text: 'Her fırsat eksiksiz hesaplanır: alım masrafları, finansman, işletme giderleri, kira potansiyeli, değer gelişimi ve senaryolar. Bir mülkün stratejinize uyup uymadığını – ve pazarlık payının nerede olduğunu – bir bakışta görürsünüz.',
+        text: 'Her fırsat titizlikle hesaplanır: alım masrafları, finansman koşulları, işletme giderleri, gelişim potansiyelleri, değer artışı ve olası senaryolar. Böylece bir mülkün stratejinize uyup uymadığını, pazarlık payının nerede olduğunu – ve yatırımın sonuçta değip değmeyeceğini – her zaman bir bakışta görürsünüz.',
         benefits: ['Şeffaf hesaplama', 'Konum ve piyasa değerlendirmesi', 'Net karar dosyası'],
       },
       {
-        text: 'Bilirkişiler ve uzman ortaklarla birlikte belgeleri, yapı durumunu, konumu, kira sözleşmelerini ve kârlılığı inceleriz – yurt dışında da Almanya’daki kadar titizlikle. Gerçekler masaya konmadan imza atmazsınız.',
+        text: 'Uzun yıllara dayanan ağımızdaki tanınmış gayrimenkul uzmanlarıyla birlikte istisnasız tüm belgeleri inceleriz. Eksiksiz bir due diligence analizi şu uzmanlık alanlarını kapsar:',
         benefits: [
-          'Belgeler ve mülk incelendi',
-          'Teknik değerlendirme',
-          'Sağlam kârlılık rakamları',
+          'Yapısal ve teknik inceleme – mimarlar, inşaat mühendisleri ve bilirkişilerle',
+          'Ticari inceleme – kurum içinde ve tesis yönetimi, mülk yönetimi ve hukuk bürolarından iş ortaklarıyla',
+          'Vergisel due diligence – gayrimenkulde uzmanlaşmış denetim ve vergi bürolarıyla',
         ],
+        after:
+          'Ve tüm bunlar yurt dışında da Almanya’daki kadar titizlikle. Her şey incelenip netleşmeden, mülk portföyünüze uymadan ve içiniz tamamen rahat olmadan imza atmazsınız – şüpheli soru işaretleri yerine olumlu ünlemlerle!',
       },
       {
         text: 'Mülkünüzü kamuya göstermeden mi satmak istiyorsunuz? Gerçekçi değerler, seçilmiş ve doğrulanmış alıcı ve yatırımcılara hedefli yaklaşır ve mümkün olan en iyi fiyatı elde ederiz – tüm süreç boyunca tam gizlilikle.',

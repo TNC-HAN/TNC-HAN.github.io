@@ -88,18 +88,25 @@ export const de: Dictionary = {
       ],
     },
     marquee: [
-      'KMU-Strategie',
-      'Coaching für Unternehmer',
-      'Nachfolge & M&A',
+      'KMU-Strategien',
+      '1:1 Coaching für Unternehmer',
+      'Interims-Management',
+      'Change-Management',
+      'Webinare & InHouse-Seminare',
+      'Nachfolge und M&A',
       'Off-Market-Immobilien',
       'Investmentimmobilien',
+      'Sonderimmobilien',
       'D-A-CH',
       'Europa',
       'Türkei',
       'Nordzypern',
+      'Dubai (VAE)',
+      'USA',
       'KI-Automation',
       'KI-Assistenten',
-      'Auswanderungscoaching',
+      'KI-Agenten',
+      'Auswanderungsbegleitung',
       'Family Offices',
     ],
     areas: {
@@ -220,17 +227,18 @@ export const de: Dictionary = {
       label: 'Coaching & Consulting',
       card: {
         title: 'Unternehmensberatung, Coaching & Consulting',
-        text: 'Strategische Begleitung für KMU – von der Neuausrichtung über Wachstum und Finanzierung bis zur Nachfolge.',
+        text: 'Strategische Begleitung für KMU – von der Neuausrichtung über Wachstum und Finanzierung bis hin zur Nachfolge.',
         points: [
           'Strategie & Geschäftsmodell',
-          'Wachstum & Prozesse',
+          'Expansion & Prozesse',
           'Coaching für Unternehmer',
+          'Interims-/Change-Management',
           'Nachfolge, M&A, Exit',
         ],
       },
       slide: {
         kicker: '01 · Consulting',
-        title: 'Strategien aus der Praxis, für die Praxis.',
+        title: 'KMU-Strategien aus der Praxis,\nfür die Praxis.',
         text: 'Consulting und Coaching für Inhaber und Geschäftsführer im Mittelstand.',
       },
       hero: {
@@ -313,13 +321,14 @@ export const de: Dictionary = {
       },
       label: 'Immobilien & Investment',
       card: {
-        title: 'Immobilienberatung – Off-Market & Investment',
+        title: 'Immobilienberatung –\nOff-Market & Investments',
         text: 'Exklusiver Zugang zu Investmentimmobilien in D-A-CH, Europa, der Türkei und Nordzypern – diskret, geprüft, persönlich begleitet.',
         points: [
-          'Off-Market-Zugang',
+          'Off-Market Access',
           'Investment- & Standortanalyse',
-          'Due Diligence & Begleitung',
+          'Due Diligence Analysen',
           'Internationale Märkte',
+          'Globale Connections',
         ],
       },
       slide: {
@@ -337,16 +346,16 @@ export const de: Dictionary = {
         title: 'Vom Suchprofil bis zum Abschluss.',
         items: [
           {
-            title: 'Off-Market-Zugang',
-            text: 'Ausgewählte Objekte und Investoren aus persönlichen Netzwerken – vertraulich, bevor der Markt sie sieht.',
+            title: 'Globaler Off-Market-Zugang',
+            text: 'Ausgewählte Objekte und Investoren aus unseren persönlichen und internationalen Netzwerken – vertraulich, schnell, lukrativ; bevor „der Markt“ sie sieht.',
           },
           {
-            title: 'Investmentanalyse',
-            text: 'Lage, Rendite, Kosten, Finanzierung und Wertentwicklung – nachvollziehbar gerechnet und klar eingeordnet.',
+            title: 'Investment-Analysen – damit’s unterm Strich immer grün bleibt',
+            text: 'Am Markt ausgerichtete Optimierung Ihres Investorenprofils: Lagen, Renditen, Kosten, Finanzierung und Wertentwicklung – nachvollziehbar gerechnet, Chancen und Risiken klar eingeordnet. Ihre Entscheidungshilfe mit allen relevanten Zahlen, Daten und Fakten.',
           },
           {
-            title: 'Due Diligence',
-            text: 'Unterlagen, Bausubstanz, Mietverträge und Wirtschaftlichkeit – geprüft gemeinsam mit Gutachtern und Fachpartnern.',
+            title: 'Due Diligence Analysen',
+            text: 'Akribische Prüfung aller Zahlen, Daten und Fakten – von der Bausubstanz über Mieterstruktur und Mietverträge bis zur langfristigen Wirtschaftlichkeit und zu Einsparpotenzialen.',
           },
           {
             title: 'Verkauf ohne Öffentlichkeit',
@@ -391,6 +400,38 @@ export const de: Dictionary = {
           q: 'Begleiten Sie auch Käufe in der Türkei und Nordzypern?',
           a: 'Ja. Wir begleiten Sie von der Objektauswahl über die Prüfung bis zur Eigentumsübertragung und arbeiten dabei mit Fachpartnern vor Ort zusammen, die wir seit Jahren kennen.',
         },
+        {
+          q: 'Was kostet Ihre Begleitung bei Kauf oder Verkauf?',
+          a: 'Das hängt von Art und Umfang des Mandats ab – etwa Suchmandat, Investment-Analyse, Due Diligence oder diskreter Verkauf. Die Vergütung vereinbaren wir vorab transparent und schriftlich, bevor Kosten entstehen. Das Erstgespräch ist unverbindlich und kostenfrei.',
+        },
+        {
+          q: 'Ab welcher Größenordnung lohnt sich die Zusammenarbeit?',
+          a: 'Eine starre Untergrenze gibt es nicht. Entscheidend sind ein klares Vorhaben und ein realistisches Suchprofil. Unser Schwerpunkt liegt auf Wohn- und Geschäftshäusern, Portfolios, Projektentwicklungen und Sonderimmobilien sowie auf hochwertigen Wohnimmobilien in der Türkei und in Nordzypern.',
+        },
+        {
+          q: 'Was sind Sonderimmobilien?',
+          a: 'Objekte mit besonderer Nutzung und eigenem Marktumfeld – zum Beispiel Hotels, Pflege- und Gesundheitsimmobilien, Ärztehäuser, Logistik- und Gewerbeflächen oder Freizeitimmobilien. Sie erfordern spezielles Know-how bei Bewertung, Betreibern und Verträgen – und bieten eigene Chancen.',
+        },
+        {
+          q: 'Wie diskret ist ein Verkauf über Off-Market?',
+          a: 'Ihr Objekt erscheint auf keinem Portal. Wir stellen es zunächst anonymisiert ausgewählten, geprüften Interessenten vor; vollständige Unterlagen gibt es erst nach Unterzeichnung einer Vertraulichkeitsvereinbarung. So behalten Sie die Kontrolle darüber, wer was wann erfährt.',
+        },
+        {
+          q: 'Wie stellen Sie sicher, dass Käufer und Investoren seriös sind?',
+          a: 'Bevor wir vertrauliche Unterlagen weitergeben, prüfen wir Identität, Ankaufsprofil und Kapitalnachweis bzw. Finanzierungsbestätigung des Interessenten – einschließlich der gesetzlich vorgeschriebenen Identifizierung. So erkennen Sie ernsthafte Käufer schon vor dem ersten Termin.',
+        },
+        {
+          q: 'Worin unterscheiden sich Investment-Analyse und Due Diligence?',
+          a: 'Die Investment-Analyse beantwortet früh die Frage, ob sich ein Objekt rechnet und zu Ihrer Strategie passt. Die Due Diligence prüft vor der Unterschrift, ob alle Annahmen stimmen – baulich, kaufmännisch und steuerlich, gemeinsam mit Fachleuten aus unserem Netzwerk.',
+        },
+        {
+          q: 'Wie lange dauert eine Due Diligence?',
+          a: 'Das hängt von Objektart, Unterlagenlage und Standort ab. Bei gut dokumentierten Objekten sind es oft wenige Wochen, bei größeren Portfolios oder Objekten im Ausland entsprechend länger. Den Zeitplan legen wir zu Beginn gemeinsam fest.',
+        },
+        {
+          q: 'Unterstützen Sie auch bei der Finanzierung?',
+          a: 'Wir bereiten Kalkulation, Objektunterlagen und Investorenprofil so auf, dass Banken schnell entscheiden können. Die Finanzierung selbst vermitteln wir nicht; auf Wunsch stellen wir den Kontakt zu Banken und zugelassenen Finanzierungspartnern her.',
+        },
       ],
       cta: {
         title: 'Suchen Sie das nächste Investment?',
@@ -410,15 +451,16 @@ export const de: Dictionary = {
         title: 'KI-Automation für KMU',
         text: 'Operative Abläufe automatisieren, Wissen nutzbar machen, Teams spürbar entlasten – sicher und datenschutzkonform.',
         points: [
-          'Potenzialanalyse',
+          'KI-Potenzialanalysen',
           'Workflow-Automatisierung',
-          'KI-Assistenten',
-          'Schulung & Betrieb',
+          'KI-Assistenten / KI-Agents',
+          'Smart-Office & Smart-Home',
+          'Implementierung & Einweisung',
         ],
       },
       slide: {
         kicker: '03 · Intelligence',
-        title: 'KI, die Sie und Ihre Mitarbeiter stärkt – nicht ersetzt.',
+        title: 'KI, die Sie und Ihre Mitarbeiter stärkt – und nicht ersetzt.',
         text: 'Automatisierung und KI-Assistenten für kleine und mittlere Unternehmen.',
       },
       hero: {

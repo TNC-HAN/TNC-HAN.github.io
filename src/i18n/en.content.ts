@@ -3,6 +3,15 @@ import type { ExtraContent } from './types';
 /** Extended content – English. Order matches src/config/content.ts. */
 export const enContent: ExtraContent = {
   photoAlt: {
+    omVillaPool: 'Modern villa with pool and terrace',
+    omAnwesen: 'Stately estate in the evening with illuminated façade',
+    omArchitektenhaus: 'Architect-designed house with large glazing at dusk',
+    omPenthouseMeer: 'Penthouse with gallery, lounge and sea view',
+    omHerrenhaus: 'Classic manor house with pond and fountain',
+    omAltbau: 'Prestigious period commercial building with stucco façade',
+    omBuero: 'Modern glass façade of an office building',
+    omPenthouseNacht: 'Penthouse living area overlooking the city at night',
+    omWasserlage: 'Waterfront villas with palm trees',
     dachCollage: 'Selected properties in Germany, Austria and Switzerland',
     istanbulNacht: 'Istanbul at night with the illuminated Bosphorus Bridge',
     nzKyreniaHafen:
@@ -122,26 +131,26 @@ export const enContent: ExtraContent = {
   showcase: {
     eyebrow: 'In focus',
     title: 'Where we make the difference.',
-    lead: 'Nine topics where experience, network and discretion tip the balance. One click takes you straight to the details.',
+    lead: 'Nine topics where know-how, know-what, experience, discretion, network and innovation lead the way. One click takes you straight to the details.',
     items: [
       {
         kicker: 'Strategy & business model',
         title: 'From gut feeling to a robust strategy',
-        text: 'Market, competition, figures and your personal goals add up to a clear picture: a few high-impact priorities, a roadmap with owners and milestones – and a business model that still works five years from now.',
+        text: 'Market, competition, facts and figures, together with your personal wishes and goals, add up to a clear picture: fewer to-dos and less stress, a few high-impact priorities, a roadmap with a crystal-clear strategy for the future, owners and milestones – and above all an optimised business model that runs smoothly even without you.\n\nSuccessful business owners no longer work in their company, but on it – from an eagle’s-eye view.',
         points: [
-          'Positioning & target markets',
-          'Business model review',
-          'Roadmap with milestones',
+          'Positioning in future and target markets',
+          'Alignment, optimisation and resilience strategies',
+          'Stress tests, evaluation, analyses and implementation',
         ],
       },
       {
         kicker: 'Coaching for business owners',
-        title: 'A sparring partner who listens – and challenges',
-        text: 'It gets lonely at the top: owners often make the most important decisions alone. In confidential coaching we sort options, test assumptions and create the headroom leadership needs.',
+        title: 'A sparring partner who really listens – and sometimes disagrees',
+        text: 'Constructive criticism is an essential part of continuous optimisation and stable growth.\n\nIt often gets lonely at the top: the most important decisions weigh heavily on owners – and they make them alone. In confidential coaching we sort out challenges, develop options, test assumptions, weigh them up together and create clarity for your decisions – while preserving your entrepreneurial direction and freedom.',
         points: [
-          'Structuring decisions',
-          'Leadership & impact',
-          'Confidential, flexible, also by video',
+          'Sound decisions – despite stress and pressure',
+          'Leadership with heart and mind instead of managing by the book',
+          'Always confidential, discreet, productive and personal (offline & online)',
         ],
       },
       {
@@ -253,11 +262,11 @@ export const enContent: ExtraContent = {
     ],
     realEstate: [
       {
-        text: 'Many attractive properties change owners without ever being offered publicly. Based on your search profile, we review opportunities from personal networks of owners, developers and investors – and present only suitable properties to you, in confidence.',
+        text: 'Many attractive properties change owners without ever being offered publicly. Based on your search profile, we review opportunities from personal networks of owners, developers and investors and present only suitable properties to you, in confidence – or market your property at its true value, discreetly and promptly.',
         benefits: ['Less competition', 'Confidential documents', 'Pre-selection by your criteria'],
       },
       {
-        text: 'Every opportunity is fully calculated: acquisition costs, financing, running costs, rental potential, value development and scenarios. You see at a glance whether a property fits your strategy – and where there is room to negotiate.',
+        text: 'Every opportunity is meticulously calculated: acquisition costs, financing terms, running costs, development potential, appreciation and possible scenarios. So you always see at a glance whether a property fits your strategy, where there is room to negotiate – and whether the investment is ultimately worth it.',
         benefits: [
           'Transparent calculation',
           'Location and market assessment',
@@ -265,12 +274,14 @@ export const enContent: ExtraContent = {
         ],
       },
       {
-        text: 'Together with surveyors and specialists we review documents, building fabric, location, leases and profitability – abroad as thoroughly as in Germany. You sign only when the facts are on the table.',
+        text: 'Together with renowned real estate experts from our long-standing network, we review every single document. A complete due diligence analysis covers the following disciplines:',
         benefits: [
-          'Documents & property reviewed',
-          'Technical assessment',
-          'Robust profitability figures',
+          'Structural and technical survey – with architects, structural engineers and surveyors',
+          'Commercial review – in-house and with partners from facility management, property management and law firms',
+          'Tax due diligence – with audit and tax firms specialised in real estate',
         ],
+        after:
+          'And all of this abroad just as thoroughly as in Germany. You sign only when absolutely everything has been checked and clarified, the property fits your portfolio and you feel genuinely good about it – with confident exclamation marks instead of nagging question marks!',
       },
       {
         text: 'Want to sell without showing your property publicly? We value it realistically, approach selected, vetted buyers and investors in a targeted way and achieve the best possible price – with full discretion throughout the process.',

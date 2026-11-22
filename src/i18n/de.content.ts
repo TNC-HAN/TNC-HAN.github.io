@@ -3,6 +3,15 @@ import type { ExtraContent } from './types';
 /** Erweiterte Inhalte – Deutsch. Reihenfolgen passen zu src/config/content.ts. */
 export const deContent: ExtraContent = {
   photoAlt: {
+    omVillaPool: 'Moderne Villa mit Pool und Terrasse',
+    omAnwesen: 'Herrschaftliches Anwesen am Abend mit beleuchteter Fassade',
+    omArchitektenhaus: 'Architektenhaus mit großen Glasflächen in der Dämmerung',
+    omPenthouseMeer: 'Penthouse mit Galerie, Lounge und Meerblick',
+    omHerrenhaus: 'Klassisches Herrenhaus mit Teich und Fontäne',
+    omAltbau: 'Repräsentatives Altbau-Geschäftshaus mit Stuckfassade',
+    omBuero: 'Moderne Glasfassade eines Bürogebäudes',
+    omPenthouseNacht: 'Penthouse-Wohnbereich mit Blick über die Stadt bei Nacht',
+    omWasserlage: 'Villen in Wasserlage mit Palmen',
     dachCollage: 'Ausgewählte Immobilien in Deutschland, Österreich und der Schweiz',
     istanbulNacht: 'Istanbul bei Nacht mit beleuchteter Bosporusbrücke',
     nzKyreniaHafen: 'Alter Hafen von Kyrenia (Girne) mit Burg und Beşparmak-Gebirge, Nordzypern',
@@ -121,26 +130,26 @@ export const deContent: ExtraContent = {
   showcase: {
     eyebrow: 'Im Fokus',
     title: 'Wo wir den Unterschied machen.',
-    lead: 'Neun Themen, bei denen Erfahrung, Netzwerk und Diskretion den Ausschlag geben. Ein Klick führt Sie direkt in die Details.',
+    lead: 'Neun Themen, bei denen KnowHow, KnowWhat, Erfahrung, Diskretion, Netzwerk & Innovation wegweisend sind. Ein Klick führt Sie direkt in die Details.',
     items: [
       {
         kicker: 'Strategie & Geschäftsmodell',
         title: 'Vom Bauchgefühl zur belastbaren Strategie',
-        text: 'Markt, Wettbewerb, Zahlen und Ihre persönlichen Ziele ergeben ein klares Bild: wenige Prioritäten mit großer Wirkung, ein Fahrplan mit Verantwortlichen und Meilensteinen – und ein Geschäftsmodell, das auch in fünf Jahren noch trägt.',
+        text: 'Markt, Wettbewerb, Zahlen, Daten, Fakten und Ihre persönlichen Wünsche und Ziele ergeben ein klares Bild: weniger „To-dos“ und weniger Stress, wenige Prioritäten mit großer Wirkung, eine „Roadmap“ mit glasklarer Zukunftsstrategie, Verantwortlichen und Meilensteinen – und vor allem ein optimiertes Geschäftsmodell, das auch ohne Sie reibungslos funktioniert.\n\nDer erfolgreiche Unternehmer arbeitet nicht (mehr) in seinem Unternehmen, sondern aus der „Adler-Perspektive“ an seinem Unternehmen.',
         points: [
-          'Positionierung & Zielmärkte',
-          'Geschäftsmodell-Check',
-          'Umsetzungsfahrplan mit Meilensteinen',
+          'Positionierung an Zukunfts- und Zielmärkten',
+          'Ausrichtung, Optimierung und Resilienz-Strategien',
+          'Stresstests, Evaluation, Analysen und Umsetzung',
         ],
       },
       {
         kicker: 'Coaching für Unternehmer',
-        title: 'Ein Sparringspartner, der zuhört – und widerspricht',
-        text: 'An der Spitze wird es einsam: Die wichtigsten Entscheidungen treffen Unternehmer oft allein. Im vertraulichen Coaching sortieren wir Optionen, prüfen Annahmen und schaffen den Freiraum, den Führung braucht.',
+        title: 'Ein Sparringspartner, der richtig zuhört – und auch mal widerspricht',
+        text: 'Konstruktive Kritik ist ein wesentlicher Bestandteil permanenter Optimierung und stabilen Wachstums.\n\nAn der Spitze wird es oft einsam: Die wichtigsten Entscheidungen fallen Unternehmern oft schwer – und sie treffen sie allein. Im vertraulichen Coaching sortieren wir Herausforderungen, entwickeln Optionen, prüfen Annahmen, wägen gemeinsam ab und schaffen so Entscheidungsklarheit – unter Wahrung Ihrer unternehmerischen Ausrichtung und Freiheit.',
         points: [
-          'Entscheidungen strukturieren',
-          'Führung & Wirksamkeit',
-          'Vertraulich, flexibel, auch per Video',
+          'Solide Entscheidungen – trotz Stress und Druck',
+          'Leadership mit Herz & Verstand statt Geschäftsführung nach „Schema F“',
+          'Immer vertraulich, diskret, produktiv und persönlich (offline & online)',
         ],
       },
       {
@@ -256,7 +265,7 @@ export const deContent: ExtraContent = {
     ],
     realEstate: [
       {
-        text: 'Viele attraktive Objekte wechseln den Eigentümer, ohne je öffentlich angeboten zu werden. Anhand Ihres Suchprofils prüfen wir Gelegenheiten aus persönlichen Netzwerken von Eigentümern, Bauträgern und Investoren – und stellen Ihnen ausschließlich passende Objekte vertraulich vor.',
+        text: 'Viele attraktive Objekte wechseln den Eigentümer, ohne je öffentlich angeboten zu werden. Anhand Ihres Suchprofils prüfen wir Gelegenheiten aus persönlichen Netzwerken von Eigentümern, Bauträgern und Investoren und stellen Ihnen ausschließlich passende Objekte vertraulich vor – oder vermarkten Ihre Immobilie wertgerecht, diskret und zeitnah.',
         benefits: [
           'Weniger Wettbewerb',
           'Vertrauliche Unterlagen',
@@ -264,7 +273,7 @@ export const deContent: ExtraContent = {
         ],
       },
       {
-        text: 'Jede Gelegenheit wird durchgerechnet: Kaufnebenkosten, Finanzierung, laufende Kosten, Mietpotenzial, Wertentwicklung und Szenarien. So sehen Sie auf einen Blick, ob ein Objekt zu Ihrer Strategie passt – und wo der Verhandlungsspielraum liegt.',
+        text: 'Jede Gelegenheit wird akribisch kalkuliert: Kaufnebenkosten, Finanzierungsmodalitäten, laufende Kosten, Entwicklungspotenziale, Wertsteigerung und mögliche Szenarien. So sehen Sie immer auf einen Blick, ob ein Objekt zu Ihrer Strategie passt, wo der Verhandlungsspielraum liegt – und ob sich die Investition letztendlich lohnt.',
         benefits: [
           'Transparente Kalkulation',
           'Lage- und Marktbewertung',
@@ -272,12 +281,14 @@ export const deContent: ExtraContent = {
         ],
       },
       {
-        text: 'Gemeinsam mit Gutachtern und Fachpartnern prüfen wir Unterlagen, Bausubstanz, Lage, Mietverträge und Wirtschaftlichkeit – im Ausland ebenso gründlich wie in Deutschland. Sie unterschreiben erst, wenn die Fakten auf dem Tisch liegen.',
+        text: 'Gemeinsam mit renommierten Experten der Immobilienwirtschaft aus unserem langjährigen Netzwerk prüfen wir ausnahmslos alle Unterlagen. Eine vollständige Due-Diligence-Analyse umfasst folgende Fachdisziplinen:',
         benefits: [
-          'Unterlagen & Objekt geprüft',
-          'Technische Einschätzung',
-          'Wirtschaftlichkeit belastbar',
+          'Bauliche und technische Substanzprüfung – mit Architekten, Bauingenieuren und Gutachtern',
+          'Kaufmännische Prüfung – inhouse und mit Kooperationspartnern aus Facility Management, Hausverwaltung und Rechtsanwaltschaft',
+          'Steuerliche Due Diligence – mit auf Immobilien spezialisierten Wirtschaftsprüfungs- und Steuerkanzleien',
         ],
+        after:
+          'Und das im Ausland ebenso gründlich wie in Deutschland. Sie unterschreiben erst, wenn absolut alles geprüft und geklärt ist, das Objekt in Ihr Portfolio passt und Sie ein rundum gutes Gefühl haben – mit positiven Ausrufezeichen statt zweifelhafter Fragezeichen!',
       },
       {
         text: 'Sie möchten verkaufen, ohne Ihr Objekt öffentlich zu zeigen? Wir bewerten realistisch, sprechen ausgewählte, geprüfte Käufer und Investoren gezielt an und erzielen so den bestmöglichen Erlös – bei voller Diskretion während des gesamten Prozesses.',

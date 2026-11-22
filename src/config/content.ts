@@ -102,7 +102,12 @@ export const offeringIds: Record<ServiceKey, string[]> = {
 /** Bilder auf den Bereichsseiten: Kopfbild + Bilder neben ausgewählten Leistungen */
 export const serviceMedia: Record<
   ServiceKey,
-  { hero: PhotoKey; inline: Partial<Record<number, PhotoKey>> }
+  {
+    hero: PhotoKey;
+    inline: Partial<Record<number, PhotoKey>>;
+    /** Optional: Bildwechsel im Unterbereich (erstes Bild = inline) */
+    galleries?: Partial<Record<number, PhotoKey[]>>;
+  }
 > = {
   consulting: {
     hero: 'strategieMeeting',
@@ -111,6 +116,20 @@ export const serviceMedia: Record<
   realEstate: {
     hero: 'villaPoolModern',
     inline: { 0: 'poolMediterran', 2: 'vertragUnterschrift', 4: 'istanbulBosporus' },
+    galleries: {
+      0: [
+        'poolMediterran',
+        'omVillaPool',
+        'omAnwesen',
+        'omArchitektenhaus',
+        'omPenthouseMeer',
+        'omHerrenhaus',
+        'omAltbau',
+        'omBuero',
+        'omPenthouseNacht',
+        'omWasserlage',
+      ],
+    },
   },
   ai: {
     hero: 'rechenzentrum',

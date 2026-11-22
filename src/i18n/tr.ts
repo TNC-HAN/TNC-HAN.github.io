@@ -87,18 +87,25 @@ export const tr: Dictionary = {
       ],
     },
     marquee: [
-      'KOBİ stratejisi',
-      'Girişimciler için koçluk',
+      'KOBİ stratejileri',
+      'Girişimciler için birebir koçluk',
+      'Geçici yönetim',
+      'Değişim yönetimi',
+      'Webinarlar ve kurum içi seminerler',
       'Devir ve M&A',
       'Off-market gayrimenkul',
       'Yatırım gayrimenkulü',
+      'Özel amaçlı gayrimenkul',
       'D-A-CH',
       'Avrupa',
       'Türkiye',
       'Kuzey Kıbrıs',
+      'Dubai (BAE)',
+      'ABD',
       'Yapay zekâ otomasyonu',
       'Yapay zekâ asistanları',
-      'Yerleşim koçluğu',
+      'Yapay zekâ ajanları',
+      'Yerleşim desteği',
       'Aile ofisleri',
     ],
     areas: {
@@ -219,17 +226,18 @@ export const tr: Dictionary = {
       label: 'Koçluk ve Danışmanlık',
       card: {
         title: 'İşletme danışmanlığı, koçluk ve consulting',
-        text: 'KOBİ’ler için stratejik destek – yeniden yapılanmadan büyümeye ve finansmandan devre kadar.',
+        text: 'KOBİ’ler için stratejik destek – yeniden yapılanmadan büyüme ve finansmana, oradan da devre kadar.',
         points: [
           'Strateji ve iş modeli',
-          'Büyüme ve süreçler',
+          'Genişleme ve süreçler',
           'Girişimciler için koçluk',
+          'Geçici yönetim / değişim yönetimi',
           'Devir, M&A, çıkış',
         ],
       },
       slide: {
         kicker: '01 · Consulting',
-        title: 'Pratikten, pratik için stratejiler.',
+        title: 'Pratikten gelen KOBİ stratejileri,\npratik için.',
         text: 'Orta ölçekli şirketlerin sahipleri ve yöneticileri için danışmanlık ve koçluk.',
       },
       hero: {
@@ -312,13 +320,14 @@ export const tr: Dictionary = {
       },
       label: 'Gayrimenkul ve Yatırım',
       card: {
-        title: 'Gayrimenkul danışmanlığı – off-market ve yatırım',
+        title: 'Gayrimenkul danışmanlığı –\noff-market ve yatırımlar',
         text: 'D-A-CH, Avrupa, Türkiye ve Kuzey Kıbrıs’ta yatırım gayrimenkullerine ayrıcalıklı erişim – gizli, incelenmiş, kişisel destekli.',
         points: [
           'Off-market erişim',
           'Yatırım ve konum analizi',
-          'Due diligence ve destek',
+          'Due diligence analizleri',
           'Uluslararası pazarlar',
+          'Küresel bağlantılar',
         ],
       },
       slide: {
@@ -336,16 +345,16 @@ export const tr: Dictionary = {
         title: 'Arama profilinden kapanışa.',
         items: [
           {
-            title: 'Off-market erişim',
-            text: 'Kişisel ağlardan seçkin mülkler ve yatırımcılar – piyasa görmeden önce, gizlilikle.',
+            title: 'Küresel off-market erişim',
+            text: 'Kişisel ve uluslararası ağlarımızdan seçkin mülkler ve yatırımcılar – gizli, hızlı, kazançlı; “piyasa” görmeden önce.',
           },
           {
-            title: 'Yatırım analizi',
-            text: 'Konum, getiri, maliyetler, finansman ve değer gelişimi – anlaşılır şekilde hesaplanmış ve değerlendirilmiş.',
+            title: 'Yatırım analizleri – sonuç hep artıda kalsın diye',
+            text: 'Yatırımcı profilinizin piyasaya göre optimizasyonu: konumlar, getiriler, maliyetler, finansman ve değer gelişimi – anlaşılır şekilde hesaplanmış, fırsatlar ve riskler net biçimde değerlendirilmiş. Tüm önemli rakam, veri ve gerçeklerle karar desteğiniz.',
           },
           {
-            title: 'Due diligence',
-            text: 'Belgeler, yapı durumu, kira sözleşmeleri ve kârlılık – bilirkişiler ve uzman ortaklarla birlikte incelenmiş.',
+            title: 'Due diligence analizleri',
+            text: 'Tüm rakam, veri ve gerçeklerin titizlikle incelenmesi – yapı durumundan kiracı yapısına ve kira sözleşmelerine, uzun vadeli kârlılıktan tasarruf potansiyellerine kadar.',
           },
           {
             title: 'Kamuya açık olmadan satış',
@@ -390,6 +399,38 @@ export const tr: Dictionary = {
           q: 'Türkiye ve Kuzey Kıbrıs’taki alımlara da eşlik ediyor musunuz?',
           a: 'Evet. Mülk seçiminden incelemeye ve tapu devrine kadar yanınızdayız; bu süreçte yıllardır tanıdığımız yerel uzman ortaklarla çalışıyoruz.',
         },
+        {
+          q: 'Alım veya satışta desteğinizin maliyeti nedir?',
+          a: 'Bu, görevin türüne ve kapsamına bağlıdır – örneğin arama görevi, yatırım analizi, due diligence veya gizli satış. Ücreti, herhangi bir maliyet doğmadan önce şeffaf ve yazılı olarak kararlaştırırız. Ön görüşme bağlayıcı değildir ve ücretsizdir.',
+        },
+        {
+          q: 'Hangi büyüklükten itibaren iş birliği anlamlıdır?',
+          a: 'Katı bir alt sınır yoktur. Önemli olan net bir plan ve gerçekçi bir arama profilidir. Odağımız konut ve ticari binalar, portföyler, proje geliştirmeleri ve özel amaçlı gayrimenkuller ile Türkiye ve Kuzey Kıbrıs’taki yüksek kaliteli konutlardır.',
+        },
+        {
+          q: 'Özel amaçlı gayrimenkul nedir?',
+          a: 'Belirli bir kullanım amacı ve kendine özgü piyasa koşulları olan mülkler – örneğin oteller, bakım ve sağlık gayrimenkulleri, tıp merkezleri, lojistik ve ticari alanlar ya da eğlence ve turizm gayrimenkulleri. Değerleme, işletmeciler ve sözleşmeler konusunda uzmanlık gerektirir – ve kendine has fırsatlar sunar.',
+        },
+        {
+          q: 'Off-market satış ne kadar gizlidir?',
+          a: 'Mülkünüz hiçbir portalda yer almaz. Önce seçilmiş ve doğrulanmış ilgililere anonim olarak sunarız; eksiksiz belgeler ancak bir gizlilik sözleşmesi imzalandıktan sonra paylaşılır. Kimin neyi ne zaman öğreneceğinin kontrolü sizde kalır.',
+        },
+        {
+          q: 'Alıcıların ve yatırımcıların ciddi olduğundan nasıl emin oluyorsunuz?',
+          a: 'Gizli belgeleri paylaşmadan önce ilgilinin kimliğini, alım profilini ve sermaye kanıtını ya da finansman onayını – yasal olarak zorunlu kimlik tespiti dahil – kontrol ederiz. Böylece ciddi alıcıları daha ilk görüşmeden önce tanırsınız.',
+        },
+        {
+          q: 'Yatırım analizi ile due diligence arasındaki fark nedir?',
+          a: 'Yatırım analizi, bir mülkün kâr getirip getirmediği ve stratejinize uyup uymadığı sorusunu erken aşamada yanıtlar. Due diligence ise imzadan önce tüm varsayımların doğru olup olmadığını – yapısal, ticari ve vergisel açıdan, ağımızdaki uzmanlarla birlikte – inceler.',
+        },
+        {
+          q: 'Bir due diligence ne kadar sürer?',
+          a: 'Bu, mülkün türüne, belgelerin durumuna ve konuma bağlıdır. İyi belgelenmiş mülklerde çoğu zaman birkaç hafta sürer; büyük portföylerde veya yurt dışındaki mülklerde buna göre daha uzun. Zaman planını başlangıçta birlikte belirleriz.',
+        },
+        {
+          q: 'Finansman konusunda da destek veriyor musunuz?',
+          a: 'Hesaplamayı, mülk belgelerini ve yatırımcı profilini, bankaların hızlı karar verebileceği şekilde hazırlarız. Finansmana kendimiz aracılık etmeyiz; isterseniz bankalar ve yetkili finansman ortaklarıyla bağlantı kurarız.',
+        },
       ],
       cta: {
         title: 'Bir sonraki yatırımınızı mı arıyorsunuz?',
@@ -409,15 +450,16 @@ export const tr: Dictionary = {
         title: 'KOBİ’ler için yapay zekâ otomasyonu',
         text: 'Operasyonel süreçleri otomatikleştirin, bilgiyi kullanılabilir kılın, ekiplerin yükünü belirgin şekilde azaltın – güvenli ve mevzuata uygun.',
         points: [
-          'Potansiyel analizi',
+          'Yapay zekâ potansiyel analizleri',
           'İş akışı otomasyonu',
-          'Yapay zekâ asistanları',
-          'Eğitim ve işletim',
+          'Yapay zekâ asistanları / ajanları',
+          'Akıllı ofis ve akıllı ev',
+          'Uygulama ve kullanım eğitimi',
         ],
       },
       slide: {
         kicker: '03 · Intelligence',
-        title: 'Sizi ve çalışanlarınızı güçlendiren – yerini almayan yapay zekâ.',
+        title: 'Sizi ve çalışanlarınızı güçlendiren – ve yerinizi almayan yapay zekâ.',
         text: 'Küçük ve orta ölçekli şirketler için otomasyon ve yapay zekâ asistanları.',
       },
       hero: {

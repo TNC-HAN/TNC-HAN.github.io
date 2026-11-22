@@ -40,12 +40,14 @@ const details = s.offerings.items.map((item, i) => ({
   summary: item.text,
   detail: dict.details[service][i]?.text ?? '',
   benefits: dict.details[service][i]?.benefits ?? [],
+  after: dict.details[service][i]?.after,
   photo: media.inline[i],
+  gallery: media.galleries?.[i],
 }));
 
 const jsonLd = [
   serviceJsonLd({
-    name: s.card.title,
+    name: s.card.title.replace(/\s*\n\s*/g, ' '),
     description: s.seo.description,
     url,
     orgId: `${root.href}#organization`,
@@ -108,15 +110,24 @@ const offeringIcons = {
           ]}
         >
           {d.photo && (
-            <div class:list={['relative min-h-64', i % 2 === 1 && 'md:order-2']}>
-              <Image
-                src={photos[d.photo]}
-                alt={dict.photoAlt[d.photo]}
-                class="absolute inset-0 size-full object-cover"
-                widths={[480, 800, 1024]}
-                sizes="(min-width: 768px) 50vw, 100vw"
-                loading="lazy"
-              />
+            <div
+              class:list={['relative min-h-64', i % 2 === 1 && 'md:order-2']}
+              data-detail-gallery={d.gallery ? '' : undefined}
+            >
+              {(d.gallery ?? [d.photo]).map((key, g) => (
+                <Image
+                  src={photos[key]}
+                  alt={dict.photoAlt[key]}
+                  class:list={[
+                    'absolute inset-0 size-full object-cover',
+                    d.gallery && 'detail-gallery-img',
+                    d.gallery && g === 0 && 'is-on',
+                  ]}
+                  widths={[480, 800, 1024]}
+                  sizes="(min-width: 768px) 50vw, 100vw"
+                  loading="lazy"
+                />
+              ))}
             </div>
           )}
           <div class:list={[d.photo && 'p-8 sm:p-10']}>
@@ -126,7 +137,14 @@ const offeringIcons = {
             <h3 class="mt-4 text-3xl font-medium">{d.title}</h3>
             <p class="mt-3 text-champagne">{d.summary}</p>
             <p class="mt-4 text-lg leading-relaxed text-muted">{d.detail}</p>
-            <ul class="mt-6 grid gap-2.5 sm:grid-cols-3 md:grid-cols-1 xl:grid-cols-3">
+            <ul
+              class:list={[
+                'mt-6 grid gap-2.5',
+                d.benefits.some((b) => b.length > 45)
+                  ? 'grid-cols-1'
+                  : 'sm:grid-cols-3 md:grid-cols-1 xl:grid-cols-3',
+              ]}
+            >
               {d.benefits.map((b) => (
                 <li class="flex items-start gap-2.5 text-sm text-text/90">
                   <Icon name="check" class="mt-0.5 size-4 shrink-0 text-gold" />
@@ -134,6 +152,7 @@ const offeringIcons = {
                 </li>
               ))}
             </ul>
+            {d.after && <p class="mt-6 leading-relaxed text-muted">{d.after}</p>}
             <div class="mt-8 flex flex-wrap gap-3">
               <BookButton lang={lang} />
               <a href={href('contact', lang)} class="btn-ghost">
@@ -218,3 +237,46 @@ const offeringIcons = {
   <CtaBand lang={lang} title={s.cta.title} text={s.cta.text} />
   <AreaCards lang={lang} exclude={service} heading={false} />
 </BaseLayout>
+
+<style>
+  .detail-gallery-img {
+    opacity: 0;
+    transition: opacity 1.2s ease;
+  }
+  .detail-gallery-img.is-on {
+    opacity: 1;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .detail-gallery-img {
+      transition: none;
+    }
+  }
+</style>
+
+<script>
+  // Bildwechsel in Unterbereichen mit mehreren Fotos (z. B. Off-Market)
+  const STEP = 3500;
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  document.querySelectorAll<HTMLElement>('[data-detail-gallery]').forEach((box) => {
+    const imgs = [...box.querySelectorAll<HTMLImageElement>('.detail-gallery-img')];
+    if (imgs.length < 2 || reduce) return;
+    let index = 0;
+    let timer: number | undefined;
+    const next = () => {
+      imgs[index]!.classList.remove('is-on');
+      index = (index + 1) % imgs.length;
+      const img = imgs[index]!;
+      img.loading = 'eager';
+      img.classList.add('is-on');
+      imgs[(index + 1) % imgs.length]!.loading = 'eager';
+    };
+    new IntersectionObserver(([entry]) => {
+      if (entry?.isIntersecting) {
+        timer ??= window.setInterval(next, STEP);
+      } else if (timer !== undefined) {
+        window.clearInterval(timer);
+        timer = undefined;
+      }
+    }).observe(box);
+  });
+</script>

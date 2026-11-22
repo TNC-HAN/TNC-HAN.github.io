@@ -40,6 +40,8 @@ export interface OfferingDetail {
   text: string;
   /** 3 konkrete Nutzenpunkte */
   benefits: string[];
+  /** Optional: Abschlussabsatz unter den Nutzenpunkten */
+  after?: string;
 }
 
 /**

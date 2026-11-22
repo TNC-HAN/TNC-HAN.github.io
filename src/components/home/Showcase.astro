@@ -62,7 +62,11 @@ const items = showcase.map((s, i) => ({ ...s, ...dict.showcase.items[i]! }));
                 {item.title}
               </a>
             </h3>
-            <p class="mt-5 text-lg leading-relaxed text-muted">{item.text}</p>
+            {item.text.split(/\n\n/).map((para, j) => (
+              <p class:list={['text-lg leading-relaxed text-muted', j === 0 ? 'mt-5' : 'mt-3']}>
+                {para}
+              </p>
+            ))}
             <ul class="mt-6 space-y-2.5">
               {item.points.map((p) => (
                 <li class="flex items-center gap-3 text-text/90">

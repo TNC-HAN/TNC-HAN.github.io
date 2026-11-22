@@ -89,3 +89,17 @@ Unsplash-Lizenz. Erzeugt mit `scripts/fetch-photos-dach-immobilien.py`.
 | `dach-ch-modern.jpg`                | Modernes Mehrfamilienhaus                       | 1747372913868-f9e099a3b2ec |
 | `dach-ch-villa-alpen.jpg`           | Villa vor Alpengipfeln                          | 1777669164460-0c0c991937ec |
 | `nordzypern-kyrenia-hafen-baum.jpg` | Kyrenia, Hafen unter Bäumen (ersetzt Famagusta) | 1678798876508-3797d1124c1a |
+
+### Off-Market-Slideshow (Immobilien, Unterbereich 01) – Unsplash License, Skript `scripts/fetch-photos-offmarket.py`
+
+| Datei                                      | Motiv                            | Unsplash-ID                |
+| ------------------------------------------ | -------------------------------- | -------------------------- |
+| `offmarket-villa-pool-modern.jpg`          | Moderne Villa mit Pool           | 1580587771525-78b9dba3b914 |
+| `offmarket-anwesen-abend.jpg`              | Anwesen am Abend                 | 1505843513577-22bb7d21e455 |
+| `offmarket-architektenhaus-daemmerung.jpg` | Architektenhaus in der Dämmerung | 1757524492552-d47a66a2b63e |
+| `offmarket-penthouse-meerblick.jpg`        | Penthouse mit Meerblick          | 1613643043796-a370ee99ecbe |
+| `offmarket-herrenhaus-klassisch.jpg`       | Klassisches Herrenhaus           | 1566908829550-e6551b00979b |
+| `offmarket-altbau-fassade.jpg`             | Altbau-Geschäftshaus             | 1501525776-246410718e63    |
+| `offmarket-buerogebaeude-glas.jpg`         | Bürogebäude mit Glasfassade      | 1621831337128-35676ca30868 |
+| `offmarket-penthouse-nacht.jpg`            | Penthouse bei Nacht              | 1565623833408-d77e39b88af6 |
+| `offmarket-villen-wasserlage.jpg`          | Villen in Wasserlage             | 1578439297699-eb414262c2de |

@@ -13,15 +13,16 @@ export const enEmigration: EmigrationContent = {
       title: 'Relocation coaching',
       text: 'A new life abroad – carefully planned, honestly assessed, personally supported. Focus on Turkey and Northern Cyprus.',
       points: [
+        'Relocation full service',
         'Turkey & Northern Cyprus',
-        'USA & UAE/Dubai',
+        'USA & UAE / Dubai',
         'Housing, business, network',
-        'Support on site',
+        'Personal 1:1 support on site',
       ],
     },
     slide: {
       kicker: '04 · Relocation',
-      title: 'Relocation or global set-up – with a plan, not a gut feeling.',
+      title: 'Relocation and/or global\nSetUp – with a plan, not a gut feeling.',
       text: 'Personal relocation coaching – focus on Turkey and Northern Cyprus.',
     },
     hero: {
