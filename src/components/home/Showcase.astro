@@ -32,7 +32,7 @@ const items = showcase.map((s, i) => ({ ...s, ...dict.showcase.items[i]! }));
           <a
             href={link}
             class:list={[
-              'showcase-media group relative block overflow-hidden rounded-[1.75rem]',
+              'showcase-media gold-frame group relative block overflow-hidden rounded-[1.75rem]',
               flip && 'md:order-2',
             ]}
             aria-label={`${item.title} – ${dict.cta.details}`}

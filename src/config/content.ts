@@ -25,9 +25,9 @@ export const bannerSlides: (Target & {
   panels?: PhotoKey[][];
   light?: boolean;
 })[] = [
-  { photo: 'strategieMeeting', page: 'consulting', hash: 'strategie', light: true },
-  { photo: 'coachingUnternehmer', page: 'consulting', hash: 'coaching', light: true },
-  { photo: 'vertragUnterschrift', page: 'consulting', hash: 'nachfolge' },
+  { photo: 'strategieMeeting', page: 'consulting', light: true },
+  { photo: 'coachingUnternehmer', page: 'consulting', light: true },
+  { photo: 'vertragUnterschrift', page: 'consulting' },
   {
     photo: 'villaPoolModern',
     page: 'realEstate',
@@ -82,9 +82,9 @@ export const bannerSlides: (Target & {
 
 /** Bild-Text-Abschnitte im Zickzack auf der Startseite (Texte: home.showcase.items) */
 export const showcase: (Target & { photo: PhotoKey; gallery?: PhotoKey[] })[] = [
-  { photo: 'planungWand', page: 'consulting', hash: 'strategie' },
-  { photo: 'unternehmerNachdenklich', page: 'consulting', hash: 'coaching' },
-  { photo: 'herrenhaus', page: 'consulting', hash: 'nachfolge' },
+  { photo: 'planungWand', page: 'consulting' },
+  { photo: 'unternehmerNachdenklich', page: 'consulting' },
+  { photo: 'herrenhaus', page: 'consulting' },
   {
     photo: 'poolMediterran',
     page: 'realEstate',

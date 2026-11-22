@@ -118,6 +118,18 @@
   }
 }
 
+/* Winkel für das umlaufende Goldlicht der Rahmen */
+@property --frame-angle {
+  syntax: '<angle>';
+  inherits: false;
+  initial-value: 0deg;
+}
+@keyframes frame-spin {
+  to {
+    --frame-angle: 360deg;
+  }
+}
+
 @keyframes reveal {
   from {
     opacity: 0;
@@ -231,6 +243,75 @@
     box-shadow:
       inset 0 1px 0 rgb(255 255 255 / 0.08),
       0 40px 80px -30px rgb(47 116 192 / 0.35);
+  }
+
+  /*
+   * Goldrahmen für alle Boards, Bildkästen und Videos (Gold wie Logo und Buttons).
+   * Beim Überfahren: Element kommt leicht entgegen, ein Goldlicht läuft wie ein LED-Band um den Rahmen.
+   * Wirkt über scale/translate statt transform, damit es sich mit den Einblend-Animationen verträgt.
+   */
+  .glass:not(nav),
+  .gold-frame {
+    border: 1px solid rgb(201 164 92 / 0.55);
+    transition:
+      scale 0.5s cubic-bezier(0.2, 0.8, 0.2, 1),
+      translate 0.5s cubic-bezier(0.2, 0.8, 0.2, 1),
+      box-shadow 0.5s ease,
+      border-color 0.5s ease,
+      background-color 0.5s ease;
+  }
+  .gold-frame {
+    position: relative;
+  }
+  .glass:not(nav)::after,
+  .gold-frame::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 3;
+    border-radius: inherit;
+    padding: 3px;
+    filter: drop-shadow(0 0 6px rgb(240 223 180 / 0.8));
+    background: conic-gradient(
+      from var(--frame-angle),
+      transparent 0deg,
+      #c9a45c 20deg,
+      #fff4d6 55deg,
+      #c9a45c 90deg,
+      transparent 130deg,
+      transparent 180deg,
+      #c9a45c 200deg,
+      #fff4d6 235deg,
+      #c9a45c 270deg,
+      transparent 310deg
+    );
+    -webkit-mask:
+      linear-gradient(#000 0 0) content-box,
+      linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask:
+      linear-gradient(#000 0 0) content-box exclude,
+      linear-gradient(#000 0 0);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease;
+  }
+  @media (hover: hover) {
+    .glass:not(nav):hover,
+    .gold-frame:hover {
+      scale: 1.02;
+      translate: 0 -4px;
+      border-color: rgb(240 223 180 / 0.9);
+      box-shadow:
+        0 0 0 1px rgb(201 164 92 / 0.35),
+        0 0 28px -4px rgb(201 164 92 / 0.55),
+        0 40px 80px -30px rgb(0 0 0 / 0.8);
+    }
+    .glass:not(nav):hover::after,
+    .gold-frame:hover::after {
+      opacity: 1;
+      animation: frame-spin 2.6s linear infinite;
+    }
   }
 
   .btn-gold,

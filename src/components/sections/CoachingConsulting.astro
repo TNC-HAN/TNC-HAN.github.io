@@ -93,21 +93,23 @@ const columns: { key: 'coaching' | 'consulting'; photos: PhotoKey[] }[] = [
               </li>
             ))}
           </ol>
-          <div class="mt-8 grid grid-cols-2 gap-2">
+          <div class="mt-8 grid grid-cols-2 gap-3">
             {col.photos.map((key, i) => (
-              <Image
-                src={photos[key]}
-                alt={dict.photoAlt[key]}
-                class:list={[
-                  'w-full rounded-xl object-cover',
-                  i === 0 ? 'col-span-2 aspect-[16/9]' : 'aspect-[4/3]',
-                ]}
-                widths={i === 0 ? [480, 800, 1100] : [320, 560]}
-                sizes={
-                  i === 0 ? '(min-width: 1024px) 560px, 100vw' : '(min-width: 1024px) 280px, 50vw'
-                }
-                loading="lazy"
-              />
+              <div class:list={['gold-frame overflow-hidden rounded-xl', i === 0 && 'col-span-2']}>
+                <Image
+                  src={photos[key]}
+                  alt={dict.photoAlt[key]}
+                  class:list={[
+                    'block w-full object-cover',
+                    i === 0 ? 'aspect-[16/9]' : 'aspect-[4/3]',
+                  ]}
+                  widths={i === 0 ? [480, 800, 1100] : [320, 560]}
+                  sizes={
+                    i === 0 ? '(min-width: 1024px) 560px, 100vw' : '(min-width: 1024px) 280px, 50vw'
+                  }
+                  loading="lazy"
+                />
+              </div>
             ))}
           </div>
         </article>
