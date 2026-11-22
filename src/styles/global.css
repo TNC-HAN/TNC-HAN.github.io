@@ -152,10 +152,13 @@
     color-scheme: dark;
     scroll-behavior: smooth;
     -webkit-text-size-adjust: 100%;
+    /* Nie seitlich wischen: nichts darf über den rechten Rand hinausragen (z. B. eingeklappte Kontaktleiste) */
+    overflow-x: clip;
   }
 
   body {
     @apply bg-ink-950 font-sans text-text antialiased;
+    overflow-x: clip;
     /* Tiefer Weltraum: Schwarz mit Blau-, Lila- und Rot-Schimmer (Grundton unter dem Kosmos) */
     background-image:
       radial-gradient(55rem 40rem at 85% -5%, rgb(42 95 214 / 0.28), transparent 62%),
@@ -394,5 +397,12 @@
     animation-iteration-count: 1 !important;
     transition-duration: 0.001ms !important;
     scroll-behavior: auto !important;
+  }
+}
+
+/* Ältere Browser ohne overflow: clip */
+@supports not (overflow: clip) {
+  body {
+    overflow-x: hidden;
   }
 }

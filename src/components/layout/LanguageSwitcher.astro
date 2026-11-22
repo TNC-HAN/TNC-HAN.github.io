@@ -15,7 +15,7 @@ const { lang, page } = Astro.props;
 ---
 
 <nav aria-label={t(lang).nav.language}>
-  <ul class="flex items-center gap-1 rounded-full border border-white/12 bg-white/[0.03] p-1">
+  <ul class="flex items-center gap-0.5 rounded-full sm:gap-1 border border-white/12 bg-white/[0.03] p-1">
     {languages.map((l) => (
       <li>
         <a
@@ -24,10 +24,10 @@ const { lang, page } = Astro.props;
           lang={t(l).meta.htmlLang}
           aria-current={l === lang ? 'true' : undefined}
           title={t(l).meta.languageName}
-          class="flex size-9 items-center justify-center rounded-full opacity-60 transition duration-300 hover:scale-110 hover:opacity-100 aria-[current=true]:opacity-100 aria-[current=true]:ring-2 aria-[current=true]:ring-champagne/80"
+          class="flex size-8 items-center justify-center rounded-full sm:size-9 opacity-60 transition duration-300 hover:scale-110 hover:opacity-100 aria-[current=true]:opacity-100 aria-[current=true]:ring-2 aria-[current=true]:ring-champagne/80"
         >
           <span class="sr-only">{t(l).meta.languageName}</span>
-          <FlagIcon lang={l} class="size-7" />
+          <FlagIcon lang={l} class="size-6 sm:size-7" />
         </a>
       </li>
     ))}

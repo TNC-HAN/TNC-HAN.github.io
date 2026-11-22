@@ -96,23 +96,25 @@ const channels: Channel[] = [
             <span class="mt-6 block text-xs font-semibold tracking-[0.2em] text-subtle uppercase">
               {c.label}
             </span>
-            <span class="mt-2 block font-display text-2xl break-words sm:text-3xl">{c.value}</span>
+            <span class="mt-2 block font-display text-xl [overflow-wrap:anywhere] min-[400px]:text-2xl sm:text-3xl">
+              {c.value}
+            </span>
             <span class="mt-2 block text-muted">{c.text}</span>
           </Fragment>
         );
         return (
-          <li class="reveal relative">
+          <li class="reveal relative min-w-0">
             {c.href ? (
               <a
                 href={c.href}
-                class="glass glass-hover block h-full p-8"
+                class="glass glass-hover block h-full p-6 sm:p-8"
                 data-launch={c.launch}
                 {...(c.external ? { target: '_blank', rel: 'noopener' } : {})}
               >
                 {inner}
               </a>
             ) : (
-              <div class="glass block h-full p-8 opacity-80">{inner}</div>
+              <div class="glass block h-full p-6 opacity-80 sm:p-8">{inner}</div>
             )}
             {c.launch && (
               <button

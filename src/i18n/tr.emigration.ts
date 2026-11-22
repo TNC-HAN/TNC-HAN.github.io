@@ -98,7 +98,7 @@ export const trEmigration: EmigrationContent = {
   },
   details: [
     {
-      text: 'Türkiye; canlı metropolleri, uzun kıyıları ve dinamik ekonomisini bir araya getirir. İstanbul, Antalya veya Ege gibi bölgeleri yaşam maliyeti, altyapı, okullar, sağlık hizmetleri ve iş fırsatlarına göre gerçekçi şekilde karşılaştırmanıza yardımcı olur, ev arayışında ve yerindeki ilk adımlarınızda yanınızda oluruz.',
+      text: 'Türkiye; canlı metropolleri, uzun kıyıları ve dinamik ekonomisini bir araya getirir. İstanbul, Antalya veya Ege gibi bölgeleri yaşam maliyeti, altyapı, okullar, sağlık hizmetleri ve iş fırsatlarına göre gerçekçi şekilde karşılaştırmanıza yardımcı olur, konut piyasasında yolunuzu bulmanıza ve yerindeki ilk adımlarınıza destek oluruz.',
       benefits: [
         'Gerçek maliyetlerle bölge karşılaştırması',
         'Konut ve altyapı incelendi',

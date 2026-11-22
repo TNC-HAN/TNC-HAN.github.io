@@ -54,8 +54,28 @@ import omAltbau from '@/assets/photos/offmarket-altbau-fassade.jpg';
 import omBuero from '@/assets/photos/offmarket-buerogebaeude-glas.jpg';
 import omPenthouseNacht from '@/assets/photos/offmarket-penthouse-nacht.jpg';
 import omWasserlage from '@/assets/photos/offmarket-villen-wasserlage.jpg';
+import coachingEinzel from '@/assets/photos/coaching-uemit-einzelgespraech.jpg';
+import coachingFuehrung from '@/assets/photos/coaching-fuehrungskraft.jpg';
+import coachingReflexion from '@/assets/photos/coaching-reflexion.jpg';
+import coachingAchtsamkeit from '@/assets/photos/coaching-achtsamkeit.jpg';
+import coachingKompass from '@/assets/photos/coaching-kompass.jpg';
+import consultingMeeting from '@/assets/photos/consulting-teammeeting.jpg';
+import consultingWorkshop from '@/assets/photos/consulting-uemit-workshop.jpg';
+import consultingSeminar from '@/assets/photos/consulting-uemit-seminar.jpg';
+import consultingTeam from '@/assets/photos/consulting-teamarbeit.jpg';
+import consultingWebinar from '@/assets/photos/consulting-webinar.jpg';
 
 export const photos = {
+  coachingEinzel,
+  coachingFuehrung,
+  coachingReflexion,
+  coachingAchtsamkeit,
+  coachingKompass,
+  consultingMeeting,
+  consultingWorkshop,
+  consultingSeminar,
+  consultingTeam,
+  consultingWebinar,
   omVillaPool,
   omAnwesen,
   omArchitektenhaus,

@@ -197,7 +197,7 @@ export const de: Dictionary = {
         },
         {
           q: 'Was bedeutet Off-Market?',
-          a: 'Off-Market-Immobilien werden nicht öffentlich auf Portalen angeboten, sondern diskret über persönliche Netzwerke vermittelt. Das schützt die Privatsphäre der Verkäufer und eröffnet Käufern Gelegenheiten mit weniger Wettbewerb.',
+          a: 'Off-Market-Immobilien werden nicht öffentlich auf Portalen angeboten, sondern diskret über persönliche Netzwerke angeboten. Das schützt die Privatsphäre der Verkäufer und eröffnet Käufern Gelegenheiten mit weniger Wettbewerb.',
         },
         {
           q: 'Arbeiten Sie auch international?',
@@ -339,27 +339,27 @@ export const de: Dictionary = {
       hero: {
         eyebrow: '02 · Immobilienberatung – Off-Market & Investment',
         title: 'Immobilien, die nicht jeder sieht.',
-        lead: 'Die besten Gelegenheiten erscheinen selten auf Portalen. Wir verbinden Investoren diskret mit Off-Market- und Investmentimmobilien, prüfen jede Gelegenheit, bevor Sie Zeit und Kapital einsetzen – und platzieren Ihre eigenen Objekte gezielt bei den richtigen Käufern.',
+        lead: 'Die besten Gelegenheiten erscheinen selten auf Portalen. Wir öffnen Investoren diskret den Zugang zu Off-Market- und Investmentimmobilien, prüfen jede Gelegenheit, bevor Sie Zeit und Kapital einsetzen – und beraten Eigentümer bei der gezielten Platzierung ihrer Objekte.',
       },
       offerings: {
         eyebrow: 'Leistungen',
-        title: 'Vom Suchprofil bis zum Abschluss.',
+        title: 'Vom Anforderungsprofil bis zur Unterschrift.',
         items: [
           {
             title: 'Globaler Off-Market-Zugang',
-            text: 'Ausgewählte Objekte und Investoren aus unseren persönlichen und internationalen Netzwerken – vertraulich, schnell, lukrativ; bevor „der Markt“ sie sieht.',
+            text: 'Ausgewählte Objekte und Investoren aus unseren persönlichen und internationalen Netzwerken – vertraulich, schnell, lukrativ; bevor „der Markt sie sieht“.',
           },
           {
-            title: 'Investment-Analysen – damit’s unterm Strich immer grün bleibt',
-            text: 'Am Markt ausgerichtete Optimierung Ihres Investorenprofils: Lagen, Renditen, Kosten, Finanzierung und Wertentwicklung – nachvollziehbar gerechnet, Chancen und Risiken klar eingeordnet. Ihre Entscheidungshilfe mit allen relevanten Zahlen, Daten und Fakten.',
+            title: 'Investment-Analysen, damit’s „Unterm Strich immer grün bleibt“',
+            text: 'Am Markt ausgerichtete Optimierung Ihres Investoren-Profils. Analyse der Lagen, Renditen, Kosten, Finanzierung und Wertentwicklung – nachvollziehbar gerechnet und Chancen & Risiken klar eingeordnet; als Entscheidungshilfe mit allen relevanten Zahlen, Daten und Fakten …',
           },
           {
             title: 'Due Diligence Analysen',
-            text: 'Akribische Prüfung aller Zahlen, Daten und Fakten – von der Bausubstanz über Mieterstruktur und Mietverträge bis zur langfristigen Wirtschaftlichkeit und zu Einsparpotenzialen.',
+            text: 'Akribische Prüfung aller Zahlen, Daten und Fakten; von der Bausubstanz, über die Mieterstruktur und Mietverträge, die langfristige Wirtschaftlichkeit und Sparpotenziale.',
           },
           {
-            title: 'Verkauf ohne Öffentlichkeit',
-            text: 'Realistische Bewertung und maximaler Erlös durch gezielte Platzierung bei geprüften Käufern – ohne Portalanzeige.',
+            title: 'Diskrete Platzierung',
+            text: 'Realistische Bewertung und eine durchdachte Platzierungsstrategie für den bestmöglichen Erlös – vertraulich und ohne Portalanzeige.',
           },
           {
             title: 'Internationale Investments',
@@ -393,8 +393,8 @@ export const de: Dictionary = {
       },
       faq: [
         {
-          q: 'Wie erhalte ich Zugang zu Off-Market-Angeboten?',
-          a: 'Nach einem Erstgespräch erstellen wir gemeinsam Ihr Suchprofil. Passende Objekte stellen wir Ihnen vertraulich vor – in der Regel nach Unterzeichnung einer Vertraulichkeitsvereinbarung.',
+          q: 'Wie erhalte ich Zugang zu Off-Market-Gelegenheiten?',
+          a: 'Nach einem Erstgespräch erarbeiten wir gemeinsam Ihr Anforderungsprofil. Gelegenheiten aus unserem Netzwerk, die dazu passen, besprechen wir vertraulich mit Ihnen – in der Regel nach Unterzeichnung einer Vertraulichkeitsvereinbarung.',
         },
         {
           q: 'Begleiten Sie auch Käufe in der Türkei und Nordzypern?',
@@ -402,23 +402,23 @@ export const de: Dictionary = {
         },
         {
           q: 'Was kostet Ihre Begleitung bei Kauf oder Verkauf?',
-          a: 'Das hängt von Art und Umfang des Mandats ab – etwa Suchmandat, Investment-Analyse, Due Diligence oder diskreter Verkauf. Die Vergütung vereinbaren wir vorab transparent und schriftlich, bevor Kosten entstehen. Das Erstgespräch ist unverbindlich und kostenfrei.',
+          a: 'Das hängt von Art und Umfang des Mandats ab – etwa Beratungsmandat, Investment-Analyse, Due Diligence oder diskreter Verkauf. Die Vergütung vereinbaren wir vorab transparent und schriftlich, bevor Kosten entstehen. Das Erstgespräch ist unverbindlich und kostenfrei.',
         },
         {
           q: 'Ab welcher Größenordnung lohnt sich die Zusammenarbeit?',
-          a: 'Eine starre Untergrenze gibt es nicht. Entscheidend sind ein klares Vorhaben und ein realistisches Suchprofil. Unser Schwerpunkt liegt auf Wohn- und Geschäftshäusern, Portfolios, Projektentwicklungen und Sonderimmobilien sowie auf hochwertigen Wohnimmobilien in der Türkei und in Nordzypern.',
+          a: 'Eine starre Untergrenze gibt es nicht. Entscheidend sind ein klares Vorhaben und ein realistisches Anforderungsprofil. Unser Schwerpunkt liegt auf Wohn- und Geschäftshäusern, Portfolios, Projektentwicklungen und Sonderimmobilien sowie auf hochwertigen Wohnimmobilien in der Türkei und in Nordzypern.',
         },
         {
           q: 'Was sind Sonderimmobilien?',
           a: 'Objekte mit besonderer Nutzung und eigenem Marktumfeld – zum Beispiel Hotels, Pflege- und Gesundheitsimmobilien, Ärztehäuser, Logistik- und Gewerbeflächen oder Freizeitimmobilien. Sie erfordern spezielles Know-how bei Bewertung, Betreibern und Verträgen – und bieten eigene Chancen.',
         },
         {
-          q: 'Wie diskret ist ein Verkauf über Off-Market?',
-          a: 'Ihr Objekt erscheint auf keinem Portal. Wir stellen es zunächst anonymisiert ausgewählten, geprüften Interessenten vor; vollständige Unterlagen gibt es erst nach Unterzeichnung einer Vertraulichkeitsvereinbarung. So behalten Sie die Kontrolle darüber, wer was wann erfährt.',
+          q: 'Wie diskret ist eine Off-Market-Platzierung?',
+          a: 'Ihr Objekt erscheint auf keinem Portal. Informationen gehen zunächst nur anonymisiert an ausgewählte, geprüfte Kontakte; vollständige Unterlagen gibt es erst nach Unterzeichnung einer Vertraulichkeitsvereinbarung. So behalten Sie die Kontrolle darüber, wer was wann erfährt.',
         },
         {
           q: 'Wie stellen Sie sicher, dass Käufer und Investoren seriös sind?',
-          a: 'Bevor wir vertrauliche Unterlagen weitergeben, prüfen wir Identität, Ankaufsprofil und Kapitalnachweis bzw. Finanzierungsbestätigung des Interessenten – einschließlich der gesetzlich vorgeschriebenen Identifizierung. So erkennen Sie ernsthafte Käufer schon vor dem ersten Termin.',
+          a: 'Bevor vertrauliche Unterlagen weitergegeben werden, durchläuft jeder Interessent eine strukturierte Prüfung: Identifizierung nach dem Know-Your-Customer-Prinzip (KYC), Prüfungen nach dem Geldwäschegesetz (GwG) – etwa zu wirtschaftlich Berechtigten, politisch exponierten Personen, Sanktionslisten und Herkunft der Mittel – sowie Ankaufsprofil und Kapitalnachweis bzw. Finanzierungsbestätigung. So erkennen Sie ernsthafte Käufer schon vor dem ersten Termin.',
         },
         {
           q: 'Worin unterscheiden sich Investment-Analyse und Due Diligence?',
@@ -430,14 +430,14 @@ export const de: Dictionary = {
         },
         {
           q: 'Unterstützen Sie auch bei der Finanzierung?',
-          a: 'Wir bereiten Kalkulation, Objektunterlagen und Investorenprofil so auf, dass Banken schnell entscheiden können. Die Finanzierung selbst vermitteln wir nicht; auf Wunsch stellen wir den Kontakt zu Banken und zugelassenen Finanzierungspartnern her.',
+          a: 'Wir bereiten Kalkulation, Objektunterlagen und Investorenprofil so auf, dass Banken schnell entscheiden können. Finanzierungen vermitteln wir nicht; auf Wunsch stellen wir den Kontakt zu Banken und zugelassenen Finanzierungspartnern her.',
         },
       ],
       cta: {
         title: 'Suchen Sie das nächste Investment?',
-        text: 'Teilen Sie uns Ihr Suchprofil mit – oder das Objekt, das Sie diskret verkaufen möchten. Wir melden uns vertraulich mit einer ersten Einschätzung.',
+        text: 'Teilen Sie uns Ihr Anforderungsprofil mit – oder das Objekt, das Sie diskret verkaufen möchten. Wir melden uns vertraulich mit einer ersten Einschätzung.',
       },
-      risk: 'Immobilieninvestitionen sind mit Risiken verbunden, etwa durch Wertschwankungen, Mietausfälle, Finanzierungs-, Währungs- und Rechtsrisiken im Ausland. Die Inhalte dieser Website sind keine Anlage-, Rechts- oder Steuerberatung und kein Angebot zum Kauf oder Verkauf. Frühere Wertentwicklungen sind kein verlässlicher Indikator für künftige Ergebnisse.',
+      risk: 'Immobilieninvestitionen sind mit Risiken verbunden, etwa durch Wertschwankungen, Mietausfälle, Finanzierungs-, Währungs- und Rechtsrisiken im Ausland. Die Inhalte dieser Website sind keine Anlage-, Rechts- oder Steuerberatung und kein Angebot zum Kauf oder Verkauf. Frühere Wertentwicklungen sind kein verlässlicher Indikator für künftige Ergebnisse. NEXXCON-24 erbringt keine nach § 34c, 34d, 34f, 34h oder 34i GewO erlaubnispflichtigen Tätigkeiten (insbesondere keine Makler-, Darlehens-, Finanzanlagen- oder Versicherungsvermittlung); soweit solche Leistungen erforderlich sind, werden sie ausschließlich von entsprechend zugelassenen Partnern erbracht.',
     },
 
     ai: {
@@ -539,7 +539,7 @@ export const de: Dictionary = {
     seo: {
       title: 'Über uns · NEXXCON-24 · Nexxus – Business & IT. Consulting',
       description:
-        'NEXXCON-24 ist die Beratungsmarke von Nexxus – Business & IT. Consulting aus Laatzen bei Hannover: Unternehmensberatung, Immobilien-Investment und KI-Automation aus einer Hand.',
+        'NEXXCON-24 ist die Beratungsmarke von Nexxus – Business & IT. Consulting aus Laatzen bei Hannover: Coaching & Consulting, Immobilien-Investment, KI-Automation und Auswanderungscoaching aus einer Hand.',
     },
     hero: {
       eyebrow: 'Über uns',

@@ -3,6 +3,16 @@ import type { ExtraContent } from './types';
 /** Genişletilmiş içerikler – Türkçe. Sıralama src/config/content.ts ile aynıdır. */
 export const trContent: ExtraContent = {
   photoAlt: {
+    coachingEinzel: 'Ümit Törün, bir iş kadınıyla gizli birebir koçlukta, yandan profil',
+    coachingFuehrung: 'Kişisel koçlukta bir yönetici',
+    coachingReflexion: 'Dizüstü bilgisayar başında sakin düşünen girişimci',
+    coachingAchtsamkeit: 'İş temposuna denge olarak ofiste farkındalık egzersizi',
+    coachingKompass: 'Yön bulmanın sembolü olarak elde pusula',
+    consultingMeeting: 'Toplantı odasında sunumlu ekip toplantısı',
+    consultingWorkshop: 'Ümit Törün, beyaz tahta başında bir ekiple strateji atölyesi yönetiyor',
+    consultingSeminar: 'Ümit Törün çalışanlara kurum içi seminer veriyor, arkadan görünüm',
+    consultingTeam: 'Cam duvarda yapışkan notlarla birlikte çalışan ekip',
+    consultingWebinar: 'Dizüstü bilgisayarda çok katılımcılı webinar',
     omVillaPool: 'Havuzlu ve teraslı modern villa',
     omAnwesen: 'Akşam ışıklandırılmış cephesiyle görkemli malikâne',
     omArchitektenhaus: 'Alacakaranlıkta geniş cam yüzeyli mimari ev',
@@ -165,7 +175,11 @@ export const trContent: ExtraContent = {
         kicker: 'Off-market gayrimenkul',
         title: 'Piyasa görmeden önce fırsatlar',
         text: 'En ilginç mülklerin çoğu hiç ilana çıkmadan el değiştirir. Kişisel ağlar size erişim sağlar – daha az rekabet, daha fazla pazarlık payı ve tam gizlilikle.',
-        points: ['Kişisel arama profili', 'Gizli tanıtım dosyaları', 'İlk değerlendirme dahil'],
+        points: [
+          'Kişisel gereksinim profili',
+          'Gizli tanıtım dosyaları',
+          'İlk değerlendirme dahil',
+        ],
       },
       {
         kicker: 'Türkiye ve Kuzey Kıbrıs',
@@ -252,7 +266,7 @@ export const trContent: ExtraContent = {
     ],
     realEstate: [
       {
-        text: 'Pek çok cazip mülk hiç kamuya açık sunulmadan el değiştirir. Arama profilinize göre mülk sahipleri, müteahhitler ve yatırımcılardan oluşan kişisel ağlardaki fırsatları inceler ve size yalnızca uygun mülkleri gizlilikle sunarız – ya da mülkünüzü değerine uygun, gizli ve kısa sürede pazarlarız.',
+        text: 'Pek çok cazip mülk hiç kamuya açık sunulmadan el değiştirir. Gereksinim profilinize göre mülk sahipleri, müteahhitler ve yatırımcılardan oluşan kişisel ağlardaki fırsatları inceler ve size yalnızca uygun mülkleri gizlilikle sunarız – ya da mülkünüzü değerine uygun, gizli ve kısa sürede konumlandırırız.',
         benefits: ['Daha az rekabet', 'Gizli belgeler', 'Kriterlerinize göre ön seçim'],
       },
       {
@@ -270,10 +284,10 @@ export const trContent: ExtraContent = {
           'Ve tüm bunlar yurt dışında da Almanya’daki kadar titizlikle. Her şey incelenip netleşmeden, mülk portföyünüze uymadan ve içiniz tamamen rahat olmadan imza atmazsınız – şüpheli soru işaretleri yerine olumlu ünlemlerle!',
       },
       {
-        text: 'Mülkünüzü kamuya göstermeden mi satmak istiyorsunuz? Gerçekçi değerler, seçilmiş ve doğrulanmış alıcı ve yatırımcılara hedefli yaklaşır ve mümkün olan en iyi fiyatı elde ederiz – tüm süreç boyunca tam gizlilikle.',
+        text: 'Mülkünüzü kamuya göstermeden mi satmak istiyorsunuz? Gerçekçi değerler, belgeleri ve yatırım hikâyesini profesyonelce hazırlar ve mümkün olan en iyi gelir için gizli bir konumlandırma stratejisi geliştiririz. Aracılık gerektiğinde, yetkili ortaklarla çalışırız.',
         benefits: [
           'Kamuya açık ilan yok',
-          'Doğrulanmış alıcı ve yatırımcılar',
+          'Yatırımcı düzeyinde belgeler',
           'Hedefli konumlandırma ile en yüksek gelir',
         ],
       },
@@ -363,5 +377,52 @@ export const trContent: ExtraContent = {
       'İstanbul Avrupa ile Asya’yı, Türk Rivierası yaşam kalitesi ile turizmi birleştirir. Şehirdeki penthouse dairesinden deniz kenarındaki villaya kadar seçim, inceleme ve satın alma sürecinde tapu tesciline kadar yanınızdayız.',
       'Kuzey Kıbrıs; Akdeniz iklimi, modern yeni projeler ve cazip fiyat seviyesi sunar – İspanya ve Dubai’ye gerçek bir alternatif. Yerelde güçlü bağlantılarımızla yeni ve mevcut mülklerde bizzat yanınızdayız.',
     ],
+  },
+  coachingConsulting: {
+    eyebrow: 'Koçluk ve consulting',
+    title: 'Koçluk mu, consulting mi? Aradaki fark.',
+    lead: 'Koçluk girişimciye, consulting ise şirkete odaklanır. İkisi birbirini tamamlar: Zirvede net düşünen daha iyi karar verir – güçlü bir ekip de bu kararları etkili biçimde hayata geçirir.',
+    graphic: {
+      coaching: 'Koçluk',
+      coachingFocus: 'Girişimci',
+      consulting: 'Consulting',
+      consultingFocus: 'Şirket',
+      together: 'Etki',
+    },
+    coaching: {
+      label: 'Koçluk',
+      title: 'Girişimci için',
+      tagline: 'Kişisel · gizli · C-seviyesinde',
+      text: 'Koçlukta bir insan ve lider olarak siz merkezdesiniz: tutumunuz, enerjiniz, kararlarınız. Sizinle birebir çalışırız – gizli, eşit düzeyde, çevrim dışı ve çevrim içi.',
+      items: [
+        'Kişisel gelişim ve öz değerlendirme',
+        'Zihniyet çalışması: tutum, odak, netlik',
+        'Enerji çalışması ve öz yönetim',
+        'Dayanıklılık (resilience) çalışması',
+        'Stres yönetimi ve iş-yaşam dengesi',
+        'C-seviyesinde karar sparring’i',
+        'Yürek ve akılla liderlik',
+        'Rol değişimi, halefiyet ve devir',
+        'Geçici yönetim: belirli bir süre yanınızda liderlik',
+      ],
+    },
+    consulting: {
+      label: 'Consulting',
+      title: 'Şirket için',
+      tagline: 'Organizasyon · ekip · süreçler',
+      text: 'Consulting’de şirket üzerinde ve ekibinizle birlikte çalışırız: yapılar, süreçler, pazar ve iş birliği – net hedefler ve ölçülebilir sonuçlarla.',
+      items: [
+        'Strateji, iş modeli ve konumlandırma',
+        'Pazarlama ve satış',
+        'İletişim – iç ve dış',
+        'Ekip dinamiği ve iş birliği',
+        'Verimlilik ve etkililik',
+        'Zaman ve öncelik yönetimi',
+        'Süreçler, organizasyon ve değişim yönetimi',
+        'Kurum içi eğitimler, seminerler, webinarlar ve kurslar',
+      ],
+    },
+    bridge:
+      'Uygulamada ikisi iç içedir: Koçluk girişimciyi, consulting şirketi güçlendirir. Nereden başlayacağımızı birlikte belirler – ve ikisini en büyük etkiyi yaratacakları yerde birleştiririz.',
   },
 };

@@ -39,10 +39,10 @@ const keys = serviceKeys.filter((k) => k !== exclude);
       const s = dict.services[key];
       const number = String(serviceKeys.indexOf(key) + 1).padStart(2, '0');
       return (
-        <li class="reveal">
+        <li class="reveal min-w-0">
           <a
             href={href(key, lang)}
-            class="glass glass-hover group flex h-full flex-col overflow-hidden p-7 sm:p-8"
+            class="glass glass-hover group flex h-full flex-col overflow-hidden p-6 sm:p-8"
           >
             <span class="pointer-events-none absolute -top-16 -right-16 size-40 rounded-full bg-brand-500/0 blur-3xl transition duration-700 group-hover:bg-brand-500/30" />
             <div class="flex items-start justify-between">

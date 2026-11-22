@@ -196,7 +196,7 @@ export const tr: Dictionary = {
         },
         {
           q: 'Off-market ne demektir?',
-          a: 'Off-market gayrimenkuller portallarda kamuya açık sunulmaz, kişisel ağlar üzerinden gizlilikle aracılık edilir. Bu, satıcıların mahremiyetini korur ve alıcılara daha az rekabetle fırsatlar sunar.',
+          a: 'Off-market gayrimenkuller portallarda kamuya açık sunulmaz, kişisel ağlar üzerinden gizlilikle sunulur. Bu, satıcıların mahremiyetini korur ve alıcılara daha az rekabetle fırsatlar sunar.',
         },
         {
           q: 'Uluslararası da çalışıyor musunuz?',
@@ -338,11 +338,11 @@ export const tr: Dictionary = {
       hero: {
         eyebrow: '02 · Gayrimenkul danışmanlığı – off-market ve yatırım',
         title: 'Herkesin göremediği gayrimenkuller.',
-        lead: 'En iyi fırsatlar nadiren portallarda görünür. Yatırımcıları off-market ve yatırım gayrimenkulleriyle gizlilikle buluşturur, zaman ve sermaye ayırmadan önce her fırsatı inceler – ve kendi mülklerinizi doğru alıcılara hedefli şekilde konumlandırırız.',
+        lead: 'En iyi fırsatlar nadiren portallarda görünür. Yatırımcılara off-market ve yatırım gayrimenkullerine gizlilikle erişim açar, zaman ve sermaye ayırmadan önce her fırsatı inceler – ve mülk sahiplerine mülklerinin hedefli konumlandırılması konusunda danışmanlık veririz.',
       },
       offerings: {
         eyebrow: 'Hizmetler',
-        title: 'Arama profilinden kapanışa.',
+        title: 'Gereksinim profilinden kapanışa.',
         items: [
           {
             title: 'Küresel off-market erişim',
@@ -357,8 +357,8 @@ export const tr: Dictionary = {
             text: 'Tüm rakam, veri ve gerçeklerin titizlikle incelenmesi – yapı durumundan kiracı yapısına ve kira sözleşmelerine, uzun vadeli kârlılıktan tasarruf potansiyellerine kadar.',
           },
           {
-            title: 'Kamuya açık olmadan satış',
-            text: 'Gerçekçi değerleme ve doğrulanmış alıcılara hedefli konumlandırma ile en yüksek gelir – portal ilanı olmadan.',
+            title: 'Gizli konumlandırma',
+            text: 'Gerçekçi değerleme ve mümkün olan en iyi gelir için iyi düşünülmüş bir konumlandırma stratejisi – gizli ve portal ilanı olmadan.',
           },
           {
             title: 'Uluslararası yatırımlar',
@@ -392,8 +392,8 @@ export const tr: Dictionary = {
       },
       faq: [
         {
-          q: 'Off-market tekliflere nasıl erişebilirim?',
-          a: 'Ön görüşmeden sonra arama profilinizi birlikte oluştururuz. Uygun mülkleri size gizlilikle sunarız – genellikle bir gizlilik sözleşmesi imzalandıktan sonra.',
+          q: 'Off-market fırsatlara nasıl erişebilirim?',
+          a: 'Ön görüşmeden sonra gereksinim profilinizi birlikte oluştururuz. Ağımızdan buna uyan fırsatları sizinle gizlilik içinde ele alırız – genellikle bir gizlilik sözleşmesi imzalandıktan sonra.',
         },
         {
           q: 'Türkiye ve Kuzey Kıbrıs’taki alımlara da eşlik ediyor musunuz?',
@@ -401,23 +401,23 @@ export const tr: Dictionary = {
         },
         {
           q: 'Alım veya satışta desteğinizin maliyeti nedir?',
-          a: 'Bu, görevin türüne ve kapsamına bağlıdır – örneğin arama görevi, yatırım analizi, due diligence veya gizli satış. Ücreti, herhangi bir maliyet doğmadan önce şeffaf ve yazılı olarak kararlaştırırız. Ön görüşme bağlayıcı değildir ve ücretsizdir.',
+          a: 'Bu, görevin türüne ve kapsamına bağlıdır – örneğin danışmanlık görevi, yatırım analizi, due diligence veya gizli satış. Ücreti, herhangi bir maliyet doğmadan önce şeffaf ve yazılı olarak kararlaştırırız. Ön görüşme bağlayıcı değildir ve ücretsizdir.',
         },
         {
           q: 'Hangi büyüklükten itibaren iş birliği anlamlıdır?',
-          a: 'Katı bir alt sınır yoktur. Önemli olan net bir plan ve gerçekçi bir arama profilidir. Odağımız konut ve ticari binalar, portföyler, proje geliştirmeleri ve özel amaçlı gayrimenkuller ile Türkiye ve Kuzey Kıbrıs’taki yüksek kaliteli konutlardır.',
+          a: 'Katı bir alt sınır yoktur. Önemli olan net bir plan ve gerçekçi bir gereksinim profilidir. Odağımız konut ve ticari binalar, portföyler, proje geliştirmeleri ve özel amaçlı gayrimenkuller ile Türkiye ve Kuzey Kıbrıs’taki yüksek kaliteli konutlardır.',
         },
         {
           q: 'Özel amaçlı gayrimenkul nedir?',
           a: 'Belirli bir kullanım amacı ve kendine özgü piyasa koşulları olan mülkler – örneğin oteller, bakım ve sağlık gayrimenkulleri, tıp merkezleri, lojistik ve ticari alanlar ya da eğlence ve turizm gayrimenkulleri. Değerleme, işletmeciler ve sözleşmeler konusunda uzmanlık gerektirir – ve kendine has fırsatlar sunar.',
         },
         {
-          q: 'Off-market satış ne kadar gizlidir?',
-          a: 'Mülkünüz hiçbir portalda yer almaz. Önce seçilmiş ve doğrulanmış ilgililere anonim olarak sunarız; eksiksiz belgeler ancak bir gizlilik sözleşmesi imzalandıktan sonra paylaşılır. Kimin neyi ne zaman öğreneceğinin kontrolü sizde kalır.',
+          q: 'Off-market konumlandırma ne kadar gizlidir?',
+          a: 'Mülkünüz hiçbir portalda yer almaz. Bilgiler önce yalnızca anonim olarak seçilmiş ve doğrulanmış kişilere iletilir; eksiksiz belgeler ancak bir gizlilik sözleşmesi imzalandıktan sonra paylaşılır. Kimin neyi ne zaman öğreneceğinin kontrolü sizde kalır.',
         },
         {
           q: 'Alıcıların ve yatırımcıların ciddi olduğundan nasıl emin oluyorsunuz?',
-          a: 'Gizli belgeleri paylaşmadan önce ilgilinin kimliğini, alım profilini ve sermaye kanıtını ya da finansman onayını – yasal olarak zorunlu kimlik tespiti dahil – kontrol ederiz. Böylece ciddi alıcıları daha ilk görüşmeden önce tanırsınız.',
+          a: 'Gizli belgeler paylaşılmadan önce her ilgili yapılandırılmış bir incelemeden geçer: “Müşterini tanı” ilkesine göre kimlik tespiti (KYC), Alman Kara Para Aklamayla Mücadele Kanunu’na (GwG) göre kontroller – örneğin gerçek faydalanıcılar, siyasi nüfuz sahibi kişiler, yaptırım listeleri ve fonların kaynağı – ayrıca alım profili ve sermaye kanıtı ya da finansman onayı. Böylece ciddi alıcıları daha ilk görüşmeden önce tanırsınız.',
         },
         {
           q: 'Yatırım analizi ile due diligence arasındaki fark nedir?',
@@ -434,9 +434,9 @@ export const tr: Dictionary = {
       ],
       cta: {
         title: 'Bir sonraki yatırımınızı mı arıyorsunuz?',
-        text: 'Arama profilinizi – veya gizlilikle satmak istediğiniz mülkü – bizimle paylaşın. İlk değerlendirmeyle gizlilik içinde size geri döneceğiz.',
+        text: 'Gereksinim profilinizi – veya gizlilikle satmak istediğiniz mülkü – bizimle paylaşın. İlk değerlendirmeyle gizlilik içinde size geri döneceğiz.',
       },
-      risk: 'Gayrimenkul yatırımları; değer dalgalanmaları, kira kayıpları, finansman, döviz ve yurt dışındaki hukuki riskler gibi riskler içerir. Bu web sitesinin içeriği yatırım, hukuk veya vergi danışmanlığı değildir ve alım veya satım teklifi niteliği taşımaz. Geçmiş performans gelecekteki sonuçlar için güvenilir bir gösterge değildir.',
+      risk: 'Gayrimenkul yatırımları; değer dalgalanmaları, kira kayıpları, finansman, döviz ve yurt dışındaki hukuki riskler gibi riskler içerir. Bu web sitesinin içeriği yatırım, hukuk veya vergi danışmanlığı değildir ve alım veya satım teklifi niteliği taşımaz. Geçmiş performans gelecekteki sonuçlar için güvenilir bir gösterge değildir. NEXXCON-24, Alman Ticaret Kanunu’nun (GewO) 34c, 34d, 34f, 34h veya 34i maddeleri uyarınca izne tabi faaliyetlerde bulunmaz – özellikle gayrimenkul, kredi, finansal yatırım veya sigorta aracılığı yapmaz; bu tür hizmetler gerektiğinde yalnızca yetkili ortaklar tarafından sunulur.',
     },
 
     ai: {
@@ -538,7 +538,7 @@ export const tr: Dictionary = {
     seo: {
       title: 'Hakkımızda · NEXXCON-24 · Nexxus – Business & IT. Consulting',
       description:
-        'NEXXCON-24, Hannover yakınlarındaki Laatzen merkezli Nexxus – Business & IT. Consulting’in danışmanlık markasıdır: işletme danışmanlığı, gayrimenkul yatırımı ve yapay zekâ otomasyonu tek elden.',
+        'NEXXCON-24, Hannover yakınlarındaki Laatzen merkezli Nexxus – Business & IT. Consulting’in danışmanlık markasıdır: koçluk ve consulting, gayrimenkul yatırımı, yapay zekâ otomasyonu ve yerleşim koçluğu tek elden.',
     },
     hero: {
       eyebrow: 'Hakkımızda',

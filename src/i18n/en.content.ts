@@ -3,6 +3,17 @@ import type { ExtraContent } from './types';
 /** Extended content – English. Order matches src/config/content.ts. */
 export const enContent: ExtraContent = {
   photoAlt: {
+    coachingEinzel:
+      'Ümit Törün in confidential one-to-one coaching with a businesswoman, side profile',
+    coachingFuehrung: 'Executive in personal coaching',
+    coachingReflexion: 'Business owner reflecting quietly at a laptop',
+    coachingAchtsamkeit: 'Mindfulness exercise in the office as a balance to everyday work',
+    coachingKompass: 'Compass in hand as a symbol of orientation',
+    consultingMeeting: 'Team meeting with presentation in a meeting room',
+    consultingWorkshop: 'Ümit Törün leading a strategy workshop at a whiteboard with a team',
+    consultingSeminar: 'Ümit Törün giving an in-house seminar to employees, rear view',
+    consultingTeam: 'Team working together with sticky notes on a glass wall',
+    consultingWebinar: 'Webinar with many participants on a laptop',
     omVillaPool: 'Modern villa with pool and terrace',
     omAnwesen: 'Stately estate in the evening with illuminated façade',
     omArchitektenhaus: 'Architect-designed house with large glazing at dusk',
@@ -167,7 +178,11 @@ export const enContent: ExtraContent = {
         kicker: 'Off-market real estate',
         title: 'Opportunities before the market sees them',
         text: 'Many of the most interesting properties change hands without ever being advertised. Personal networks give you access – with less competition, more room to negotiate and complete confidentiality.',
-        points: ['Personal search profile', 'Confidential exposés', 'Initial assessment included'],
+        points: [
+          'Personal requirements profile',
+          'Confidential exposés',
+          'Initial assessment included',
+        ],
       },
       {
         kicker: 'Turkey & Northern Cyprus',
@@ -262,7 +277,7 @@ export const enContent: ExtraContent = {
     ],
     realEstate: [
       {
-        text: 'Many attractive properties change owners without ever being offered publicly. Based on your search profile, we review opportunities from personal networks of owners, developers and investors and present only suitable properties to you, in confidence – or market your property at its true value, discreetly and promptly.',
+        text: 'Many attractive properties change owners without ever being offered publicly. Based on your requirements profile, we review opportunities from personal networks of owners, developers and investors and present only suitable properties to you, in confidence – or place your property at its true value, discreetly and promptly.',
         benefits: ['Less competition', 'Confidential documents', 'Pre-selection by your criteria'],
       },
       {
@@ -284,10 +299,10 @@ export const enContent: ExtraContent = {
           'And all of this abroad just as thoroughly as in Germany. You sign only when absolutely everything has been checked and clarified, the property fits your portfolio and you feel genuinely good about it – with confident exclamation marks instead of nagging question marks!',
       },
       {
-        text: 'Want to sell without showing your property publicly? We value it realistically, approach selected, vetted buyers and investors in a targeted way and achieve the best possible price – with full discretion throughout the process.',
+        text: 'Want to sell without showing your property publicly? We value it realistically, prepare documents and the investment story professionally and develop a discreet placement strategy for the best possible proceeds. Where brokerage is required, we work with appropriately licensed partners.',
         benefits: [
           'No public listing',
-          'Vetted buyers & investors',
+          'Investor-grade documents',
           'Maximum proceeds through targeted placement',
         ],
       },
@@ -373,5 +388,52 @@ export const enContent: ExtraContent = {
       'Istanbul connects Europe and Asia, the Turkish Riviera combines quality of life and tourism. From the city penthouse to the villa by the sea, we support selection, review and purchase through to registration in the land register.',
       'Northern Cyprus offers a Mediterranean climate, modern new-build projects and an attractive price level – a genuine alternative to Spain and Dubai. We are connected locally and personally support new-build and existing properties.',
     ],
+  },
+  coachingConsulting: {
+    eyebrow: 'Coaching & consulting',
+    title: 'Coaching or consulting? The difference.',
+    lead: 'Coaching focuses on the business owner, consulting on the business. The two work hand in hand: clear thinking at the top leads to better decisions – and a strong team puts those decisions into effect.',
+    graphic: {
+      coaching: 'Coaching',
+      coachingFocus: 'The owner',
+      consulting: 'Consulting',
+      consultingFocus: 'The business',
+      together: 'Impact',
+    },
+    coaching: {
+      label: 'Coaching',
+      title: 'For the business owner',
+      tagline: 'Personal · confidential · at C-level',
+      text: 'In coaching, you as a person and leader are at the centre: your mindset, your energy, your decisions. We work with you one-to-one – confidentially, as equals, offline & online.',
+      items: [
+        'Personal development & self-reflection',
+        'Mindset work: attitude, focus, clarity',
+        'Energy work & self-management',
+        'Resilience work',
+        'Anti-stress management & work-life balance',
+        'Decision sparring at C-level',
+        'Leadership with heart and mind',
+        'Role changes, succession & handover',
+        'Interim management: leadership for a defined period at your side',
+      ],
+    },
+    consulting: {
+      label: 'Consulting',
+      title: 'For the business',
+      tagline: 'Organisation · team · processes',
+      text: 'In consulting, we work on the business and with your team: structures, processes, market and collaboration – with clear goals and measurable results.',
+      items: [
+        'Strategy, business model & positioning',
+        'Marketing & sales',
+        'Communication – internal & external',
+        'Team dynamics & collaboration',
+        'Productivity & effectiveness',
+        'Time & priority management',
+        'Processes, organisation & change management',
+        'In-house training, seminars, webinars & courses',
+      ],
+    },
+    bridge:
+      'In practice, the two go hand in hand: coaching strengthens the owner, consulting strengthens the business. Together we decide where to start – and combine both where they have the greatest impact.',
   },
 };

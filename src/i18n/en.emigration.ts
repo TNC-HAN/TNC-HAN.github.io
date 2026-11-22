@@ -98,7 +98,7 @@ export const enEmigration: EmigrationContent = {
   },
   details: [
     {
-      text: 'Turkey combines vibrant metropolises, long coastlines and a dynamic economy. We help you compare regions such as Istanbul, Antalya or the Aegean realistically – by cost of living, infrastructure, schools, healthcare and business opportunities – and support you with finding a home and your first steps on site.',
+      text: 'Turkey combines vibrant metropolises, long coastlines and a dynamic economy. We help you compare regions such as Istanbul, Antalya or the Aegean realistically – by cost of living, infrastructure, schools, healthcare and business opportunities – and help you find your way around the housing market and take your first steps on site.',
       benefits: [
         'Regional comparison with real costs',
         'Housing & infrastructure reviewed',

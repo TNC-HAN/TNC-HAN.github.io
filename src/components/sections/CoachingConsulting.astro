@@ -1,0 +1,157 @@
+---
+/**
+ * Erklärbereich „Coaching oder Consulting?“ (Seite Coaching & Consulting):
+ * Erklärgrafik (zwei überlappende Kreise), je Disziplin Text, Themenliste und 5 Fotos.
+ * Texte: src/i18n/<sprache>.content.ts → coachingConsulting · Fotos: src/config/media.ts
+ */
+import { Image } from 'astro:assets';
+import SectionHeading from '@/components/ui/SectionHeading.astro';
+import BookButton from '@/components/ui/BookButton.astro';
+import { photos, type PhotoKey } from '@/config/media';
+import type { Lang } from '@/config/routes';
+import { t } from '@/i18n';
+
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const dict = t(lang);
+const c = dict.coachingConsulting;
+const columns: { key: 'coaching' | 'consulting'; photos: PhotoKey[] }[] = [
+  {
+    key: 'coaching',
+    photos: [
+      'coachingEinzel',
+      'coachingFuehrung',
+      'coachingReflexion',
+      'coachingAchtsamkeit',
+      'coachingKompass',
+    ],
+  },
+  {
+    key: 'consulting',
+    photos: [
+      'consultingWorkshop',
+      'consultingSeminar',
+      'consultingTeam',
+      'consultingWebinar',
+      'consultingMeeting',
+    ],
+  },
+];
+---
+
+<section
+  id="coaching-oder-consulting"
+  class="container-site scroll-mt-28 py-20 sm:py-24"
+  aria-labelledby="cc-title"
+>
+  <SectionHeading id="cc-title" eyebrow={c.eyebrow} title={c.title} lead={c.lead} />
+
+  <!-- Erklärgrafik: Unternehmer (Coaching) + Unternehmen (Consulting) = Wirksamkeit -->
+  <figure
+    class="reveal mt-12 flex justify-center"
+    aria-label={`${c.graphic.coaching}: ${c.graphic.coachingFocus} · ${c.graphic.consulting}: ${c.graphic.consultingFocus} · ${c.graphic.together}`}
+  >
+    <div class="relative flex flex-col items-center sm:flex-row">
+      <div class="cc-circle cc-first border-gold/60 bg-gold/10">
+        <span class="text-xs font-semibold tracking-[0.2em] text-champagne uppercase">
+          {c.graphic.coaching}
+        </span>
+        <span class="mt-2 font-display text-xl sm:text-2xl">{c.graphic.coachingFocus}</span>
+        <span class="mt-1 text-xs text-muted">{c.coaching.tagline}</span>
+      </div>
+      <div class="cc-circle cc-second -mt-14 border-brand-400/60 bg-brand-500/15 sm:mt-0 sm:-ml-16">
+        <span class="text-xs font-semibold tracking-[0.2em] text-champagne uppercase">
+          {c.graphic.consulting}
+        </span>
+        <span class="mt-2 font-display text-xl sm:text-2xl">{c.graphic.consultingFocus}</span>
+        <span class="mt-1 text-xs text-muted">{c.consulting.tagline}</span>
+      </div>
+      <span class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full bg-champagne sm:top-[84%] px-4 py-1.5 text-xs font-semibold tracking-[0.15em] text-[#04030c] uppercase shadow-lg">
+        {c.graphic.together}
+      </span>
+    </div>
+  </figure>
+
+  <div class="mt-14 grid gap-6 lg:grid-cols-2">
+    {columns.map((col) => {
+      const d = c[col.key];
+      return (
+        <article class="reveal glass min-w-0 p-6 sm:p-8">
+          <p class="eyebrow">{d.label}</p>
+          <h3 class="mt-3 text-2xl font-medium sm:text-3xl">{d.title}</h3>
+          <p class="mt-2 text-sm text-champagne">{d.tagline}</p>
+          <p class="mt-4 leading-relaxed text-muted">{d.text}</p>
+          <ol class="mt-6 space-y-2.5">
+            {d.items.map((item, i) => (
+              <li class="flex gap-3 text-text/90">
+                <span class="flex size-6 shrink-0 items-center justify-center rounded-full border border-gold/40 text-xs text-champagne">
+                  {i + 1}
+                </span>
+                <span class="min-w-0">{item}</span>
+              </li>
+            ))}
+          </ol>
+          <div class="mt-8 grid grid-cols-2 gap-2">
+            {col.photos.map((key, i) => (
+              <Image
+                src={photos[key]}
+                alt={dict.photoAlt[key]}
+                class:list={[
+                  'w-full rounded-xl object-cover',
+                  i === 0 ? 'col-span-2 aspect-[16/9]' : 'aspect-[4/3]',
+                ]}
+                widths={i === 0 ? [480, 800, 1100] : [320, 560]}
+                sizes={
+                  i === 0 ? '(min-width: 1024px) 560px, 100vw' : '(min-width: 1024px) 280px, 50vw'
+                }
+                loading="lazy"
+              />
+            ))}
+          </div>
+        </article>
+      );
+    })}
+  </div>
+
+  <div class="reveal mx-auto mt-12 max-w-3xl text-center">
+    <p class="text-lg leading-relaxed text-muted">{c.bridge}</p>
+    <BookButton lang={lang} class="mt-6" note />
+  </div>
+</section>
+
+<style>
+  .cc-circle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 15rem;
+    height: 15rem;
+    padding: 1.5rem 2.25rem;
+    border-width: 1px;
+    border-radius: 9999px;
+    text-align: center;
+    backdrop-filter: blur(6px);
+  }
+  /* Inhalt vom Überlappungsbereich (Mitte mit „Wirksamkeit“) wegrücken */
+  .cc-first {
+    padding-bottom: 4rem;
+  }
+  .cc-second {
+    padding-top: 4rem;
+  }
+  @media (min-width: 640px) {
+    .cc-circle {
+      width: 18rem;
+      height: 18rem;
+    }
+    .cc-first {
+      padding: 1.5rem 4rem 2.5rem 1.5rem;
+    }
+    .cc-second {
+      padding: 1.5rem 1.5rem 2.5rem 4rem;
+    }
+  }
+</style>

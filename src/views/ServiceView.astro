@@ -13,6 +13,7 @@ import FeatureGrid from '@/components/sections/FeatureGrid.astro';
 import FaqList from '@/components/sections/FaqList.astro';
 import CtaBand from '@/components/sections/CtaBand.astro';
 import AreaCards from '@/components/sections/AreaCards.astro';
+import CoachingConsulting from '@/components/sections/CoachingConsulting.astro';
 import SectionHeading from '@/components/ui/SectionHeading.astro';
 import BookButton from '@/components/ui/BookButton.astro';
 import Icon from '@/components/ui/Icon.astro';
@@ -88,6 +89,8 @@ const offeringIcons = {
       </div>
     </div>
   </section>
+
+  {service === 'consulting' && <CoachingConsulting lang={lang} />}
 
   <FeatureGrid
     id="offerings-title"

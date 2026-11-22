@@ -94,6 +94,22 @@ export interface ExtraContent {
     ai: OfferingDetail[];
   };
   markets: { eyebrow: string; title: string; lead: string; details: string[] };
+  /** Erklärbereich „Coaching oder Consulting?“ (Seite Coaching & Consulting) */
+  coachingConsulting: {
+    eyebrow: string;
+    title: string;
+    lead: string;
+    graphic: {
+      coaching: string;
+      coachingFocus: string;
+      consulting: string;
+      consultingFocus: string;
+      together: string;
+    };
+    coaching: { label: string; title: string; tagline: string; text: string; items: string[] };
+    consulting: { label: string; title: string; tagline: string; text: string; items: string[] };
+    bridge: string;
+  };
   video: { eyebrow: string; title: string; text: string; label: string; points: string[] };
   network: {
     eyebrow: string;

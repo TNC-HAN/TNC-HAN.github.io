@@ -103,3 +103,18 @@ Unsplash-Lizenz. Erzeugt mit `scripts/fetch-photos-dach-immobilien.py`.
 | `offmarket-buerogebaeude-glas.jpg`         | Bürogebäude mit Glasfassade      | 1621831337128-35676ca30868 |
 | `offmarket-penthouse-nacht.jpg`            | Penthouse bei Nacht              | 1565623833408-d77e39b88af6 |
 | `offmarket-villen-wasserlage.jpg`          | Villen in Wasserlage             | 1578439297699-eb414262c2de |
+
+### Coaching & Consulting (Erklärbereich, Seite Coaching & Consulting) – Originale der KI-Bilder: `scripts/originals/gemini/`
+
+| Datei                                | Motiv                                       | Quelle                                               |
+| ------------------------------------ | ------------------------------------------- | ---------------------------------------------------- |
+| `coaching-uemit-einzelgespraech.jpg` | Ümit Törün im Einzel-Coaching (Profil)      | KI-generiert (Google Gemini) auf Basis eigener Fotos |
+| `consulting-uemit-workshop.jpg`      | Ümit Törün im Workshop am Whiteboard        | KI-generiert (Google Gemini) auf Basis eigener Fotos |
+| `consulting-uemit-seminar.jpg`       | Ümit Törün im Inhouse-Seminar (Rückansicht) | KI-generiert (Google Gemini) auf Basis eigener Fotos |
+| `coaching-fuehrungskraft.jpg`        | Führungskraft im Coaching                   | Unsplash 1758518730162-09a142505bfd                  |
+| `coaching-reflexion.jpg`             | Unternehmer in Reflexion                    | Unsplash 1518644730709-0835105d9daa                  |
+| `coaching-achtsamkeit.jpg`           | Achtsamkeit im Büro                         | Unsplash 1758874384683-0accd9fb26ee                  |
+| `coaching-kompass.jpg`               | Kompass in der Hand                         | Unsplash 1505778276668-26b3ff7af103                  |
+| `consulting-teammeeting.jpg`         | Team-Meeting mit Präsentation               | Unsplash 1542744173-8e7e53415bb0                     |
+| `consulting-teamarbeit.jpg`          | Teamarbeit mit Haftnotizen                  | Unsplash 1758691736872-61a1f75fe2d5                  |
+| `consulting-webinar.jpg`             | Webinar am Laptop                           | Unsplash 1588196749597-9ff075ee6b5b                  |

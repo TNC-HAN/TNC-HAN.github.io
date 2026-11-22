@@ -196,7 +196,7 @@ export const en: Dictionary = {
         },
         {
           q: 'What does off-market mean?',
-          a: 'Off-market properties are not advertised publicly on portals but brokered discreetly through personal networks. This protects sellers’ privacy and gives buyers opportunities with less competition.',
+          a: 'Off-market properties are not advertised publicly on portals but offered discreetly through personal networks. This protects sellers’ privacy and gives buyers opportunities with less competition.',
         },
         {
           q: 'Do you also work internationally?',
@@ -338,11 +338,11 @@ export const en: Dictionary = {
       hero: {
         eyebrow: '02 · Real estate advisory – off-market & investment',
         title: 'Properties not everyone gets to see.',
-        lead: 'The best opportunities rarely appear on portals. We discreetly connect investors with off-market and investment property, review every opportunity before you commit time and capital – and place your own properties precisely with the right buyers.',
+        lead: 'The best opportunities rarely appear on portals. We discreetly open up access to off-market and investment property for investors, review every opportunity before you commit time and capital – and advise owners on the targeted placement of their properties.',
       },
       offerings: {
         eyebrow: 'Services',
-        title: 'From search profile to closing.',
+        title: 'From requirements profile to signing.',
         items: [
           {
             title: 'Global off-market access',
@@ -357,8 +357,8 @@ export const en: Dictionary = {
             text: 'Meticulous review of all facts and figures – from the building fabric, tenant structure and leases to long-term profitability and savings potential.',
           },
           {
-            title: 'Selling without publicity',
-            text: 'Realistic valuation and maximum proceeds through targeted placement with vetted buyers – no portal listing.',
+            title: 'Discreet placement',
+            text: 'Realistic valuation and a well-thought-out placement strategy for the best possible proceeds – confidential and without a portal listing.',
           },
           {
             title: 'International investments',
@@ -392,8 +392,8 @@ export const en: Dictionary = {
       },
       faq: [
         {
-          q: 'How do I get access to off-market offers?',
-          a: 'After an initial consultation we create your search profile together. We present suitable properties to you in confidence – usually after signing a non-disclosure agreement.',
+          q: 'How do I get access to off-market opportunities?',
+          a: 'After an initial consultation we work out your requirements profile together. We discuss matching opportunities from our network with you in confidence – usually after signing a non-disclosure agreement.',
         },
         {
           q: 'Do you also support purchases in Turkey and Northern Cyprus?',
@@ -401,23 +401,23 @@ export const en: Dictionary = {
         },
         {
           q: 'What does your support with buying or selling cost?',
-          a: 'That depends on the type and scope of the mandate – for example a search mandate, investment analysis, due diligence or a discreet sale. We agree the fee transparently and in writing before any costs arise. The initial consultation is free and without obligation.',
+          a: 'That depends on the type and scope of the mandate – for example an advisory mandate, investment analysis, due diligence or a discreet sale. We agree the fee transparently and in writing before any costs arise. The initial consultation is free and without obligation.',
         },
         {
           q: 'From what size is working together worthwhile?',
-          a: 'There is no fixed minimum. What matters is a clear plan and a realistic search profile. Our focus is on residential and commercial buildings, portfolios, development projects and special-purpose property, as well as high-quality residential property in Turkey and Northern Cyprus.',
+          a: 'There is no fixed minimum. What matters is a clear plan and a realistic requirements profile. Our focus is on residential and commercial buildings, portfolios, development projects and special-purpose property, as well as high-quality residential property in Turkey and Northern Cyprus.',
         },
         {
           q: 'What is special-purpose property?',
           a: 'Property with a specific use and its own market environment – for example hotels, care and healthcare property, medical centres, logistics and commercial space, or leisure property. It requires specialist know-how in valuation, operators and contracts – and offers opportunities of its own.',
         },
         {
-          q: 'How discreet is an off-market sale?',
-          a: 'Your property does not appear on any portal. We first present it anonymously to selected, vetted prospects; full documents are only shared after a non-disclosure agreement has been signed. You stay in control of who learns what, and when.',
+          q: 'How discreet is an off-market placement?',
+          a: 'Your property does not appear on any portal. Information initially goes only in anonymised form to selected, vetted contacts; full documents are only shared after a non-disclosure agreement has been signed. You stay in control of who learns what, and when.',
         },
         {
           q: 'How do you make sure buyers and investors are serious?',
-          a: 'Before sharing confidential documents, we check the prospect’s identity, acquisition profile and proof of funds or financing confirmation – including the legally required identification. That way you know who is serious before the first meeting.',
+          a: 'Before confidential documents are shared, every prospect goes through a structured review: identification under the know-your-customer principle (KYC), checks under the German Anti-Money Laundering Act (GwG) – for example on beneficial owners, politically exposed persons, sanctions lists and source of funds – as well as acquisition profile and proof of funds or financing confirmation. That way you know who is serious before the first meeting.',
         },
         {
           q: 'What is the difference between investment analysis and due diligence?',
@@ -434,9 +434,9 @@ export const en: Dictionary = {
       ],
       cta: {
         title: 'Looking for your next investment?',
-        text: 'Share your search profile with us – or the property you want to sell discreetly. We will get back to you confidentially with an initial assessment.',
+        text: 'Share your requirements profile with us – or the property you want to sell discreetly. We will get back to you confidentially with an initial assessment.',
       },
-      risk: 'Real estate investments involve risks, such as fluctuations in value, rent defaults, financing, currency and legal risks abroad. The content of this website does not constitute investment, legal or tax advice, nor an offer to buy or sell. Past performance is not a reliable indicator of future results.',
+      risk: 'Real estate investments involve risks, such as fluctuations in value, rent defaults, financing, currency and legal risks abroad. The content of this website does not constitute investment, legal or tax advice, nor an offer to buy or sell. Past performance is not a reliable indicator of future results. NEXXCON-24 does not carry out any activities requiring a licence under sections 34c, 34d, 34f, 34h or 34i of the German Trade Regulation Act (GewO) – in particular no brokerage of property, loans, financial investments or insurance; where such services are required, they are provided exclusively by appropriately licensed partners.',
     },
 
     ai: {
@@ -538,7 +538,7 @@ export const en: Dictionary = {
     seo: {
       title: 'About · NEXXCON-24 · Nexxus – Business & IT. Consulting',
       description:
-        'NEXXCON-24 is the advisory brand of Nexxus – Business & IT. Consulting, based in Laatzen near Hanover: business consulting, real estate investment and AI automation from a single source.',
+        'NEXXCON-24 is the advisory brand of Nexxus – Business & IT. Consulting, based in Laatzen near Hanover: coaching & consulting, real estate investment, AI automation and relocation coaching from a single source.',
     },
     hero: {
       eyebrow: 'About us',

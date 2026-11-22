@@ -3,6 +3,17 @@ import type { ExtraContent } from './types';
 /** Erweiterte Inhalte – Deutsch. Reihenfolgen passen zu src/config/content.ts. */
 export const deContent: ExtraContent = {
   photoAlt: {
+    coachingEinzel:
+      'Ümit Törün im vertraulichen Einzel-Coaching mit einer Unternehmerin, seitlich im Profil',
+    coachingFuehrung: 'Führungskraft im persönlichen Coaching',
+    coachingReflexion: 'Unternehmer in ruhiger Reflexion am Laptop',
+    coachingAchtsamkeit: 'Achtsamkeitsübung im Büro als Ausgleich zum Arbeitsalltag',
+    coachingKompass: 'Kompass in der Hand als Symbol für Orientierung',
+    consultingMeeting: 'Team-Meeting mit Präsentation im Besprechungsraum',
+    consultingWorkshop: 'Ümit Törün leitet einen Strategie-Workshop am Whiteboard mit einem Team',
+    consultingSeminar: 'Ümit Törün hält ein Inhouse-Seminar vor Mitarbeitenden, Ansicht von hinten',
+    consultingTeam: 'Team arbeitet gemeinsam mit Haftnotizen an einer Glaswand',
+    consultingWebinar: 'Webinar mit vielen Teilnehmern auf dem Laptop',
     omVillaPool: 'Moderne Villa mit Pool und Terrasse',
     omAnwesen: 'Herrschaftliches Anwesen am Abend mit beleuchteter Fassade',
     omArchitektenhaus: 'Architektenhaus mit großen Glasflächen in der Dämmerung',
@@ -135,7 +146,7 @@ export const deContent: ExtraContent = {
       {
         kicker: 'Strategie & Geschäftsmodell',
         title: 'Vom Bauchgefühl zur belastbaren Strategie',
-        text: 'Markt, Wettbewerb, Zahlen, Daten, Fakten und Ihre persönlichen Wünsche und Ziele ergeben ein klares Bild: weniger „To-dos“ und weniger Stress, wenige Prioritäten mit großer Wirkung, eine „Roadmap“ mit glasklarer Zukunftsstrategie, Verantwortlichen und Meilensteinen – und vor allem ein optimiertes Geschäftsmodell, das auch ohne Sie reibungslos funktioniert.\n\nDer erfolgreiche Unternehmer arbeitet nicht (mehr) in seinem Unternehmen, sondern aus der „Adler-Perspektive“ an seinem Unternehmen.',
+        text: 'Markt, Wettbewerb, Zahlen, Daten, Fakten und Ihre persönlichen Wünsche & Ziele ergeben ein klares Bild: Weniger „To-Dos“ und Stress und weniger Prioritäten mit großer Wirkung, eine „RoadMap“ mit glasklarer Zukunfts-Strategie, Verantwortlichen und Meilensteinen – und vor allem ein optimiertes Geschäftsmodell, das auch ohne Sie reibungslos funktioniert …\n\nDer erfolgreiche Unternehmer arbeitet nicht (mehr) in seinem Unternehmen; sondern in „Adler-Perspektive“ an seinem Unternehmen …',
         points: [
           'Positionierung an Zukunfts- und Zielmärkten',
           'Ausrichtung, Optimierung und Resilienz-Strategien',
@@ -144,12 +155,12 @@ export const deContent: ExtraContent = {
       },
       {
         kicker: 'Coaching für Unternehmer',
-        title: 'Ein Sparringspartner, der richtig zuhört – und auch mal widerspricht',
-        text: 'Konstruktive Kritik ist ein wesentlicher Bestandteil permanenter Optimierung und stabilen Wachstums.\n\nAn der Spitze wird es oft einsam: Die wichtigsten Entscheidungen fallen Unternehmern oft schwer – und sie treffen sie allein. Im vertraulichen Coaching sortieren wir Herausforderungen, entwickeln Optionen, prüfen Annahmen, wägen gemeinsam ab und schaffen so Entscheidungsklarheit – unter Wahrung Ihrer unternehmerischen Ausrichtung und Freiheit.',
+        title: 'Ein Sparringspartner, der richtig zuhört und auch mal widerspricht',
+        text: 'Konstruktive Kritik ist ein wesentlicher Bestandteil permanenter Optimierung und stabilen Wachstums.\n\nAn der Spitze wird es ganz oft einsam: Die wichtigsten Entscheidungen treffen Unternehmer oft schwerlich und allein. Im vertraulichen Coaching sortieren wir Herausforderungen, entwickeln Optionen, prüfen Annahmen, wägen gemeinsam ab und schaffen dadurch Entscheidungsklarheit, bei Wahrung Ihrer unternehmerischen Ausrichtung und Freiheit.',
         points: [
-          'Solide Entscheidungen – trotz Stress und Druck',
-          'Leadership mit Herz & Verstand statt Geschäftsführung nach „Schema F“',
-          'Immer vertraulich, diskret, produktiv und persönlich (offline & online)',
+          'Solide Entscheidungen treffen; trotz Stress und Druck',
+          'Leadership mit Herz & Verstand anstatt GF nach „Schema F“',
+          'Immer vertraulich, diskret, produktiv, persönlich (offline & online)',
         ],
       },
       {
@@ -166,7 +177,11 @@ export const deContent: ExtraContent = {
         kicker: 'Off-Market-Immobilien',
         title: 'Gelegenheiten, bevor der Markt sie sieht',
         text: 'Viele der interessantesten Objekte wechseln den Eigentümer, ohne je inseriert zu werden. Über persönliche Netzwerke erhalten Sie Zugang – mit weniger Wettbewerb, mehr Verhandlungsspielraum und vollständiger Vertraulichkeit.',
-        points: ['Persönliches Suchprofil', 'Vertrauliche Exposés', 'Erste Einschätzung inklusive'],
+        points: [
+          'Persönliches Anforderungsprofil',
+          'Vertrauliche Exposés',
+          'Erste Einschätzung inklusive',
+        ],
       },
       {
         kicker: 'Türkei & Nordzypern',
@@ -265,7 +280,7 @@ export const deContent: ExtraContent = {
     ],
     realEstate: [
       {
-        text: 'Viele attraktive Objekte wechseln den Eigentümer, ohne je öffentlich angeboten zu werden. Anhand Ihres Suchprofils prüfen wir Gelegenheiten aus persönlichen Netzwerken von Eigentümern, Bauträgern und Investoren und stellen Ihnen ausschließlich passende Objekte vertraulich vor – oder vermarkten Ihre Immobilie wertgerecht, diskret und zeitnah.',
+        text: 'Viele attraktive Objekte wechseln den Eigentümer, ohne je öffentlich angeboten zu werden. Anhand Ihres Anforderungsprofils prüfen wir Gelegenheiten aus persönlichen Netzwerken von Eigentümern, Bauträgern und Investoren und stellen Ihnen ausschließlich passende Objekte vertraulich vor bzw. platzieren Ihre Immobilie wertgerecht, diskret und zeitnah.',
         benefits: [
           'Weniger Wettbewerb',
           'Vertrauliche Unterlagen',
@@ -273,7 +288,7 @@ export const deContent: ExtraContent = {
         ],
       },
       {
-        text: 'Jede Gelegenheit wird akribisch kalkuliert: Kaufnebenkosten, Finanzierungsmodalitäten, laufende Kosten, Entwicklungspotenziale, Wertsteigerung und mögliche Szenarien. So sehen Sie immer auf einen Blick, ob ein Objekt zu Ihrer Strategie passt, wo der Verhandlungsspielraum liegt – und ob sich die Investition letztendlich lohnt.',
+        text: 'Jede Gelegenheit wird akribisch kalkuliert: Kaufnebenkosten, Finanzierungsmodalitäten, laufende Kosten, Entwicklungspotenziale, Wertsteigerung und mögliche Szenarien. So sehen Sie immer auf einen Blick, ob ein Objekt zu Ihrer Strategie passt, wo der Verhandlungsspielraum liegt und letztendlich, ob es sich lohnt zu investieren.',
         benefits: [
           'Transparente Kalkulation',
           'Lage- und Marktbewertung',
@@ -281,20 +296,20 @@ export const deContent: ExtraContent = {
         ],
       },
       {
-        text: 'Gemeinsam mit renommierten Experten der Immobilienwirtschaft aus unserem langjährigen Netzwerk prüfen wir ausnahmslos alle Unterlagen. Eine vollständige Due-Diligence-Analyse umfasst folgende Fachdisziplinen:',
+        text: 'Gemeinsam mit renommierten Experten der Immobilienwirtschaft aus unserem langjährigen Netzwerk überprüfen wir alle Unterlagen ausnahmslos. Eine vollständige Prüfung in der DDA umfasst folgende Fachdisziplinen:',
         benefits: [
-          'Bauliche und technische Substanzprüfung – mit Architekten, Bauingenieuren und Gutachtern',
-          'Kaufmännische Prüfung – inhouse und mit Kooperationspartnern aus Facility Management, Hausverwaltung und Rechtsanwaltschaft',
-          'Steuerliche Due Diligence – mit auf Immobilien spezialisierten Wirtschaftsprüfungs- und Steuerkanzleien',
+          'Bauliche-/Techn. Substanzprüfung (mit Architekten / Bau-Ing. / Gutachtern)',
+          'Kaufmännische Prüfung (Inhouse & Kooperationspartner: FM/HV/RAe)',
+          'Steuerliche DD mit auf Immobilien spezialisierten Wirtschafts-/Steuerkanzleien',
         ],
         after:
-          'Und das im Ausland ebenso gründlich wie in Deutschland. Sie unterschreiben erst, wenn absolut alles geprüft und geklärt ist, das Objekt in Ihr Portfolio passt und Sie ein rundum gutes Gefühl haben – mit positiven Ausrufezeichen statt zweifelhafter Fragezeichen!',
+          'Und das alles im Ausland ebenso gründlich wie in Deutschland. Sie unterschreiben erst, wenn absolut alles geprüft und geklärt ist, in Ihr Portfolio passt und Sie ausnahmslos ein richtig gutes Gefühl haben. Mit positiven Ausrufezeichen, statt zweifelhaften Fragezeichen!',
       },
       {
-        text: 'Sie möchten verkaufen, ohne Ihr Objekt öffentlich zu zeigen? Wir bewerten realistisch, sprechen ausgewählte, geprüfte Käufer und Investoren gezielt an und erzielen so den bestmöglichen Erlös – bei voller Diskretion während des gesamten Prozesses.',
+        text: 'Sie möchten verkaufen, ohne Ihr Objekt öffentlich zu zeigen? Wir bewerten realistisch, bereiten Unterlagen und Investment-Story professionell auf und entwickeln eine diskrete Platzierungsstrategie für den bestmöglichen Erlös. Wo eine Vermittlung erforderlich ist, arbeiten wir mit entsprechend zugelassenen Partnern zusammen.',
         benefits: [
           'Keine öffentliche Anzeige',
-          'Geprüfte Käufer & Investoren',
+          'Unterlagen auf Investorenniveau',
           'Maximaler Erlös durch gezielte Platzierung',
         ],
       },
@@ -392,5 +407,52 @@ export const deContent: ExtraContent = {
       'Istanbul verbindet Europa und Asien, die türkische Riviera Lebensqualität und Tourismus. Vom Penthouse in der Metropole bis zur Villa am Meer begleiten wir Auswahl, Prüfung und Kauf bis zur Eintragung im Grundbuch.',
       'Nordzypern bietet Mittelmeerklima, moderne Neubauprojekte und ein attraktives Preisniveau – eine echte Alternative zu Spanien und Dubai. Wir sind vor Ort vernetzt und begleiten Neubau- und Bestandsobjekte persönlich.',
     ],
+  },
+  coachingConsulting: {
+    eyebrow: 'Coaching & Consulting',
+    title: 'Coaching oder Consulting? Der Unterschied.',
+    lead: 'Coaching setzt beim Unternehmer an, Consulting beim Unternehmen. Beides greift ineinander: Wer an der Spitze klar denkt, entscheidet besser – und ein starkes Team setzt diese Entscheidungen wirksam um.',
+    graphic: {
+      coaching: 'Coaching',
+      coachingFocus: 'Der Unternehmer',
+      consulting: 'Consulting',
+      consultingFocus: 'Das Unternehmen',
+      together: 'Wirksamkeit',
+    },
+    coaching: {
+      label: 'Coaching',
+      title: 'Für den Unternehmer',
+      tagline: 'Persönlich · vertraulich · auf C-Level',
+      text: 'Im Coaching stehen Sie als Mensch und Führungspersönlichkeit im Mittelpunkt: Ihre Haltung, Ihre Energie, Ihre Entscheidungen. Wir arbeiten 1:1 mit Ihnen – vertraulich, auf Augenhöhe, offline & online.',
+      items: [
+        'Persönlichkeitsentwicklung & Selbstreflexion',
+        'Mindset-Arbeit: Haltung, Fokus, Klarheit',
+        'Energie-Arbeit & Selbstmanagement',
+        'Resilienz-Arbeit',
+        'Anti-Stress-Management & Work-Life-Balance',
+        'Entscheidungs-Sparring auf C-Level',
+        'Leadership mit Herz & Verstand',
+        'Rollenwechsel, Nachfolge & Übergabe',
+        'Interims-Management: Führung auf Zeit an Ihrer Seite',
+      ],
+    },
+    consulting: {
+      label: 'Consulting',
+      title: 'Für das Unternehmen',
+      tagline: 'Organisation · Team · Prozesse',
+      text: 'Im Consulting arbeiten wir am Unternehmen und mit Ihrem Team: Strukturen, Abläufe, Markt und Zusammenarbeit – mit klaren Zielen und messbaren Ergebnissen.',
+      items: [
+        'Strategie, Geschäftsmodell & Positionierung',
+        'Marketing & Sales',
+        'Kommunikation – intern & extern',
+        'Teamdynamik & Zusammenarbeit',
+        'Produktivität & Effektivität',
+        'Zeit- & Prioritätenmanagement',
+        'Prozesse, Organisation & Change-Management',
+        'Inhouse-Schulungen, Seminare, Webinare & Kurse',
+      ],
+    },
+    bridge:
+      'In der Praxis greift beides ineinander: Coaching stärkt den Unternehmer, Consulting das Unternehmen. Gemeinsam legen wir fest, wo Sie ansetzen – und kombinieren beides dort, wo es die größte Wirkung entfaltet.',
   },
 };

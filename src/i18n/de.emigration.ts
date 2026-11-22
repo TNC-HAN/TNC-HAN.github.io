@@ -102,7 +102,7 @@ export const deEmigration: EmigrationContent = {
   },
   details: [
     {
-      text: 'Die Türkei verbindet pulsierende Metropolen, lange Küsten und eine dynamische Wirtschaft. Wir helfen Ihnen, Regionen wie Istanbul, Antalya oder die Ägäis realistisch zu vergleichen – nach Lebenshaltungskosten, Infrastruktur, Schulen, Gesundheitsversorgung und Business-Chancen – und begleiten Sie bei Wohnungssuche und ersten Schritten vor Ort.',
+      text: 'Die Türkei verbindet pulsierende Metropolen, lange Küsten und eine dynamische Wirtschaft. Wir helfen Ihnen, Regionen wie Istanbul, Antalya oder die Ägäis realistisch zu vergleichen – nach Lebenshaltungskosten, Infrastruktur, Schulen, Gesundheitsversorgung und Business-Chancen – und unterstützen Sie bei der Orientierung am Wohnungsmarkt und den ersten Schritten vor Ort.',
       benefits: [
         'Regionenvergleich mit echten Kosten',
         'Wohnen & Infrastruktur geprüft',
