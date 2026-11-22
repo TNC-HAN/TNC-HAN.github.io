@@ -120,9 +120,9 @@ export const enContent: ExtraContent = {
         text: 'Selling, buying or handing over a business to a successor.\nFrom the first idea through due diligence analysis to a legally sound signing – with our legal cooperation partners (audit and tax firms, lawyers and notaries for corporate structuring) and M&A experts.\nCarefully prepared, realistically valued, discreetly supported.',
       },
       {
-        kicker: 'Off-market (pre-sale investment opportunities)',
+        kicker: 'Off-market (opportunities before market launch)',
         title: 'Properties that never reach a portal',
-        text: 'Discreet access to selected properties, investors and joint venture capital from our exclusive, personal off-market networks. Not only for real estate deals, but also for business networking at C-level.',
+        text: 'Discreet access to selected properties, investors and joint venture partners from our exclusive, personal off-market networks. Not only for real estate deals, but also for business networking at C-level.',
       },
       {
         kicker: 'Investment D-A-CH',

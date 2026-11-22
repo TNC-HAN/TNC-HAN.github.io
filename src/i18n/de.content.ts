@@ -111,7 +111,7 @@ export const deContent: ExtraContent = {
       {
         kicker: 'Coaching',
         title: 'Sparring für Unternehmer auf Augenhöhe',
-        text: 'Vertraulich, direkt und lösungsorientiert – für bessere Entscheidungen in einem zunehmend komplexen Markt.\nWir agieren regional / lokal – als auch international global und passen uns Ihren Herausforderungen & Bedürfnissen an.',
+        text: 'Vertraulich, direkt und lösungsorientiert – für bessere Entscheidungen in einem zunehmend komplexeren Markt.\nWir agieren regional / lokal – als auch international global und passen uns Ihren Herausforderungen & Bedürfnissen an.',
       },
       {
         kicker: 'Nachfolge und M&A',
@@ -119,9 +119,9 @@ export const deContent: ExtraContent = {
         text: 'Unternehmensverkauf, Kauf oder Nachfolge-Übergabe.\nVom ersten Gedanken über die Due Diligence Analyse bis hin zur rechtssicheren Unterzeichnung – mit unseren juristischen Kooperationspartnern (Wirtschafts- und Steuerkanzleien, RAe und Notaren für Unternehmensgestaltung) und M&A-Experten.\nStrukturiert vorbereitet, realistisch bewertet, diskret begleitet.',
       },
       {
-        kicker: 'Off-Market (Anlagechancen im „PreSale“)',
+        kicker: 'Off-Market (Chancen noch vor dem Marktstart)',
         title: 'Immobilien, die nie ein Portal sehen',
-        text: 'Diskreter Zugang zu ausgewählten Objekten, Investoren und „JointVentureCapital“ aus unseren exklusiven und persönlichen Off-Market-Netzwerken. Nicht nur für Immobilien-Deals, sondern auch für ein Business-Networking auf dem C-Level.',
+        text: 'Diskreter Zugang zu ausgewählten Objekten, Investoren und Joint-Venture-Partnern aus unseren exklusiven und persönlichen Off-Market-Netzwerken. Nicht nur für Immobilien-Deals, sondern auch für ein Business-Networking auf dem C-Level.',
       },
       {
         kicker: 'Investment D-A-CH',

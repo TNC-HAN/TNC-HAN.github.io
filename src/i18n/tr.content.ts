@@ -117,9 +117,9 @@ export const trContent: ExtraContent = {
         text: 'Şirket satışı, alımı veya halefe devir.\nİlk düşünceden due diligence analizine ve hukuken güvenli imzaya kadar – hukuki iş ortaklarımızla (denetim ve vergi büroları, şirket yapılandırması için avukatlar ve noterler) ve M&A uzmanlarıyla.\nYapılandırılmış şekilde hazırlanmış, gerçekçi değerlendirilmiş, gizlilikle desteklenmiş.',
       },
       {
-        kicker: 'Off-market (ön satışta yatırım fırsatları)',
+        kicker: 'Off-market (piyasaya çıkmadan önce fırsatlar)',
         title: 'Hiçbir portalda görünmeyen gayrimenkuller',
-        text: 'Özel ve kişisel off-market ağlarımızdan seçkin mülklere, yatırımcılara ve ortak girişim sermayesine gizli erişim. Yalnızca gayrimenkul anlaşmaları için değil, C-seviyesinde iş ağı kurmak için de.',
+        text: 'Özel ve kişisel off-market ağlarımızdan seçkin mülklere, yatırımcılara ve ortak girişim (joint venture) ortaklarına gizli erişim. Yalnızca gayrimenkul anlaşmaları için değil, C-seviyesinde iş ağı kurmak için de.',
       },
       {
         kicker: 'Yatırım D-A-CH',
