@@ -78,7 +78,7 @@ export const de: Dictionary = {
       eyebrow: 'Business · Real Estate · Intelligence',
       title: 'Klarheit für Entscheidungen,',
       titleAccent: 'die Werte schaffen.',
-      lead: 'NEXXCON-24 begleitet Unternehmer, Makler, Investoren und Family Offices dort, wo es um Substanz geht: bei der strategischen Ausrichtung des Unternehmens, beim diskreten Immobilieninvestment und der Platzierung, bei der Automatisierung mit künstlicher Intelligenz und beim Neustart, bei der Expansion oder beim Exit im Ausland.',
+      lead: 'Wir unterstützen und begleiten Unternehmer, Makler, private und institutionelle Investoren und Family Offices beim Netzwerken, bei der strategischen (Neu-)Ausrichtung, bei Immobilieninvestments und der diskreten Platzierung von Asset- & Share-Deals.\n\nEbenso spielt die Automatisierung in einer Ära der Robotik, KI & Co. eine viel größere Rolle, als die meisten im Moment noch wahrhaben wollen! Wir analysieren und implementieren KI auch bei Ihnen – individuell, sicher und effektiv; vom „StartUp“ über die Expansion bis hin zum Exit im Inland & Ausland. Stets professionell, diskret, zuverlässig und transparent.',
       primary: 'Vertrauliches Erstgespräch',
       secondary: 'Leistungen ansehen',
       trust: [
@@ -238,7 +238,7 @@ export const de: Dictionary = {
       },
       slide: {
         kicker: '01 · Consulting',
-        title: 'KMU-Strategien aus der Praxis,\nfür die Praxis.',
+        title: 'KMU-Strategien, die wirklich funktionieren –\naus der Praxis; für die Praxis.',
         text: 'Consulting und Coaching für Inhaber und Geschäftsführer im Mittelstand.',
       },
       hero: {

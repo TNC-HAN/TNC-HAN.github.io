@@ -3,6 +3,23 @@ import type { ExtraContent } from './types';
 /** Extended content – English. Order matches src/config/content.ts. */
 export const enContent: ExtraContent = {
   photoAlt: {
+    trIstanbulNacht: 'Istanbul at night with the illuminated Bosphorus Bridge and skyline',
+    trBodrumAbend: 'Sunset over the Aegean in Bodrum with flowers on the hillside',
+    trAntalya: 'Kaleiçi old town and marina in Antalya',
+    trKaputas: 'Kaputaş beach between cliffs on the Turkish Riviera',
+    trOeluedeniz: 'Ölüdeniz lagoon with turquoise water',
+    trOrtakoey: 'Ortaköy Mosque on the Bosphorus in Istanbul at sunset',
+    trBodrumBucht: 'Bay of Bodrum with palm trees and boats',
+    ddHausLupe: 'House model next to a magnifying glass as a symbol of property review',
+    ddBauplan: 'Construction plan with pencil and scale ruler',
+    ddArchitekt: 'Architect reviewing plans at a desk',
+    ddBaustelle: 'Site inspection with experts on a construction site',
+    ddTechnik: 'Technician inspecting building services',
+    ddFinanzen: 'Financial analysis with charts and calculator',
+    ddDashboard: 'KPI dashboard on a screen',
+    ddDokumente: 'Reviewing documents with a magnifying glass',
+    ddVertrag: 'Signing a contract',
+    ddNotar: 'Notary seal being embossed on a document',
     coachingEinzel:
       'Ümit Törün in confidential one-to-one coaching with a businesswoman, side profile',
     coachingFuehrung: 'Executive in personal coaching',
@@ -90,22 +107,22 @@ export const enContent: ExtraContent = {
       {
         kicker: 'Business consulting',
         title: 'Strategies that move your company forward – and secure it for the long term.',
-        text: 'Not just for the next quarter: we position your business to grow steadily in the medium and long term – with clear priorities, reliable figures and a plan your team can carry.',
+        text: 'Not just for the next quarter: we align your business so that it keeps growing steadily in the medium and long term – with clear priorities, robust figures and a plan that also builds in AI, so you are not left behind by your competitors.',
       },
       {
         kicker: 'Coaching',
         title: 'Sparring for business owners, eye to eye',
-        text: 'Confidential, direct and solution-focused – for better decisions in an increasingly complex market.',
+        text: 'Confidential, direct and solution-oriented – for better decisions in an increasingly complex market.\nWe operate regionally and locally as well as internationally and globally, and adapt to your challenges and needs.',
       },
       {
         kicker: 'Succession and M&A',
         title: 'Your life’s work in the right hands',
-        text: 'Selling, buying or handing over a business – carefully prepared, realistically valued, discreetly managed.',
+        text: 'Selling, buying or handing over a business to a successor.\nFrom the first idea through due diligence analysis to a legally sound signing – with our legal cooperation partners (audit and tax firms, lawyers and notaries for corporate structuring) and M&A experts.\nCarefully prepared, realistically valued, discreetly supported.',
       },
       {
-        kicker: 'Off-market',
+        kicker: 'Off-market (pre-sale investment opportunities)',
         title: 'Properties that never reach a portal',
-        text: 'Discreet access to selected properties and investors from personal off-market networks.',
+        text: 'Discreet access to selected properties, investors and joint venture capital from our exclusive, personal off-market networks. Not only for real estate deals, but also for business networking at C-level.',
       },
       {
         kicker: 'Investment D-A-CH',
@@ -142,7 +159,7 @@ export const enContent: ExtraContent = {
   showcase: {
     eyebrow: 'In focus',
     title: 'Where we make the difference.',
-    lead: 'Nine topics where know-how, know-what, experience, discretion, network and innovation lead the way. One click takes you straight to the details.',
+    lead: 'Nine topics where know-how, know-what, experience, discretion, network and innovation lead the way. Here we act as an “outside eye” and break through the operational blindness in which those in charge sometimes can no longer “see the wood for the trees”, as the saying goes …',
     items: [
       {
         kicker: 'Strategy & business model',
@@ -167,11 +184,11 @@ export const enContent: ExtraContent = {
       {
         kicker: 'Succession, M&A & exit',
         title: 'Protecting value, shaping handovers',
-        text: 'Selling a company is not an advert, it is a project: making it sale-ready, valuing it realistically, approaching suitable buyers or successors discreetly and leading negotiations through to closing.',
+        text: 'Selling a company is not an advert but a project built on your life’s work!\n\nEstablishing sale readiness, determining value realistically, discreetly approaching buyers or successors who are a good fit both financially and personally, and leading the negotiations through to closing – so that everyone involved ends up in a “triple win” situation; that alone is our mission for you.',
         points: [
-          'Sale readiness & value growth',
-          'Discreet buyer and partner search',
-          'Negotiation support to closing',
+          'Sale readiness & value enhancement',
+          'Discreet search for buyers and partners',
+          'Negotiation & closing / handover',
         ],
       },
       {
@@ -187,7 +204,7 @@ export const enContent: ExtraContent = {
       {
         kicker: 'Turkey & Northern Cyprus',
         title: 'Mediterranean investments with one point of contact',
-        text: 'Istanbul, the Turkish Riviera and Northern Cyprus are among the most exciting property markets in the Mediterranean. We speak German and Turkish, know the local processes and partners – and support you from selection to key handover.',
+        text: 'Istanbul, the Turkish Aegean and Riviera as well as Northern Cyprus are now among the most exciting property markets in the Mediterranean – and they still offer top opportunities.\n\nWe speak German, Turkish, Arabic, English, Russian and other languages, know every process, pitfall and shortcut, and have trustworthy, reliable partners on site who accompany you personally from selection to key handover.',
         points: [
           'Location & project selection',
           'Clarity on costs & returns',
@@ -195,7 +212,7 @@ export const enContent: ExtraContent = {
         ],
       },
       {
-        kicker: 'Due diligence & closing',
+        kicker: 'Due diligence analysis & closing',
         title: 'Certainty before you sign',
         text: 'Before capital moves, every assumption is put to the test: documents, building fabric, location, tenancies and profitability. Together with surveyors and specialists we create a basis for decisions you can rely on.',
         points: ['Document & property review', 'Profitability calculation', 'Clear decision paper'],
@@ -368,10 +385,10 @@ export const enContent: ExtraContent = {
   },
   video: {
     eyebrow: 'Image film',
-    title: 'NEXXCON-24 in 25 seconds.',
+    title: 'NEXXCON-24 in 60 seconds.',
     text: 'Business, real estate and technology: a short look at the worlds in which we work for our clients – from the strategy meeting to the villa on the Mediterranean.',
     label:
-      'NEXXCON-24 image film: villas, skylines, strategy workshops, Mediterranean coast and data centre',
+      'NEXXCON-24 image film with music: Ümit Törün in a strategy meeting, workshop, coaching and seminar, plus villas, skylines, Istanbul, Northern Cyprus, due diligence and AI',
     points: [
       'D-A-CH, Europe, Turkey, Northern Cyprus',
       'Strategy, investment, AI',

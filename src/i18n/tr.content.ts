@@ -3,6 +3,23 @@ import type { ExtraContent } from './types';
 /** Genişletilmiş içerikler – Türkçe. Sıralama src/config/content.ts ile aynıdır. */
 export const trContent: ExtraContent = {
   photoAlt: {
+    trIstanbulNacht: 'Gece ışıklandırılmış Boğaz Köprüsü ve siluetiyle İstanbul',
+    trBodrumAbend: 'Bodrum’da yamaçta çiçeklerle Ege üzerinde gün batımı',
+    trAntalya: 'Antalya’da Kaleiçi ve yat limanı',
+    trKaputas: 'Türk Rivierası’nda kayalıklar arasında Kaputaş Plajı',
+    trOeluedeniz: 'Turkuaz sularıyla Ölüdeniz lagünü',
+    trOrtakoey: 'Gün batımında İstanbul Boğazı’nda Ortaköy Camii',
+    trBodrumBucht: 'Palmiyeler ve teknelerle Bodrum koyu',
+    ddHausLupe: 'Mülk incelemesinin sembolü olarak büyüteç yanında ev maketi',
+    ddBauplan: 'Kalem ve ölçekli cetvelle inşaat planı',
+    ddArchitekt: 'Masada planları inceleyen mimar',
+    ddBaustelle: 'Şantiyede uzmanlarla yerinde inceleme',
+    ddTechnik: 'Bina tesisatını inceleyen teknisyen',
+    ddFinanzen: 'Grafikler ve hesap makinesiyle finansal analiz',
+    ddDashboard: 'Ekranda gösterge paneli',
+    ddDokumente: 'Belgelerin büyüteçle incelenmesi',
+    ddVertrag: 'Sözleşme imzalanması',
+    ddNotar: 'Belgeye noter mührü basılması',
     coachingEinzel: 'Ümit Törün, bir iş kadınıyla gizli birebir koçlukta, yandan profil',
     coachingFuehrung: 'Kişisel koçlukta bir yönetici',
     coachingReflexion: 'Dizüstü bilgisayar başında sakin düşünen girişimci',
@@ -87,22 +104,22 @@ export const trContent: ExtraContent = {
       {
         kicker: 'İşletme danışmanlığı',
         title: 'Şirketinizi ileriye taşıyan – ve kalıcı olarak güvence altına alan stratejiler.',
-        text: 'Sadece bir sonraki çeyrek için değil: Şirketinizi orta ve uzun vadede de istikrarlı büyüyecek şekilde konumlandırıyoruz – net önceliklerle, güvenilir rakamlarla ve ekibinizin sahipleneceği bir planla.',
+        text: 'Sadece bir sonraki çeyrek için değil: Şirketinizi orta ve uzun vadede de istikrarlı büyüyecek şekilde konumlandırırız – net önceliklerle, sağlam rakamlarla ve rakiplerinizin gerisinde kalmamanız için yapay zekâyı da içeren bir planla.',
       },
       {
         kicker: 'Koçluk',
         title: 'Girişimciler için eşit düzeyde sparring',
-        text: 'Gizli, doğrudan ve çözüm odaklı – giderek karmaşıklaşan bir piyasada daha iyi kararlar için.',
+        text: 'Gizli, doğrudan ve çözüm odaklı – giderek karmaşıklaşan bir piyasada daha iyi kararlar için.\nHem bölgesel / yerel hem de uluslararası / küresel çalışır, zorluklarınıza ve ihtiyaçlarınıza uyum sağlarız.',
       },
       {
         kicker: 'Devir ve M&A',
         title: 'Hayat eseriniz doğru ellere',
-        text: 'Şirket satışı, alımı veya devri – yapılandırılmış şekilde hazırlanmış, gerçekçi değerlenmiş, gizlilikle yürütülmüş.',
+        text: 'Şirket satışı, alımı veya halefe devir.\nİlk düşünceden due diligence analizine ve hukuken güvenli imzaya kadar – hukuki iş ortaklarımızla (denetim ve vergi büroları, şirket yapılandırması için avukatlar ve noterler) ve M&A uzmanlarıyla.\nYapılandırılmış şekilde hazırlanmış, gerçekçi değerlendirilmiş, gizlilikle desteklenmiş.',
       },
       {
-        kicker: 'Off-market',
+        kicker: 'Off-market (ön satışta yatırım fırsatları)',
         title: 'Hiçbir portalda görünmeyen gayrimenkuller',
-        text: 'Kişisel off-market ağlarından seçkin mülklere ve yatırımcılara gizli erişim.',
+        text: 'Özel ve kişisel off-market ağlarımızdan seçkin mülklere, yatırımcılara ve ortak girişim sermayesine gizli erişim. Yalnızca gayrimenkul anlaşmaları için değil, C-seviyesinde iş ağı kurmak için de.',
       },
       {
         kicker: 'Yatırım D-A-CH',
@@ -139,7 +156,7 @@ export const trContent: ExtraContent = {
   showcase: {
     eyebrow: 'Odakta',
     title: 'Farkı yarattığımız alanlar.',
-    lead: 'Know-how, know-what, deneyim, gizlilik, ağ ve inovasyonun yol gösterdiği dokuz konu. Tek tıkla doğrudan ayrıntılara ulaşırsınız.',
+    lead: 'Know-how, know-what, deneyim, gizlilik, ağ ve inovasyonun yol gösterdiği dokuz konu. Burada “dışarıdan bir göz” olarak hareket eder ve sorumluların bazen “ağaçlardan ormanı göremediği” işletme körlüğünü gideririz; deyim yerindeyse …',
     items: [
       {
         kicker: 'Strateji ve iş modeli',
@@ -164,11 +181,11 @@ export const trContent: ExtraContent = {
       {
         kicker: 'Devir, M&A ve çıkış',
         title: 'Değerleri korumak, devirleri şekillendirmek',
-        text: 'Şirket satışı bir ilan değil, bir projedir: satışa hazır hale getirmek, değeri gerçekçi belirlemek, uygun alıcı veya halefleri gizlilikle bulmak ve müzakereleri kapanışa kadar yürütmek.',
+        text: 'Bir şirket satışı bir ilan değil, ömür boyu emeğinizin üzerine kurulu bir projedir!\n\nSatışa hazırlığı sağlamak, değeri gerçekçi biçimde belirlemek, maddi ve manevi açıdan uygun alıcılara veya haleflere gizlilikle ulaşmak ve müzakereleri kapanışa kadar yürütmek – böylece tüm taraflar için “üçlü kazan” durumu ortaya çıkar; tek misyonumuz budur.',
         points: [
           'Satışa hazırlık ve değer artışı',
           'Gizli alıcı ve ortak arayışı',
-          'Kapanışa kadar müzakere desteği',
+          'Müzakere ve kapanış / devir',
         ],
       },
       {
@@ -184,11 +201,11 @@ export const trContent: ExtraContent = {
       {
         kicker: 'Türkiye ve Kuzey Kıbrıs',
         title: 'Tek muhatapla Akdeniz yatırımları',
-        text: 'İstanbul, Türk Rivierası ve Kuzey Kıbrıs, Akdeniz’in en heyecan verici gayrimenkul piyasaları arasındadır. Almanca ve Türkçe konuşuyor, yerel süreçleri ve ortakları tanıyoruz – seçimden anahtar teslimine kadar yanınızdayız.',
+        text: 'İstanbul, Türk Egesi ve Rivierası ile Kuzey Kıbrıs bugün Akdeniz’in en heyecan verici gayrimenkul pazarları arasında yer alıyor – ve hâlâ en iyi fırsatları sunuyor.\n\nAlmanca, Türkçe, Arapça, İngilizce, Rusça ve başka diller konuşuyor, tüm süreçleri, tuzakları ve kısa yolları biliyoruz; sizi seçimden anahtar teslimine kadar şahsen yönlendiren güvenilir yerel ortaklarımız var.',
         points: ['Konum ve proje seçimi', 'Maliyet ve getiri netliği', 'Teslime kadar destek'],
       },
       {
-        kicker: 'Due diligence ve kapanış',
+        kicker: 'Due diligence analizi ve kapanış',
         title: 'İmzadan önce güvence',
         text: 'Sermaye hareket etmeden önce her varsayım sınanır: belgeler, yapı durumu, konum, kira durumu ve kârlılık. Bilirkişiler ve uzman ortaklarla birlikte güvenebileceğiniz bir karar temeli oluştururuz.',
         points: ['Belge ve mülk incelemesi', 'Kârlılık hesabı', 'Net karar dosyası'],
@@ -357,10 +374,10 @@ export const trContent: ExtraContent = {
   },
   video: {
     eyebrow: 'Tanıtım filmi',
-    title: '25 saniyede NEXXCON-24.',
+    title: '60 saniyede NEXXCON-24.',
     text: 'İşletme, gayrimenkul ve teknoloji: Müvekkillerimiz için çalıştığımız dünyalara kısa bir bakış – strateji toplantısından Akdeniz’deki villaya kadar.',
     label:
-      'NEXXCON-24 tanıtım filmi: villalar, siluetler, strateji atölyeleri, Akdeniz kıyısı ve veri merkezi',
+      'Müzikli NEXXCON-24 tanıtım filmi: strateji toplantısında, atölyede, koçlukta ve seminerde Ümit Törün; villalar, siluetler, İstanbul, Kuzey Kıbrıs, due diligence ve yapay zekâ',
     points: [
       'D-A-CH, Avrupa, Türkiye, Kuzey Kıbrıs',
       'Strateji, yatırım, yapay zekâ',

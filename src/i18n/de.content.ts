@@ -3,6 +3,23 @@ import type { ExtraContent } from './types';
 /** Erweiterte Inhalte – Deutsch. Reihenfolgen passen zu src/config/content.ts. */
 export const deContent: ExtraContent = {
   photoAlt: {
+    trIstanbulNacht: 'Istanbul bei Nacht mit beleuchteter Bosporusbrücke und Skyline',
+    trBodrumAbend: 'Sonnenuntergang über der Ägäis in Bodrum mit Blumen am Hang',
+    trAntalya: 'Altstadt Kaleiçi und Yachthafen von Antalya',
+    trKaputas: 'Kaputaş-Strand zwischen Felsen an der türkischen Riviera',
+    trOeluedeniz: 'Lagune von Ölüdeniz mit türkisblauem Wasser',
+    trOrtakoey: 'Ortaköy-Moschee am Bosporus in Istanbul bei Sonnenuntergang',
+    trBodrumBucht: 'Bucht von Bodrum mit Palmen und Booten',
+    ddHausLupe: 'Hausmodell neben einer Lupe als Symbol für die Objektprüfung',
+    ddBauplan: 'Bauplan mit Bleistift und Maßstab',
+    ddArchitekt: 'Architekt prüft Baupläne am Tisch',
+    ddBaustelle: 'Begehung einer Baustelle mit Sachverständigen',
+    ddTechnik: 'Techniker prüft Gebäudetechnik',
+    ddFinanzen: 'Finanzanalyse mit Diagrammen und Taschenrechner',
+    ddDashboard: 'Kennzahlen-Dashboard auf einem Bildschirm',
+    ddDokumente: 'Prüfung von Dokumenten mit einer Lupe',
+    ddVertrag: 'Unterzeichnung eines Vertrags',
+    ddNotar: 'Notarielles Siegel wird auf ein Dokument geprägt',
     coachingEinzel:
       'Ümit Törün im vertraulichen Einzel-Coaching mit einer Unternehmerin, seitlich im Profil',
     coachingFuehrung: 'Führungskraft im persönlichen Coaching',
@@ -89,22 +106,22 @@ export const deContent: ExtraContent = {
       {
         kicker: 'Unternehmensberatung',
         title: 'Strategien, die Ihr Unternehmen voranbringen – und dauerhaft sichern.',
-        text: 'Nicht nur für das nächste Quartal: Wir richten Ihr Unternehmen so aus, dass es auch mittel- und langfristig stabil wächst – mit klaren Prioritäten, belastbaren Zahlen und einem Plan, den Ihr Team trägt.',
+        text: 'Nicht nur für das nächste Quartal: Wir richten Ihr Unternehmen so aus, dass es auch mittel- und langfristig stabil wächst – mit klaren Prioritäten, belastbaren Zahlen und einem Plan, der auch KI mit implementiert, um von den Mitbewerbern nicht „abgehangen“ zu werden.',
       },
       {
         kicker: 'Coaching',
         title: 'Sparring für Unternehmer auf Augenhöhe',
-        text: 'Vertraulich, direkt und lösungsorientiert – für bessere Entscheidungen in einem zunehmend komplexen Markt.',
+        text: 'Vertraulich, direkt und lösungsorientiert – für bessere Entscheidungen in einem zunehmend komplexen Markt.\nWir agieren regional / lokal – als auch international global und passen uns Ihren Herausforderungen & Bedürfnissen an.',
       },
       {
         kicker: 'Nachfolge und M&A',
         title: 'Ihr Lebenswerk in die richtigen Hände',
-        text: 'Unternehmensverkauf, Kauf oder Übergabe – strukturiert vorbereitet, realistisch bewertet, diskret begleitet.',
+        text: 'Unternehmensverkauf, Kauf oder Nachfolge-Übergabe.\nVom ersten Gedanken über die Due Diligence Analyse bis hin zur rechtssicheren Unterzeichnung – mit unseren juristischen Kooperationspartnern (Wirtschafts- und Steuerkanzleien, RAe und Notaren für Unternehmensgestaltung) und M&A-Experten.\nStrukturiert vorbereitet, realistisch bewertet, diskret begleitet.',
       },
       {
-        kicker: 'Off-Market',
+        kicker: 'Off-Market (Anlagechancen im „PreSale“)',
         title: 'Immobilien, die nie ein Portal sehen',
-        text: 'Diskreter Zugang zu ausgewählten Objekten und Investoren aus persönlichen Off-Market-Netzwerken.',
+        text: 'Diskreter Zugang zu ausgewählten Objekten, Investoren und „JointVentureCapital“ aus unseren exklusiven und persönlichen Off-Market-Netzwerken. Nicht nur für Immobilien-Deals, sondern auch für ein Business-Networking auf dem C-Level.',
       },
       {
         kicker: 'Investment D-A-CH',
@@ -141,7 +158,7 @@ export const deContent: ExtraContent = {
   showcase: {
     eyebrow: 'Im Fokus',
     title: 'Wo wir den Unterschied machen.',
-    lead: 'Neun Themen, bei denen KnowHow, KnowWhat, Erfahrung, Diskretion, Netzwerk & Innovation wegweisend sind. Ein Klick führt Sie direkt in die Details.',
+    lead: 'Neun Themen, bei denen KnowHow, KnowWhat, Erfahrung, Diskretion, Netzwerk & Innovation wegweisend sind. Hier agieren wir als „Auge von Außen“ und lösen die „Betriebsblindheit“, in der man als Verantwortlicher manchmal „Den Wald vor lauter Bäumen“ nicht (mehr) sieht; wie es so schön heißt …',
     items: [
       {
         kicker: 'Strategie & Geschäftsmodell',
@@ -166,11 +183,11 @@ export const deContent: ExtraContent = {
       {
         kicker: 'Nachfolge, M&A & Exit',
         title: 'Werte sichern, Übergaben gestalten',
-        text: 'Ein Unternehmensverkauf ist kein Inserat, sondern ein Projekt: Verkaufsreife herstellen, Wert realistisch ermitteln, passende Käufer oder Nachfolger diskret ansprechen und die Verhandlungen bis zum Closing führen.',
+        text: 'Ein Unternehmensverkauf ist kein Inserat, sondern ein Projekt auf Ihrem Lebenswerk!\n\nVerkaufsreife herstellen, Wert realistisch ermitteln, materiell und immateriell geeignete Käufer bzw. Nachfolger diskret ansprechen und die Verhandlungen bis zum Abschluss führen, damit für alle Beteiligten eine „Triple-WIN-Situation“ entsteht; das allein ist unsere Mission für Sie.',
         points: [
           'Verkaufsreife & Wertsteigerung',
           'Diskrete Käufer- und Partnersuche',
-          'Verhandlungsbegleitung bis zum Closing',
+          'Verhandlung & Abschluss / Übergabe',
         ],
       },
       {
@@ -186,7 +203,7 @@ export const deContent: ExtraContent = {
       {
         kicker: 'Türkei & Nordzypern',
         title: 'Mittelmeer-Investments mit einem Ansprechpartner',
-        text: 'Istanbul, die türkische Riviera und Nordzypern gehören zu den spannendsten Immobilienmärkten am Mittelmeer. Wir sprechen Deutsch und Türkisch, kennen Abläufe und Partner vor Ort – und begleiten Sie von der Auswahl bis zur Schlüsselübergabe.',
+        text: 'Istanbul, die türkische Ägäis & Riviera sowie Nordzypern gehören mittlerweile zu den spannendsten Immobilienmärkten am Mittelmeer, die immer noch TOP-Chancen bieten.\n\nWir sprechen Deutsch, Türkisch, Arabisch, Englisch, Russisch und weitere Sprachen, kennen alle Abläufe, Fallstricke und Abkürzungen und haben vertrauenswürdige und zuverlässige Partner vor Ort, die Sie von der Auswahl bis zur Schlüsselübergabe persönlich begleiten.',
         points: [
           'Standort- & Projektauswahl',
           'Kosten- & Renditeklarheit',
@@ -194,7 +211,7 @@ export const deContent: ExtraContent = {
         ],
       },
       {
-        kicker: 'Due Diligence & Abschluss',
+        kicker: 'Due Diligence Analyse & Abschluss',
         title: 'Sicherheit vor der Unterschrift',
         text: 'Bevor Kapital fließt, gehört jede Annahme auf den Prüfstand: Unterlagen, Bausubstanz, Lage, Mietsituation und Wirtschaftlichkeit. Gemeinsam mit Gutachtern und Fachpartnern schaffen wir eine Entscheidungsgrundlage, auf die Sie sich verlassen können.',
         points: [
@@ -387,10 +404,10 @@ export const deContent: ExtraContent = {
   },
   video: {
     eyebrow: 'Imagefilm',
-    title: 'NEXXCON-24 in 25 Sekunden.',
+    title: 'NEXXCON-24 in 60 Sekunden.',
     text: 'Unternehmen, Immobilien und Technologie: ein kurzer Blick auf die Welten, in denen wir für unsere Mandanten unterwegs sind – von der Strategie-Runde bis zur Villa am Mittelmeer.',
     label:
-      'Imagefilm NEXXCON-24: Villen, Skylines, Strategie-Workshops, Mittelmeerküste und Rechenzentrum',
+      'Imagefilm NEXXCON-24 mit Musik: Ümit Törün in Strategie-Meeting, Workshop, Coaching und Seminar, dazu Villen, Skylines, Istanbul, Nordzypern, Due Diligence und KI',
     points: [
       'D-A-CH, Europa, Türkei, Nordzypern',
       'Strategie, Investment, KI',

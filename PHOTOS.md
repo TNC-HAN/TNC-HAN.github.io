@@ -118,3 +118,29 @@ Unsplash-Lizenz. Erzeugt mit `scripts/fetch-photos-dach-immobilien.py`.
 | `consulting-teammeeting.jpg`         | Team-Meeting mit Präsentation               | Unsplash 1542744173-8e7e53415bb0                     |
 | `consulting-teamarbeit.jpg`          | Teamarbeit mit Haftnotizen                  | Unsplash 1758691736872-61a1f75fe2d5                  |
 | `consulting-webinar.jpg`             | Webinar am Laptop                           | Unsplash 1588196749597-9ff075ee6b5b                  |
+
+### Startseite – Slideshows Türkei/Nordzypern und Due Diligence (Unsplash License, `scripts/fetch-photos-slideshows-2026-11-22.py`)
+
+| Datei                            | Motiv                              | Unsplash-ID                |
+| -------------------------------- | ---------------------------------- | -------------------------- |
+| `tr-istanbul-bosporus-nacht.jpg` | Istanbul, Bosporusbrücke bei Nacht | 1696711551721-458511adcd86 |
+| `tr-bodrum-sonnenuntergang.jpg`  | Bodrum, Sonnenuntergang            | 1684858504602-677ac40eadfd |
+| `tr-antalya-kaleici-hafen.jpg`   | Antalya, Kaleiçi und Hafen         | 1648325129746-abcc1b872380 |
+| `tr-kaputas-strand.jpg`          | Kaputaş-Strand                     | 1593238739364-18cfde30e522 |
+| `tr-oeluedeniz-lagune.jpg`       | Ölüdeniz-Lagune                    | 1641630649458-13135455aaf7 |
+| `tr-istanbul-ortakoey.jpg`       | Istanbul, Ortaköy                  | 1763965368246-5e89755e4455 |
+| `tr-bodrum-bucht.jpg`            | Bodrum, Bucht                      | 1583062482795-d2bef78e9bc1 |
+| `dd-haus-lupe.jpg`               | Haus unter der Lupe                | 1769776400238-cd24612240ea |
+| `dd-bauplan-bleistift.jpg`       | Bauplan                            | 1542621334-a254cf47733d    |
+| `dd-architekt-plaene.jpg`        | Architekt mit Plänen               | 1503387762-592deb58ef4e    |
+| `dd-baustelle-begehung.jpg`      | Baustellenbegehung                 | 1591588582259-e675bd2e6088 |
+| `dd-technische-pruefung.jpg`     | Technische Prüfung                 | 1748027869634-fc2e545cfb0c |
+| `dd-finanzanalyse.jpg`           | Finanzanalyse                      | 1628348068343-c6a848d2b6dd |
+| `dd-kennzahlen-dashboard.jpg`    | Kennzahlen-Dashboard               | 1551288049-bebda4e38f71    |
+| `dd-dokumente-lupe.jpg`          | Dokumente unter der Lupe           | 1554696468-19f8c7a71ad5    |
+| `dd-vertrag-unterschrift.jpg`    | Vertragsunterzeichnung             | 1564846824194-346b7871b855 |
+| `dd-notar-siegel.jpg`            | Notarsiegel                        | 1614605844432-731c32334c49 |
+
+### Imagefilm – Musik
+
+„Inspiring Corporate“ von Paul Yudin (Pixabay, Pixabay Content License, frei nutzbar ohne Namensnennung): `scripts/media/imagefilm-musik.mp3`, Quelle https://pixabay.com/music/corporate-inspiring-corporate-164808/

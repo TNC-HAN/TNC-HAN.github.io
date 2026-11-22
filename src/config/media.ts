@@ -64,8 +64,42 @@ import consultingWorkshop from '@/assets/photos/consulting-uemit-workshop.jpg';
 import consultingSeminar from '@/assets/photos/consulting-uemit-seminar.jpg';
 import consultingTeam from '@/assets/photos/consulting-teamarbeit.jpg';
 import consultingWebinar from '@/assets/photos/consulting-webinar.jpg';
+import trIstanbulNacht from '@/assets/photos/tr-istanbul-bosporus-nacht.jpg';
+import trBodrumAbend from '@/assets/photos/tr-bodrum-sonnenuntergang.jpg';
+import trAntalya from '@/assets/photos/tr-antalya-kaleici-hafen.jpg';
+import trKaputas from '@/assets/photos/tr-kaputas-strand.jpg';
+import trOeluedeniz from '@/assets/photos/tr-oeluedeniz-lagune.jpg';
+import trOrtakoey from '@/assets/photos/tr-istanbul-ortakoey.jpg';
+import trBodrumBucht from '@/assets/photos/tr-bodrum-bucht.jpg';
+import ddHausLupe from '@/assets/photos/dd-haus-lupe.jpg';
+import ddBauplan from '@/assets/photos/dd-bauplan-bleistift.jpg';
+import ddArchitekt from '@/assets/photos/dd-architekt-plaene.jpg';
+import ddBaustelle from '@/assets/photos/dd-baustelle-begehung.jpg';
+import ddTechnik from '@/assets/photos/dd-technische-pruefung.jpg';
+import ddFinanzen from '@/assets/photos/dd-finanzanalyse.jpg';
+import ddDashboard from '@/assets/photos/dd-kennzahlen-dashboard.jpg';
+import ddDokumente from '@/assets/photos/dd-dokumente-lupe.jpg';
+import ddVertrag from '@/assets/photos/dd-vertrag-unterschrift.jpg';
+import ddNotar from '@/assets/photos/dd-notar-siegel.jpg';
 
 export const photos = {
+  trIstanbulNacht,
+  trBodrumAbend,
+  trAntalya,
+  trKaputas,
+  trOeluedeniz,
+  trOrtakoey,
+  trBodrumBucht,
+  ddHausLupe,
+  ddBauplan,
+  ddArchitekt,
+  ddBaustelle,
+  ddTechnik,
+  ddFinanzen,
+  ddDashboard,
+  ddDokumente,
+  ddVertrag,
+  ddNotar,
   coachingEinzel,
   coachingFuehrung,
   coachingReflexion,

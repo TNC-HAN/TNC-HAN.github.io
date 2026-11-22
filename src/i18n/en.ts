@@ -77,7 +77,7 @@ export const en: Dictionary = {
       eyebrow: 'Business · Real Estate · Intelligence',
       title: 'Clarity for decisions',
       titleAccent: 'that create value.',
-      lead: 'NEXXCON-24 supports business owners, real estate agents, investors and family offices where substance matters: in the strategic direction of the company, in discreet real estate investment and placement, in automation with artificial intelligence and in a new start, expansion or exit abroad.',
+      lead: 'We support and accompany business owners, brokers, private and institutional investors and family offices in networking, strategic (re)alignment, real estate investments and the discreet placement of asset and share deals.\n\nAutomation in an era of robotics, AI & co. also plays a far bigger role than most people are willing to admit right now! We analyse and implement AI for you too – individually, securely and effectively; from start-up through expansion to exit, at home and abroad. Always professional, discreet, reliable and transparent.',
       primary: 'Confidential consultation',
       secondary: 'View services',
       trust: [
@@ -237,7 +237,7 @@ export const en: Dictionary = {
       },
       slide: {
         kicker: '01 · Consulting',
-        title: 'SME strategies from practice,\nfor practice.',
+        title: 'SME strategies that really work –\nfrom practice, for practice.',
         text: 'Consulting and coaching for owners and managing directors of SMEs.',
       },
       hero: {

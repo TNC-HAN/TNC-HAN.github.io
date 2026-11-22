@@ -73,7 +73,7 @@ export const imprint: { title: string; sections: LegalSection[] } = {
     {
       heading: 'Bildnachweis',
       paragraphs: [
-        'Fotos: Unsplash, Openverse und Wikimedia Commons (freie Lizenzen), NOYANLAR Group (mit Genehmigung), NASA (gemeinfrei), LGLN (Luftbilder Laatzen).',
+        'Fotos: Unsplash, Openverse und Wikimedia Commons (freie Lizenzen), NOYANLAR Group (mit Genehmigung), NASA (gemeinfrei), LGLN (Luftbilder Laatzen). Musik im Imagefilm: „Inspiring Corporate“ von Paul Yudin (Pixabay).',
         'Einzelne Bilder, auf denen der Inhaber zu sehen ist (u. a. im Startseiten-Banner), wurden mit KI-Unterstützung auf Basis eigener Fotos erstellt.',
       ],
     },

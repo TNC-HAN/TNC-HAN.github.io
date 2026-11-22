@@ -77,7 +77,7 @@ export const tr: Dictionary = {
       eyebrow: 'Business · Real Estate · Intelligence',
       title: 'Değer yaratan kararlar için',
       titleAccent: 'netlik.',
-      lead: 'NEXXCON-24; girişimcilere, emlak danışmanlarına, yatırımcılara ve aile ofislerine özün önemli olduğu yerde eşlik eder: şirketin stratejik yönünde, gizli gayrimenkul yatırımında ve konumlandırmasında, yapay zekâ ile otomasyonda ve yurt dışında yeni bir başlangıçta, genişlemede veya çıkışta.',
+      lead: 'Girişimcileri, emlakçıları, bireysel ve kurumsal yatırımcıları ve aile ofislerini iş ağı kurmada, stratejik (yeniden) yönlendirmede, gayrimenkul yatırımlarında ve varlık ve hisse devri işlemlerinin gizli konumlandırılmasında destekler, onlara eşlik ederiz.\n\nRobotik, yapay zekâ ve benzerlerinin çağında otomasyon, çoğu kişinin şu an kabul etmek istediğinden çok daha büyük bir rol oynuyor! Yapay zekâyı sizin için de analiz eder ve uygularız – bireysel, güvenli ve etkili; girişim aşamasından büyümeye, yurt içinde ve yurt dışında çıkışa kadar. Her zaman profesyonel, gizli, güvenilir ve şeffaf.',
       primary: 'Gizli ön görüşme',
       secondary: 'Hizmetleri görün',
       trust: [
@@ -237,7 +237,7 @@ export const tr: Dictionary = {
       },
       slide: {
         kicker: '01 · Consulting',
-        title: 'Pratikten gelen KOBİ stratejileri,\npratik için.',
+        title: 'Gerçekten işe yarayan KOBİ stratejileri –\npratikten, pratik için.',
         text: 'Orta ölçekli şirketlerin sahipleri ve yöneticileri için danışmanlık ve koçluk.',
       },
       hero: {

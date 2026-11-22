@@ -37,14 +37,25 @@ const items = showcase.map((s, i) => ({ ...s, ...dict.showcase.items[i]! }));
             ]}
             aria-label={`${item.title} – ${dict.cta.details}`}
           >
-            <Image
-              src={photos[item.photo]}
-              alt={dict.photoAlt[item.photo]}
-              class="aspect-[4/3] w-full object-cover transition duration-[1.2s] ease-out group-hover:scale-105"
-              widths={[480, 800, 1024]}
-              sizes="(min-width: 768px) 45vw, 100vw"
-              loading="lazy"
-            />
+            <div
+              class="relative aspect-[4/3] w-full"
+              data-showcase-gallery={item.gallery ? '' : undefined}
+            >
+              {(item.gallery ?? [item.photo]).map((key, g) => (
+                <Image
+                  src={photos[key]}
+                  alt={dict.photoAlt[key]}
+                  class:list={[
+                    'absolute inset-0 size-full object-cover transition duration-[1.2s] ease-out group-hover:scale-105',
+                    item.gallery && 'sc-img',
+                    item.gallery && g === 0 && 'is-on',
+                  ]}
+                  widths={[480, 800, 1024]}
+                  sizes="(min-width: 768px) 45vw, 100vw"
+                  loading="lazy"
+                />
+              ))}
+            </div>
             <span class="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#04030c]/70 via-transparent to-transparent" />
             <span class="pointer-events-none absolute inset-0 rounded-[1.75rem] ring-1 ring-white/10 ring-inset transition group-hover:ring-champagne/50" />
             <span class="absolute bottom-5 left-5 flex items-center gap-2 rounded-full bg-black/45 px-4 py-2 text-sm font-semibold text-champagne backdrop-blur transition group-hover:gap-3">
@@ -88,3 +99,40 @@ const items = showcase.map((s, i) => ({ ...s, ...dict.showcase.items[i]! }));
     })}
   </div>
 </section>
+
+<style>
+  .sc-img {
+    opacity: 0;
+    transition:
+      opacity 1.2s ease,
+      transform 1.2s ease-out;
+  }
+  .sc-img.is-on {
+    opacity: 1;
+  }
+</style>
+
+<script>
+  // Bildwechsel in Showcase-Bildern mit mehreren Fotos – läuft nur, solange sichtbar
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  document.querySelectorAll<HTMLElement>('[data-showcase-gallery]').forEach((box) => {
+    const imgs = [...box.querySelectorAll<HTMLImageElement>('.sc-img')];
+    if (imgs.length < 2 || reduce) return;
+    let index = 0;
+    let timer: number | undefined;
+    const next = () => {
+      imgs[index]!.classList.remove('is-on');
+      index = (index + 1) % imgs.length;
+      imgs[index]!.loading = 'eager';
+      imgs[index]!.classList.add('is-on');
+      imgs[(index + 1) % imgs.length]!.loading = 'eager';
+    };
+    new IntersectionObserver(([entry]) => {
+      if (entry?.isIntersecting) timer ??= window.setInterval(next, 3500);
+      else if (timer !== undefined) {
+        window.clearInterval(timer);
+        timer = undefined;
+      }
+    }).observe(box);
+  });
+</script>

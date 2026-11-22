@@ -1,6 +1,6 @@
 ---
 /**
- * Imagefilm (public/media/nexxcon-imagefilm.mp4, erzeugt mit scripts/make-video.ps1).
+ * Imagefilm mit Musik (public/media/nexxcon-imagefilm.mp4, erzeugt mit scripts/make-video.ps1).
  * Startet stumm und in Schleife erst, wenn er sichtbar wird; bei „reduzierte Bewegung“
  * oder Datensparmodus nur mit Startknopf. Lädt vorher nur das Vorschaubild.
  */
@@ -14,6 +14,7 @@ interface Props {
 }
 const { lang } = Astro.props;
 const v = t(lang).video;
+const soundLabel = { de: 'Mit Ton ansehen', en: 'Watch with sound', tr: 'Sesli izle' } as const;
 ---
 
 <section class="container-site py-24 sm:py-28" aria-labelledby="video-title">
@@ -32,6 +33,25 @@ const v = t(lang).video;
       >
         <source src={asset('media/nexxcon-imagefilm.mp4')} type="video/mp4" />
       </video>
+      <!-- Startet stumm (Browser-Regel); ein Klick spielt den Film mit Musik von vorn -->
+      <button
+        type="button"
+        data-video-sound
+        class="absolute top-4 left-4 inline-flex items-center gap-2 rounded-full border border-champagne/50 bg-black/60 px-4 py-2 text-sm font-semibold text-champagne backdrop-blur transition hover:bg-black/80"
+      >
+        <svg
+          viewBox="0 0 24 24"
+          class="size-4"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          aria-hidden="true"
+        >
+          <path d="M11 5 6 9H3v6h3l5 4V5Z" />
+          <path d="M15.5 8.5a5 5 0 0 1 0 7M18.5 5.5a9 9 0 0 1 0 13" />
+        </svg>
+        {soundLabel[lang]}
+      </button>
     </div>
     <div class="lg:col-span-5">
       <p class="eyebrow">{v.eyebrow}</p>
@@ -65,5 +85,18 @@ const v = t(lang).video;
       },
       { threshold: 0.4 },
     ).observe(video);
+  });
+  document.querySelectorAll<HTMLButtonElement>('[data-video-sound]').forEach((btn) => {
+    const video = btn.parentElement?.querySelector('video');
+    if (!video) return;
+    btn.addEventListener('click', () => {
+      video.muted = false;
+      video.currentTime = 0;
+      video.play().catch(() => undefined);
+      btn.hidden = true;
+    });
+    video.addEventListener('volumechange', () => {
+      btn.hidden = !video.muted;
+    });
   });
 </script>
