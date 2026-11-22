@@ -133,23 +133,23 @@ export const trContent: ExtraContent = {
       },
       {
         kicker: 'Kuzey Kıbrıs',
-        title: 'Geleceği olan Akdeniz gayrimenkulleri',
-        text: 'Yeni ve mevcut projeler, yerel ağla – İspanya ve Dubai’ye gerçek bir alternatif.',
+        title: 'Güçlü gelecek potansiyeline sahip Akdeniz gayrimenkulleri',
+        text: 'Yeni ve mevcut projeler, yerel ağla. Kuzey Kıbrıs, İspanya ve Dubai’ye gerçek bir alternatiftir.',
       },
       {
         kicker: 'Due diligence ve değerleme',
-        title: 'Titizlikle incelendi. Hedefli konumlandırıldı.',
+        title: 'Titizlikle incelendi. Hedefli konumlandırıldı. Başarıyla tamamlandı.',
         text: 'Gerçekçi değerleme ve kalbi & aklıyla hareket eden haleflere hedefli konumlandırma ile en yüksek satış geliri.',
       },
       {
         kicker: 'Yapay zekâ otomasyonu',
         title: 'Sizin için 7/24 çalışan iş akışları',
-        text: 'Operasyonel işin tüm hizmet süreçleri en üst düzeyde otomatikleştirildi – etkili, verimli, izlenebilir, kontrol edilebilir, güvenli ve BDSG & DSGVO (GDPR) veri koruma mevzuatına uygun.',
+        text: 'Operasyonel işin tüm dijital hizmet süreçleri en üst düzeyde otomatikleştirildi – etkili, verimli, izlenebilir, kontrol edilebilir, güvenli ve BDSG & DSGVO (GDPR) veri koruma mevzuatına uygun.',
       },
       {
         kicker: 'Yapay zekâ asistanları',
         title: 'Pazarlama ve satış, hizmet ve bilgi bankası için dijital iş arkadaşları',
-        text: '“Yapay zekâ ajanları” yeni dijital asistanlardır: süreçlerinizi bilir, ekibinizin yükünü azaltır, yeni çalışanları işe alıştırır – ve hatta telefonla görüşür.',
+        text: '“Yapay zekâ ajanları” yeni dijital asistanlardır: şirketinizi, kurumsal kimliğinizi, üslubunuzu ve süreçlerinizi bilir, ekibinizin yerini almak yerine yükünü azaltır, yeni çalışanları işe alıştırır – ve hatta telefonla görüşebilir.',
       },
     ],
   },

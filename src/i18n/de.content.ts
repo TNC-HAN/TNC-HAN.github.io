@@ -135,23 +135,23 @@ export const deContent: ExtraContent = {
       },
       {
         kicker: 'Nordzypern',
-        title: 'Mittelmeer-Immobilien mit Zukunft',
-        text: 'Neubau- und Bestandsobjekte, vor Ort vernetzt – eine echte Alternative zu Spanien und Dubai.',
+        title: 'Mittelmeer-Immobilien mit starkem Zukunftspotenzial',
+        text: 'Neubau- und Bestandsobjekte, vor Ort vernetzt. Eine echte Alternative zu Spanien und Dubai ist Nordzypern.',
       },
       {
         kicker: 'Due Diligence & Bewertung',
-        title: 'Sorgfältig geprüft. Gezielt platziert.',
+        title: 'Sorgfältig geprüft. Gezielt platziert. Erfolgreich abgeschlossen.',
         text: 'Realistische Bewertung und maximaler Erlös durch gezielte Platzierung bei Nachfolgern mit Herz & Verstand.',
       },
       {
         kicker: 'KI-Automation',
         title: 'Workflows, die rund um die Uhr für Sie arbeiten',
-        text: 'Alle Leistungsprozesse des operativen Geschäfts maximal automatisiert – effektiv, effizient, nachvollziehbar, kontrollierbar, sicher und datenschutzkonform nach BDSG & DSGVO.',
+        text: 'Alle digitalen Leistungsprozesse des operativen Geschäfts maximal automatisiert – effektiv, effizient, nachvollziehbar, kontrollierbar, sicher und datenschutzkonform nach BDSG & DSGVO.',
       },
       {
         kicker: 'KI-Assistenten',
         title: 'Digitale Kollegen für Marketing & Sales, Services und Knowledge Base',
-        text: '„KI-Agenten“ sind die neuen digitalen Assistenten, die Ihre Prozesse kennen, Ihr Team entlasten, neue Mitarbeiter onboarden – und sogar telefonieren.',
+        text: '„KI-Agenten“ sind die neuen digitalen Assistenten, die Ihr Unternehmen, Ihre Corporate Identity, Ihr Wording und Ihre Prozesse kennen, Ihr Team entlasten statt ersetzen, neue Mitarbeiter onboarden – und sogar telefonieren können.',
       },
     ],
   },

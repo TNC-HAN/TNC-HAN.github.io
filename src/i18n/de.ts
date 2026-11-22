@@ -179,7 +179,7 @@ export const de: Dictionary = {
         },
         {
           title: 'Nordzypern',
-          text: 'Mittelmeer-Immobilien in Neubau und Bestand – eine echte Alternative zu Spanien und Dubai.',
+          text: 'Mittelmeer-Immobilien in Neubau und Bestand. Eine echte Alternative zu Spanien und Dubai ist Nordzypern.',
         },
       ],
     },

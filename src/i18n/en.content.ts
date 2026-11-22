@@ -136,23 +136,23 @@ export const enContent: ExtraContent = {
       },
       {
         kicker: 'Northern Cyprus',
-        title: 'Mediterranean property with a future',
-        text: 'New-build and existing properties, with a local network – a genuine alternative to Spain and Dubai.',
+        title: 'Mediterranean property with strong future potential',
+        text: 'New-build and existing properties, with a local network. Northern Cyprus is a genuine alternative to Spain and Dubai.',
       },
       {
         kicker: 'Due diligence & valuation',
-        title: 'Thoroughly checked. Precisely placed.',
+        title: 'Thoroughly checked. Precisely placed. Successfully closed.',
         text: 'Realistic valuation and maximum proceeds through targeted placement with successors who bring both heart & mind.',
       },
       {
         kicker: 'AI automation',
         title: 'Workflows that work for you around the clock',
-        text: 'Every operational service process automated to the fullest – effective, efficient, traceable, controllable, secure and data-protection compliant under BDSG & GDPR.',
+        text: 'Every digital operational service process automated to the fullest – effective, efficient, traceable, controllable, secure and data-protection compliant under BDSG & GDPR.',
       },
       {
         kicker: 'AI assistants',
         title: 'Digital colleagues for marketing & sales, service and knowledge base',
-        text: '“AI agents” are the new digital assistants that know your processes, relieve your team, onboard new staff – and even take phone calls.',
+        text: '“AI agents” are the new digital assistants that know your company, your corporate identity, your wording and your processes, support your team instead of replacing it, onboard new staff – and can even take phone calls.',
       },
     ],
   },

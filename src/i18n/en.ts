@@ -178,7 +178,7 @@ export const en: Dictionary = {
         },
         {
           title: 'Northern Cyprus',
-          text: 'Mediterranean property, new-build and existing – a genuine alternative to Spain and Dubai.',
+          text: 'Mediterranean property, new-build and existing. Northern Cyprus is a genuine alternative to Spain and Dubai.',
         },
       ],
     },

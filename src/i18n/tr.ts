@@ -178,7 +178,7 @@ export const tr: Dictionary = {
         },
         {
           title: 'Kuzey Kıbrıs',
-          text: 'Yeni ve mevcut Akdeniz gayrimenkulleri – İspanya ve Dubai’ye gerçek bir alternatif.',
+          text: 'Yeni ve mevcut Akdeniz gayrimenkulleri. Kuzey Kıbrıs, İspanya ve Dubai’ye gerçek bir alternatiftir.',
         },
       ],
     },
