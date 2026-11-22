@@ -22,7 +22,7 @@ const { lang } = Astro.props;
 const dict = t(lang);
 const slides = bannerSlides.map((s, i) => ({ ...s, ...dict.banner.slides[i]! }));
 /** Anzeigedauer je Galeriebild (Folien mit `gallery` bleiben entsprechend länger stehen) */
-const GALLERY_STEP = 3200;
+const GALLERY_STEP = 5000;
 /** Länderbeschriftung der dreigeteilten Folie (D · A · CH) */
 const panelLabels: Record<Lang, string[]> = {
   de: ['Deutschland', 'Österreich', 'Schweiz'],
@@ -70,7 +70,7 @@ const durationOf = (s: (typeof slides)[number]) => {
                   class="gallery relative overflow-hidden"
                   data-gallery
                   data-step={GALLERY_STEP}
-                  data-offset={p * 500}
+                  data-offset={p * 800}
                 >
                   {panel.map((g, k) => (
                     <Image
@@ -269,7 +269,7 @@ const durationOf = (s: (typeof slides)[number]) => {
     width: 100%;
   }
   [data-banner]:not([data-paused]) .banner-dot[aria-current='true'] .banner-dot-fill {
-    animation: banner-progress var(--banner-interval, 6500ms) linear;
+    animation: banner-progress var(--banner-interval, 10000ms) linear;
   }
   @keyframes banner-progress {
     from {
@@ -287,7 +287,7 @@ const durationOf = (s: (typeof slides)[number]) => {
 </style>
 
 <script>
-  const INTERVAL = 6500;
+  const INTERVAL = 10000;
   document.querySelectorAll<HTMLElement>('[data-banner]').forEach((root) => {
     root.style.setProperty('--banner-interval', `${INTERVAL}ms`);
     const slides = [...root.querySelectorAll<HTMLElement>('[data-bslide]')];

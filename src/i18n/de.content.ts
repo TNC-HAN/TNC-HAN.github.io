@@ -131,7 +131,7 @@ export const deContent: ExtraContent = {
       {
         kicker: 'Türkei',
         title: 'Investieren zwischen Orient und Okzident',
-        text: 'Von Istanbul, der Weltmetropole in Eurasien, die mit der berühmten Bosporusbrücke Europa und Asien verbindet: lukrative Immobilien von der Penthouse-Wohnung bis zur Villa am Meer – von Istanbul bis an die türkische Riviera.',
+        text: 'Von Istanbul, der Weltmetropole in Eurasien, die mit der berühmten Bosporusbrücke Europa und Asien verbindet: lukrative Immobilien von der Penthouse-Wohnung bis zur Villa am Meer – von Istanbul bis an die türkische Riviera und darüber hinaus in Südostanatolien.',
       },
       {
         kicker: 'Nordzypern',

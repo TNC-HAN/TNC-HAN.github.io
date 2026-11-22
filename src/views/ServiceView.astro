@@ -258,7 +258,7 @@ const offeringIcons = {
 
 <script>
   // Bildwechsel in Unterbereichen mit mehreren Fotos (z. B. Off-Market)
-  const STEP = 3500;
+  const STEP = 5500;
   const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   document.querySelectorAll<HTMLElement>('[data-detail-gallery]').forEach((box) => {
     const imgs = [...box.querySelectorAll<HTMLImageElement>('.detail-gallery-img')];

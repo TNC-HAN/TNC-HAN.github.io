@@ -129,7 +129,7 @@ export const trContent: ExtraContent = {
       {
         kicker: 'Türkiye',
         title: 'Doğu ile Batı arasında yatırım',
-        text: 'Ünlü Boğaz Köprüsü ile Avrupa ve Asya’yı birleştiren Avrasya’nın dünya metropolü İstanbul’dan: penthouse dairesinden deniz kenarındaki villaya kadar kazançlı gayrimenkuller – İstanbul’dan Türk Rivierası’na.',
+        text: 'Ünlü Boğaz Köprüsü ile Avrupa ve Asya’yı birleştiren Avrasya’nın dünya metropolü İstanbul’dan: penthouse dairesinden deniz kenarındaki villaya kadar kazançlı gayrimenkuller – İstanbul’dan Türk Rivierası’na ve ötesinde Güneydoğu Anadolu’ya kadar.',
       },
       {
         kicker: 'Kuzey Kıbrıs',

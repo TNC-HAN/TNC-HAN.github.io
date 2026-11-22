@@ -133,7 +133,7 @@ const items = showcase.map((s, i) => ({ ...s, ...dict.showcase.items[i]! }));
       imgs[(index + 1) % imgs.length]!.loading = 'eager';
     };
     new IntersectionObserver(([entry]) => {
-      if (entry?.isIntersecting) timer ??= window.setInterval(next, 3500);
+      if (entry?.isIntersecting) timer ??= window.setInterval(next, 5500);
       else if (timer !== undefined) {
         window.clearInterval(timer);
         timer = undefined;

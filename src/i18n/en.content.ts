@@ -132,7 +132,7 @@ export const enContent: ExtraContent = {
       {
         kicker: 'Turkey',
         title: 'Investing between Orient and Occident',
-        text: 'From Istanbul, the Eurasian world metropolis whose famous Bosphorus Bridge connects Europe and Asia: lucrative properties from the penthouse apartment to the villa by the sea – from Istanbul to the Turkish Riviera.',
+        text: 'From Istanbul, the Eurasian world metropolis whose famous Bosphorus Bridge connects Europe and Asia: lucrative properties from the penthouse apartment to the villa by the sea – from Istanbul to the Turkish Riviera and beyond, into south-eastern Anatolia.',
       },
       {
         kicker: 'Northern Cyprus',

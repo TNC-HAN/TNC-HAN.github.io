@@ -101,7 +101,7 @@ export const privacy: { title: string; sections: LegalSection[] } = {
       heading: '3. Hosting und Server-Logdateien',
       paragraphs: [
         `Diese Website wird bereitgestellt von: ${site.legal.host}. Beim Aufruf der Website verarbeitet der Anbieter technisch notwendige Daten (z. B. IP-Adresse, Datum und Uhrzeit, aufgerufene Seite, Browsertyp) in Server-Logdateien, um die Website auszuliefern und ihre Sicherheit zu gewährleisten.`,
-        'Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an einer sicheren und funktionsfähigen Website). Eine Übermittlung in die USA ist möglich; der Anbieter stützt sich hierfür auf [PRÜFEN: EU-US Data Privacy Framework und / oder Standardvertragsklauseln – Angaben des Hosters prüfen].',
+        'Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an einer sicheren und funktionsfähigen Website). Dabei können Daten in die USA übermittelt werden. GitHub Inc. ist nach dem EU-US Data Privacy Framework zertifiziert; die Übermittlung erfolgt auf Grundlage des Angemessenheitsbeschlusses der EU-Kommission (Art. 45 DSGVO). Weitere Informationen: https://docs.github.com/de/site-policy/privacy-policies/github-general-privacy-statement',
       ],
     },
     {
@@ -122,7 +122,7 @@ export const privacy: { title: string; sections: LegalSection[] } = {
       heading: '6. Online-Terminbuchung über Calendly',
       paragraphs: [
         'Für die Terminbuchung verlinken wir auf den Dienst Calendly (Calendly LLC, 115 E Main St, Ste A1B, Buford, GA 30518, USA). Erst wenn Sie den Link anklicken, wird die Seite von Calendly geöffnet; vorher werden keine Daten an Calendly übertragen. Bei der Buchung verarbeitet Calendly die von Ihnen eingegebenen Daten (z. B. Name, E-Mail-Adresse, Wunschtermin) nach eigenen Bestimmungen, auch in den USA. Alternativ erreichen Sie uns jederzeit per Telefon oder E-Mail.',
-        'Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO (Anbahnung eines Vertrags) sowie Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an einer einfachen Terminvereinbarung). [PRÜFEN: Anschrift von Calendly und Grundlage der US-Übermittlung]',
+        'Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO (Anbahnung eines Vertrags) sowie Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an einer einfachen Terminvereinbarung). Calendly LLC ist nach dem EU-US Data Privacy Framework zertifiziert; die Übermittlung in die USA erfolgt auf Grundlage des Angemessenheitsbeschlusses der EU-Kommission (Art. 45 DSGVO). Weitere Informationen: https://calendly.com/privacy',
       ],
     },
     {
