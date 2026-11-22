@@ -163,7 +163,7 @@ export const deContent: ExtraContent = {
       {
         kicker: 'Strategie & Geschäftsmodell',
         title: 'Vom Bauchgefühl zur belastbaren Strategie',
-        text: 'Markt, Wettbewerb, Zahlen, Daten, Fakten und Ihre persönlichen Wünsche & Ziele ergeben ein klares Bild: Weniger „To-Dos“ und Stress und weniger Prioritäten mit großer Wirkung, eine „RoadMap“ mit glasklarer Zukunfts-Strategie, Verantwortlichen und Meilensteinen – und vor allem ein optimiertes Geschäftsmodell, das auch ohne Sie reibungslos funktioniert …\n\nDer erfolgreiche Unternehmer arbeitet nicht (mehr) in seinem Unternehmen; sondern in „Adler-Perspektive“ an seinem Unternehmen …',
+        text: 'Markt, Wettbewerb, Zahlen, Daten, Fakten und Ihre persönlichen Wünsche & Ziele ergeben ein klares Bild: Weniger „To-Dos“ und Stress und weniger Prioritäten mit großer Wirkung, eine „RoadMap“ mit glasklarer Zukunfts-Strategie, Verantwortlichen und Meilensteinen – und vor allem ein optimiertes Geschäftsmodell, das auch ohne Sie reibungslos funktioniert …\n\nDer erfolgreiche Unternehmer arbeitet nicht (mehr) **in** seinem Unternehmen; sondern in „Adler-Perspektive“ **an** seinem Unternehmen …',
         points: [
           'Positionierung an Zukunfts- und Zielmärkten',
           'Ausrichtung, Optimierung und Resilienz-Strategien',
@@ -315,9 +315,9 @@ export const deContent: ExtraContent = {
       {
         text: 'Gemeinsam mit renommierten Experten der Immobilienwirtschaft aus unserem langjährigen Netzwerk überprüfen wir alle Unterlagen ausnahmslos. Eine vollständige Prüfung in der DDA umfasst folgende Fachdisziplinen:',
         benefits: [
-          'Bauliche-/Techn. Substanzprüfung (mit Architekten / Bau-Ing. / Gutachtern)',
-          'Kaufmännische Prüfung (Inhouse & Kooperationspartner: FM/HV/RAe)',
-          'Steuerliche DD mit auf Immobilien spezialisierten Wirtschafts-/Steuerkanzleien',
+          'Bauliche- / Techn. Substanzprüfung (mit Architekten / Bau-Ing. / Gutachtern)',
+          'Kaufmännische Prüfung (Inhouse & Kooperationspartner: FM / HV / RAe)',
+          'Steuerliche DD mit auf Immobilien spezialisierten Wirtschafts- / Steuerkanzleien',
         ],
         after:
           'Und das alles im Ausland ebenso gründlich wie in Deutschland. Sie unterschreiben erst, wenn absolut alles geprüft und geklärt ist, in Ihr Portfolio passt und Sie ausnahmslos ein richtig gutes Gefühl haben. Mit positiven Ausrufezeichen, statt zweifelhaften Fragezeichen!',

@@ -164,7 +164,7 @@ export const enContent: ExtraContent = {
       {
         kicker: 'Strategy & business model',
         title: 'From gut feeling to a robust strategy',
-        text: 'Market, competition, facts and figures, together with your personal wishes and goals, add up to a clear picture: fewer to-dos and less stress, a few high-impact priorities, a roadmap with a crystal-clear strategy for the future, owners and milestones – and above all an optimised business model that runs smoothly even without you.\n\nSuccessful business owners no longer work in their company, but on it – from an eagle’s-eye view.',
+        text: 'Market, competition, facts and figures, together with your personal wishes and goals, add up to a clear picture: fewer to-dos and less stress, a few high-impact priorities, a roadmap with a crystal-clear strategy for the future, owners and milestones – and above all an optimised business model that runs smoothly even without you.\n\nSuccessful business owners no longer work **in** their company, but **on** it – from an eagle’s-eye view.',
         points: [
           'Positioning in future and target markets',
           'Alignment, optimisation and resilience strategies',

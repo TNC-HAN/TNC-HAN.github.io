@@ -101,7 +101,7 @@ export const privacy: { title: string; sections: LegalSection[] } = {
       heading: '3. Hosting und Server-Logdateien',
       paragraphs: [
         `Diese Website wird bereitgestellt von: ${site.legal.host}. Beim Aufruf der Website verarbeitet der Anbieter technisch notwendige Daten (z. B. IP-Adresse, Datum und Uhrzeit, aufgerufene Seite, Browsertyp) in Server-Logdateien, um die Website auszuliefern und ihre Sicherheit zu gewährleisten.`,
-        'Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an einer sicheren und funktionsfähigen Website). Eine Übermittlung in die USA ist möglich; der Anbieter stützt sich hierfür auf [PRÜFEN: EU-US Data Privacy Framework und/oder Standardvertragsklauseln – Angaben des Hosters prüfen].',
+        'Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an einer sicheren und funktionsfähigen Website). Eine Übermittlung in die USA ist möglich; der Anbieter stützt sich hierfür auf [PRÜFEN: EU-US Data Privacy Framework und / oder Standardvertragsklauseln – Angaben des Hosters prüfen].',
       ],
     },
     {

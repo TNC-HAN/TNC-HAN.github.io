@@ -232,8 +232,8 @@ export const de: Dictionary = {
           'Strategie & Geschäftsmodell',
           'Expansion & Prozesse',
           'Coaching für Unternehmer',
-          'Interims-/Change-Management',
-          'Nachfolge, M&A, Exit',
+          'Interims- / Change-Management',
+          'Nachfolge, M&A, Exit / Sale',
         ],
       },
       slide: {

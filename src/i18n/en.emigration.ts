@@ -6,7 +6,7 @@ export const enEmigration: EmigrationContent = {
     seo: {
       title: 'Relocation Coaching Turkey & Northern Cyprus · USA · Dubai · NEXXCON-24',
       description:
-        'Relocate with a plan: personal relocation coaching for entrepreneurs, families and retirees – focus on Turkey and Northern Cyprus, plus the USA and UAE/Dubai. From choosing the country to settling in.',
+        'Relocate with a plan: personal relocation coaching for entrepreneurs, families and retirees – focus on Turkey and Northern Cyprus, plus the USA and UAE / Dubai. From choosing the country to settling in.',
     },
     label: 'Relocation',
     card: {
@@ -22,7 +22,7 @@ export const enEmigration: EmigrationContent = {
     },
     slide: {
       kicker: '04 · Relocation',
-      title: 'Relocation and/or global\nSetUp – with a plan, not a gut feeling.',
+      title: 'Relocation and / or global\nSetUp – with a plan, not a gut feeling.',
       text: 'Personal relocation coaching – focus on Turkey and Northern Cyprus.',
     },
     hero: {
@@ -106,7 +106,7 @@ export const enEmigration: EmigrationContent = {
       ],
     },
     {
-      text: 'Northern Cyprus impresses with its Mediterranean climate, relaxed lifestyle and modern new-build projects – for example in İskele/Long Beach or Kyrenia. We know the places, the developers and the processes and show you why the island is a genuine alternative to Spain and Dubai for many.',
+      text: 'Northern Cyprus impresses with its Mediterranean climate, relaxed lifestyle and modern new-build projects – for example in İskele / Long Beach or Kyrenia. We know the places, the developers and the processes and show you why the island is a genuine alternative to Spain and Dubai for many.',
       benefits: [
         'Local knowledge İskele & Kyrenia',
         'Partners we know personally',

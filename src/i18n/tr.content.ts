@@ -161,7 +161,7 @@ export const trContent: ExtraContent = {
       {
         kicker: 'Strateji ve iş modeli',
         title: 'İçgüdüden sağlam bir stratejiye',
-        text: 'Piyasa, rekabet, rakamlar, veriler, gerçekler ve kişisel istek ve hedefleriniz net bir tablo oluşturur: daha az yapılacak iş ve daha az stres, etkisi büyük birkaç öncelik, net bir gelecek stratejisi, sorumlular ve kilometre taşlarıyla bir yol haritası – ve her şeyden önce siz olmadan da sorunsuz işleyen, optimize edilmiş bir iş modeli.\n\nBaşarılı girişimci artık şirketinin içinde değil, “kartal bakışıyla” şirketinin üzerinde çalışır.',
+        text: 'Piyasa, rekabet, rakamlar, veriler, gerçekler ve kişisel istek ve hedefleriniz net bir tablo oluşturur: daha az yapılacak iş ve daha az stres, etkisi büyük birkaç öncelik, net bir gelecek stratejisi, sorumlular ve kilometre taşlarıyla bir yol haritası – ve her şeyden önce siz olmadan da sorunsuz işleyen, optimize edilmiş bir iş modeli.\n\nBaşarılı girişimci artık şirketinin **içinde** değil, “kartal bakışıyla” şirketinin **üzerinde** çalışır.',
         points: [
           'Gelecek ve hedef pazarlarda konumlanma',
           'Yönlendirme, optimizasyon ve dayanıklılık stratejileri',

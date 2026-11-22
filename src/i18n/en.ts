@@ -231,8 +231,8 @@ export const en: Dictionary = {
           'Strategy & business model',
           'Expansion & processes',
           'Coaching for business owners',
-          'Interim/change management',
-          'Succession, M&A, exit',
+          'Interim / change management',
+          'Succession, M&A, exit / sale',
         ],
       },
       slide: {

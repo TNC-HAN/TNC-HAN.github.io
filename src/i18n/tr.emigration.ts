@@ -6,7 +6,7 @@ export const trEmigration: EmigrationContent = {
     seo: {
       title: 'Yurt Dışına Yerleşim Koçluğu Türkiye ve Kuzey Kıbrıs · ABD · Dubai · NEXXCON-24',
       description:
-        'Planlı yerleşim: girişimciler, aileler ve emekliler için kişisel yerleşim koçluğu – odak Türkiye ve Kuzey Kıbrıs, ayrıca ABD ve BAE/Dubai. Hedef ülke seçiminden yerleşmeye kadar.',
+        'Planlı yerleşim: girişimciler, aileler ve emekliler için kişisel yerleşim koçluğu – odak Türkiye ve Kuzey Kıbrıs, ayrıca ABD ve BAE / Dubai. Hedef ülke seçiminden yerleşmeye kadar.',
     },
     label: 'Yerleşim',
     card: {
@@ -22,7 +22,7 @@ export const trEmigration: EmigrationContent = {
     },
     slide: {
       kicker: '04 · Relocation',
-      title: 'Yerleşim ve/veya küresel\nSetUp – içgüdüyle değil, planla.',
+      title: 'Yerleşim ve / veya küresel\nSetUp – içgüdüyle değil, planla.',
       text: 'Kişisel yerleşim koçluğu – odak Türkiye ve Kuzey Kıbrıs.',
     },
     hero: {
@@ -106,7 +106,7 @@ export const trEmigration: EmigrationContent = {
       ],
     },
     {
-      text: 'Kuzey Kıbrıs; Akdeniz iklimi, rahat yaşam tarzı ve modern yeni projeleriyle büyüler – örneğin İskele/Long Beach veya Girne’de. Yerleri, müteahhitleri ve süreçleri tanıyor ve adanın neden birçokları için İspanya ve Dubai’ye gerçek bir alternatif olduğunu gösteriyoruz.',
+      text: 'Kuzey Kıbrıs; Akdeniz iklimi, rahat yaşam tarzı ve modern yeni projeleriyle büyüler – örneğin İskele / Long Beach veya Girne’de. Yerleri, müteahhitleri ve süreçleri tanıyor ve adanın neden birçokları için İspanya ve Dubai’ye gerçek bir alternatif olduğunu gösteriyoruz.',
       benefits: [
         'İskele ve Girne’de yerel bilgi',
         'Şahsen tanıdığımız ortaklar',

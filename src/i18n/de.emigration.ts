@@ -6,7 +6,7 @@ export const deEmigration: EmigrationContent = {
     seo: {
       title: 'Auswanderungscoaching Türkei & Nordzypern · USA · Dubai · NEXXCON-24',
       description:
-        'Auswandern mit Plan: persönliches Auswanderungscoaching für Unternehmer, Familien und Ruheständler – Schwerpunkt Türkei und Nordzypern, außerdem USA und VAE/Dubai. Von der Wahl des Ziellands bis zum Ankommen.',
+        'Auswandern mit Plan: persönliches Auswanderungscoaching für Unternehmer, Familien und Ruheständler – Schwerpunkt Türkei und Nordzypern, außerdem USA und VAE / Dubai. Von der Wahl des Ziellands bis zum Ankommen.',
     },
     label: 'Auswandern',
     card: {
@@ -22,7 +22,7 @@ export const deEmigration: EmigrationContent = {
     },
     slide: {
       kicker: '04 · Relocation',
-      title: 'Auswandern und/oder globales\nSetUp – mit Plan statt mit Bauchgefühl.',
+      title: 'Auswandern und / oder globales\nSetUp – mit Plan statt mit Bauchgefühl.',
       text: 'Persönliches Auswanderungscoaching – Schwerpunkt Türkei und Nordzypern.',
     },
     hero: {
@@ -110,7 +110,7 @@ export const deEmigration: EmigrationContent = {
       ],
     },
     {
-      text: 'Nordzypern begeistert mit Mittelmeerklima, entspanntem Lebensstil und modernen Neubauprojekten – etwa in İskele/Long Beach oder Kyrenia. Wir kennen die Orte, die Bauträger und die Abläufe und zeigen Ihnen, warum die Insel für viele eine echte Alternative zu Spanien und Dubai ist.',
+      text: 'Nordzypern begeistert mit Mittelmeerklima, entspanntem Lebensstil und modernen Neubauprojekten – etwa in İskele / Long Beach oder Kyrenia. Wir kennen die Orte, die Bauträger und die Abläufe und zeigen Ihnen, warum die Insel für viele eine echte Alternative zu Spanien und Dubai ist.',
       benefits: [
         'Ortskenntnis İskele & Kyrenia',
         'Persönlich bekannte Partner vor Ort',

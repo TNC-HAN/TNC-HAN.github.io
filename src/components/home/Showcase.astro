@@ -75,7 +75,12 @@ const items = showcase.map((s, i) => ({ ...s, ...dict.showcase.items[i]! }));
             </h3>
             {item.text.split(/\n\n/).map((para, j) => (
               <p class:list={['text-lg leading-relaxed text-muted', j === 0 ? 'mt-5' : 'mt-3']}>
-                {para}
+                {/* **Wort** = fett */}
+                {para
+                  .split(/\*\*(.+?)\*\*/)
+                  .map((part, k) =>
+                    k % 2 === 1 ? <strong class="font-semibold text-text">{part}</strong> : part,
+                  )}
               </p>
             ))}
             <ul class="mt-6 space-y-2.5">

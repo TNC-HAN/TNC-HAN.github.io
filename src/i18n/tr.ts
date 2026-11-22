@@ -232,7 +232,7 @@ export const tr: Dictionary = {
           'Genişleme ve süreçler',
           'Girişimciler için koçluk',
           'Geçici yönetim / değişim yönetimi',
-          'Devir, M&A, çıkış',
+          'Devir, M&A, çıkış / satış',
         ],
       },
       slide: {
