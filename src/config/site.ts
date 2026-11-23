@@ -33,6 +33,11 @@ export const site = {
      * Leer lassen, solange es keinen gibt – dann erscheint ein Hinweis.
      */
     bookingUrl: 'https://calendly.com/uemit-t-aka-nexxcon24',
+    /**
+     * Adresse des Kontaktformular-Dienstes (Google Apps Script „Web-App“, siehe
+     * scripts/kontaktformular/ANLEITUNG.md). Leer = Formular zeigt Hinweis auf E-Mail.
+     */
+    formEndpoint: '',
   },
 
   legal: {

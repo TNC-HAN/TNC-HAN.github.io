@@ -385,7 +385,7 @@ export const enContent: ExtraContent = {
   },
   video: {
     eyebrow: 'Image film',
-    title: 'NEXXCON-24 in 60 seconds.',
+    title: 'NEXXCON-24 in 72 seconds.',
     text: 'Business, real estate and technology: a short look at the worlds in which we work for our clients – from the strategy meeting to the villa on the Mediterranean.',
     label:
       'NEXXCON-24 image film with music: Ümit Törün in a strategy meeting, workshop, coaching and seminar, plus villas, skylines, Istanbul, Northern Cyprus, due diligence and AI',

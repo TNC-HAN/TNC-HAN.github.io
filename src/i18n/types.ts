@@ -246,3 +246,56 @@ export interface Dictionary {
     brandsNote: string;
   };
 }
+
+/**
+ * Weitere Inhalte (Arbeitsweise-Seite, Kontaktformular, zusätzliche FAQ).
+ * Liegen je Sprache in src/i18n/<sprache>.more.ts und werden in t() zusammengeführt.
+ */
+export interface MoreContent {
+  /** CTA unter jeder FAQ-Antwort, z. B. „Jetzt Erstgespräch vereinbaren“ */
+  bookNow: string;
+  processPage: {
+    seo: Seo;
+    label: string;
+    hero: { eyebrow: string; title: string; lead: string };
+    phase: string;
+    phases: { text: string; points: string[] }[];
+  };
+  contactForm: {
+    nav: string;
+    eyebrow: string;
+    title: string;
+    lead: string;
+    name: string;
+    company: string;
+    email: string;
+    phone: string;
+    topic: string;
+    topics: string[];
+    message: string;
+    files: string;
+    filesHint: string;
+    filesChoose: string;
+    filesRemove: string;
+    consent: string;
+    consentLink: string;
+    required: string;
+    submit: string;
+    sending: string;
+    uploading: string;
+    successTitle: string;
+    successText: string;
+    error: string;
+    errorSize: string;
+    errorType: string;
+    pending: string;
+  };
+  /** Zusätzliche Fragen – werden an die vorhandenen FAQ angehängt */
+  faqMore: {
+    home: Faq[];
+    consulting: Faq[];
+    realEstate: Faq[];
+    ai: Faq[];
+    emigration: Faq[];
+  };
+}

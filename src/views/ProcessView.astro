@@ -1,0 +1,90 @@
+---
+/**
+ * Seite „Arbeitsweise“: die vier Phasen ausführlicher erklärt, je mit Foto und CTA.
+ * Texte: src/i18n/<sprache>.ts → home.process (Titel, Kurztext) und
+ * src/i18n/<sprache>.more.ts → processPage (ausführlicher Text, Punkte).
+ */
+import { Image } from 'astro:assets';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import PageHero from '@/components/sections/PageHero.astro';
+import CtaBand from '@/components/sections/CtaBand.astro';
+import Icon from '@/components/ui/Icon.astro';
+import BookButton from '@/components/ui/BookButton.astro';
+import { photos, type PhotoKey } from '@/config/media';
+import type { Lang } from '@/config/routes';
+import { t } from '@/i18n';
+
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const dict = t(lang);
+const page = dict.processPage;
+const images: PhotoKey[] = [
+  'strategieMeeting',
+  'datenanalyseLaptop',
+  'planungWand',
+  'handschlagNachfolge',
+];
+const phases = dict.home.process.steps.map((s, i) => ({
+  title: s.title,
+  short: s.text,
+  detail: page.phases[i]!.text,
+  points: page.phases[i]!.points,
+  photo: images[i]!,
+}));
+---
+
+<BaseLayout lang={lang} page="process" {...page.seo}>
+  <PageHero lang={lang} {...page.hero} current={page.label} />
+
+  <div class="container-site space-y-10 pb-16 sm:space-y-14">
+    {phases.map((p, i) => (
+      <article
+        id={`phase-${i + 1}`}
+        class="reveal glass grid scroll-mt-28 items-center gap-8 overflow-hidden p-6 sm:p-8 lg:grid-cols-2 lg:gap-12 lg:p-10"
+        aria-labelledby={`phase-${i + 1}-title`}
+      >
+        <div class:list={['gold-frame overflow-hidden rounded-2xl', i % 2 === 1 && 'lg:order-2']}>
+          <Image
+            src={photos[p.photo]}
+            alt={dict.photoAlt[p.photo]}
+            class="block aspect-[4/3] w-full object-cover"
+            widths={[480, 800, 1100]}
+            sizes="(min-width: 1024px) 560px, 100vw"
+            loading={i === 0 ? 'eager' : 'lazy'}
+          />
+        </div>
+        <div class="min-w-0">
+          <div class="flex items-center gap-4">
+            <span class="flex size-12 shrink-0 items-center justify-center rounded-full border border-gold/40 bg-gold/10 font-display text-lg text-champagne shadow-[0_0_30px_-5px_rgb(201_164_92/0.5)]">
+              {String(i + 1).padStart(2, '0')}
+            </span>
+            <span class="eyebrow">
+              {page.phase} {i + 1}
+            </span>
+          </div>
+          <h2
+            id={`phase-${i + 1}-title`}
+            class="mt-6 text-3xl leading-tight font-medium sm:text-4xl"
+          >
+            {p.title}
+          </h2>
+          <p class="mt-3 text-lg text-champagne">{p.short}</p>
+          <p class="mt-5 text-lg leading-relaxed text-muted">{p.detail}</p>
+          <ul class="mt-6 space-y-2.5">
+            {p.points.map((point) => (
+              <li class="flex items-start gap-3 text-text/90">
+                <Icon name="check" class="mt-0.5 size-5 shrink-0 text-gold" />
+                <span class="min-w-0">{point}</span>
+              </li>
+            ))}
+          </ul>
+          <BookButton lang={lang} class="mt-8" note />
+        </div>
+      </article>
+    ))}
+  </div>
+
+  <CtaBand lang={lang} />
+</BaseLayout>

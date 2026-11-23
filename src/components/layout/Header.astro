@@ -23,36 +23,36 @@ const links: { key: PageKey; label: string }[] = [
   { key: 'about', label: dict.nav.about },
   { key: 'contact', label: dict.nav.contact },
 ];
+// „Kontakt“ springt direkt zum Kontaktformular
+const linkHref = (key: PageKey) => href(key, lang, key === 'contact' ? '#formular' : '');
 // „Erstgespräch“ öffnet direkt Calendly (sonst Kontaktseite)
 const bookingUrl = site.contact.bookingUrl || href('contact', lang);
 const bookingAttrs = site.contact.bookingUrl ? { target: '_blank', rel: 'noopener' } : {};
 ---
 
 <header class="sticky top-0 z-50 border-b border-line bg-ink-950/70 backdrop-blur-xl">
-  <div class="container-site flex h-18 items-center gap-2 sm:gap-3 lg:h-20">
+  <div class="container-site flex h-18 items-center gap-2 sm:gap-3 lg:h-20 xl:max-w-[92rem]">
     <a
       href={href('home', lang)}
-      class="min-w-0 shrink"
+      class="min-w-0 shrink xl:shrink-0"
       aria-label={`NEXXCON-24 – ${dict.nav.home}`}
     >
-      <BrandLogo3D src={logo} class="h-7 w-auto min-[400px]:h-9 lg:h-12" />
+      <BrandLogo3D src={logo} class="h-7 w-auto min-[400px]:h-9 lg:h-12 xl:h-10 2xl:h-12" />
     </a>
 
     <nav aria-label={dict.nav.primary} class="ml-auto hidden xl:block">
       <ul class="flex items-center gap-0.5 2xl:gap-1">
-        {links
-          .filter((l) => l.key !== 'contact')
-          .map((l) => (
-            <li>
-              <a
-                href={href(l.key, lang)}
-                aria-current={page === l.key ? 'page' : undefined}
-                class="nav-pill rounded-full border border-gold/45 bg-gradient-to-b from-gold/25 to-gold/5 px-2.5 py-1.5 text-[13px] whitespace-nowrap 2xl:px-3 text-champagne shadow-[inset_0_1px_0_rgb(255_255_255/0.2),0_4px_12px_-4px_rgb(0_0_0/0.6)] transition hover:-translate-y-px hover:border-champagne hover:from-gold/40 hover:text-white aria-[current=page]:border-transparent aria-[current=page]:from-[#f0dfb4] aria-[current=page]:to-gold aria-[current=page]:text-ink-950"
-              >
-                {l.label}
-              </a>
-            </li>
-          ))}
+        {links.map((l) => (
+          <li>
+            <a
+              href={linkHref(l.key)}
+              aria-current={page === l.key ? 'page' : undefined}
+              class="nav-pill rounded-full border border-gold/45 bg-gradient-to-b from-gold/25 to-gold/5 px-2 py-1.5 text-[12px] whitespace-nowrap 2xl:px-3 2xl:text-[13px] text-champagne shadow-[inset_0_1px_0_rgb(255_255_255/0.2),0_4px_12px_-4px_rgb(0_0_0/0.6)] transition hover:-translate-y-px hover:border-champagne hover:from-gold/40 hover:text-white aria-[current=page]:border-transparent aria-[current=page]:from-[#f0dfb4] aria-[current=page]:to-gold aria-[current=page]:text-ink-950"
+            >
+              {l.label}
+            </a>
+          </li>
+        ))}
       </ul>
     </nav>
 
@@ -80,7 +80,7 @@ const bookingAttrs = site.contact.bookingUrl ? { target: '_blank', rel: 'noopene
             {links.map((l) => (
               <li>
                 <a
-                  href={href(l.key, lang)}
+                  href={linkHref(l.key)}
                   aria-current={page === l.key ? 'page' : undefined}
                   class="block rounded-xl px-4 py-3 text-base text-text hover:bg-white/5 aria-[current=page]:text-champagne"
                 >

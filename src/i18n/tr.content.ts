@@ -374,7 +374,7 @@ export const trContent: ExtraContent = {
   },
   video: {
     eyebrow: 'Tanıtım filmi',
-    title: '60 saniyede NEXXCON-24.',
+    title: '72 saniyede NEXXCON-24.',
     text: 'İşletme, gayrimenkul ve teknoloji: Müvekkillerimiz için çalıştığımız dünyalara kısa bir bakış – strateji toplantısından Akdeniz’deki villaya kadar.',
     label:
       'Müzikli NEXXCON-24 tanıtım filmi: strateji toplantısında, atölyede, koçlukta ve seminerde Ümit Törün; villalar, siluetler, İstanbul, Kuzey Kıbrıs, due diligence ve yapay zekâ',

@@ -10,8 +10,19 @@ interface Props {
   variant?: 'gold' | 'ghost';
   note?: boolean;
   class?: string;
+  /** Eigene Beschriftung (Standard: „Erstgespräch buchen“) */
+  label?: string;
+  /** Kompakte Größe, z. B. unter FAQ-Antworten */
+  small?: boolean;
 }
-const { lang, variant = 'gold', note = false, class: className } = Astro.props;
+const {
+  lang,
+  variant = 'gold',
+  note = false,
+  class: className,
+  label,
+  small = false,
+} = Astro.props;
 const dict = t(lang);
 const url = site.contact.bookingUrl || href('contact', lang);
 const external = Boolean(site.contact.bookingUrl);
@@ -20,11 +31,11 @@ const external = Boolean(site.contact.bookingUrl);
 <span class:list={['inline-flex flex-col items-start gap-2', className]}>
   <a
     href={url}
-    class={variant === 'gold' ? 'btn-gold' : 'btn-ghost'}
+    class:list={[variant === 'gold' ? 'btn-gold' : 'btn-ghost', small && '!min-h-10 !px-5 text-sm']}
     {...(external ? { target: '_blank', rel: 'noopener' } : {})}
   >
     <Icon name="calendar" class="size-4" />
-    {dict.cta.book}
+    {label ?? dict.cta.book}
   </a>
   {note && <span class="text-xs text-subtle">{dict.cta.bookNote}</span>}
 </span>

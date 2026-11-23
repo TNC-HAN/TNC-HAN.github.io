@@ -1,0 +1,321 @@
+---
+/**
+ * Kontaktformular mit Anhängen (bis 100 MB gesamt).
+ * Versand über den eigenen Google-Apps-Script-Dienst (Adresse: site.contact.formEndpoint,
+ * Code + Anleitung: scripts/kontaktformular/). Anhänge landen im Google Drive des Inhabers,
+ * die Anfrage als „❗ PRIORITÄT A“ markierte Mail im Gmail-Postfach.
+ */
+import Icon from '@/components/ui/Icon.astro';
+import { href, type Lang } from '@/config/routes';
+import { site } from '@/config/site';
+import { t } from '@/i18n';
+
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const dict = t(lang);
+const f = dict.contactForm;
+const endpoint: string = site.contact.formEndpoint;
+const [consentBefore, consentAfter] = f.consent.split('{link}');
+const field =
+  'mt-2 block w-full rounded-xl border border-white/15 bg-ink-950/60 px-4 py-3 text-base text-text placeholder:text-subtle focus:border-champagne focus:ring-2 focus:ring-gold/30 focus:outline-none';
+const labelCls = 'block text-sm font-medium text-text/90';
+---
+
+<section id="formular" class="container-site scroll-mt-28 pb-16" aria-labelledby="form-title">
+  <div class="reveal glass relative overflow-hidden p-6 sm:p-10">
+    <p class="eyebrow">{f.eyebrow}</p>
+    <h2 id="form-title" class="mt-4 text-3xl font-medium sm:text-4xl">
+      {f.title}
+    </h2>
+    <p class="mt-3 max-w-2xl text-lg leading-relaxed text-muted">{f.lead}</p>
+
+    <form
+      class="mt-8 grid gap-5 sm:grid-cols-2"
+      data-contact-form
+      data-endpoint={endpoint}
+      data-lang={lang}
+      novalidate
+    >
+      <label class={labelCls}>
+        {f.name}{' '}
+        <span class="text-champagne" aria-hidden="true">
+          *
+        </span>
+        <input class={field} name="name" required autocomplete="name" maxlength="120" />
+      </label>
+      <label class={labelCls}>
+        {f.company}
+        <input class={field} name="company" autocomplete="organization" maxlength="160" />
+      </label>
+      <label class={labelCls}>
+        {f.email}{' '}
+        <span class="text-champagne" aria-hidden="true">
+          *
+        </span>
+        <input
+          class={field}
+          name="email"
+          type="email"
+          required
+          autocomplete="email"
+          maxlength="160"
+        />
+      </label>
+      <label class={labelCls}>
+        {f.phone}
+        <input class={field} name="phone" type="tel" autocomplete="tel" maxlength="60" />
+      </label>
+      <label class:list={[labelCls, 'sm:col-span-2']}>
+        {f.topic}
+        <select class={field} name="topic">
+          {f.topics.map((topic) => (
+            <option value={topic}>{topic}</option>
+          ))}
+        </select>
+      </label>
+      <label class:list={[labelCls, 'sm:col-span-2']}>
+        {f.message}{' '}
+        <span class="text-champagne" aria-hidden="true">
+          *
+        </span>
+        <textarea class={field} name="message" rows="6" required maxlength="10000"></textarea>
+      </label>
+
+      <!-- Anhänge -->
+      <div class="sm:col-span-2">
+        <span class={labelCls}>{f.files}</span>
+        <label class="btn-ghost mt-2 cursor-pointer">
+          <Icon name="arrow" class="size-4 -rotate-90" />
+          {f.filesChoose}
+          <input type="file" name="files" multiple class="sr-only" data-files />
+        </label>
+        <p class="mt-2 text-sm text-subtle">{f.filesHint}</p>
+        <ul class="mt-3 space-y-2 text-sm" data-file-list></ul>
+      </div>
+
+      <!-- Honeypot gegen Spam-Bots (für Menschen unsichtbar) -->
+      <div class="hidden" aria-hidden="true">
+        <input name="website" tabindex="-1" autocomplete="off" />
+      </div>
+
+      <label class="flex items-start gap-3 text-sm text-muted sm:col-span-2">
+        <input
+          type="checkbox"
+          name="consent"
+          required
+          class="mt-1 size-4 shrink-0 accent-[#c9a45c]"
+        />
+        <span>
+          {consentBefore}
+          <a href={href('privacy', lang)} class="text-champagne underline" target="_blank">
+            {f.consentLink}
+          </a>
+          {consentAfter}{' '}
+          <span class="text-champagne" aria-hidden="true">
+            *
+          </span>
+        </span>
+      </label>
+
+      <div class="flex flex-wrap items-center gap-4 sm:col-span-2">
+        <button type="submit" class="btn-gold" data-submit>
+          <Icon name="mail" class="size-4" />
+          <span data-submit-label>{f.submit}</span>
+        </button>
+        <span class="text-xs text-subtle">* {f.required}</span>
+      </div>
+
+      <div class="hidden sm:col-span-2" data-progress>
+        <div class="h-2 overflow-hidden rounded-full bg-white/10">
+          <div
+            class="h-full w-0 bg-gradient-to-r from-gold to-champagne transition-[width]"
+            data-bar
+          ></div>
+        </div>
+      </div>
+      <p
+        class="hidden rounded-xl border border-red-400/40 bg-red-500/10 px-4 py-3 text-sm text-red-200 sm:col-span-2"
+        role="alert"
+        data-error
+      ></p>
+    </form>
+
+    <div class="hidden" data-success role="status">
+      <div class="mt-8 rounded-2xl border border-gold/40 bg-gold/10 p-6 sm:p-8">
+        <Icon name="check" class="size-8 text-gold" />
+        <p class="mt-4 text-2xl font-medium">{f.successTitle}</p>
+        <p class="mt-2 text-muted">{f.successText}</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script
+  is:inline
+  define:vars={{
+    T: {
+      sending: f.sending,
+      uploading: f.uploading,
+      error: f.error,
+      errorSize: f.errorSize,
+      errorType: f.errorType,
+      pending: f.pending,
+      remove: f.filesRemove,
+      email: site.contact.email,
+    },
+  }}
+>
+  (() => {
+    const form = document.querySelector('[data-contact-form]');
+    if (!form) return;
+    const MAX = 100 * 1024 * 1024;
+    // Gefährliche Dateitypen (Programme, Skripte, Makro-Dokumente …) – gleiche Liste wie im Google-Skript
+    const BLOCKED = (
+      'exe msi msp msix appx bat cmd com scr pif cpl dll sys drv ocx vbs vbe js jse mjs wsf wsh wsc ' +
+      'ps1 ps1xml ps2 psc1 psm1 psd1 msh msh1 msh2 mshxml jar class hta lnk url scf inf reg msc gadget ' +
+      'application appref-ms vb sct shb shs sh bash zsh csh ksh command run bin elf apk xapk ipa app dmg pkg ' +
+      'deb rpm iso img vhd vhdx docm dotm xlsm xltm xlam pptm potm ppam ppsm sldm chm hlp library-ms settingcontent-ms'
+    ).split(' ');
+    const ext = (n) => {
+      const p = n
+        .toLowerCase()
+        .trim()
+        .replace(/[.\s]+$/, '')
+        .split('.');
+      return p.length > 1 ? p[p.length - 1] : '';
+    };
+    const mb = (b) => (b / 1048576).toFixed(b < 1048576 ? 2 : 1) + ' MB';
+    const input = form.querySelector('[data-files]');
+    const list = form.querySelector('[data-file-list]');
+    const errorBox = form.querySelector('[data-error]');
+    const progress = form.querySelector('[data-progress]');
+    const bar = form.querySelector('[data-bar]');
+    const submit = form.querySelector('[data-submit]');
+    const submitLabel = form.querySelector('[data-submit-label]');
+    const success = form.parentElement.querySelector('[data-success]');
+    let files = [];
+    const submitText = submitLabel.textContent;
+
+    const showError = (msg) => {
+      errorBox.textContent = msg;
+      errorBox.classList.toggle('hidden', !msg);
+    };
+    const render = () => {
+      list.replaceChildren(
+        ...files.map((file, i) => {
+          const li = document.createElement('li');
+          li.className =
+            'flex items-center justify-between gap-3 rounded-xl border border-white/10 px-4 py-2';
+          const name = document.createElement('span');
+          name.className = 'min-w-0 [overflow-wrap:anywhere] text-text/90';
+          name.textContent = file.name + ' · ' + mb(file.size);
+          const btn = document.createElement('button');
+          btn.type = 'button';
+          btn.className = 'shrink-0 text-xs text-champagne hover:underline';
+          btn.textContent = T.remove;
+          btn.addEventListener('click', () => {
+            files.splice(i, 1);
+            render();
+          });
+          li.append(name, btn);
+          return li;
+        }),
+      );
+    };
+    const check = () => {
+      const bad = files.find((file) => BLOCKED.includes(ext(file.name)));
+      if (bad) return T.errorType + ' ' + bad.name;
+      if (files.reduce((s, file) => s + file.size, 0) > MAX) return T.errorSize;
+      return '';
+    };
+    input.addEventListener('change', () => {
+      files = files.concat([...input.files]);
+      input.value = '';
+      render();
+      showError(check());
+    });
+
+    const put = (url, file, done, total) =>
+      new Promise((resolve, reject) => {
+        const xhr = new XMLHttpRequest();
+        xhr.open('PUT', url);
+        xhr.upload.onprogress = (e) => {
+          bar.style.width = Math.round(((done + e.loaded) / total) * 100) + '%';
+        };
+        xhr.onload = () =>
+          xhr.status >= 200 && xhr.status < 300 ? resolve() : reject(new Error('upload'));
+        xhr.onerror = () => reject(new Error('upload'));
+        xhr.send(file);
+      });
+    const post = (body) =>
+      fetch(form.dataset.endpoint, { method: 'POST', body: JSON.stringify(body) }).then((r) =>
+        r.json(),
+      );
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      showError('');
+      if (!form.reportValidity()) return;
+      const problem = check();
+      if (problem) return showError(problem);
+      if (!form.dataset.endpoint) return showError(T.pending + ' ' + T.email);
+
+      const data = Object.fromEntries(new FormData(form));
+      submit.disabled = true;
+      submitLabel.textContent = T.sending;
+      try {
+        const init = await post({
+          action: 'init',
+          origin: location.origin,
+          lang: form.dataset.lang,
+          page: location.href,
+          name: data.name,
+          company: data.company,
+          email: data.email,
+          phone: data.phone,
+          topic: data.topic,
+          message: data.message,
+          hp: data.website,
+          files: files.map((file) => ({ name: file.name, size: file.size, type: file.type })),
+        });
+        if (!init.ok) {
+          throw new Error(
+            init.error === 'size'
+              ? T.errorSize
+              : init.error === 'type'
+                ? T.errorType + ' ' + init.file
+                : T.error,
+          );
+        }
+        if (files.length) {
+          submitLabel.textContent = T.uploading;
+          progress.classList.remove('hidden');
+          const total = files.reduce((s, file) => s + file.size, 0) || 1;
+          let done = 0;
+          for (let i = 0; i < files.length; i++) {
+            if (!init.uploads[i]) throw new Error(T.error);
+            await put(init.uploads[i], files[i], done, total);
+            done += files[i].size;
+          }
+        }
+        const fin = await post({ action: 'finish', id: init.id });
+        if (!fin.ok) throw new Error(T.error);
+        form.classList.add('hidden');
+        success.classList.remove('hidden');
+        success.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      } catch (err) {
+        showError(
+          err && err.message && err.message !== 'upload' && err.message !== 'Failed to fetch'
+            ? err.message
+            : T.error + ' ' + T.email,
+        );
+        submit.disabled = false;
+        submitLabel.textContent = submitText;
+        progress.classList.add('hidden');
+        bar.style.width = '0';
+      }
+    });
+  })();
+</script>

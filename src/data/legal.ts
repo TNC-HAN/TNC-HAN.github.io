@@ -119,14 +119,22 @@ export const privacy: { title: string; sections: LegalSection[] } = {
       ],
     },
     {
-      heading: '6. Online-Terminbuchung über Calendly',
+      heading: '6. Kontaktformular',
+      paragraphs: [
+        'Wenn Sie uns über das Kontaktformular schreiben, verarbeiten wir Ihre Angaben (Name, E-Mail-Adresse, Ihre Nachricht sowie freiwillig Unternehmen, Telefonnummer, Bereich und Anhänge), um Ihre Anfrage zu bearbeiten. Pflichtfelder sind gekennzeichnet.',
+        'Für die technische Abwicklung nutzen wir Dienste von Google (Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland): Das Formular wird über Google Apps Script verarbeitet, Ihre Nachricht in unserem Gmail-Postfach und Anhänge in unserem Google Drive gespeichert. Dabei können Daten an Google LLC in die USA übermittelt werden. Google LLC ist nach dem EU-US Data Privacy Framework zertifiziert; die Übermittlung erfolgt auf Grundlage des Angemessenheitsbeschlusses der EU-Kommission (Art. 45 DSGVO). Weitere Informationen: https://policies.google.com/privacy',
+        'Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO (Anbahnung eines Vertrags) sowie Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an der Beantwortung von Anfragen). Wir löschen Ihre Angaben und Anhänge, sobald sie für die Bearbeitung nicht mehr erforderlich sind und keine gesetzlichen Aufbewahrungspflichten entgegenstehen. Alternativ erreichen Sie uns jederzeit per Telefon oder E-Mail.',
+      ],
+    },
+    {
+      heading: '7. Online-Terminbuchung über Calendly',
       paragraphs: [
         'Für die Terminbuchung verlinken wir auf den Dienst Calendly (Calendly LLC, 115 E Main St, Ste A1B, Buford, GA 30518, USA). Erst wenn Sie den Link anklicken, wird die Seite von Calendly geöffnet; vorher werden keine Daten an Calendly übertragen. Bei der Buchung verarbeitet Calendly die von Ihnen eingegebenen Daten (z. B. Name, E-Mail-Adresse, Wunschtermin) nach eigenen Bestimmungen, auch in den USA. Alternativ erreichen Sie uns jederzeit per Telefon oder E-Mail.',
         'Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO (Anbahnung eines Vertrags) sowie Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an einer einfachen Terminvereinbarung). Calendly LLC ist nach dem EU-US Data Privacy Framework zertifiziert; die Übermittlung in die USA erfolgt auf Grundlage des Angemessenheitsbeschlusses der EU-Kommission (Art. 45 DSGVO). Weitere Informationen: https://calendly.com/privacy',
       ],
     },
     {
-      heading: '7. Ihre Rechte',
+      heading: '8. Ihre Rechte',
       paragraphs: ['Sie haben im Rahmen der gesetzlichen Vorgaben jederzeit das Recht auf:'],
       list: [
         'Auskunft über Ihre gespeicherten Daten (Art. 15 DSGVO)',
@@ -139,13 +147,13 @@ export const privacy: { title: string; sections: LegalSection[] } = {
       ],
     },
     {
-      heading: '8. Zuständige Aufsichtsbehörde',
+      heading: '9. Zuständige Aufsichtsbehörde',
       paragraphs: [
         'Die Landesbeauftragte für den Datenschutz Niedersachsen, Prinzenstraße 5, 30159 Hannover.',
       ],
     },
     {
-      heading: '9. Stand',
+      heading: '10. Stand',
       paragraphs: ['Diese Datenschutzerklärung hat den Stand November 2026.'],
     },
   ],

@@ -39,7 +39,7 @@ const regionLinks = regionIds.map((id) => href('realEstate', lang, `#${id}`));
   <Showcase lang={lang} />
   <VideoFeature lang={lang} />
   <div class="hairline"></div>
-  <ProcessSteps {...home.process} link={href('contact', lang)} linkLabel={dict.cta.book} />
+  <ProcessSteps lang={lang} {...home.process} />
   <FeatureGrid
     id="why-title"
     {...home.why}
@@ -56,6 +56,6 @@ const regionLinks = regionIds.map((id) => href('realEstate', lang, `#${id}`));
     links={regionLinks}
     linkLabel={dict.cta.details}
   />
-  <FaqList {...home.faq} />
+  <FaqList lang={lang} {...home.faq} />
   <CtaBand lang={lang} />
 </BaseLayout>

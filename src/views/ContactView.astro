@@ -1,6 +1,6 @@
 ---
 /**
- * Kontakt ohne Formular: Telefon, E-Mail, WhatsApp, Terminbuchung (Link in site.ts).
+ * Kontakt: Kontaktformular (mit Anhängen), Telefon, E-Mail, WhatsApp, Terminbuchung (Link in site.ts).
  * Telefon und E-Mail öffnen am Smartphone direkt die passende App, am Laptop ein
  * Auswahlfenster mit den gängigsten Programmen (ContactLauncher).
  */
@@ -9,6 +9,7 @@ import PageHero from '@/components/sections/PageHero.astro';
 import Icon, { type IconName } from '@/components/ui/Icon.astro';
 import WhatsAppIcon3D from '@/components/ui/WhatsAppIcon3D.astro';
 import BookButton from '@/components/ui/BookButton.astro';
+import ContactForm from '@/components/sections/ContactForm.astro';
 import type { Lang } from '@/config/routes';
 import { site, whatsappUrl } from '@/config/site';
 import { t } from '@/i18n';
@@ -77,6 +78,8 @@ const channels: Channel[] = [
 
 <BaseLayout lang={lang} page="contact" {...contact.seo}>
   <PageHero lang={lang} {...contact.hero} current={dict.nav.contact} />
+
+  <ContactForm lang={lang} />
 
   <section class="container-site pb-16" aria-labelledby="channels-title">
     <h2 id="channels-title" class="sr-only">

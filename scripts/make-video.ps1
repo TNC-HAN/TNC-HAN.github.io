@@ -5,12 +5,15 @@
 # Aufruf:  powershell -File scripts/make-video.ps1
 $ErrorActionPreference = 'Stop'
 $root = Split-Path $PSScriptRoot -Parent
-# 16 Motive, davon 5 mit dem Inhaber (KI-Bilder auf Basis eigener Fotos)
+# 20 Motive (alle Geschäftsbereiche), davon 3 mit dem Inhaber (KI-Bilder auf Basis eigener Fotos)
 $photos = 'strategie-meeting', 'villa-pool-modern', 'consulting-uemit-workshop', 'frankfurt-skyline',
-  'coaching-uemit-einzelgespraech', 'offmarket-penthouse-meerblick', 'tr-istanbul-bosporus-nacht', 'coaching-unternehmer',
-  'nordzypern-kyrenia-hafen-berge', 'dd-haus-lupe', 'consulting-uemit-seminar', 'rechenzentrum',
+  'coaching-uemit-einzelgespraech', 'handschlag-nachfolge', 'offmarket-penthouse-meerblick', 'dach-ch-villa-alpen',
+  'tr-istanbul-bosporus-nacht', 'coaching-unternehmer', 'nordzypern-kyrenia-hafen-berge', 'noyanlar-ocean-life',
+  'dd-haus-lupe', 'consulting-uemit-seminar', 'datenanalyse-laptop', 'rechenzentrum',
   'tr-bodrum-sonnenuntergang', 'ki-roboter', 'offmarket-villa-pool-modern', 'mittelmeer-kueste'
-$dur = 4.7; $fade = 1.0; $fps = 25; $w = 1280; $h = 720
+# Gesamtlänge 72 s: Standzeit je Motiv aus Ziellänge berechnet
+$target = 72; $fade = 1.0; $fps = 25; $w = 1280; $h = 720
+$dur = ($target - $fade) / $photos.Count + $fade
 $outDir = Join-Path $root 'public\media'
 New-Item -ItemType Directory -Force $outDir | Out-Null
 
