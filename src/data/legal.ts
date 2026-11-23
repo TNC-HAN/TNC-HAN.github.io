@@ -127,14 +127,23 @@ export const privacy: { title: string; sections: LegalSection[] } = {
       ],
     },
     {
-      heading: '7. Online-Terminbuchung über Calendly',
+      heading: '7. KI-Potenzialcheck (Online-Fragebogen)',
+      paragraphs: [
+        'Mit unserem KI-Potenzialcheck (https://tnc-han.github.io/ki-check/, auch eingebettet auf unseren Seiten) erfassen wir die Ausgangslage Ihres Unternehmens, um eine KI-Potenzialanalyse vorzubereiten und Sie dazu zu kontaktieren. Wir verarbeiten Ihre Antworten, freiwillige Ergänzungen als Text, freiwillige Sprach- und Videoaufnahmen, freiwillig hochgeladene Dateien sowie Ihre Kontaktdaten (Name, Unternehmen, E-Mail-Adresse, freiwillig Telefonnummer und Website). Aus ausgewählten Antworten (z. B. Unternehmensgröße, Budget, Zeitrahmen) bilden wir eine interne Einstufung, um Anfragen zu priorisieren; es findet keine automatisierte Entscheidung mit rechtlicher Wirkung statt.',
+        'Kamera und Mikrofon werden nur genutzt, wenn Sie eine Aufnahme selbst starten und dies in Ihrem Browser erlauben. Bis zum Absenden bleiben Ihre Antworten nur in Ihrem Browser (lokaler Speicher, damit Sie später weitermachen können); Aufnahmen und Dateien werden erst beim Absenden übertragen.',
+        'Für die technische Abwicklung nutzen wir Google Apps Script, Google Drive, Google Tabellen und Gmail (Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland). Dabei können Daten an Google LLC in die USA übermittelt werden; Google LLC ist nach dem EU-US Data Privacy Framework zertifiziert (Art. 45 DSGVO). Weitere Informationen: https://policies.google.com/privacy',
+        'Rechtsgrundlage ist Ihre Einwilligung (Art. 6 Abs. 1 lit. a DSGVO), die Sie vor dem Absenden erteilen, sowie Art. 6 Abs. 1 lit. b DSGVO (Anbahnung eines Vertrags). Sie können Ihre Einwilligung jederzeit per E-Mail mit Wirkung für die Zukunft widerrufen. Wir löschen Ihre Angaben, Aufnahmen und Dateien, sobald sie für die Analyse und die Kontaktaufnahme nicht mehr erforderlich sind, spätestens 24 Monate nach dem letzten Kontakt, sofern keine gesetzlichen Aufbewahrungspflichten entgegenstehen.',
+      ],
+    },
+    {
+      heading: '8. Online-Terminbuchung über Calendly',
       paragraphs: [
         'Für die Terminbuchung verlinken wir auf den Dienst Calendly (Calendly LLC, 115 E Main St, Ste A1B, Buford, GA 30518, USA). Erst wenn Sie den Link anklicken, wird die Seite von Calendly geöffnet; vorher werden keine Daten an Calendly übertragen. Bei der Buchung verarbeitet Calendly die von Ihnen eingegebenen Daten (z. B. Name, E-Mail-Adresse, Wunschtermin) nach eigenen Bestimmungen, auch in den USA. Alternativ erreichen Sie uns jederzeit per Telefon oder E-Mail.',
         'Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO (Anbahnung eines Vertrags) sowie Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an einer einfachen Terminvereinbarung). Calendly LLC ist nach dem EU-US Data Privacy Framework zertifiziert; die Übermittlung in die USA erfolgt auf Grundlage des Angemessenheitsbeschlusses der EU-Kommission (Art. 45 DSGVO). Weitere Informationen: https://calendly.com/privacy',
       ],
     },
     {
-      heading: '8. Ihre Rechte',
+      heading: '9. Ihre Rechte',
       paragraphs: ['Sie haben im Rahmen der gesetzlichen Vorgaben jederzeit das Recht auf:'],
       list: [
         'Auskunft über Ihre gespeicherten Daten (Art. 15 DSGVO)',
@@ -147,13 +156,13 @@ export const privacy: { title: string; sections: LegalSection[] } = {
       ],
     },
     {
-      heading: '9. Zuständige Aufsichtsbehörde',
+      heading: '10. Zuständige Aufsichtsbehörde',
       paragraphs: [
         'Die Landesbeauftragte für den Datenschutz Niedersachsen, Prinzenstraße 5, 30159 Hannover.',
       ],
     },
     {
-      heading: '10. Stand',
+      heading: '11. Stand',
       paragraphs: ['Diese Datenschutzerklärung hat den Stand November 2026.'],
     },
   ],
