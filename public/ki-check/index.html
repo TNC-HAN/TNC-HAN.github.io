@@ -123,6 +123,42 @@ footer.foot{margin-top:22px;text-align:center;color:var(--subtle);font-size:.8re
 footer.foot a{color:var(--muted)}
 .fade{animation:fade .35s ease}
 @keyframes fade{from{opacity:.001;transform:translateY(8px)}to{opacity:1;transform:none}}
+/* ===== Dankeseite im Stil NX.24 Global Command Center (Neon) ===== */
+:root{--n-cyan:#2ee6ff;--n-white:#ffffff;--n-violet:#a66bff;--n-pink:#ff4fd8;--n-lime:#b6ff3b}
+.neon-h{background:linear-gradient(90deg,var(--n-cyan),var(--n-white),var(--n-violet),var(--n-violet),var(--n-pink),var(--n-lime),var(--n-cyan));background-size:300% 100%;
+  -webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 0 10px rgb(166 107 255 / .35));animation:nx-neonfluss 16s linear infinite}
+.neon-eyebrow{color:var(--n-cyan);text-shadow:0 0 10px rgb(46 230 255 / .55)}
+@keyframes nx-neonfluss{to{background-position:300% 0}}
+.steps{list-style:none;display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:22px 0 6px;padding:0}
+.steps li{display:grid;gap:2px;padding:12px 14px;border-radius:14px;border:1px solid color-mix(in srgb,var(--nc) 45%,transparent);
+  background:linear-gradient(180deg,color-mix(in srgb,var(--nc) 10%,transparent),transparent);box-shadow:inset 0 1px 0 rgb(255 255 255 / .06),0 0 18px color-mix(in srgb,var(--nc) 14%,transparent)}
+.steps b{font-size:.75rem;letter-spacing:.14em;color:var(--nc);text-shadow:0 0 8px var(--nc);font-variant-numeric:tabular-nums}
+.steps span{font-weight:600}
+.steps small{color:var(--muted);font-size:.8rem}
+.coupon{position:relative;margin:22px 0 6px;padding:2px;border-radius:20px;overflow:hidden;
+  background:conic-gradient(from var(--ang,0deg),var(--n-cyan),var(--n-violet),var(--n-pink),var(--n-lime),var(--n-cyan));animation:nx-spin 8s linear infinite;
+  box-shadow:0 0 28px rgb(166 107 255 / .35),0 0 60px rgb(46 230 255 / .15)}
+@property --ang{syntax:"<angle>";inherits:false;initial-value:0deg}
+@keyframes nx-spin{to{--ang:360deg}}
+.coupon-in{display:flex;gap:20px;align-items:center;padding:20px 22px;border-radius:18px;
+  background:radial-gradient(400px 160px at 0% 0%,rgb(166 107 255 / .22),transparent 70%),radial-gradient(300px 140px at 100% 100%,rgb(46 230 255 / .16),transparent 70%),var(--ink-900)}
+.coupon-pct{flex:none;font-family:var(--font-display);font-weight:700;font-size:clamp(2.6rem,9vw,3.6rem);line-height:1;color:var(--n-white);
+  text-shadow:0 1px 0 #cfd6ff,0 2px 0 #8f8cff,0 3px 0 #6a55d8,0 6px 14px rgb(0 0 0 / .6),0 0 24px rgb(255 79 216 / .55)}
+.coupon-txt{display:grid;gap:8px;min-width:0}
+.coupon-tag{font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:var(--n-pink);text-shadow:0 0 10px rgb(255 79 216 / .6)}
+.coupon-txt strong{font-size:1.1rem}
+.coupon-row{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.neon-code{color:var(--n-lime);border:1px dashed rgb(182 255 59 / .6);background:rgb(182 255 59 / .06);text-shadow:0 0 10px rgb(182 255 59 / .55);box-shadow:inset 0 0 14px rgb(182 255 59 / .08)}
+.btn-3d{box-shadow:inset 0 1px 0 rgb(255 255 255 / .18),inset 0 -2px 0 rgb(0 0 0 / .35),0 4px 12px rgb(0 0 0 / .35)}
+.btn-3d:hover{transform:translateY(-1px)}
+.btn-3d:active{transform:translateY(1px);box-shadow:inset 0 2px 4px rgb(0 0 0 / .4)}
+.btn-neon{color:#07101a;background:linear-gradient(90deg,var(--n-cyan),var(--n-violet) 55%,var(--n-pink));font-weight:700;
+  box-shadow:inset 0 1px 0 rgb(255 255 255 / .35),inset 0 -2px 0 rgb(0 0 0 / .25),0 0 18px rgb(166 107 255 / .55),0 0 36px rgb(46 230 255 / .25)}
+.btn-neon:hover{filter:brightness(1.08)}
+.btn-neon:focus-visible,.btn-3d:focus-visible{outline:2px solid var(--n-cyan);outline-offset:3px}
+.done-nav{flex-wrap:wrap;gap:12px}
+@media (max-width:560px){.steps{grid-template-columns:1fr}.coupon-in{flex-direction:column;align-items:flex-start}.done-nav,.done-nav .right{width:100%}.done-nav .btn{width:100%}.done-nav{flex-direction:column-reverse}}
+@media (prefers-contrast:more),(forced-colors:active){.neon-h{background:none;color:var(--text);filter:none}.coupon{background:var(--n-violet);animation:none}}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 [hidden]{display:none!important}
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
@@ -593,16 +629,33 @@ async function submit(){
 
 /* ===================== DANKE ===================== */
 function renderDone(){
+  const BOOK = 'https://calendly.com/uemit-t-aka-nexxcon24';
   app.innerHTML = `
-    <span class="eyebrow">Vielen Dank</span>
-    <h1>Ihre Angaben sind bei uns angekommen.</h1>
-    <p class="muted">Wir werten Ihre Antworten aus und melden uns innerhalb von zwei Werktagen mit den ersten Ergebnissen Ihrer KI-Potenzialanalyse${state.contact.callback?' und einem Terminvorschlag für das Erstgespräch':''}.</p>
-    ${state.deep ? `<div class="gate-offer">
-      <strong>Ihr Dankeschön: ${DISCOUNT} Rabatt auf unsere Leistungen</strong>
-      <span class="small muted">Nennen Sie bei Ihrer Beauftragung einfach diesen Code:</span>
-      <div><span class="code" id="code">${esc(DISCOUNT_CODE)}</span> <button class="btn btn-ghost btn-sm" id="copy" type="button">Code kopieren</button></div>
-    </div>` : ''}
-    <div class="nav"><div class="right"><a class="btn btn-primary" href="https://tnc-han.github.io/" target="_top" rel="noopener">Zur Website von NEXXCON-24</a></div></div>`;
+    <div class="done">
+      <span class="eyebrow neon-eyebrow">Vielen Dank</span>
+      <h1 class="neon-h">Ihre Angaben sind bei uns angekommen.</h1>
+      <p class="muted">Wir werten Ihre Antworten aus und melden uns innerhalb von zwei Werktagen mit den ersten Ergebnissen Ihrer KI-Potenzialanalyse${state.contact.callback?' und einem Terminvorschlag für das Erstgespräch':''}.</p>
+      <ol class="steps">
+        <li style="--nc:var(--n-cyan)"><b>01</b><span>Auswertung</span><small>innerhalb von 2 Werktagen</small></li>
+        <li style="--nc:var(--n-violet)"><b>02</b><span>Erstgespräch</span><small>Termin direkt online wählen</small></li>
+        <li style="--nc:var(--n-lime)"><b>03</b><span>Umsetzung</span><small>Ihre ersten Automatisierungen</small></li>
+      </ol>
+      ${state.deep ? `<div class="coupon">
+        <div class="coupon-in">
+          <div class="coupon-pct" aria-hidden="true">${DISCOUNT.replace(' ','')}</div>
+          <div class="coupon-txt">
+            <span class="coupon-tag">Ihr Dankeschön</span>
+            <strong>${DISCOUNT} Rabatt auf unsere Leistungen</strong>
+            <span class="small muted">Nennen Sie bei Ihrer Beauftragung einfach diesen Code:</span>
+            <div class="coupon-row"><span class="code neon-code" id="code">${esc(DISCOUNT_CODE)}</span><button class="btn btn-ghost btn-sm btn-3d" id="copy" type="button">Code kopieren</button></div>
+          </div>
+        </div>
+      </div>` : ''}
+      <div class="nav done-nav">
+        <a class="btn btn-ghost btn-3d" href="https://tnc-han.github.io/" target="_top" rel="noopener">Zur Website von NEXXCON-24</a>
+        <div class="right"><a class="btn btn-neon btn-3d" href="${BOOK}" target="_blank" rel="noopener">Gespräch buchen <span aria-hidden="true">→</span></a></div>
+      </div>
+    </div>`;
   const cp = $('#copy');
   if (cp) cp.onclick = async () => {
     try { await navigator.clipboard.writeText(DISCOUNT_CODE); cp.textContent='Kopiert ✓'; }
