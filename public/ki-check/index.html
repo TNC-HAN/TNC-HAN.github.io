@@ -114,6 +114,10 @@ label.field{display:grid;gap:6px;font-size:.9rem;color:var(--muted)}
 .facts div{padding:12px;border:1px solid var(--line);border-radius:12px;font-size:.88rem;color:var(--muted)}
 .facts b{display:block;color:var(--text);font-size:1.05rem;font-variant-numeric:tabular-nums}
 @media (max-width:560px){.facts{grid-template-columns:1fr}}
+.xls{display:flex;gap:14px;align-items:center;margin:18px 0 4px;padding:14px 16px;border:1px dashed var(--line);border-radius:14px}
+.xls p{margin:0}
+.xls .btn{flex:none}
+@media (max-width:560px){.xls{flex-direction:column;align-items:stretch}}
 .upload-progress{display:grid;gap:8px;margin-top:14px}
 footer.foot{margin-top:22px;text-align:center;color:var(--subtle);font-size:.8rem}
 footer.foot a{color:var(--muted)}
@@ -263,6 +267,10 @@ function renderIntro(){
       <div><b>${DISCOUNT} Rabatt</b>als Dankeschön für die Vertiefung</div>
     </div>
     <p class="small muted">Je Frage wählen Sie aus fünf Antworten. Unter „Sonstiges“ können Sie frei ergänzen, auf Wunsch auch per Sprachnachricht (bis 5 Min.) oder Video (bis 3 Min.). Am Ende können Sie Dokumente hochladen.</p>
+    <div class="xls">
+      <p class="small muted">Falls Ihnen dieser interaktive Online-Fragebogen zu umständlich ist, können Sie auch gerne die Excel-Tabelle herunterladen, sie jederzeit in Ihrem eigenen Tempo ausfüllen und uns zukommen lassen. Einfacher ist es aber definitiv mit dieser Online-Umfrage: Sie geht schnell, spart Zeit und Nerven, und Sie müssen nicht so viel tippen, weil Sie sogar per Audio oder Video antworten können. Viel Spaß beim Ausfüllen! Wir freuen uns darauf, Ihre Antworten akribisch zu analysieren und Sie so bald wie möglich persönlich kennenzulernen.</p>
+      <a class="btn btn-ghost btn-sm" href="KI-Potenzialcheck-NEXXCON-24.xlsx" download>Excel-Tabelle herunterladen</a>
+    </div>
     <div class="nav">
       ${started?'<button class="btn btn-ghost" id="reset" type="button">Neu beginnen</button>':''}
       <div class="right"><button class="btn btn-primary" id="go" type="button">${started?'Weiter, wo ich war':'Check starten'} →</button></div>

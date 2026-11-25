@@ -69,3 +69,10 @@ Auf jeder Seite (auch fremde Baukästen wie WordPress, Wix, Jimdo – als „HTM
 - In der **Datenschutzerklärung** einen Abschnitt „KI-Potenzialcheck“ ergänzen: Zweck (Vorbereitung Potenzialanalyse, Kontaktaufnahme), Rechtsgrundlage Einwilligung (Art. 6 Abs. 1 lit. a DSGVO), Speicherung in Google Workspace/Google Drive (Google Ireland, mögliche Übermittlung in die USA, EU-US Data Privacy Framework), Speicherdauer, Widerruf.
 - Mit Google den **Auftragsverarbeitungsvertrag** abschließen (bei Google Workspace in der Admin-Konsole; bei einem privaten Gmail-Konto gibt es keinen AVV → für Kundendaten besser ein Google-Workspace-Konto nutzen).
 - Das Formular enthält eine Pflicht-Einwilligung mit Link zur Datenschutzerklärung. Rechtlich prüfen lassen.
+
+## 7. Excel-Version zum Herunterladen
+
+Auf der Startseite des Checks gibt es die Datei `public/ki-check/KI-Potenzialcheck-NEXXCON-24.xlsx` (gleiche 25 + 20 Fragen, Kontaktblatt, Fortschrittsanzeige). Ausgefüllte Dateien kommen per E-Mail an nexxcon24@gmail.com, nicht in die Lead-Tabelle.
+
+Ändern sich die Fragen im Online-Formular, die Excel-Datei neu erzeugen: Zeilen `const PART1 = [` bis zum Ende von `PART2` aus `index.html` in eine Datei `q.js` kopieren, darunter `require("fs").writeFileSync(process.argv[2], JSON.stringify({PART1,PART2}));` ergänzen, dann
+`node q.js q.json` und `python scripts/ki-check/make_xlsx.py q.json public/ki-check/KI-Potenzialcheck-NEXXCON-24.xlsx`.
