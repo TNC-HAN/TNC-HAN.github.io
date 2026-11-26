@@ -1,6 +1,8 @@
 ---
 /** Kontakt-Aufruf am Seitenende: Erstgespräch, Telefon, WhatsApp. */
 import Icon from '@/components/ui/Icon.astro';
+import CheckButton from '@/components/ui/CheckButton.astro';
+import BookButton from '@/components/ui/BookButton.astro';
 import { href, type Lang } from '@/config/routes';
 import { site, whatsappUrl } from '@/config/site';
 import { t } from '@/i18n';
@@ -9,8 +11,10 @@ interface Props {
   lang: Lang;
   title?: string;
   text?: string;
+  /** Zusätzlich „KI-Potenzialanalyse starten“ und „Erstgespräch buchen“ als eigene Zeile */
+  check?: boolean;
 }
-const { lang, title, text } = Astro.props;
+const { lang, title, text, check = false } = Astro.props;
 const dict = t(lang);
 const cta = dict.home.cta;
 ---
@@ -30,7 +34,13 @@ const cta = dict.home.cta;
         {title ?? cta.title}
       </h2>
       <p class="mx-auto mt-5 max-w-2xl text-lg leading-relaxed text-muted">{text ?? cta.text}</p>
-      <div class="mt-10 flex flex-col justify-center gap-3 sm:flex-row">
+      {check && (
+        <div class="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row sm:items-start">
+          <CheckButton />
+          <BookButton lang={lang} />
+        </div>
+      )}
+      <div class:list={[check ? 'mt-4' : 'mt-10', 'flex flex-col justify-center gap-3 sm:flex-row']}>
         <a href={href('contact', lang)} class="btn-gold">
           {dict.home.hero.primary}
           <Icon name="arrow" class="size-4" />

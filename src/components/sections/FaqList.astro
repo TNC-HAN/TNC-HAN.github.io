@@ -2,6 +2,7 @@
 /** Aufklappbare FAQ (ohne JavaScript). Strukturierte Daten erzeugt die Seite (faqJsonLd). */
 import SectionHeading from '@/components/ui/SectionHeading.astro';
 import BookButton from '@/components/ui/BookButton.astro';
+import CheckButton from '@/components/ui/CheckButton.astro';
 import type { Lang } from '@/config/routes';
 import { t } from '@/i18n';
 import type { Faq } from '@/i18n/types';
@@ -11,8 +12,10 @@ interface Props {
   eyebrow: string;
   title: string;
   items: Faq[];
+  /** Zusätzlich „KI-Potenzialanalyse starten“ unter jeder Antwort */
+  check?: boolean;
 }
-const { lang, eyebrow, title, items } = Astro.props;
+const { lang, eyebrow, title, items, check = false } = Astro.props;
 const dict = t(lang);
 ---
 
@@ -34,7 +37,10 @@ const dict = t(lang);
           <div class="px-6 pb-6 sm:px-7">
             <p class="leading-relaxed text-muted">{item.a}</p>
             {/* CTA unter jeder Antwort – öffnet Calendly */}
-            <BookButton lang={lang} label={dict.bookNow} small class="mt-5" />
+            <div class="mt-5 flex flex-wrap items-center gap-3">
+              {check && <CheckButton small />}
+              <BookButton lang={lang} label={dict.bookNow} small />
+            </div>
           </div>
         </details>
       ))}

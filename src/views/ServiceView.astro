@@ -16,6 +16,7 @@ import AreaCards from '@/components/sections/AreaCards.astro';
 import CoachingConsulting from '@/components/sections/CoachingConsulting.astro';
 import SectionHeading from '@/components/ui/SectionHeading.astro';
 import BookButton from '@/components/ui/BookButton.astro';
+import CheckButton from '@/components/ui/CheckButton.astro';
 import Icon from '@/components/ui/Icon.astro';
 import { offeringIds, regionIds, serviceMedia } from '@/config/content';
 import { photos } from '@/config/media';
@@ -60,6 +61,8 @@ const jsonLd = [
     { name: s.label, url },
   ]),
 ];
+// KI-Bereich (nur Deutsch, der Fragebogen ist deutsch): zusätzlich „KI-Potenzialanalyse starten“
+const showCheck = service === 'ai' && lang === 'de';
 const offeringIcons = {
   consulting: ['compass', 'globe', 'layers', 'key', 'shield', 'arrow'],
   realEstate: ['key', 'layers', 'shield', 'building', 'globe', 'compass'],
@@ -85,7 +88,10 @@ const offeringIcons = {
       <div class="absolute inset-0 bg-gradient-to-t from-[#04030c]/85 via-[#04030c]/20 to-transparent"></div>
       <div class="absolute inset-x-0 bottom-0 flex flex-wrap items-end justify-between gap-4 p-6 sm:p-10">
         <p class="max-w-xl font-display text-2xl leading-snug sm:text-3xl">{s.cta.title}</p>
-        <BookButton lang={lang} note />
+        <div class="flex flex-wrap items-start gap-3">
+          {showCheck && <CheckButton />}
+          <BookButton lang={lang} note />
+        </div>
       </div>
     </div>
   </section>
@@ -157,6 +163,7 @@ const offeringIcons = {
             </ul>
             {d.after && <p class="mt-6 leading-relaxed text-muted">{d.after}</p>}
             <div class="mt-8 flex flex-wrap gap-3">
+              {showCheck && <CheckButton />}
               <BookButton lang={lang} />
               <a href={href('contact', lang)} class="btn-ghost">
                 {dict.nav.contact}
@@ -215,13 +222,16 @@ const offeringIcons = {
               </li>
             ))}
           </ul>
-          <BookButton lang={lang} class="mt-8" note />
+          <div class="mt-8 flex flex-wrap items-start gap-3">
+            {showCheck && <CheckButton />}
+            <BookButton lang={lang} note />
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <FaqList lang={lang} eyebrow="FAQ" title={dict.common.faqTitle} items={s.faq} />
+  <FaqList lang={lang} eyebrow="FAQ" title={dict.common.faqTitle} items={s.faq} check={showCheck} />
 
   {s.risk && (
     <section class="container-site pb-6" aria-labelledby="risk-title">
@@ -237,7 +247,7 @@ const offeringIcons = {
     </section>
   )}
 
-  <CtaBand lang={lang} title={s.cta.title} text={s.cta.text} />
+  <CtaBand lang={lang} title={s.cta.title} text={s.cta.text} check={showCheck} />
   <AreaCards lang={lang} exclude={service} heading={false} />
 </BaseLayout>
 

@@ -1,0 +1,181 @@
+---
+/**
+ * Eye-Catcher-CTA „KI-Potenzialanalyse starten“ → Online-Fragebogen /ki-check/.
+ * 3D-Knopf mit umlaufenden Neon-LED-Lichtern (Stil NX.24 Global Command Center).
+ * Ruhig bei „Bewegung reduzieren“, einfarbig bei Hochkontrast.
+ */
+import Icon from '@/components/ui/Icon.astro';
+
+interface Props {
+  /** Kompakte Größe, z. B. unter FAQ-Antworten */
+  small?: boolean;
+  /** Ganze Breite (z. B. im mobilen Menü) */
+  block?: boolean;
+  label?: string;
+  class?: string;
+}
+const { small = false, block = false, label = 'KI-Potenzialanalyse starten', class: className } =
+  Astro.props;
+const url = `${import.meta.env.BASE_URL.replace(/\/$/, '')}/ki-check/`;
+---
+
+<a
+  href={url}
+  class:list={['nx-check', small && 'nx-check--sm', block && 'nx-check--block', className]}
+  data-cta="ki-check"
+>
+  <span class="nx-check__leds" aria-hidden="true"></span>
+  <span class="nx-check__face">
+    <span class="nx-check__icon"><Icon name="spark" class="size-full" /></span>
+    <span class="nx-check__label">{label}</span>
+    <span class="nx-check__arrow" aria-hidden="true">→</span>
+  </span>
+</a>
+
+<style>
+  @property --nx-ang {
+    syntax: '<angle>';
+    inherits: false;
+    initial-value: 0deg;
+  }
+  .nx-check {
+    --c1: #2ee6ff;
+    --c2: #a66bff;
+    --c3: #ff4fd8;
+    --c4: #b6ff3b;
+    position: relative;
+    isolation: isolate;
+    display: inline-flex;
+    min-height: 3.125rem;
+    padding: 3px;
+    border-radius: 9999px;
+    text-decoration: none;
+    transform: translateY(0);
+    transition: transform 0.2s ease;
+    filter: drop-shadow(0 0 10px rgb(166 107 255 / 0.75)) drop-shadow(0 0 24px rgb(46 230 255 / 0.4));
+    animation: nx-check-pulse 2.8s ease-in-out infinite;
+  }
+  .nx-check--block {
+    display: flex;
+    width: 100%;
+  }
+  /* Umlaufende Neon-LED-Kette: Farbring + heller Lichtpunkt + LED-Raster */
+  .nx-check__leds {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    border-radius: inherit;
+    background:
+      conic-gradient(from var(--nx-ang), transparent 0 62%, rgb(255 255 255 / 0.6) 74%, #fff 80%, transparent 86%),
+      conic-gradient(from var(--nx-ang), var(--c1), var(--c2), var(--c3), var(--c4), var(--c1));
+    animation: nx-check-spin 3.2s linear infinite;
+  }
+  .nx-check__leds::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: repeating-conic-gradient(from var(--nx-ang), rgb(0 0 0 / 0.45) 0 3deg, transparent 3deg 10deg);
+    animation: nx-check-spin 3.2s linear infinite reverse;
+    mix-blend-mode: multiply;
+  }
+  .nx-check__face {
+    display: inline-flex;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+    gap: 0.55rem;
+    padding: 0 1.5rem;
+    border-radius: inherit;
+    font-size: 0.875rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    white-space: nowrap;
+    color: #fff;
+    background:
+      radial-gradient(120% 140% at 50% -20%, rgb(166 107 255 / 0.45), transparent 60%),
+      linear-gradient(180deg, #1a1540, #0a0a1f 60%, #05050f);
+    /* 3D: Lichtkante oben, Schattenkante unten, Tiefe */
+    box-shadow:
+      inset 0 1px 0 rgb(255 255 255 / 0.35),
+      inset 0 -3px 0 rgb(0 0 0 / 0.55),
+      inset 0 0 14px rgb(46 230 255 / 0.18),
+      0 6px 0 -1px #1b0f3a,
+      0 10px 22px rgb(0 0 0 / 0.55);
+    text-shadow: 0 0 10px rgb(46 230 255 / 0.8), 0 1px 0 rgb(0 0 0 / 0.6);
+  }
+  .nx-check__icon {
+    display: inline-flex;
+    flex: none;
+    width: 1.05rem;
+    height: 1.05rem;
+    color: var(--c4);
+    filter: drop-shadow(0 0 6px var(--c4));
+  }
+  .nx-check__arrow {
+    color: var(--c1);
+    transition: transform 0.2s ease;
+  }
+  .nx-check:hover {
+    transform: translateY(-2px);
+  }
+  .nx-check:hover .nx-check__arrow {
+    transform: translateX(3px);
+  }
+  .nx-check:active {
+    transform: translateY(2px);
+  }
+  .nx-check:active .nx-check__face {
+    box-shadow:
+      inset 0 3px 6px rgb(0 0 0 / 0.6),
+      0 2px 0 -1px #1b0f3a;
+  }
+  .nx-check:focus-visible {
+    outline: 2px solid var(--c1);
+    outline-offset: 4px;
+  }
+  .nx-check--sm {
+    min-height: 2.5rem;
+  }
+  .nx-check--sm .nx-check__face {
+    padding: 0 1.1rem;
+    font-size: 0.8125rem;
+  }
+  @media (max-width: 340px) {
+    .nx-check__face {
+      padding: 0 1rem;
+      white-space: normal;
+      text-align: center;
+    }
+  }
+  @keyframes nx-check-spin {
+    to {
+      --nx-ang: 360deg;
+    }
+  }
+  @keyframes nx-check-pulse {
+    50% {
+      filter: drop-shadow(0 0 16px rgb(255 79 216 / 0.85)) drop-shadow(0 0 36px rgb(46 230 255 / 0.5));
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .nx-check,
+    .nx-check__leds,
+    .nx-check__leds::after {
+      animation: none;
+    }
+  }
+  @media (prefers-contrast: more), (forced-colors: active) {
+    .nx-check {
+      filter: none;
+      animation: none;
+    }
+    .nx-check__leds {
+      background: var(--c2);
+      animation: none;
+    }
+    .nx-check__leds::after {
+      display: none;
+    }
+  }
+</style>

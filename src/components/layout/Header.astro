@@ -7,6 +7,7 @@ import { site } from '@/config/site';
 import logo from '@/assets/brand/nexxcon-logo.png';
 import BrandLogo3D from '@/components/ui/BrandLogo3D.astro';
 import Icon from '@/components/ui/Icon.astro';
+import CheckButton from '@/components/ui/CheckButton.astro';
 import LanguageSwitcher from './LanguageSwitcher.astro';
 import { href, serviceKeys, type Lang, type PageKey } from '@/config/routes';
 import { t } from '@/i18n';
@@ -89,6 +90,7 @@ const bookingAttrs = site.contact.bookingUrl ? { target: '_blank', rel: 'noopene
               </li>
             ))}
           </ul>
+          {page === 'ai' && lang === 'de' && <CheckButton block class="mt-2" />}
           <a href={bookingUrl} class="btn-gold mt-2 w-full" {...bookingAttrs}>
             {dict.nav.cta}
           </a>
