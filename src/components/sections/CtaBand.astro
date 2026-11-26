@@ -36,7 +36,7 @@ const cta = dict.home.cta;
       <p class="mx-auto mt-5 max-w-2xl text-lg leading-relaxed text-muted">{text ?? cta.text}</p>
       {check && (
         <div class="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row sm:items-start">
-          <CheckButton />
+          <CheckButton lang={lang} />
           <BookButton lang={lang} />
         </div>
       )}

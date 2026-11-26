@@ -5,8 +5,10 @@
  * Ruhig bei „Bewegung reduzieren“, einfarbig bei Hochkontrast.
  */
 import Icon from '@/components/ui/Icon.astro';
+import type { Lang } from '@/config/routes';
 
 interface Props {
+  lang?: Lang;
   /** Kompakte Größe, z. B. unter FAQ-Antworten */
   small?: boolean;
   /** Ganze Breite (z. B. im mobilen Menü) */
@@ -14,9 +16,13 @@ interface Props {
   label?: string;
   class?: string;
 }
-const { small = false, block = false, label = 'KI-Potenzialanalyse starten', class: className } =
-  Astro.props;
-const url = `${import.meta.env.BASE_URL.replace(/\/$/, '')}/ki-check/`;
+const LABELS: Record<Lang, string> = {
+  de: 'KI-Potenzialanalyse starten',
+  en: 'Start AI potential analysis',
+  tr: 'Yapay zekâ potansiyel analizini başlat',
+};
+const { lang = 'de', small = false, block = false, label, class: className } = Astro.props;
+const url = `${import.meta.env.BASE_URL.replace(/\/$/, '')}/ki-check/${lang === 'de' ? '' : `${lang}/`}`;
 ---
 
 <a
@@ -27,7 +33,7 @@ const url = `${import.meta.env.BASE_URL.replace(/\/$/, '')}/ki-check/`;
   <span class="nx-check__leds" aria-hidden="true"></span>
   <span class="nx-check__face">
     <span class="nx-check__icon"><Icon name="spark" class="size-full" /></span>
-    <span class="nx-check__label">{label}</span>
+    <span class="nx-check__label">{label ?? LABELS[lang]}</span>
     <span class="nx-check__arrow" aria-hidden="true">→</span>
   </span>
 </a>
@@ -53,7 +59,7 @@ const url = `${import.meta.env.BASE_URL.replace(/\/$/, '')}/ki-check/`;
     transform: translateY(0);
     transition: transform 0.2s ease;
     filter: drop-shadow(0 0 10px rgb(166 107 255 / 0.75)) drop-shadow(0 0 24px rgb(46 230 255 / 0.4));
-    animation: nx-check-pulse 2.8s ease-in-out infinite;
+    animation: nx-check-pulse 6s ease-in-out infinite;
   }
   .nx-check--block {
     display: flex;
@@ -68,7 +74,7 @@ const url = `${import.meta.env.BASE_URL.replace(/\/$/, '')}/ki-check/`;
     background:
       conic-gradient(from var(--nx-ang), transparent 0 62%, rgb(255 255 255 / 0.6) 74%, #fff 80%, transparent 86%),
       conic-gradient(from var(--nx-ang), var(--c1), var(--c2), var(--c3), var(--c4), var(--c1));
-    animation: nx-check-spin 3.2s linear infinite;
+    animation: nx-check-spin 12s linear infinite;
   }
   .nx-check__leds::after {
     content: '';
@@ -76,7 +82,7 @@ const url = `${import.meta.env.BASE_URL.replace(/\/$/, '')}/ki-check/`;
     inset: 0;
     border-radius: inherit;
     background: repeating-conic-gradient(from var(--nx-ang), rgb(0 0 0 / 0.45) 0 3deg, transparent 3deg 10deg);
-    animation: nx-check-spin 3.2s linear infinite reverse;
+    animation: nx-check-spin 18s linear infinite reverse;
     mix-blend-mode: multiply;
   }
   .nx-check__face {

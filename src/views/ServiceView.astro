@@ -17,6 +17,8 @@ import CoachingConsulting from '@/components/sections/CoachingConsulting.astro';
 import SectionHeading from '@/components/ui/SectionHeading.astro';
 import BookButton from '@/components/ui/BookButton.astro';
 import CheckButton from '@/components/ui/CheckButton.astro';
+import AiVisual from '@/components/ui/AiVisual.astro';
+import { aiExtras } from '@/data/ai-extras';
 import Icon from '@/components/ui/Icon.astro';
 import { offeringIds, regionIds, serviceMedia } from '@/config/content';
 import { photos } from '@/config/media';
@@ -61,8 +63,11 @@ const jsonLd = [
     { name: s.label, url },
   ]),
 ];
-// KI-Bereich (nur Deutsch, der Fragebogen ist deutsch): zusätzlich „KI-Potenzialanalyse starten“
-const showCheck = service === 'ai' && lang === 'de';
+// KI-Bereich: zusätzlich „KI-Potenzialanalyse starten“ (Fragebogen in de/en/tr)
+const showCheck = service === 'ai';
+// KI-Seite: Leistungs-Kacheln öffnen ihr Detail direkt darunter (statt Sprung), mit animierter Grafik
+const isAi = service === 'ai';
+const ax = aiExtras[lang];
 const offeringIcons = {
   consulting: ['compass', 'globe', 'layers', 'key', 'shield', 'arrow'],
   realEstate: ['key', 'layers', 'shield', 'building', 'globe', 'compass'],
@@ -89,7 +94,7 @@ const offeringIcons = {
       <div class="absolute inset-x-0 bottom-0 flex flex-wrap items-end justify-between gap-4 p-6 sm:p-10">
         <p class="max-w-xl font-display text-2xl leading-snug sm:text-3xl">{s.cta.title}</p>
         <div class="flex flex-wrap items-start gap-3">
-          {showCheck && <CheckButton />}
+          {showCheck && <CheckButton lang={lang} />}
           <BookButton lang={lang} note />
         </div>
       </div>
@@ -103,27 +108,40 @@ const offeringIcons = {
     {...s.offerings}
     icons={[...offeringIcons[service]]}
     links={ids.map((id) => `#${id}`)}
-    linkLabel={dict.cta.details}
+    linkLabel={isAi ? ax.showDetails : dict.cta.details}
   />
 
   <!-- Unterbereiche: je Leistung ein Detailabschnitt -->
-  <section class="container-site pb-12" aria-labelledby="details-title">
-    <SectionHeading id="details-title" eyebrow={dict.details.eyebrow} title={dict.details.title} />
-    <div class="mt-14 space-y-8">
+  <section
+    class:list={['container-site pb-12', isAi && '-mt-16']}
+    aria-labelledby={isAi ? 'offerings-title' : 'details-title'}
+    data-ai-panels={isAi ? '' : undefined}
+    data-show={ax.showDetails}
+    data-hide={ax.hideDetails}
+  >
+    {isAi ? (
+      <p class="ai-hint text-center text-sm text-subtle" hidden>
+        <Icon name="arrow" class="mr-1 inline size-4 rotate-90 text-champagne" />
+        {ax.tilesHint}
+      </p>
+    ) : (
+      <SectionHeading id="details-title" eyebrow={dict.details.eyebrow} title={dict.details.title} />
+    )}
+    <div class:list={[isAi ? 'mt-6 space-y-8' : 'mt-14 space-y-8']}>
       {details.map((d, i) => (
         <article
           id={d.id}
           class:list={[
             'reveal glass scroll-mt-28 overflow-hidden',
-            d.photo ? 'grid items-stretch md:grid-cols-2' : 'p-8 sm:p-10',
+            d.photo || isAi ? 'grid items-stretch md:grid-cols-2' : 'p-8 sm:p-10',
           ]}
         >
-          {d.photo && (
+          {(d.photo || isAi) && (
             <div
-              class:list={['relative min-h-64', i % 2 === 1 && 'md:order-2']}
+              class:list={['relative min-h-64', i % 2 === 1 && 'md:order-2', !d.photo && 'ai-visual-bg']}
               data-detail-gallery={d.gallery ? '' : undefined}
             >
-              {(d.gallery ?? [d.photo]).map((key, g) => (
+              {d.photo && (d.gallery ?? [d.photo]).map((key, g) => (
                 <Image
                   src={photos[key]}
                   alt={dict.photoAlt[key]}
@@ -137,9 +155,14 @@ const offeringIcons = {
                   loading="lazy"
                 />
               ))}
+              {isAi && (
+                <div class="absolute inset-0 flex items-center justify-center bg-gradient-to-t from-[#04030c]/95 via-[#04030c]/80 to-[#04030c]/65 p-6 backdrop-blur-[3px]">
+                  <AiVisual kind={i} lang={lang} class="drop-shadow-[0_0_24px_rgb(46_230_255/0.25)]" />
+                </div>
+              )}
             </div>
           )}
-          <div class:list={[d.photo && 'p-8 sm:p-10']}>
+          <div class:list={[(d.photo || isAi) && 'p-8 sm:p-10']}>
             <p class="eyebrow">
               {String(i + 1).padStart(2, '0')} · {s.label}
             </p>
@@ -163,7 +186,7 @@ const offeringIcons = {
             </ul>
             {d.after && <p class="mt-6 leading-relaxed text-muted">{d.after}</p>}
             <div class="mt-8 flex flex-wrap gap-3">
-              {showCheck && <CheckButton />}
+              {showCheck && <CheckButton lang={lang} />}
               <BookButton lang={lang} />
               <a href={href('contact', lang)} class="btn-ghost">
                 {dict.nav.contact}
@@ -198,14 +221,36 @@ const offeringIcons = {
     <div class="grid gap-6 lg:grid-cols-2">
       <div class="reveal glass p-8 sm:p-10">
         <SectionHeading eyebrow={s.audience.eyebrow} title={s.audience.title} />
-        <ul class="mt-8 space-y-4">
-          {s.audience.items.map((item) => (
-            <li class="flex gap-3 leading-relaxed text-text/90">
-              <Icon name="check" class="mt-0.5 size-5 shrink-0 text-gold" />
-              {item}
-            </li>
-          ))}
-        </ul>
+        {isAi ? (
+          <div class="mt-8 space-y-3">
+            {s.audience.items.map((item, i) => (
+              <details class="ai-acc group" open={i === 0}>
+                <summary>
+                  <span class="ai-acc-ic" style={`--nc:${['#2ee6ff', '#a66bff', '#ff4fd8', '#b6ff3b'][i % 4]}`}>
+                    <Icon name={(['layers', 'chat', 'building', 'compass'] as const)[i % 4]} class="size-4" />
+                  </span>
+                  <span class="flex-1">{item}</span>
+                  <span class="ai-acc-plus" aria-hidden="true"></span>
+                </summary>
+                <p>{ax.audience[i]}</p>
+              </details>
+            ))}
+          </div>
+        ) : (
+          <ul class="mt-8 space-y-4">
+            {s.audience.items.map((item) => (
+              <li class="flex gap-3 leading-relaxed text-text/90">
+                <Icon name="check" class="mt-0.5 size-5 shrink-0 text-gold" />
+                {item}
+              </li>
+            ))}
+          </ul>
+        )}
+        {showCheck && (
+          <div class="mt-8">
+            <CheckButton lang={lang} />
+          </div>
+        )}
       </div>
       <div class="reveal glass relative overflow-hidden p-8 sm:p-10">
         <div
@@ -215,15 +260,31 @@ const offeringIcons = {
         <div class="relative">
           <SectionHeading eyebrow={s.approach.eyebrow} title={s.approach.title} />
           <p class="mt-6 text-lg leading-relaxed text-muted">{s.approach.text}</p>
-          <ul class="mt-8 flex flex-wrap gap-2.5">
-            {s.approach.points.map((p) => (
-              <li class="rounded-full border border-gold/30 bg-gold/10 px-4 py-2 text-sm text-champagne">
-                {p}
-              </li>
-            ))}
-          </ul>
+          {isAi ? (
+            <div class="mt-8 space-y-3">
+              {s.approach.points.map((p, i) => (
+                <details class="ai-acc group" open={i === 0}>
+                  <summary>
+                    <span class="ai-acc-ic ai-acc-num" style={`--nc:${['#2ee6ff', '#a66bff', '#b6ff3b'][i % 3]}`}>
+                      {String(i + 1).padStart(2, '0')}
+                    </span>
+                    <span class="flex-1">{p}</span>
+                    <span class="ai-acc-plus" aria-hidden="true"></span>
+                  </summary>
+                  <p>{ax.approach[i]}</p>
+                </details>
+              ))}
+            </div>
+          ) : (
+            <ul class="mt-8 flex flex-wrap gap-2.5">
+              {s.approach.points.map((p) => (
+                <li class="rounded-full border border-gold/30 bg-gold/10 px-4 py-2 text-sm text-champagne">
+                  {p}
+                </li>
+              ))}
+            </ul>
+          )}
           <div class="mt-8 flex flex-wrap items-start gap-3">
-            {showCheck && <CheckButton />}
             <BookButton lang={lang} note />
           </div>
         </div>
@@ -248,10 +309,103 @@ const offeringIcons = {
   )}
 
   <CtaBand lang={lang} title={s.cta.title} text={s.cta.text} check={showCheck} />
-  <AreaCards lang={lang} exclude={service} heading={false} />
+  {!isAi && <AreaCards lang={lang} exclude={service} heading={false} />}
 </BaseLayout>
 
 <style>
+  /* KI-Seite: aufklappbare Erklärungen (Für wen / Ansatz) */
+  .ai-acc {
+    border: 1px solid rgb(255 255 255 / 0.09);
+    border-radius: 1rem;
+    background: rgb(255 255 255 / 0.02);
+    transition: border-color 0.2s, background 0.2s;
+  }
+  .ai-acc[open] {
+    border-color: rgb(201 164 92 / 0.45);
+    background: rgb(201 164 92 / 0.06);
+  }
+  .ai-acc summary {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    padding: 0.9rem 1rem;
+    cursor: pointer;
+    list-style: none;
+    line-height: 1.45;
+  }
+  .ai-acc summary::-webkit-details-marker {
+    display: none;
+  }
+  .ai-acc summary:focus-visible {
+    outline: 2px solid #e6d3a8;
+    outline-offset: 2px;
+    border-radius: 1rem;
+  }
+  .ai-acc p {
+    margin: 0;
+    padding: 0 1rem 1rem 3.6rem;
+    color: var(--color-muted, #a3adbd);
+    line-height: 1.6;
+    animation: ai-acc-in 0.35s ease;
+  }
+  .ai-acc-ic {
+    display: inline-flex;
+    flex: none;
+    align-items: center;
+    justify-content: center;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 9999px;
+    color: var(--nc);
+    border: 1px solid color-mix(in srgb, var(--nc) 55%, transparent);
+    background: color-mix(in srgb, var(--nc) 12%, transparent);
+    box-shadow: 0 0 14px color-mix(in srgb, var(--nc) 30%, transparent);
+  }
+  .ai-acc-num {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+  }
+  .ai-acc-plus {
+    position: relative;
+    flex: none;
+    width: 0.9rem;
+    height: 0.9rem;
+  }
+  .ai-acc-plus::before,
+  .ai-acc-plus::after {
+    content: '';
+    position: absolute;
+    inset: 50% 0 auto;
+    height: 1px;
+    background: #e6d3a8;
+    transition: transform 0.25s;
+  }
+  .ai-acc-plus::after {
+    transform: rotate(90deg);
+  }
+  .ai-acc[open] .ai-acc-plus::after {
+    transform: rotate(0deg);
+  }
+  @keyframes ai-acc-in {
+    from {
+      opacity: 0;
+      transform: translateY(-4px);
+    }
+  }
+  /* KI-Seite: aktive Kachel */
+  :global([data-ai-active]) {
+    border-color: rgb(46 230 255 / 0.6) !important;
+    box-shadow:
+      0 0 0 1px rgb(46 230 255 / 0.35),
+      0 0 28px rgb(166 107 255 / 0.35) !important;
+  }
+  .ai-visual-bg {
+    background:
+      radial-gradient(60% 70% at 30% 20%, rgb(166 107 255 / 0.28), transparent 70%),
+      radial-gradient(50% 60% at 80% 90%, rgb(46 230 255 / 0.2), transparent 70%),
+      #070a12;
+  }
   .detail-gallery-img {
     opacity: 0;
     transition: opacity 1.2s ease;
@@ -267,6 +421,50 @@ const offeringIcons = {
 </style>
 
 <script>
+  // KI-Seite: Kachel-Klick öffnet das passende Detail direkt unter dem Raster (ohne JS: alle sichtbar)
+  const panels = document.querySelector<HTMLElement>('[data-ai-panels]');
+  if (panels) {
+    const arts = [...panels.querySelectorAll<HTMLElement>('article[id]')];
+    const tiles = [...document.querySelectorAll<HTMLAnchorElement>('section[aria-labelledby="offerings-title"] a[href^="#"]')];
+    const hint = panels.querySelector<HTMLElement>('.ai-hint');
+    const show = panels.dataset.show ?? '';
+    const hide = panels.dataset.hide ?? '';
+    const label = (a: HTMLAnchorElement, open: boolean) => {
+      const span = a.querySelector('span.mt-auto');
+      const txt = span?.firstChild;
+      if (txt && txt.nodeType === Node.TEXT_NODE) txt.textContent = (open ? hide : show) + ' ';
+      a.setAttribute('aria-expanded', String(open));
+    };
+    const open = (id: string | null, scroll: boolean) => {
+      arts.forEach((art) => {
+        const on = art.id === id;
+        art.hidden = !on;
+        if (on) art.classList.add('is-visible');
+      });
+      tiles.forEach((a) => {
+        const on = a.getAttribute('href') === `#${id}`;
+        if (on) a.setAttribute('data-ai-active', '');
+        else a.removeAttribute('data-ai-active');
+        label(a, on);
+      });
+      if (hint) hint.hidden = Boolean(id);
+      const target = arts.find((art) => art.id === id);
+      if (scroll && target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    };
+    tiles.forEach((a) => {
+      const id = a.getAttribute('href')!.slice(1);
+      a.setAttribute('aria-controls', id);
+      a.addEventListener('click', (e) => {
+        e.preventDefault();
+        const isOpen = a.hasAttribute('data-ai-active');
+        open(isOpen ? null : id, !isOpen);
+        history.replaceState(null, '', isOpen ? location.pathname : `#${id}`);
+      });
+    });
+    const fromHash = location.hash.slice(1);
+    open(arts.some((art) => art.id === fromHash) ? fromHash : null, Boolean(fromHash));
+  }
+
   // Bildwechsel in Unterbereichen mit mehreren Fotos (z. B. Off-Market)
   const STEP = 5500;
   const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;

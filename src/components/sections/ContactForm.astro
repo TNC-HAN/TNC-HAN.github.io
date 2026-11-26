@@ -319,3 +319,13 @@ const labelCls = 'block text-sm font-medium text-text/90';
     });
   })();
 </script>
+
+<script is:inline>
+  // Thema aus dem Link vorauswählen (z. B. Fußzeile: ?thema=affiliate)
+  (function () {
+    const key = new URLSearchParams(location.search).get('thema');
+    const index = { affiliate: 4, lizenz: 5, investor: 6 }[key];
+    const select = document.querySelector('select[name="topic"]');
+    if (select && index !== undefined && select.options[index]) select.selectedIndex = index;
+  })();
+</script>

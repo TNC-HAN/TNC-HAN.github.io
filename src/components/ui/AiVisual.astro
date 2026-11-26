@@ -1,0 +1,195 @@
+---
+/**
+ * Animierte Erklärgrafik je KI-Leistung (Index wie services.ai.offerings.items):
+ * 0 Potenzialanalyse (Radar + priorisierte Balken), 1 Workflow (Datenfluss zwischen Systemen),
+ * 2 KI-Assistent (Chat), 3 Daten (Dashboard), 4 Web & Apps (Portal baut sich auf), 5 Schulung (Team lernt).
+ * Rein dekorativ (aria-hidden), still bei „Bewegung reduzieren“.
+ */
+import type { Lang } from '@/config/routes';
+
+interface Props {
+  kind: number;
+  lang?: Lang;
+  class?: string;
+}
+const { kind, lang = 'de', class: className } = Astro.props;
+const T = {
+  de: { prio: 'PRIORITÄT', flow: 'AUTOMATISCH · NACHVOLLZIEHBAR', chat: '24/7 · IN IHRER TONALITÄT', ai: 'KI' },
+  en: { prio: 'PRIORITY', flow: 'AUTOMATED · TRACEABLE', chat: '24/7 · IN YOUR TONE', ai: 'AI' },
+  tr: { prio: 'ÖNCELİK', flow: 'OTOMATİK · İZLENEBİLİR', chat: '7/24 · SİZİN ÜSLUBUNUZLA', ai: 'YZ' },
+}[lang];
+---
+
+<div class:list={['aiv', className]} aria-hidden="true">
+  {kind === 0 && (
+    <svg viewBox="0 0 320 200">
+      <g transform="translate(90 100)">
+        <circle r="70" class="aiv-ring" />
+        <circle r="47" class="aiv-ring" />
+        <circle r="24" class="aiv-ring" />
+        <path d="M0 0 L0 -70 A70 70 0 0 1 60 -36 Z" class="aiv-sweep" />
+        <circle cx="30" cy="-38" r="4" class="aiv-dot c1" />
+        <circle cx="-40" cy="20" r="4" class="aiv-dot c2" />
+        <circle cx="18" cy="44" r="4" class="aiv-dot c3" />
+      </g>
+      <g transform="translate(190 46)">
+        <text x="0" y="-8" class="aiv-label">{T.prio}</text>
+        <rect y="0" height="14" rx="7" width="110" class="aiv-bar b1" />
+        <rect y="28" height="14" rx="7" width="84" class="aiv-bar b2" />
+        <rect y="56" height="14" rx="7" width="60" class="aiv-bar b3" />
+        <rect y="84" height="14" rx="7" width="38" class="aiv-bar b4" />
+      </g>
+    </svg>
+  )}
+  {kind === 1 && (
+    <svg viewBox="0 0 320 200">
+      <path id="aiv-flow" d="M50 100 C 100 30, 140 30, 160 100 S 230 170, 270 100" class="aiv-path" />
+      <g class="aiv-node"><rect x="22" y="76" width="56" height="48" rx="12" /><text x="50" y="105">Mail</text></g>
+      <g class="aiv-node"><rect x="132" y="76" width="56" height="48" rx="12" /><text x="160" y="105">{T.ai}</text></g>
+      <g class="aiv-node"><rect x="242" y="76" width="56" height="48" rx="12" /><text x="270" y="105">CRM</text></g>
+      <circle r="5" class="aiv-packet p1"><animateMotion dur="4s" repeatCount="indefinite"><mpath href="#aiv-flow" /></animateMotion></circle>
+      <circle r="5" class="aiv-packet p2"><animateMotion dur="4s" begin="1.33s" repeatCount="indefinite"><mpath href="#aiv-flow" /></animateMotion></circle>
+      <circle r="5" class="aiv-packet p3"><animateMotion dur="4s" begin="2.66s" repeatCount="indefinite"><mpath href="#aiv-flow" /></animateMotion></circle>
+      <text x="160" y="172" class="aiv-label" text-anchor="middle">{T.flow}</text>
+    </svg>
+  )}
+  {kind === 2 && (
+    <svg viewBox="0 0 320 200">
+      <g class="aiv-msg m1"><rect x="24" y="22" width="170" height="34" rx="14" class="aiv-bubble-in" /><rect x="40" y="35" width="120" height="8" rx="4" class="aiv-line" /></g>
+      <g class="aiv-msg m2"><rect x="126" y="70" width="170" height="44" rx="14" class="aiv-bubble-out" /><rect x="142" y="83" width="130" height="7" rx="3.5" class="aiv-line-dark" /><rect x="142" y="97" width="90" height="7" rx="3.5" class="aiv-line-dark" /></g>
+      <g class="aiv-msg m3"><rect x="24" y="128" width="130" height="34" rx="14" class="aiv-bubble-in" /><rect x="40" y="141" width="80" height="8" rx="4" class="aiv-line" /></g>
+      <g class="aiv-typing"><rect x="200" y="130" width="70" height="30" rx="14" class="aiv-bubble-out" /><circle cx="222" cy="145" r="4" class="t1" /><circle cx="235" cy="145" r="4" class="t2" /><circle cx="248" cy="145" r="4" class="t3" /></g>
+      <text x="160" y="190" class="aiv-label" text-anchor="middle">{T.chat}</text>
+    </svg>
+  )}
+  {kind === 3 && (
+    <svg viewBox="0 0 320 200">
+      <rect x="16" y="16" width="288" height="168" rx="16" class="aiv-panel" />
+      <g transform="translate(36 40)">
+        <rect width="70" height="34" rx="8" class="aiv-kpi" /><text x="10" y="22" class="aiv-kpi-t">+18 %</text>
+        <rect x="82" width="70" height="34" rx="8" class="aiv-kpi" /><text x="92" y="22" class="aiv-kpi-t">−6 h</text>
+        <rect x="164" width="84" height="34" rx="8" class="aiv-kpi" /><text x="174" y="22" class="aiv-kpi-t">Live</text>
+      </g>
+      <polyline points="36,160 76,140 116,148 156,118 196,124 236,96 280,86" class="aiv-line-chart" />
+      <g class="aiv-cols">
+        <rect x="40" y="150" width="14" height="14" class="cA" />
+        <rect x="80" y="140" width="14" height="24" class="cB" />
+        <rect x="120" y="146" width="14" height="18" class="cC" />
+        <rect x="160" y="130" width="14" height="34" class="cD" />
+        <rect x="200" y="134" width="14" height="30" class="cE" />
+        <rect x="240" y="118" width="14" height="46" class="cF" />
+      </g>
+    </svg>
+  )}
+  {kind === 4 && (
+    <svg viewBox="0 0 320 200">
+      <rect x="30" y="18" width="260" height="164" rx="14" class="aiv-panel" />
+      <rect x="30" y="18" width="260" height="22" rx="11" class="aiv-chrome" />
+      <circle cx="46" cy="29" r="4" class="aiv-dot c3" /><circle cx="60" cy="29" r="4" class="aiv-dot c2" /><circle cx="74" cy="29" r="4" class="aiv-dot c1" />
+      <rect x="44" y="52" width="60" height="116" rx="8" class="aiv-blk k1" />
+      <rect x="114" y="52" width="162" height="40" rx="8" class="aiv-blk k2" />
+      <rect x="114" y="100" width="78" height="68" rx="8" class="aiv-blk k3" />
+      <rect x="198" y="100" width="78" height="68" rx="8" class="aiv-blk k4" />
+      <path d="M150 140 l12 12 l22 -26" class="aiv-check" />
+    </svg>
+  )}
+  {kind === 5 && (
+    <svg viewBox="0 0 320 200">
+      <g transform="translate(160 76)">
+        <path d="M-60 0 L0 -28 L60 0 L0 28 Z" class="aiv-cap" />
+        <path d="M-34 14 v26 q34 22 68 0 v-26" class="aiv-cap2" />
+        <line x1="60" y1="0" x2="60" y2="34" class="aiv-tassel" />
+      </g>
+      <g transform="translate(70 150)" class="aiv-people">
+        <circle cx="0" cy="0" r="10" class="pp1" /><circle cx="60" cy="0" r="10" class="pp2" /><circle cx="120" cy="0" r="10" class="pp3" /><circle cx="180" cy="0" r="10" class="pp4" />
+      </g>
+      <rect x="70" y="176" width="180" height="8" rx="4" class="aiv-track" />
+      <rect x="70" y="176" width="180" height="8" rx="4" class="aiv-progress" />
+    </svg>
+  )}
+</div>
+
+<style>
+  .aiv {
+    --c1: #2ee6ff;
+    --c2: #a66bff;
+    --c3: #ff4fd8;
+    --c4: #b6ff3b;
+    width: 100%;
+    max-width: 26rem;
+  }
+  .aiv svg {
+    display: block;
+    width: 100%;
+    height: auto;
+    overflow: visible;
+    font-family: inherit;
+  }
+  .aiv-label {
+    fill: #a3adbd;
+    font-size: 9px;
+    letter-spacing: 0.18em;
+    font-weight: 600;
+  }
+  /* 0 Radar */
+  .aiv-ring { fill: none; stroke: rgb(46 230 255 / 0.28); stroke-width: 1.2; }
+  .aiv-sweep { fill: rgb(46 230 255 / 0.22); transform-origin: 0 0; animation: aiv-rot 6s linear infinite; }
+  .aiv-dot { animation: aiv-blink 3s ease-in-out infinite; }
+  .c1 { fill: var(--c1); } .c2 { fill: var(--c3); animation-delay: 1s; } .c3 { fill: var(--c4); animation-delay: 2s; }
+  .aiv-bar { transform-box: fill-box; transform-origin: left; animation: aiv-grow 5s ease-in-out infinite; }
+  .b1 { fill: var(--c4); } .b2 { fill: var(--c1); animation-delay: 0.3s; } .b3 { fill: var(--c2); animation-delay: 0.6s; } .b4 { fill: var(--c3); animation-delay: 0.9s; }
+  /* 1 Workflow */
+  .aiv-path { fill: none; stroke: rgb(166 107 255 / 0.5); stroke-width: 2; stroke-dasharray: 6 8; animation: aiv-dash 3s linear infinite; }
+  .aiv-node rect { fill: #0e141e; stroke: rgb(46 230 255 / 0.55); stroke-width: 1.5; }
+  .aiv-node text { fill: #eef1f6; font-size: 12px; font-weight: 600; text-anchor: middle; }
+  .aiv-packet { filter: drop-shadow(0 0 6px currentColor); }
+  .p1 { fill: var(--c1); color: var(--c1); } .p2 { fill: var(--c3); color: var(--c3); } .p3 { fill: var(--c4); color: var(--c4); }
+  /* 2 Chat */
+  .aiv-msg { opacity: 0; animation: aiv-chat 8s ease-in-out infinite; }
+  .m2 { animation-delay: 1.2s; } .m3 { animation-delay: 2.4s; }
+  .aiv-bubble-in { fill: #161e2b; stroke: rgb(255 255 255 / 0.12); }
+  .aiv-bubble-out { fill: #a66bff; }
+  .aiv-line { fill: rgb(238 241 246 / 0.6); }
+  .aiv-line-dark { fill: rgb(7 16 26 / 0.65); }
+  .aiv-typing circle { fill: #07101a; animation: aiv-bounce 1.2s ease-in-out infinite; }
+  .t2 { animation-delay: 0.15s; } .t3 { animation-delay: 0.3s; }
+  /* 3 Dashboard */
+  .aiv-panel { fill: rgb(8 12 19 / 0.85); stroke: rgb(255 255 255 / 0.1); }
+  .aiv-kpi { fill: rgb(46 230 255 / 0.1); stroke: rgb(46 230 255 / 0.4); }
+  .aiv-kpi-t { fill: var(--c1); font-size: 13px; font-weight: 700; }
+  .aiv-line-chart { fill: none; stroke: var(--c4); stroke-width: 2.5; stroke-linejoin: round; stroke-dasharray: 320; animation: aiv-draw 6s ease-in-out infinite; filter: drop-shadow(0 0 4px rgb(182 255 59 / 0.6)); }
+  .aiv-cols rect { fill: rgb(166 107 255 / 0.55); transform-box: fill-box; transform-origin: bottom; animation: aiv-rise 6s ease-in-out infinite; }
+  .cB { animation-delay: 0.2s; } .cC { animation-delay: 0.4s; } .cD { animation-delay: 0.6s; } .cE { animation-delay: 0.8s; } .cF { animation-delay: 1s; }
+  /* 4 Web */
+  .aiv-chrome { fill: #161e2b; }
+  .aiv-blk { fill: rgb(46 230 255 / 0.12); stroke: rgb(46 230 255 / 0.45); opacity: 0; animation: aiv-build 7s ease-in-out infinite; }
+  .k2 { animation-delay: 0.4s; stroke: rgb(166 107 255 / 0.6); } .k3 { animation-delay: 0.8s; stroke: rgb(255 79 216 / 0.6); } .k4 { animation-delay: 1.2s; stroke: rgb(182 255 59 / 0.6); }
+  .aiv-check { fill: none; stroke: var(--c4); stroke-width: 4; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 60; stroke-dashoffset: 60; animation: aiv-tick 7s ease-in-out infinite; }
+  /* 5 Schulung */
+  .aiv-cap { fill: #a66bff; }
+  .aiv-cap2 { fill: none; stroke: #a66bff; stroke-width: 3; }
+  .aiv-tassel { stroke: var(--c4); stroke-width: 2.5; transform-origin: 60px 0; animation: aiv-swing 3s ease-in-out infinite; }
+  .aiv-people circle { fill: #161e2b; stroke: rgb(255 255 255 / 0.25); stroke-width: 1.5; animation: aiv-learn 6s ease-in-out infinite; }
+  .pp2 { animation-delay: 0.5s; } .pp3 { animation-delay: 1s; } .pp4 { animation-delay: 1.5s; }
+  .aiv-track { fill: #161e2b; }
+  .aiv-progress { fill: var(--c1); transform-box: fill-box; transform-origin: left; animation: aiv-grow 6s ease-in-out infinite; }
+
+  @keyframes aiv-rot { to { transform: rotate(360deg); } }
+  @keyframes aiv-blink { 0%, 100% { opacity: 0.25; } 50% { opacity: 1; } }
+  @keyframes aiv-grow { 0% { transform: scaleX(0.05); } 40%, 85% { transform: scaleX(1); } 100% { transform: scaleX(0.05); } }
+  @keyframes aiv-dash { to { stroke-dashoffset: -28; } }
+  @keyframes aiv-chat { 0%, 5% { opacity: 0; transform: translateY(8px); } 12%, 85% { opacity: 1; transform: none; } 95%, 100% { opacity: 0; } }
+  @keyframes aiv-bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-4px); } }
+  @keyframes aiv-draw { 0% { stroke-dashoffset: 320; } 45%, 85% { stroke-dashoffset: 0; } 100% { stroke-dashoffset: 320; } }
+  @keyframes aiv-rise { 0% { transform: scaleY(0.1); } 40%, 85% { transform: scaleY(1); } 100% { transform: scaleY(0.1); } }
+  @keyframes aiv-build { 0%, 5% { opacity: 0; } 15%, 88% { opacity: 1; } 100% { opacity: 0; } }
+  @keyframes aiv-tick { 0%, 30% { stroke-dashoffset: 60; } 45%, 88% { stroke-dashoffset: 0; } 100% { stroke-dashoffset: 60; } }
+  @keyframes aiv-swing { 0%, 100% { transform: rotate(-8deg); } 50% { transform: rotate(8deg); } }
+  @keyframes aiv-learn { 0%, 20% { fill: #161e2b; } 40%, 85% { fill: rgb(46 230 255 / 0.6); } 100% { fill: #161e2b; } }
+
+  @media (prefers-reduced-motion: reduce) {
+    .aiv * { animation: none !important; }
+    .aiv-msg, .aiv-blk { opacity: 1; }
+    .aiv-check { stroke-dashoffset: 0; }
+  }
+</style>

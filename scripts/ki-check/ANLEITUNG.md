@@ -76,3 +76,10 @@ Auf der Startseite des Checks gibt es die Datei `public/ki-check/KI-Potenzialche
 
 Ändern sich die Fragen im Online-Formular, die Excel-Datei neu erzeugen: Zeilen `const PART1 = [` bis zum Ende von `PART2` aus `index.html` in eine Datei `q.js` kopieren, darunter `require("fs").writeFileSync(process.argv[2], JSON.stringify({PART1,PART2}));` ergänzen, dann
 `node q.js q.json` und `python scripts/ki-check/make_xlsx.py q.json public/ki-check/KI-Potenzialcheck-NEXXCON-24.xlsx`.
+
+## 8. Sprachen (Deutsch, Englisch, Türkisch)
+
+- Seiten: `/ki-check/` (de), `/ki-check/en/`, `/ki-check/tr/` – schlanke Hüllen; Logik in `app.js`, Gestaltung in `app.css`, Texte und Fragen in `lang-de.js`, `lang-en.js`, `lang-tr.js`.
+- Fragen- und Antwortreihenfolge muss in allen Sprachen gleich bleiben (Lead-Bewertung nach Index).
+- An das Skript gehen immer die deutschen Fragen und Antworten; Freitext bleibt im Original. Englische/türkische Einsendungen sind in der Mail-Fußzeile mit `[EN]`/`[TR]` markiert.
+- Excel je Sprache: `python scripts/ki-check/make_xlsx.py q.json <datei>.xlsx de|en|tr` (q.json aus der jeweiligen lang-Datei, siehe Abschnitt 7).

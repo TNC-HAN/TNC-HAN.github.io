@@ -90,7 +90,7 @@ const bookingAttrs = site.contact.bookingUrl ? { target: '_blank', rel: 'noopene
               </li>
             ))}
           </ul>
-          {page === 'ai' && lang === 'de' && <CheckButton block class="mt-2" />}
+          {page === 'ai' && <CheckButton lang={lang} block class="mt-2" />}
           <a href={bookingUrl} class="btn-gold mt-2 w-full" {...bookingAttrs}>
             {dict.nav.cta}
           </a>

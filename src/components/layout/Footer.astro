@@ -12,6 +12,12 @@ interface Props {
 const { lang } = Astro.props;
 const dict = t(lang);
 const year = new Date().getFullYear();
+// Partner-Links in der unteren Leiste → Kontaktformular mit vorausgewähltem Thema (ContactForm liest ?thema=)
+const partnerLinks = {
+  de: [['affiliate', 'Affiliate-Programm'], ['lizenz', 'Lizenzpartner werden'], ['investor', 'Investor Relations']],
+  en: [['affiliate', 'Affiliate programme'], ['lizenz', 'Become a licence partner'], ['investor', 'Investor relations']],
+  tr: [['affiliate', 'Ortaklık programı'], ['lizenz', 'Lisans ortağı olun'], ['investor', 'Yatırımcı ilişkileri']],
+}[lang];
 ---
 
 <footer class="relative mt-24 border-t border-line bg-ink-950/80">
@@ -114,10 +120,17 @@ const year = new Date().getFullYear();
     </div>
   </div>
   <div class="border-t border-line">
-    <div class="container-site flex flex-col gap-2 py-6 text-xs text-subtle sm:flex-row sm:justify-between">
+    <div class="container-site flex flex-col gap-2 py-6 text-xs text-subtle lg:flex-row lg:items-center lg:justify-between">
       <p>
         © {year} {site.company} · {dict.footer.rights}
       </p>
+      <nav aria-label="Partner" class="flex flex-wrap gap-x-5 gap-y-1">
+        {partnerLinks.map(([key, label]) => (
+          <a href={`${href('contact', lang)}?thema=${key}#formular`} class="text-muted transition hover:text-champagne">
+            {label}
+          </a>
+        ))}
+      </nav>
       <p>
         {site.brand} · {site.hashtag}
       </p>

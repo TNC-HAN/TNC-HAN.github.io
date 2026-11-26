@@ -38,7 +38,7 @@ const dict = t(lang);
             <p class="leading-relaxed text-muted">{item.a}</p>
             {/* CTA unter jeder Antwort – öffnet Calendly */}
             <div class="mt-5 flex flex-wrap items-center gap-3">
-              {check && <CheckButton small />}
+              {check && <CheckButton lang={lang} small />}
               <BookButton lang={lang} label={dict.bookNow} small />
             </div>
           </div>
