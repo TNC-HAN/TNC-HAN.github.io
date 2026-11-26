@@ -11,6 +11,7 @@ import AboutView from '@/views/AboutView.astro';
 import ContactView from '@/views/ContactView.astro';
 import LegalView from '@/views/LegalView.astro';
 import ProcessView from '@/views/ProcessView.astro';
+import PartnerView from '@/views/PartnerView.astro';
 
 export const getStaticPaths = (() =>
   languages.flatMap((lang) =>
@@ -35,3 +36,6 @@ const { lang, page } = Astro.props;
 {page === 'about' && <AboutView lang={lang} />}
 {page === 'contact' && <ContactView lang={lang} />}
 {(page === 'imprint' || page === 'privacy') && <LegalView lang={lang} kind={page} />}
+{(page === 'affiliate' || page === 'license' || page === 'investors') && (
+  <PartnerView lang={lang} kind={page} />
+)}

@@ -1,0 +1,267 @@
+---
+/**
+ * Partnerseiten: Affiliate-Programm, Lizenzpartner, Investor Relations (Links in der Fußzeile).
+ * Aufbau: Kopf → Foto mit animierter Neon-Grafik + „Für wen“ → Ablauf in 4 Schritten →
+ * Vorteile → FAQ → Anfrage (Kontaktformular mit vorausgewähltem Thema) + Erstgespräch.
+ * Texte: src/data/partner-pages.ts
+ */
+import { Image } from 'astro:assets';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import PageHero from '@/components/sections/PageHero.astro';
+import FaqList from '@/components/sections/FaqList.astro';
+import BookButton from '@/components/ui/BookButton.astro';
+import Icon from '@/components/ui/Icon.astro';
+import { photos, type PhotoKey } from '@/config/media';
+import { href, type Lang } from '@/config/routes';
+import { partnerPages, partnerTopic, type PartnerKind } from '@/data/partner-pages';
+import { faqJsonLd } from '@/lib/structured-data';
+import { t } from '@/i18n';
+
+interface Props {
+  lang: Lang;
+  kind: PartnerKind;
+}
+const { lang, kind } = Astro.props;
+const dict = t(lang);
+const p = partnerPages[kind][lang];
+const pageKey = ({ affiliate: 'affiliate', license: 'license', investors: 'investors' } as const)[kind];
+const photo: PhotoKey = ({ affiliate: 'handschlagNachfolge', license: 'vertragUnterschrift', investors: 'frankfurtSkyline' } as const)[kind];
+const contactUrl = `${href('contact', lang)}?thema=${partnerTopic[kind]}#formular`;
+const benefitIcons = {
+  affiliate: ['key', 'spark', 'shield', 'layers'],
+  license: ['compass', 'layers', 'building', 'chat'],
+  investors: ['chat', 'shield', 'globe', 'check'],
+} as const;
+const neon = ['#2ee6ff', '#a66bff', '#ff4fd8', '#b6ff3b'];
+---
+
+<BaseLayout lang={lang} page={pageKey} {...p.seo} jsonLd={[faqJsonLd(p.faq)]}>
+  <PageHero lang={lang} {...p.hero} current={p.label} />
+
+  <!-- Foto mit animierter Grafik + Für wen -->
+  <section class="container-site -mt-6 pb-16">
+    <div class="grid items-stretch gap-6 lg:grid-cols-2">
+      <div class="reveal gold-frame relative min-h-80 overflow-hidden rounded-[2rem]">
+        <Image
+          src={photos[photo]}
+          alt={dict.photoAlt[photo]}
+          class="absolute inset-0 size-full object-cover"
+          widths={[640, 1024, 1400]}
+          sizes="(min-width: 1024px) 600px, 100vw"
+          loading="eager"
+        />
+        <div class="absolute inset-0 flex items-center justify-center bg-gradient-to-t from-[#04030c]/95 via-[#04030c]/75 to-[#04030c]/50 p-6 backdrop-blur-[2px]">
+          <div class="pv" aria-hidden="true">
+            {kind === 'affiliate' && (
+              <svg viewBox="0 0 320 220">
+                <g class="pv-links">
+                  <line x1="160" y1="110" x2="60" y2="50" /><line x1="160" y1="110" x2="260" y2="50" />
+                  <line x1="160" y1="110" x2="60" y2="175" /><line x1="160" y1="110" x2="260" y2="175" />
+                </g>
+                <circle cx="60" cy="50" r="14" class="pv-node n1" /><circle cx="260" cy="50" r="14" class="pv-node n2" />
+                <circle cx="60" cy="175" r="14" class="pv-node n3" /><circle cx="260" cy="175" r="14" class="pv-node n4" />
+                <circle cx="160" cy="110" r="26" class="pv-core" />
+                <text x="160" y="116" class="pv-core-t">NX</text>
+                <circle r="5" class="pv-coin c1"><animateMotion dur="3.5s" repeatCount="indefinite" path="M160 110 L60 50" /></circle>
+                <circle r="5" class="pv-coin c2"><animateMotion dur="3.5s" begin="0.9s" repeatCount="indefinite" path="M160 110 L260 50" /></circle>
+                <circle r="5" class="pv-coin c3"><animateMotion dur="3.5s" begin="1.8s" repeatCount="indefinite" path="M160 110 L60 175" /></circle>
+                <circle r="5" class="pv-coin c4"><animateMotion dur="3.5s" begin="2.7s" repeatCount="indefinite" path="M160 110 L260 175" /></circle>
+              </svg>
+            )}
+            {kind === 'license' && (
+              <svg viewBox="0 0 320 220">
+                <g class="pv-map">
+                  <rect x="40" y="40" width="70" height="60" rx="10" class="r1" />
+                  <rect x="125" y="40" width="70" height="60" rx="10" class="r2" />
+                  <rect x="210" y="40" width="70" height="60" rx="10" class="r3" />
+                  <rect x="40" y="115" width="70" height="60" rx="10" class="r4" />
+                  <rect x="125" y="115" width="70" height="60" rx="10" class="r5" />
+                  <rect x="210" y="115" width="70" height="60" rx="10" class="r6" />
+                </g>
+                <g class="pv-badge">
+                  <circle cx="160" cy="108" r="30" />
+                  <path d="M147 108 l9 9 l18 -20" class="pv-tick" />
+                </g>
+              </svg>
+            )}
+            {kind === 'investors' && (
+              <svg viewBox="0 0 320 220">
+                <line x1="40" y1="185" x2="290" y2="185" class="pv-axis" />
+                <g class="pv-bars">
+                  <rect x="55" y="140" width="26" height="45" rx="4" class="b1" />
+                  <rect x="100" y="120" width="26" height="65" rx="4" class="b2" />
+                  <rect x="145" y="100" width="26" height="85" rx="4" class="b3" />
+                  <rect x="190" y="75" width="26" height="110" rx="4" class="b4" />
+                  <rect x="235" y="50" width="26" height="135" rx="4" class="b5" />
+                </g>
+                <polyline points="68,130 113,110 158,90 203,65 248,38" class="pv-trend" />
+                <circle cx="248" cy="38" r="6" class="pv-peak" />
+              </svg>
+            )}
+          </div>
+        </div>
+      </div>
+
+      <div class="reveal glass p-8 sm:p-10">
+        <p class="eyebrow">{p.label}</p>
+        <h2 class="mt-4 text-3xl font-medium">{p.audienceTitle}</h2>
+        <ul class="mt-8 space-y-4">
+          {p.audience.map((a, i) => (
+            <li class="flex gap-3 leading-relaxed text-text/90">
+              <span
+                class="pv-ic"
+                style={`--nc:${neon[i % 4]}`}
+              >
+                <Icon name="check" class="size-4" />
+              </span>
+              {a}
+            </li>
+          ))}
+        </ul>
+        <div class="mt-10 flex flex-wrap gap-3">
+          <a href={contactUrl} class="btn-gold">
+            {p.ctaButton}
+            <Icon name="arrow" class="size-4" />
+          </a>
+          <BookButton lang={lang} variant="ghost" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Ablauf -->
+  <section class="container-site py-16" aria-labelledby="steps-title">
+    <h2 id="steps-title" class="text-3xl font-medium sm:text-4xl">{p.stepsTitle}</h2>
+    <ol class="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
+      {p.steps.map((s, i) => (
+        <li class="reveal glass pv-step relative p-7" style={`--nc:${neon[i % 4]}`}>
+          <span class="pv-num">{String(i + 1).padStart(2, '0')}</span>
+          <h3 class="mt-5 text-xl font-medium">{s.title}</h3>
+          <p class="mt-3 leading-relaxed text-muted">{s.text}</p>
+        </li>
+      ))}
+    </ol>
+  </section>
+
+  <!-- Vorteile -->
+  <section class="container-site py-16" aria-labelledby="benefits-title">
+    <h2 id="benefits-title" class="text-3xl font-medium sm:text-4xl">{p.benefitsTitle}</h2>
+    <ul class="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+      {p.benefits.map((b, i) => (
+        <li class="reveal glass glass-hover p-7">
+          <span class="flex size-11 items-center justify-center rounded-full border border-brand-400/30 bg-brand-500/10 text-brand-300">
+            <Icon name={benefitIcons[kind][i % 4]!} class="size-5" />
+          </span>
+          <h3 class="mt-5 text-xl font-medium">{b.title}</h3>
+          <p class="mt-3 leading-relaxed text-muted">{b.text}</p>
+        </li>
+      ))}
+    </ul>
+  </section>
+
+  <FaqList lang={lang} eyebrow="FAQ" title={dict.common.faqTitle} items={p.faq} />
+
+  <!-- Anfrage -->
+  <section class="container-site py-16" aria-labelledby="partner-cta">
+    <div class="reveal glass relative overflow-hidden px-6 py-14 text-center sm:px-14">
+      <div aria-hidden="true" class="pointer-events-none absolute -top-32 left-1/2 size-[32rem] -translate-x-1/2 rounded-full bg-brand-500/25 blur-[100px]"></div>
+      <div class="relative">
+        <h2 id="partner-cta" class="mx-auto max-w-3xl text-3xl leading-tight font-medium sm:text-5xl">{p.ctaTitle}</h2>
+        <p class="mx-auto mt-5 max-w-2xl text-lg leading-relaxed text-muted">{p.ctaText}</p>
+        <div class="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row sm:items-start">
+          <a href={contactUrl} class="btn-gold">
+            {p.ctaButton}
+            <Icon name="arrow" class="size-4" />
+          </a>
+          <BookButton lang={lang} variant="ghost" />
+        </div>
+        {p.note && <p class="mx-auto mt-8 max-w-2xl text-xs leading-relaxed text-subtle">{p.note}</p>}
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .pv {
+    --c1: #2ee6ff;
+    --c2: #a66bff;
+    --c3: #ff4fd8;
+    --c4: #b6ff3b;
+    width: 100%;
+    max-width: 26rem;
+    filter: drop-shadow(0 0 22px rgb(46 230 255 / 0.25));
+  }
+  .pv svg {
+    display: block;
+    width: 100%;
+    height: auto;
+    overflow: visible;
+  }
+  .pv-ic {
+    display: inline-flex;
+    flex: none;
+    align-items: center;
+    justify-content: center;
+    width: 1.75rem;
+    height: 1.75rem;
+    margin-top: 0.05rem;
+    border-radius: 9999px;
+    color: var(--nc);
+    border: 1px solid color-mix(in srgb, var(--nc) 55%, transparent);
+    background: color-mix(in srgb, var(--nc) 12%, transparent);
+  }
+  .pv-num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.75rem;
+    height: 2.75rem;
+    border-radius: 9999px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    color: var(--nc);
+    border: 1px solid color-mix(in srgb, var(--nc) 55%, transparent);
+    background: color-mix(in srgb, var(--nc) 12%, transparent);
+    box-shadow: 0 0 18px color-mix(in srgb, var(--nc) 35%, transparent);
+  }
+  .pv-step::after {
+    content: '';
+    position: absolute;
+    inset: auto 1.75rem 0;
+    height: 2px;
+    border-radius: 2px;
+    background: linear-gradient(90deg, transparent, var(--nc), transparent);
+    opacity: 0.7;
+  }
+  /* Affiliate: Netzwerk mit fließender Beteiligung */
+  .pv-links line { stroke: rgb(166 107 255 / 0.5); stroke-width: 2; stroke-dasharray: 5 7; animation: pv-dash 3s linear infinite; }
+  .pv-node { fill: #0e141e; stroke-width: 2; animation: pv-pulse 3.5s ease-in-out infinite; }
+  .n1 { stroke: var(--c1); } .n2 { stroke: var(--c3); animation-delay: 0.9s; } .n3 { stroke: var(--c4); animation-delay: 1.8s; } .n4 { stroke: var(--c2); animation-delay: 2.7s; }
+  .pv-core { fill: #a66bff; }
+  .pv-core-t { fill: #07101a; font-size: 15px; font-weight: 800; text-anchor: middle; }
+  .pv-coin { filter: drop-shadow(0 0 6px currentColor); }
+  .c1 { fill: var(--c1); color: var(--c1); } .c2 { fill: var(--c3); color: var(--c3); } .c3 { fill: var(--c4); color: var(--c4); } .c4 { fill: var(--c2); color: var(--c2); }
+  /* Lizenz: Regionen leuchten nacheinander auf, Siegel */
+  .pv-map rect { fill: rgb(46 230 255 / 0.06); stroke: rgb(46 230 255 / 0.35); stroke-width: 1.5; animation: pv-region 6s ease-in-out infinite; }
+  .r2 { animation-delay: 1s; } .r3 { animation-delay: 2s; } .r4 { animation-delay: 3s; } .r5 { animation-delay: 4s; } .r6 { animation-delay: 5s; }
+  .pv-badge circle { fill: #07101a; stroke: var(--c4); stroke-width: 3; }
+  .pv-tick { fill: none; stroke: var(--c4); stroke-width: 4; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 50; animation: pv-tick 6s ease-in-out infinite; }
+  /* Investoren: Wachstum */
+  .pv-axis { stroke: rgb(255 255 255 / 0.2); stroke-width: 1.5; }
+  .pv-bars rect { fill: rgb(166 107 255 / 0.55); transform-box: fill-box; transform-origin: bottom; animation: pv-rise 6s ease-in-out infinite; }
+  .b2 { animation-delay: 0.2s; } .b3 { animation-delay: 0.4s; } .b4 { animation-delay: 0.6s; } .b5 { animation-delay: 0.8s; fill: rgb(46 230 255 / 0.6); }
+  .pv-trend { fill: none; stroke: var(--c4); stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 260; animation: pv-draw 6s ease-in-out infinite; }
+  .pv-peak { fill: var(--c4); animation: pv-pulse 2s ease-in-out infinite; }
+
+  @keyframes pv-dash { to { stroke-dashoffset: -24; } }
+  @keyframes pv-pulse { 0%, 100% { opacity: 0.55; } 50% { opacity: 1; } }
+  @keyframes pv-region { 0%, 100% { fill: rgb(46 230 255 / 0.06); } 12% { fill: rgb(166 107 255 / 0.4); } 30% { fill: rgb(46 230 255 / 0.06); } }
+  @keyframes pv-tick { 0%, 25% { stroke-dashoffset: 50; } 45%, 90% { stroke-dashoffset: 0; } 100% { stroke-dashoffset: 50; } }
+  @keyframes pv-rise { 0% { transform: scaleY(0.1); } 40%, 85% { transform: scaleY(1); } 100% { transform: scaleY(0.1); } }
+  @keyframes pv-draw { 0% { stroke-dashoffset: 260; } 45%, 85% { stroke-dashoffset: 0; } 100% { stroke-dashoffset: 260; } }
+
+  @media (prefers-reduced-motion: reduce) {
+    .pv * { animation: none !important; }
+    .pv-tick, .pv-trend { stroke-dashoffset: 0; }
+  }
+</style>

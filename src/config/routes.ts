@@ -18,6 +18,9 @@ export const pages = [
   'contact',
   'imprint',
   'privacy',
+  'affiliate',
+  'license',
+  'investors',
 ] as const;
 export type PageKey = (typeof pages)[number];
 
@@ -44,6 +47,9 @@ export const routes: Record<PageKey, Record<Lang, string>> = {
   contact: { de: 'kontakt', en: 'contact', tr: 'iletisim' },
   imprint: { de: 'impressum', en: 'imprint', tr: 'kunye' },
   privacy: { de: 'datenschutz', en: 'privacy', tr: 'gizlilik' },
+  affiliate: { de: 'affiliate-programm', en: 'affiliate-programme', tr: 'ortaklik-programi' },
+  license: { de: 'lizenzpartner', en: 'licence-partner', tr: 'lisans-ortakligi' },
+  investors: { de: 'investor-relations', en: 'investor-relations', tr: 'yatirimci-iliskileri' },
 };
 
 /** Pfad ohne Basis, z. B. "en/contact/" oder "" für die deutsche Startseite. */

@@ -5,6 +5,7 @@ import nexxus from '@/assets/brand/nexxus-logo.png';
 import { href, serviceKeys, type Lang } from '@/config/routes';
 import { site, whatsappUrl } from '@/config/site';
 import { t } from '@/i18n';
+import { partnerPages } from '@/data/partner-pages';
 
 interface Props {
   lang: Lang;
@@ -12,12 +13,10 @@ interface Props {
 const { lang } = Astro.props;
 const dict = t(lang);
 const year = new Date().getFullYear();
-// Partner-Links in der unteren Leiste → Kontaktformular mit vorausgewähltem Thema (ContactForm liest ?thema=)
-const partnerLinks = {
-  de: [['affiliate', 'Affiliate-Programm'], ['lizenz', 'Lizenzpartner werden'], ['investor', 'Investor Relations']],
-  en: [['affiliate', 'Affiliate programme'], ['lizenz', 'Become a licence partner'], ['investor', 'Investor relations']],
-  tr: [['affiliate', 'Ortaklık programı'], ['lizenz', 'Lisans ortağı olun'], ['investor', 'Yatırımcı ilişkileri']],
-}[lang];
+// Partner-Links in der unteren Leiste → eigene Partnerseiten (Texte: src/data/partner-pages.ts)
+const partnerLinks = (['affiliate', 'license', 'investors'] as const).map(
+  (key) => [key, partnerPages[key][lang].label] as const,
+);
 ---
 
 <footer class="relative mt-24 border-t border-line bg-ink-950/80">
@@ -126,7 +125,7 @@ const partnerLinks = {
       </p>
       <nav aria-label="Partner" class="flex flex-wrap gap-x-5 gap-y-1">
         {partnerLinks.map(([key, label]) => (
-          <a href={`${href('contact', lang)}?thema=${key}#formular`} class="text-muted transition hover:text-champagne">
+          <a href={href(key, lang)} class="text-muted transition hover:text-champagne">
             {label}
           </a>
         ))}
